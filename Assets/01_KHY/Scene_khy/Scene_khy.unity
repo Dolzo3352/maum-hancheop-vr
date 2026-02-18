@@ -681,9 +681,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5574ec9d7c1d277428295ba340d6e295, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 753340290}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5574ec9d7c1d277428295ba340d6e295, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 753340291}
     - targetCorrespondingSourceObject: {fileID: 7036213049465896255, guid: 5574ec9d7c1d277428295ba340d6e295, type: 3}
       insertIndex: -1
@@ -730,14 +727,16 @@ PlayableDirector:
     value: {fileID: 124496986}
   - key: {fileID: 0}
     value: {fileID: 494852779}
-  - key: {fileID: 7274688572474515193, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
-    value: {fileID: 869514865}
-  - key: {fileID: 6607689637628323706, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
-    value: {fileID: 294014320}
-  - key: {fileID: 8349575734910340172, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
-    value: {fileID: 1177493465}
   - key: {fileID: -1567009042333303746, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
     value: {fileID: 294014322}
+  - key: {fileID: -3336969661001315212, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+    value: {fileID: 869514865}
+  - key: {fileID: 7148061420758035129, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+    value: {fileID: 1177493465}
+  - key: {fileID: 7082951976430772783, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+    value: {fileID: 294014320}
+  - key: {fileID: 4409742258656729383, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+    value: {fileID: 1549954616}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &196252690
@@ -1084,8 +1083,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.99, y: -5.62, z: 5.24}
-  m_LocalScale: {x: 0.7545604, y: 0.7545604, z: 0.7545604}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 494852779}
   m_Father: {fileID: 0}
@@ -1102,7 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 1, y: 1, z: 1}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!95 &294014322
 Animator:
   serializedVersion: 7
@@ -1586,7 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 9.839318, y: 3.2974465, z: 3.820484}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &413772873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,7 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 1, y: 1, z: 1}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!4 &494852779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5574ec9d7c1d277428295ba340d6e295, type: 3}
@@ -2008,25 +2007,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 0.43432, y: 0.43432, z: 0.43432}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &753340289 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5574ec9d7c1d277428295ba340d6e295, type: 3}
   m_PrefabInstance: {fileID: 190281533}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &753340290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753340289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 0.021376276, y: 0.021376276, z: 0.021376276}
 --- !u!95 &753340291
 Animator:
   serializedVersion: 7
@@ -2335,7 +2321,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.4197578, y: 0.091276765, z: 2.873273}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 404807922}
@@ -2354,7 +2340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 1, y: 1, z: 1}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &910483714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,7 +2388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 0.43432, y: 0.43432, z: 0.43432}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &923384007
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,7 +3068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 4.626546, y: 3.2974465, z: 3.820484}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1126531961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,7 +3120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 1, y: 1, z: 1}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1129595197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3487,7 +3473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 1, y: 1, z: 1}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1177493464
 GameObject:
   m_ObjectHideFlags: 0
@@ -3515,8 +3501,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.193, y: -0.028289199, z: 1.176}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2132149294}
   - {fileID: 2081985137}
@@ -3534,7 +3520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 1, y: 1, z: 1}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1192414374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,7 +3904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 0.43432, y: 0.43432, z: 0.43432}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1490606868
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,7 +3952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 0.43432, y: 0.43432, z: 0.43432}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1543517041
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,6 +4065,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543517041}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1549954616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1549954618}
+  - component: {fileID: 1549954617}
+  m_Layer: 0
+  m_Name: Timeline (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &1549954617
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549954616}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: bb2ac92586ea9064098da598014e1e11, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 0}
+    value: {fileID: 869514865}
+  - key: {fileID: -2168037433649779114, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+    value: {fileID: 124496986}
+  - key: {fileID: 0}
+    value: {fileID: 494852779}
+  - key: {fileID: -1567009042333303746, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+    value: {fileID: 294014322}
+  - key: {fileID: -3336969661001315212, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+    value: {fileID: 869514865}
+  - key: {fileID: 7148061420758035129, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+    value: {fileID: 1177493465}
+  - key: {fileID: 7082951976430772783, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+    value: {fileID: 294014320}
+  - key: {fileID: -3336969661001315212, guid: bb2ac92586ea9064098da598014e1e11, type: 2}
+    value: {fileID: 869514865}
+  - key: {fileID: 7148061420758035129, guid: bb2ac92586ea9064098da598014e1e11, type: 2}
+    value: {fileID: 1177493465}
+  - key: {fileID: 7082951976430772783, guid: bb2ac92586ea9064098da598014e1e11, type: 2}
+    value: {fileID: 294014320}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &1549954618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549954616}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1567155404
 GameObject:
   m_ObjectHideFlags: 0
@@ -4540,7 +4595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 1671.3121, y: 1671.3123, z: 1671.3124}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1795348224
 GameObject:
   m_ObjectHideFlags: 0
@@ -4924,7 +4979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 0.43432, y: 0.43432, z: 0.43432}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &2081985136
 GameObject:
   m_ObjectHideFlags: 0
@@ -5050,7 +5105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 1, y: 1, z: 1}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &2087267514
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,7 +5155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 1671.3121, y: 1671.312, z: 1671.3123}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1 &2132149293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5226,7 +5281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972f6a09744794458ea5a32777e6209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleOrigin
-  originalScale: {x: 0.37244, y: 1.4845086, z: 0.37244}
+  baseScale: {x: 1, y: 1, z: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5235,6 +5290,7 @@ SceneRoots:
   - {fileID: 987962317}
   - {fileID: 1152080354}
   - {fileID: 196252690}
+  - {fileID: 1549954618}
   - {fileID: 124496987}
   - {fileID: 294014320}
   - {fileID: 1149263621}
