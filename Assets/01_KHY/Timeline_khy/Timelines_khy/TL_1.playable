@@ -1,5 +1,97 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8483084863171710935
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44e330e8b6398e41bfd9220396e44ab, type: 3}
+  m_Name: Diorama Scale Track
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleTrack
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 1.6666666666666656
+    m_ClipIn: 0
+    m_Asset: {fileID: 8374751786670116329}
+    m_Duration: 2.3666666666666676
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -8483084863171710935}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 1.6666666666666656
+    m_DisplayName: "1.0x \u2192 1.5x"
+  m_Markers:
+    m_Objects: []
 --- !u!114 &-8285027523966392700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19,6 +111,98 @@ MonoBehaviour:
     easeType: 3
     overshootStrength: 0.35
     anticipationStrength: 0.15
+--- !u!114 &-5494115173705424643
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44e330e8b6398e41bfd9220396e44ab, type: 3}
+  m_Name: Diorama Scale Track (4)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleTrack
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 1.6666666666666656
+    m_ClipIn: 0
+    m_Asset: {fileID: -4135435393361235708}
+    m_Duration: 2.3666666666666676
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -5494115173705424643}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 1.6666666666666656
+    m_DisplayName: "1.0x \u2192 1.5x"
+  m_Markers:
+    m_Objects: []
 --- !u!114 &-4511916693373418865
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -36,6 +220,25 @@ MonoBehaviour:
     targetScale: 1
     transitionIn: 2
     easeType: 2
+    overshootStrength: 0.35
+    anticipationStrength: 0.15
+--- !u!114 &-4135435393361235708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13af091c9be2764ba9b0179ed5a4a87, type: 3}
+  m_Name: DioramaScaleClip(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleClip
+  _template:
+    fromScale: 1
+    targetScale: 1.5
+    transitionIn: 0.5
+    easeType: 3
     overshootStrength: 0.35
     anticipationStrength: 0.15
 --- !u!114 &-4045974025812680254
@@ -57,6 +260,44 @@ MonoBehaviour:
     easeType: 3
     overshootStrength: 0.152
     anticipationStrength: 0.356
+--- !u!114 &-3773241764639649990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13af091c9be2764ba9b0179ed5a4a87, type: 3}
+  m_Name: DioramaScaleClip(Clone)(Clone)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleClip
+  _template:
+    fromScale: 1
+    targetScale: 1.5
+    transitionIn: 0.5
+    easeType: 3
+    overshootStrength: 0.35
+    anticipationStrength: 0.15
+--- !u!114 &-896485588463484424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13af091c9be2764ba9b0179ed5a4a87, type: 3}
+  m_Name: DioramaScaleClip(Clone)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleClip
+  _template:
+    fromScale: 1
+    targetScale: 1.5
+    transitionIn: 0.5
+    easeType: 3
+    overshootStrength: 0.35
+    anticipationStrength: 0.15
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +313,12 @@ MonoBehaviour:
   m_Version: 0
   m_Tracks:
   - {fileID: 7082951976430772783}
+  - {fileID: -8483084863171710935}
+  - {fileID: 4636412540578899431}
+  - {fileID: 6280806402587804873}
+  - {fileID: -5494115173705424643}
+  - {fileID: 7779983891356616557}
+  - {fileID: 7250815661298418471}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -116,6 +363,209 @@ MonoBehaviour:
     easeType: 3
     overshootStrength: 0.35
     anticipationStrength: 0.15
+--- !u!114 &4636412540578899431
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44e330e8b6398e41bfd9220396e44ab, type: 3}
+  m_Name: Diorama Scale Track (1)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleTrack
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 1.6666666666666656
+    m_ClipIn: 0
+    m_Asset: {fileID: -896485588463484424}
+    m_Duration: 2.3666666666666676
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 4636412540578899431}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 1.6666666666666656
+    m_DisplayName: "1.0x \u2192 1.5x"
+  m_Markers:
+    m_Objects: []
+--- !u!114 &5216727978564052668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13af091c9be2764ba9b0179ed5a4a87, type: 3}
+  m_Name: DioramaScaleClip(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleClip
+  _template:
+    fromScale: 1
+    targetScale: 1.5
+    transitionIn: 0.5
+    easeType: 3
+    overshootStrength: 0.35
+    anticipationStrength: 0.15
+--- !u!114 &6280806402587804873
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44e330e8b6398e41bfd9220396e44ab, type: 3}
+  m_Name: Diorama Scale Track (3)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleTrack
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 1.6666666666666656
+    m_ClipIn: 0
+    m_Asset: {fileID: -3773241764639649990}
+    m_Duration: 2.3666666666666676
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 6280806402587804873}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 1.6666666666666656
+    m_DisplayName: "1.0x \u2192 1.5x"
+  m_Markers:
+    m_Objects: []
 --- !u!114 &7082951976430772783
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,3 +658,225 @@ MonoBehaviour:
     m_DisplayName: "1.0x \u2192 1.5x"
   m_Markers:
     m_Objects: []
+--- !u!114 &7215672205166949820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13af091c9be2764ba9b0179ed5a4a87, type: 3}
+  m_Name: DioramaScaleClip(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleClip
+  _template:
+    fromScale: 1
+    targetScale: 3
+    transitionIn: 0.5
+    easeType: 3
+    overshootStrength: 0.35
+    anticipationStrength: 0.15
+--- !u!114 &7250815661298418471
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44e330e8b6398e41bfd9220396e44ab, type: 3}
+  m_Name: Diorama Scale Track (6)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleTrack
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 1.6666666666666656
+    m_ClipIn: 0
+    m_Asset: {fileID: 7215672205166949820}
+    m_Duration: 2.3666666666666676
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 7250815661298418471}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 1.6666666666666656
+    m_DisplayName: "1.0x \u2192 3.0x"
+  m_Markers:
+    m_Objects: []
+--- !u!114 &7779983891356616557
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44e330e8b6398e41bfd9220396e44ab, type: 3}
+  m_Name: Diorama Scale Track (5)
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleTrack
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 1.6666666666666656
+    m_ClipIn: 0
+    m_Asset: {fileID: 5216727978564052668}
+    m_Duration: 2.3666666666666676
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 7779983891356616557}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 1.6666666666666656
+    m_DisplayName: "1.0x \u2192 1.5x"
+  m_Markers:
+    m_Objects: []
+--- !u!114 &8374751786670116329
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13af091c9be2764ba9b0179ed5a4a87, type: 3}
+  m_Name: DioramaScaleClip
+  m_EditorClassIdentifier: Assembly-CSharp::DioramaScaleClip
+  _template:
+    fromScale: 1
+    targetScale: 1.5
+    transitionIn: 0.5
+    easeType: 3
+    overshootStrength: 0.35
+    anticipationStrength: 0.15

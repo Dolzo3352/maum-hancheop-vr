@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb80a04ebc9d094f93bf1595c97a09b, type: 3}
+  m_Name: "Stage_01_\uC9D1\uC55E"
+  m_EditorClassIdentifier: Assembly-CSharp::StageData
+  stageName: "Stage_01_\uC9D1\uC55E"
+  stageIndex: 0
+  timeline: {fileID: 11400000, guid: 5540ff25831c7c848bca9a49e801477a, type: 2}
+  dioramaScale: 1
+  entryTransition: 0
+  transitionDuration: 1
+  lightingPreset: {fileID: 0}
+  ambientAudio: {fileID: 0}
