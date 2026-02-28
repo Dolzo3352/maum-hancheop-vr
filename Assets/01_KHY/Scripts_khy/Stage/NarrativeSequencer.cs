@@ -11,13 +11,15 @@ using UnityEngine.Playables;
 /// 각 Stage GameObject 안에 PlayableDirector가 있어야 하며,
 /// 타임라인과 바인딩은 해당 Director의 Inspector에서 직접 설정합니다.
 ///
-/// 동작 흐름:
-///   1. TimelineController.OnTimelineFinished     → Stage 타임라인 종료 감지
-///   2. StageTransitionHandler.FadeOut             → 화면 가림
-///   3. DioramaStageManager.DeactivateAllStages    → 전부 끔
-///   4. DioramaStageManager.ActivateStage(next)    → 다음 Stage 켬
-///   5. TimelineController.SetDirector + Play      → 해당 Stage의 Director로 재생
-///   6. StageTransitionHandler.FadeIn              → 화면 보임
+/// 동작 흐름 (The Line VR 스타일 크로스페이드):
+///   1. TimelineController.OnTimelineFinished           → Stage 타임라인 종료 감지
+///   2. DioramaStageManager.ActivateStageAdditive(next) → 다음 Stage 추가 활성화 (양쪽 동시)
+///   3. StageLightingController.CrossfadeLighting       → 라이팅 크로스페이드 (시선 유도)
+///   4. StageTransitionHandler.FadeOut                  → 짧은 암전
+///   5. DioramaStageManager.DeactivateStage(prev)       → 이전 Stage만 끔
+///   6. 텔레포트 (추후 시그널 연결)
+///   7. TimelineController.SetDirector + Play           → 다음 Stage Director 재생
+///   8. StageTransitionHandler.FadeIn                   → 화면 보임
 ///
 /// 사용법:
 ///   매니저 오브젝트에 부착하고, Inspector에서 참조를 연결합니다.
@@ -35,6 +37,12 @@ public class NarrativeSequencer : MonoBehaviour
     [SerializeField] private DioramaStageManager stageManager;
     [SerializeField] private TimelineController timelineController;
     [SerializeField] private StageTransitionHandler transitionHandler;
+
+    [Tooltip("라이팅 크로스페이드 컨트롤러 (없으면 기존 하드컷 방식)")]
+    [SerializeField] private StageLightingController lightingController;
+
+    [Tooltip("웨이포인트 텔레포터 (없으면 텔레포트 건너뜀)")]
+    [SerializeField] private WaypointTeleporter waypointTeleporter;
 
     [Header("설정")]
     [Tooltip("첫 Stage 시작 시에도 페이드 인 연출을 적용할지")]
@@ -190,27 +198,81 @@ public class NarrativeSequencer : MonoBehaviour
     {
         isTransitioning = true;
         StageData data = stages[index];
-
-        // 1. 페이드 아웃 (첫 Stage이고 fadeInOnStart가 false면 건너뜀)
         bool isFirstStage = currentStageIndex < 0;
-        if (!isFirstStage && transitionHandler != null)
+        int prevStageIndex = currentStageIndex >= 0 ? stages[currentStageIndex].stageIndex : -1;
+
+        // ─── 첫 Stage: 바로 활성화 + 재생 ───
+        if (isFirstStage)
         {
-            yield return transitionHandler.ExecuteTransition(
-                data.entryTransition,
-                data.transitionDuration
-            );
+            stageManager.ActivateStage(data.stageIndex);
+            stageManager.ResetToDefaultScale();
+            PlayStageTimeline(data);
+
+            currentStageIndex = index;
+            OnStageStart?.Invoke(index, data);
+            Debug.Log($"[NarrativeSequencer] Stage {index} 시작: {data.stageName}", this);
+
+            if (transitionHandler != null && fadeInOnStart)
+                yield return transitionHandler.FadeIn(data.transitionDuration);
+
+            isTransitioning = false;
+            yield break;
         }
 
-        // 2. 이전 Stage 끄기
-        stageManager.DeactivateAllStages();
+        // ─── 이후 Stage: 크로스페이드 전환 ───
 
-        // 3. 다음 Stage 켜기
-        stageManager.ActivateStage(data.stageIndex);
+        // 1. 다음 스테이지 추가 활성화 (이전 스테이지도 켜진 상태 유지)
+        stageManager.ActivateStageAdditive(data.stageIndex);
+        Debug.Log($"[NarrativeSequencer] 크로스페이드 시작: Stage {prevStageIndex} → {data.stageIndex}", this);
 
-        // 4. 스케일 초기화
+        // 2. 라이팅 크로스페이드 (있으면)
+        if (lightingController != null)
+        {
+            lightingController.TurnOffStageLights(data.stageIndex);
+            yield return lightingController.CrossfadeLighting(prevStageIndex, data.stageIndex);
+        }
+
+        // 3. 페이드 아웃 (짧은 암전)
+        if (transitionHandler != null)
+        {
+            yield return transitionHandler.FadeOut(data.transitionDuration);
+        }
+
+        // 4. 암전 중: 이전 스테이지 비활성화
+        stageManager.DeactivateStage(prevStageIndex);
+
+        // 5. 스케일 초기화
         stageManager.ResetToDefaultScale();
 
-        // 5. 스테이지의 PlayableDirector를 찾아서 재생
+        // 5-1. 텔레포트 (암전 중 사용자 이동)
+        if (waypointTeleporter != null)
+        {
+            waypointTeleporter.TeleportImmediate(data.stageIndex);
+            Debug.Log($"[NarrativeSequencer] 텔레포트: WP {data.stageIndex}", this);
+        }
+
+        // 6. 타임라인 재생
+        PlayStageTimeline(data);
+
+        // 7. 인덱스 갱신 및 이벤트 발행
+        currentStageIndex = index;
+        OnStageStart?.Invoke(index, data);
+        Debug.Log($"[NarrativeSequencer] Stage {index} 시작: {data.stageName}", this);
+
+        // 8. 페이드 인
+        if (transitionHandler != null)
+        {
+            yield return transitionHandler.FadeIn(data.transitionDuration);
+        }
+
+        isTransitioning = false;
+    }
+
+    /// <summary>
+    /// 스테이지의 PlayableDirector를 찾아서 재생합니다.
+    /// </summary>
+    private void PlayStageTimeline(StageData data)
+    {
         var stageObj = stageManager.GetStage(data.stageIndex);
         var director = stageObj != null ? stageObj.GetComponentInChildren<PlayableDirector>() : null;
 
@@ -223,20 +285,6 @@ public class NarrativeSequencer : MonoBehaviour
         {
             Debug.LogWarning($"[NarrativeSequencer] Stage {data.stageName}에 PlayableDirector가 없습니다.", this);
         }
-
-        // 6. 인덱스 갱신 및 이벤트 발행
-        currentStageIndex = index;
-        OnStageStart?.Invoke(index, data);
-
-        Debug.Log($"[NarrativeSequencer] Stage {index} 시작: {data.stageName}", this);
-
-        // 7. 페이드 인
-        if (transitionHandler != null && (fadeInOnStart || !isFirstStage))
-        {
-            yield return transitionHandler.FadeIn(data.transitionDuration);
-        }
-
-        isTransitioning = false;
     }
 
     // ─── 검증 ───

@@ -128,7 +128,10 @@ public class WaypointTeleporter : MonoBehaviour
         TeleportTo(currentWaypoint - 1);
     }
 
-    void TeleportImmediate(int index)
+    /// <summary>
+    /// 즉시 텔레포트 (페이드 없음). NarrativeSequencer 등 외부에서 호출 가능.
+    /// </summary>
+    public void TeleportImmediate(int index)
     {
         if (xrOrigin == null || waypoints[index] == null) return;
         xrOrigin.position = waypoints[index].position;

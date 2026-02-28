@@ -95,6 +95,36 @@ public class DioramaStageManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 해당 Stage를 추가로 활성화합니다 (다른 Stage를 끄지 않음).
+    /// 크로스페이드 전환 시 양쪽 Stage가 동시에 보여야 할 때 사용합니다.
+    /// </summary>
+    public void ActivateStageAdditive(int index)
+    {
+        if (!IsValidIndex(index)) return;
+
+        if (stages[index] != null)
+        {
+            stages[index].SetActive(true);
+            Debug.Log($"[DioramaStageManager] Stage {index} 추가 활성화: {stages[index].name}", this);
+        }
+    }
+
+    /// <summary>
+    /// 특정 Stage 하나만 비활성화합니다.
+    /// 크로스페이드 완료 후 이전 Stage를 끌 때 사용합니다.
+    /// </summary>
+    public void DeactivateStage(int index)
+    {
+        if (!IsValidIndex(index)) return;
+
+        if (stages[index] != null)
+        {
+            stages[index].SetActive(false);
+            Debug.Log($"[DioramaStageManager] Stage {index} 비활성화: {stages[index].name}", this);
+        }
+    }
+
+    /// <summary>
     /// 모든 Stage를 비활성화합니다. Stage 전환 중 암전 상태에서 사용합니다.
     /// </summary>
     public void DeactivateAllStages()
