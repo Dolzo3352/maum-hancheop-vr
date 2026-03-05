@@ -458,7 +458,7 @@ Animator:
   m_GameObject: {fileID: 208385387}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7e9fbcbf13dbec54f863b0b92dc78afc, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1518,8 +1518,9 @@ MonoBehaviour:
   director: {fileID: 56768600}
   targetInteractable: {fileID: 752405958}
   ringChargeSystem: {fileID: 1516447754}
+  idleClip: {fileID: 7400000, guid: 8a50f11d33b45334486063604b095ea5, type: 2}
+  blendDuration: 0.3
   autoEnableRingSystem: 1
-  releaseAnimationOnPause: 1
   resumeDelay: 0.5
   debugLog: 1
 --- !u!4 &1070821706

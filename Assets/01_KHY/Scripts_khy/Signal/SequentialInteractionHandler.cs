@@ -1,49 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Playables;
 
 /// <summary>
 /// 순차 인터랙션 핸들러.
-///
-/// 하나의 스테이지에 여러 인터랙션이 순서대로 발생하는 경우 사용합니다.
-/// director.Stop() / director.Play()로 Animator Controller Idle을 허용합니다.
+/// AnimationMixerPlayable 기반 크로스페이드를 지원합니다.
 /// </summary>
 public class SequentialInteractionHandler : MonoBehaviour
 {
-    // ─── 참조 ───
-
     [Header("참조")]
-    [Tooltip("이 스테이지의 PlayableDirector")]
     [SerializeField] private PlayableDirector director;
-
-    [Tooltip("링 충전 시스템")]
     [SerializeField] private RingChargeSystem ringChargeSystem;
 
     [Header("인터랙션 순서")]
-    [Tooltip("순서대로 수행할 인터랙션 목록")]
     [SerializeField] private List<RingInteractable> interactionSequence = new List<RingInteractable>();
 
+    [Header("애니메이션 블렌드")]
+    [Tooltip("일시정지 중 재생할 Idle 클립")]
+    [SerializeField] private AnimationClip idleClip;
+    [Tooltip("타임라인 ↔ Idle 크로스페이드 시간 (초)")]
+    [SerializeField] private float blendDuration = 0.3f;
+
     [Header("설정")]
-    [Tooltip("인터랙션 간 재개 대기 시간")]
     [SerializeField] private float resumeDelay = 0.5f;
-
-    [Tooltip("디버그 로그 출력")]
     [SerializeField] private bool debugLog = true;
-
-    // ─── 상태 ───
 
     private int currentIndex = 0;
     private bool isWaiting;
     private double savedPauseTime;
 
-    /// <summary>현재 대기 중인 인터랙션 인덱스.</summary>
+    // Blend mixer
+    private AnimationMixerPlayable blendMixer;
+    private AnimationClipPlayable idlePlayable;
+    private Playable savedSourcePlayable;
+    private int savedSourcePort;
+    private int animOutputIndex = -1;
+    private bool mixerActive;
+
     public int CurrentIndex => currentIndex;
-
-    /// <summary>모든 인터랙션이 완료되었는지.</summary>
     public bool AllCompleted => currentIndex >= interactionSequence.Count;
-
-    // ─── SignalReceiver에서 호출 ───
 
     public void HandleNextInteraction()
     {
@@ -53,11 +50,7 @@ public class SequentialInteractionHandler : MonoBehaviour
 
     private IEnumerator WaitForCurrentInteraction()
     {
-        if (currentIndex >= interactionSequence.Count)
-        {
-            Debug.LogWarning("[SequentialInteractionHandler] 모든 인터랙션이 이미 완료되었습니다.", this);
-            yield break;
-        }
+        if (currentIndex >= interactionSequence.Count) yield break;
 
         isWaiting = true;
         var target = interactionSequence[currentIndex];
@@ -69,15 +62,30 @@ public class SequentialInteractionHandler : MonoBehaviour
             yield break;
         }
 
-        // 타임라인 정지 — PlayableGraph 완전 해제
-        if (director != null)
+        bool useMixer = idleClip != null;
+
+        // ── 일시정지 + 블렌드 인 ──
+        if (useMixer)
         {
-            savedPauseTime = director.time;
-            director.Stop();
-            Log($"타임라인 정지 (time={savedPauseTime:F2}s). 대기 중 [{currentIndex + 1}/{interactionSequence.Count}]: {target.name}");
+            if (director != null && director.playableGraph.IsValid())
+            {
+                savedPauseTime = director.time;
+                director.playableGraph.GetRootPlayable(0).SetSpeed(0);
+            }
+            if (InsertBlendMixer())
+                yield return Crossfade(toIdle: true);
+        }
+        else
+        {
+            if (director != null)
+            {
+                savedPauseTime = director.time;
+                director.Stop();
+            }
         }
 
-        // 링 시스템 활성화
+        Log($"대기 중 [{currentIndex + 1}/{interactionSequence.Count}]: {target.name}");
+
         if (ringChargeSystem != null)
             ringChargeSystem.IsEnabled = true;
 
@@ -85,36 +93,150 @@ public class SequentialInteractionHandler : MonoBehaviour
         bool done = false;
         void OnDone() { done = true; }
         target.OnInteractionDone += OnDone;
-
         while (!done)
+        {
+            AdvanceIdleTime();
             yield return null;
-
+        }
         target.OnInteractionDone -= OnDone;
 
-        Log($"인터랙션 완료! [{currentIndex + 1}/{interactionSequence.Count}]: {target.name}");
-
+        Log($"완료! [{currentIndex + 1}/{interactionSequence.Count}]: {target.name}");
         currentIndex++;
 
-        // 대기 후 타임라인 재개
         if (resumeDelay > 0f)
-            yield return new WaitForSeconds(resumeDelay);
-
-        if (director != null)
         {
-            director.time = savedPauseTime;
-            director.Play();
-            Log($"타임라인 재개 (time: {savedPauseTime:F2}s)");
+            float waited = 0f;
+            while (waited < resumeDelay)
+            {
+                AdvanceIdleTime();
+                waited += Time.deltaTime;
+                yield return null;
+            }
+        }
+
+        // ── 블렌드 아웃 + 재개 ──
+        if (useMixer && mixerActive)
+        {
+            yield return Crossfade(toIdle: false);
+            RemoveBlendMixer();
+
+            if (director != null && director.playableGraph.IsValid())
+                director.playableGraph.GetRootPlayable(0).SetSpeed(1);
+        }
+        else
+        {
+            if (director != null)
+            {
+                director.time = savedPauseTime;
+                director.Play();
+            }
         }
 
         isWaiting = false;
     }
 
-    /// <summary>인덱스를 초기화합니다. 스테이지 재시작 시 사용.</summary>
+    // ─── Blend Mixer ───
+
+    private bool InsertBlendMixer()
+    {
+        if (director == null || !director.playableGraph.IsValid()) return false;
+
+        var graph = director.playableGraph;
+
+        for (int i = 0; i < graph.GetOutputCount(); i++)
+        {
+            var output = graph.GetOutput(i);
+            if (!output.IsOutputValid()) continue;
+            if (output.GetPlayableOutputType() != typeof(AnimationPlayableOutput)) continue;
+
+            savedSourcePlayable = output.GetSourcePlayable();
+            savedSourcePort = output.GetSourceOutputPort();
+            if (!savedSourcePlayable.IsValid()) continue;
+
+            // 포트 유효성 검증
+            int srcOutputCount = savedSourcePlayable.GetOutputCount();
+            if (savedSourcePort < 0 || savedSourcePort >= srcOutputCount)
+                savedSourcePort = 0;
+
+            animOutputIndex = i;
+
+            blendMixer = AnimationMixerPlayable.Create(graph, 2);
+            idlePlayable = AnimationClipPlayable.Create(graph, idleClip);
+
+            graph.Connect(savedSourcePlayable, savedSourcePort, blendMixer, 0);
+            graph.Connect(idlePlayable, 0, blendMixer, 1);
+
+            blendMixer.SetInputWeight(0, 1f);
+            blendMixer.SetInputWeight(1, 0f);
+
+            output.SetSourcePlayable(blendMixer, 0);
+
+            mixerActive = true;
+            return true;
+        }
+        return false;
+    }
+
+    private void RemoveBlendMixer()
+    {
+        if (!mixerActive) return;
+        if (director == null || !director.playableGraph.IsValid()) return;
+
+        var graph = director.playableGraph;
+
+        if (animOutputIndex >= 0 && animOutputIndex < graph.GetOutputCount())
+        {
+            var output = graph.GetOutput(animOutputIndex);
+            if (output.IsOutputValid())
+                output.SetSourcePlayable(savedSourcePlayable, savedSourcePort);
+        }
+
+        if (blendMixer.IsValid())
+        {
+            graph.Disconnect(blendMixer, 0);
+            graph.Disconnect(blendMixer, 1);
+            graph.DestroySubgraph(blendMixer);
+        }
+        if (idlePlayable.IsValid())
+            graph.DestroySubgraph(idlePlayable);
+
+        mixerActive = false;
+        animOutputIndex = -1;
+    }
+
+    private IEnumerator Crossfade(bool toIdle)
+    {
+        if (!blendMixer.IsValid()) yield break;
+
+        float elapsed = 0f;
+        while (elapsed < blendDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / blendDuration);
+            blendMixer.SetInputWeight(0, toIdle ? 1f - t : t);
+            blendMixer.SetInputWeight(1, toIdle ? t : 1f - t);
+            AdvanceIdleTime();
+            yield return null;
+        }
+        blendMixer.SetInputWeight(0, toIdle ? 0f : 1f);
+        blendMixer.SetInputWeight(1, toIdle ? 1f : 0f);
+    }
+
+    private void AdvanceIdleTime()
+    {
+        if (!idlePlayable.IsValid() || idleClip == null) return;
+        double time = idlePlayable.GetTime() + Time.deltaTime;
+        if (idleClip.length > 0f && time >= idleClip.length)
+            time %= idleClip.length;
+        idlePlayable.SetTime(time);
+    }
+
+    // ─── 기타 ───
+
     public void ResetSequence()
     {
         currentIndex = 0;
         isWaiting = false;
-
         foreach (var interactable in interactionSequence)
         {
             if (interactable != null)
@@ -122,12 +244,9 @@ public class SequentialInteractionHandler : MonoBehaviour
         }
     }
 
-    // ─── 유틸리티 ───
-
     private void Log(string message)
     {
-        if (debugLog)
-            Debug.Log($"[SequentialInteractionHandler] {message}", this);
+        if (debugLog) Debug.Log($"[SequentialInteractionHandler] {message}", this);
     }
 
     private void OnDisable()
@@ -137,5 +256,11 @@ public class SequentialInteractionHandler : MonoBehaviour
             StopAllCoroutines();
             isWaiting = false;
         }
+        RemoveBlendMixer();
+    }
+
+    private void OnDestroy()
+    {
+        RemoveBlendMixer();
     }
 }

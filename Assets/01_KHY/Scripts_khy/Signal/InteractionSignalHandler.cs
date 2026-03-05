@@ -1,46 +1,41 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Playables;
 
 /// <summary>
 /// 인터랙션 Signal 수신 및 처리 핸들러.
 ///
-/// SignalReceiver의 이벤트에 연결하여, 타임라인이 Signal 지점에 도달하면
-/// 타임라인을 정지하고, 지정된 인터랙션이 완료될 때까지 기다린 후 재개합니다.
+/// 타임라인 그래프 내부에 AnimationMixerPlayable을 삽입하여
+/// Timeline 애니메이션 ↔ Idle 클립 간 부드러운 크로스페이드를 수행합니다.
 ///
-/// 동작 흐름:
-///   1. Signal 도달 → director.Stop() (PlayableGraph 완전 해제)
-///   2. Animator Controller가 자동으로 Idle 재생
-///   3. 플레이어 인터랙션 완료 대기
-///   4. director.Play() → 저장된 시간부터 재개
-///
-/// 주의: 캐릭터의 Animator에 Animator Controller(Idle 상태 포함)가
-///       설정되어 있어야 정지 중 Idle 애니메이션이 재생됩니다.
+/// Inspector 설정:
+///   - Idle Clip을 연결하면 → 타임라인 클립 블렌드처럼 부드러운 전환
+///   - 비워두면 → director.Stop()/Play() 폴백 (즉시 전환)
 /// </summary>
 public class InteractionSignalHandler : MonoBehaviour
 {
     // ─── 참조 ───
 
     [Header("참조")]
-    [Tooltip("이 스테이지의 PlayableDirector")]
     [SerializeField] private PlayableDirector director;
-
-    [Tooltip("이 Signal이 기다릴 인터랙션 대상")]
     [SerializeField] private RingInteractable targetInteractable;
-
-    [Tooltip("링 충전 시스템 (씬 전체에서 공유)")]
     [SerializeField] private RingChargeSystem ringChargeSystem;
+
+    // ─── 애니메이션 블렌드 ───
+
+    [Header("애니메이션 블렌드")]
+    [Tooltip("일시정지 중 재생할 Idle 클립 (비워두면 블렌드 없이 즉시 전환)")]
+    [SerializeField] private AnimationClip idleClip;
+
+    [Tooltip("타임라인 ↔ Idle 크로스페이드 시간 (초)")]
+    [SerializeField] private float blendDuration = 0.3f;
 
     // ─── 설정 ───
 
     [Header("설정")]
-    [Tooltip("Signal 수신 시 자동으로 링 시스템을 활성화할지")]
     [SerializeField] private bool autoEnableRingSystem = true;
-
-    [Tooltip("인터랙션 완료 후 타임라인 재개까지 대기 시간 (초)")]
     [SerializeField] private float resumeDelay = 0.5f;
-
-    [Tooltip("디버그 로그 출력")]
     [SerializeField] private bool debugLog = true;
 
     // ─── 상태 ───
@@ -48,34 +43,26 @@ public class InteractionSignalHandler : MonoBehaviour
     private bool isWaitingForInteraction;
     private double savedPauseTime;
 
-    /// <summary>현재 인터랙션을 기다리고 있는지.</summary>
+    // Blend mixer (타임라인 그래프 내부에 삽입)
+    private AnimationMixerPlayable blendMixer;
+    private AnimationClipPlayable idlePlayable;
+    private Playable savedSourcePlayable;
+    private int savedSourcePort;
+    private int animOutputIndex = -1;
+    private bool mixerActive;
+
     public bool IsWaiting => isWaitingForInteraction;
 
-    // ─── SignalReceiver에서 호출하는 메서드 ───
+    // ─── SignalReceiver에서 호출 ───
 
-    /// <summary>
-    /// SignalReceiver의 이벤트에 연결할 메서드.
-    /// 타임라인이 InteractionSignal 지점에 도달하면 호출됩니다.
-    /// </summary>
     public void HandleInteractionSignal()
     {
         if (isWaitingForInteraction)
         {
-            Log("이미 인터랙션 대기 중입니다. (Signal 재진입 방지)");
+            Log("이미 인터랙션 대기 중입니다.");
             return;
         }
-
-        if (targetInteractable == null)
-        {
-            Debug.LogWarning("[InteractionSignalHandler] targetInteractable이 없습니다. 타임라인을 계속 재생합니다.", this);
-            return;
-        }
-
-        if (targetInteractable.IsCompleted)
-        {
-            Log("이미 완료된 인터랙션입니다. 건너뜁니다.");
-            return;
-        }
+        if (targetInteractable == null || targetInteractable.IsCompleted) return;
 
         StartCoroutine(WaitForInteractionCoroutine());
     }
@@ -86,53 +73,220 @@ public class InteractionSignalHandler : MonoBehaviour
     {
         isWaitingForInteraction = true;
 
-        // 1. 타임라인 정지 — director.Stop()으로 PlayableGraph 완전 해제
-        //    → Animator Controller가 자동으로 Idle 재생
-        if (director != null)
+        // ── 1. 타임라인 일시정지 ──
+        bool useMixer = idleClip != null;
+
+        if (useMixer)
         {
-            savedPauseTime = director.time;
-            director.Stop();
-            Log($"타임라인 정지 (time={savedPauseTime:F2}s). 대상: {targetInteractable.name} ({targetInteractable.RingType})");
+            // 그래프를 살려두고 speed만 0
+            if (director != null && director.playableGraph.IsValid())
+            {
+                savedPauseTime = director.time;
+                director.playableGraph.GetRootPlayable(0).SetSpeed(0);
+            }
+
+            // Mixer 삽입 + 크로스페이드 (Timeline → Idle)
+            if (InsertBlendMixer())
+            {
+                yield return Crossfade(toIdle: true);
+                Log($"Idle 크로스페이드 완료. 대상: {targetInteractable.name}");
+            }
+        }
+        else
+        {
+            // 폴백: director.Stop()
+            if (director != null)
+            {
+                savedPauseTime = director.time;
+                director.Stop();
+                Log($"타임라인 정지 (폴백). 대상: {targetInteractable.name}");
+            }
         }
 
-        // 2. 링 충전 시스템 활성화
+        // ── 2. 링 충전 시스템 활성화 ──
         if (autoEnableRingSystem && ringChargeSystem != null)
-        {
             ringChargeSystem.IsEnabled = true;
-        }
 
-        // 3. 인터랙션 완료 대기
+        // ── 3. 인터랙션 완료 대기 (idle 시간 수동 갱신) ──
         bool interactionDone = false;
-
-        void OnDone()
-        {
-            interactionDone = true;
-        }
-
+        void OnDone() { interactionDone = true; }
         targetInteractable.OnInteractionDone += OnDone;
 
         while (!interactionDone)
         {
+            AdvanceIdleTime();
             yield return null;
         }
 
         targetInteractable.OnInteractionDone -= OnDone;
-
         Log($"인터랙션 완료! 대상: {targetInteractable.name}");
 
-        // 4. 재개 전 잠시 대기 (시각적 피드백 여유)
+        // ── 4. 재개 전 대기 ──
         if (resumeDelay > 0f)
-            yield return new WaitForSeconds(resumeDelay);
-
-        // 5. 타임라인 재개 — 저장된 시간부터 다시 Play
-        if (director != null)
         {
-            director.time = savedPauseTime;
-            director.Play();
-            Log($"타임라인 재개 (time: {savedPauseTime:F2}s)");
+            float waited = 0f;
+            while (waited < resumeDelay)
+            {
+                AdvanceIdleTime();
+                waited += Time.deltaTime;
+                yield return null;
+            }
+        }
+
+        // ── 5. 재개 ──
+        if (useMixer && mixerActive)
+        {
+            // 크로스페이드 (Idle → Timeline)
+            yield return Crossfade(toIdle: false);
+            RemoveBlendMixer();
+
+            if (director != null && director.playableGraph.IsValid())
+            {
+                director.playableGraph.GetRootPlayable(0).SetSpeed(1);
+                Log($"타임라인 재개 (time: {savedPauseTime:F2}s)");
+            }
+        }
+        else
+        {
+            // 폴백 재개
+            if (director != null)
+            {
+                director.time = savedPauseTime;
+                director.Play();
+                Log($"타임라인 재개 - 폴백 (time: {savedPauseTime:F2}s)");
+            }
         }
 
         isWaitingForInteraction = false;
+    }
+
+    // ─── Blend Mixer 삽입/제거 ───
+
+    /// <summary>
+    /// 타임라인 그래프의 AnimationPlayableOutput에 Mixer를 끼워넣습니다.
+    /// Timeline 애니메이션(input 0)과 Idle 클립(input 1)을 블렌드합니다.
+    /// </summary>
+    private bool InsertBlendMixer()
+    {
+        if (director == null || !director.playableGraph.IsValid()) return false;
+
+        var graph = director.playableGraph;
+
+        for (int i = 0; i < graph.GetOutputCount(); i++)
+        {
+            var output = graph.GetOutput(i);
+            if (!output.IsOutputValid()) continue;
+            if (output.GetPlayableOutputType() != typeof(AnimationPlayableOutput)) continue;
+
+            // 현재 연결 저장
+            savedSourcePlayable = output.GetSourcePlayable();
+            savedSourcePort = output.GetSourceOutputPort();
+            if (!savedSourcePlayable.IsValid()) continue;
+
+            // 포트 유효성 검증 — Timeline 내부 그래프에서
+            // GetSourceOutputPort()가 실제 출력 포트 범위를 벗어나는 경우 방어
+            int srcOutputCount = savedSourcePlayable.GetOutputCount();
+            if (savedSourcePort < 0 || savedSourcePort >= srcOutputCount)
+                savedSourcePort = 0;
+
+            animOutputIndex = i;
+
+            // Mixer 생성 (2 입력: timeline, idle)
+            blendMixer = AnimationMixerPlayable.Create(graph, 2);
+
+            // Idle 클립 생성
+            idlePlayable = AnimationClipPlayable.Create(graph, idleClip);
+
+            // 연결: timeline → mixer[0], idle → mixer[1]
+            graph.Connect(savedSourcePlayable, savedSourcePort, blendMixer, 0);
+            graph.Connect(idlePlayable, 0, blendMixer, 1);
+
+            // 초기값: 100% timeline, 0% idle
+            blendMixer.SetInputWeight(0, 1f);
+            blendMixer.SetInputWeight(1, 0f);
+
+            // Mixer를 Output의 소스로 설정
+            output.SetSourcePlayable(blendMixer, 0);
+
+            mixerActive = true;
+            Log("Blend Mixer 삽입 완료");
+            return true;
+        }
+
+        Log("AnimationPlayableOutput을 찾을 수 없습니다.");
+        return false;
+    }
+
+    /// <summary>
+    /// Mixer를 제거하고 원래 연결을 복원합니다.
+    /// </summary>
+    private void RemoveBlendMixer()
+    {
+        if (!mixerActive) return;
+        if (director == null || !director.playableGraph.IsValid()) return;
+
+        var graph = director.playableGraph;
+
+        // Output을 원래 소스로 복원
+        if (animOutputIndex >= 0 && animOutputIndex < graph.GetOutputCount())
+        {
+            var output = graph.GetOutput(animOutputIndex);
+            if (output.IsOutputValid())
+                output.SetSourcePlayable(savedSourcePlayable, savedSourcePort);
+        }
+
+        // Mixer 입력 연결 해제 후 제거
+        if (blendMixer.IsValid())
+        {
+            graph.Disconnect(blendMixer, 0);
+            graph.Disconnect(blendMixer, 1);
+            graph.DestroySubgraph(blendMixer);
+        }
+        if (idlePlayable.IsValid())
+            graph.DestroySubgraph(idlePlayable);
+
+        mixerActive = false;
+        animOutputIndex = -1;
+        Log("Blend Mixer 제거 완료");
+    }
+
+    // ─── 크로스페이드 ───
+
+    private IEnumerator Crossfade(bool toIdle)
+    {
+        if (!blendMixer.IsValid()) yield break;
+
+        float elapsed = 0f;
+        while (elapsed < blendDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / blendDuration);
+
+            float timelineWeight = toIdle ? 1f - t : t;
+            float idleWeight = toIdle ? t : 1f - t;
+
+            blendMixer.SetInputWeight(0, timelineWeight);
+            blendMixer.SetInputWeight(1, idleWeight);
+
+            AdvanceIdleTime();
+            yield return null;
+        }
+
+        blendMixer.SetInputWeight(0, toIdle ? 0f : 1f);
+        blendMixer.SetInputWeight(1, toIdle ? 1f : 0f);
+    }
+
+    /// <summary>
+    /// 타임라인 그래프가 멈춰있어도 Idle 클립은 계속 재생되도록 시간을 수동으로 전진.
+    /// </summary>
+    private void AdvanceIdleTime()
+    {
+        if (!idlePlayable.IsValid() || idleClip == null) return;
+
+        double time = idlePlayable.GetTime() + Time.deltaTime;
+        if (idleClip.length > 0f && time >= idleClip.length)
+            time %= idleClip.length;
+        idlePlayable.SetTime(time);
     }
 
     // ─── 유틸리티 ───
@@ -143,8 +297,6 @@ public class InteractionSignalHandler : MonoBehaviour
             Debug.Log($"[InteractionSignalHandler] {message}", this);
     }
 
-    // ─── 정리 ───
-
     private void OnDisable()
     {
         if (isWaitingForInteraction)
@@ -152,5 +304,11 @@ public class InteractionSignalHandler : MonoBehaviour
             StopAllCoroutines();
             isWaitingForInteraction = false;
         }
+        RemoveBlendMixer();
+    }
+
+    private void OnDestroy()
+    {
+        RemoveBlendMixer();
     }
 }
