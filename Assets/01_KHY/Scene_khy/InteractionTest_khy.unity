@@ -242,6 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 56768601}
   - component: {fileID: 56768600}
+  - component: {fileID: 56768602}
   m_Layer: 0
   m_Name: TestTimeline
   m_TagString: Untagged
@@ -269,7 +270,7 @@ PlayableDirector:
   - key: {fileID: 603558595234312117, guid: 48cf6a113b90f7948b596ca72c3ac9fb, type: 2}
     value: {fileID: 68692804}
   - key: {fileID: -5588158564640916659, guid: 48cf6a113b90f7948b596ca72c3ac9fb, type: 2}
-    value: {fileID: 208385388}
+    value: {fileID: 208385390}
   - key: {fileID: -6345322302519568884, guid: 48cf6a113b90f7948b596ca72c3ac9fb, type: 2}
     value: {fileID: 2011864280}
   m_ExposedReferences:
@@ -295,6 +296,21 @@ Transform:
   - {fileID: 1151909922}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &56768602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56768599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769cc26192c264c43b63ef11c21bee19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimelineAnimationBlender
+  director: {fileID: 56768600}
+  animator: {fileID: 208385390}
+  blendDuration: 0.3
 --- !u!1 &68692804
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,14 +498,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1449a1b0f59e1374ab592c648b09e755, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 208385388}
+      addedObject: {fileID: 208385390}
   m_SourcePrefab: {fileID: 100100000, guid: 1449a1b0f59e1374ab592c648b09e755, type: 3}
 --- !u!1 &208385387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1449a1b0f59e1374ab592c648b09e755, type: 3}
   m_PrefabInstance: {fileID: 208385386}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &208385388
+--- !u!95 &208385390
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -499,7 +515,7 @@ Animator:
   m_GameObject: {fileID: 208385387}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7e9fbcbf13dbec54f863b0b92dc78afc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1844,8 +1860,8 @@ MonoBehaviour:
   director: {fileID: 56768600}
   targetInteractable: {fileID: 752405958}
   ringChargeSystem: {fileID: 1516447754}
-  idleClip: {fileID: 7400000, guid: 8a50f11d33b45334486063604b095ea5, type: 2}
-  blendDuration: 0.3
+  blender: {fileID: 56768602}
+  idleClip: {fileID: 7400000, guid: e6352408e809c084ab7c0e737d70c63e, type: 2}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -1911,8 +1927,8 @@ MonoBehaviour:
   director: {fileID: 56768600}
   targetInteractable: {fileID: 1801813133}
   ringChargeSystem: {fileID: 1516447754}
-  idleClip: {fileID: 7400000, guid: 8a50f11d33b45334486063604b095ea5, type: 2}
-  blendDuration: 0.3
+  blender: {fileID: 56768602}
+  idleClip: {fileID: 7400000, guid: e6352408e809c084ab7c0e737d70c63e, type: 2}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -2744,7 +2760,19 @@ MonoBehaviour:
       m_Calls: []
   onChargeCancelled:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 56768599}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1801813134
 BoxCollider:
   m_ObjectHideFlags: 0
