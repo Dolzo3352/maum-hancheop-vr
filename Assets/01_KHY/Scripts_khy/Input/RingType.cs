@@ -37,4 +37,12 @@ public static class RingTypeColors
             _                   => Color.white
         };
     }
+
+    /// <summary>
+    /// HDR 색상을 반환합니다. intensity 배수가 곱해진 색상입니다.
+    /// </summary>
+    public static Color GetHDRColor(RingType type, float intensity = 2f)
+    {
+        return GetColor(type) * intensity;
+    }
 }

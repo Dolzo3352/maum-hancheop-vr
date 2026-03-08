@@ -37,6 +37,10 @@ public class RingInteractable : MonoBehaviour
     [Tooltip("충전 중 아웃라인 색상 (ringType 색상으로 자동 설정됨)")]
     [SerializeField] private bool useRingColorForOutline = true;
 
+    [Header("VFX 배치")]
+    [Tooltip("프로그레스 VFX가 소환될 위치. 비워두면 오브젝트 위치 + 기본 오프셋")]
+    [SerializeField] private Transform vfxSpawnPoint;
+
     [Header("완료 설정")]
     [Tooltip("true면 Execute() 즉시 완료 처리. 하위 클래스(바위, 감나무 등)는 false로 두고 VFX 끝난 후 직접 호출")]
     [SerializeField] private bool autoCompleteOnExecute = true;
@@ -62,6 +66,9 @@ public class RingInteractable : MonoBehaviour
 
     /// <summary>인터랙션 완료 여부. true이면 더 이상 충전 불가.</summary>
     public bool IsCompleted => isCompleted;
+
+    /// <summary>프로그레스 VFX 소환 위치. null이면 기본 오프셋 사용.</summary>
+    public Transform VFXSpawnPoint => vfxSpawnPoint;
 
     // ─── C# 이벤트 ───
 
