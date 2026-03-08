@@ -37,6 +37,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BrushTexture:
+        m_Texture: {fileID: 2800000, guid: 1ea48a8edb4db514dbc1c00712a2cb23, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -51,7 +55,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FillAmount: 0.537
+    - _FillAmount: 0.59
     - _InnerRadius: 0
     - _OuterRadius: 0
     - _QueueControl: 0

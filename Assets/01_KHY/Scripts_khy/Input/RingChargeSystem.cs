@@ -57,6 +57,9 @@ public class RingChargeSystem : MonoBehaviour
     /// <summary>시스템 활성화 여부. false이면 Grip 입력을 무시합니다.</summary>
     public bool IsEnabled { get; set; } = true;
 
+    /// <summary>현재 충전에 사용 중인 XRRayInteractor. 충전 중이 아니면 null.</summary>
+    public XRRayInteractor ActiveRayInteractor { get; private set; }
+
     // 충전 경과 시간
     private float chargeElapsed;
 
@@ -119,6 +122,7 @@ public class RingChargeSystem : MonoBehaviour
         // 충전 시작
         currentTarget = target;
         CurrentRingType = target.RingType;
+        ActiveRayInteractor = hand == HandSide.Left ? leftRayInteractor : rightRayInteractor;
         ChargeProgress = 0f;
         chargeElapsed = 0f;
         IsCharging = true;
@@ -209,6 +213,7 @@ public class RingChargeSystem : MonoBehaviour
         ChargeProgress = 0f;
         chargeElapsed = 0f;
         IsCharging = false;
+        ActiveRayInteractor = null;
     }
 
     // ─── Ray 대상 탐색 ───
