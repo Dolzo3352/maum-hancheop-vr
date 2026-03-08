@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &501143196386972437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2715411514490774172}
+  - component: {fileID: 1239356055353347468}
+  - component: {fileID: 5206661827924619854}
+  - component: {fileID: 2750847631810079932}
+  - component: {fileID: 8358335986547576952}
+  - component: {fileID: 6786815685707296221}
+  m_Layer: 0
+  m_Name: VRInputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2715411514490774172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501143196386972437}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1239356055353347468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501143196386972437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d2f38bd5bdeb74f82e1ceeefd41c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRInputManager
+  leftGripAction: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightGripAction: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  hapticMinAmplitude: 0.05
+  hapticMaxAmplitude: 0.6
+  hapticDuration: 0.1
+  hapticCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  gripThreshold: 0.1
+--- !u!114 &5206661827924619854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501143196386972437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396c9b519b072774dbdcbe0efff16f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RingChargeSystem
+  inputManager: {fileID: 1239356055353347468}
+  leftRayInteractor: {fileID: 0}
+  rightRayInteractor: {fileID: 0}
+  chargeDuration: 3
+  chargeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2750847631810079932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501143196386972437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0aca908f7eb37946af62139e1b0142c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RingChargeUI
+  ringChargeSystem: {fileID: 5206661827924619854}
+  chargeSlider: {fileID: 0}
+  fillImage: {fileID: 0}
+  backgroundImage: {fileID: 0}
+  completeIcon: {fileID: 0}
+  fadeDuration: 0.2
+  completeDisplayDuration: 0.5
+--- !u!114 &8358335986547576952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501143196386972437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed010393202453745b068191432c0d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RingRayVisual
+  ringChargeSystem: {fileID: 5206661827924619854}
+  intensifyWithProgress: 1
+  minIntensity: 1
+  maxIntensity: 3
+--- !u!114 &6786815685707296221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501143196386972437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fbdb02cf91b485499a823029b2f687f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RingRayParticle
+  ringChargeSystem: {fileID: 5206661827924619854}
+  particlePrefab: {fileID: 0}
+  flowSpeed: 4
+  baseEmissionRate: 15
+  maxEmissionRate: 50
+  spreadRadius: 0.015
+  enableSwirl: 1
+  swirlSpeed: 5
+  swirlRadius: 0.06
+  swirlConverge: 0.8
+  minSize: 0.008
+  maxSize: 0.025
+  hdrIntensity: 3
+  customParticleMaterial: {fileID: 2100000, guid: e3ef7fd8eb6cede48b9ebd2b218c7ae6, type: 2}
