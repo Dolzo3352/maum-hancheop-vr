@@ -4395,17 +4395,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1207942527}
     - target: {fileID: 6786815685707296221, guid: 193a15595e841ad498169a269f9f4ef3, type: 3}
-      propertyPath: swirlSpeed
-      value: 10
+      propertyPath: maxSize
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6786815685707296221, guid: 193a15595e841ad498169a269f9f4ef3, type: 3}
-      propertyPath: swirlRadius
+      propertyPath: minSize
       value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786815685707296221, guid: 193a15595e841ad498169a269f9f4ef3, type: 3}
+      propertyPath: spreadRadius
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6786815685707296221, guid: 193a15595e841ad498169a269f9f4ef3, type: 3}
       propertyPath: particlePrefab
       value: 
       objectReference: {fileID: 791161311}
+    - target: {fileID: 6786815685707296221, guid: 193a15595e841ad498169a269f9f4ef3, type: 3}
+      propertyPath: maxEmissionRate
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786815685707296221, guid: 193a15595e841ad498169a269f9f4ef3, type: 3}
+      propertyPath: baseEmissionRate
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

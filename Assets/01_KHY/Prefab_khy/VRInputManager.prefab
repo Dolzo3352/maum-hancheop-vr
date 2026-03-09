@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501143196386972437}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -172,10 +172,10 @@ MonoBehaviour:
   maxEmissionRate: 50
   spreadRadius: 0.015
   enableSwirl: 1
-  swirlSpeed: 5
-  swirlRadius: 0.06
+  swirlSpeed: 10
+  swirlRadius: 0.03
   swirlConverge: 0.8
-  minSize: 0.008
-  maxSize: 0.025
+  minSize: 0.01
+  maxSize: 0.03
   hdrIntensity: 3
   customParticleMaterial: {fileID: 2100000, guid: e3ef7fd8eb6cede48b9ebd2b218c7ae6, type: 2}
