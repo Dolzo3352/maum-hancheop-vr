@@ -127,6 +127,10 @@ public class RingChargeSystem : MonoBehaviour
         chargeElapsed = 0f;
         IsCharging = true;
 
+        // 햅틱 활성화
+        if (inputManager != null)
+            inputManager.HapticEnabled = true;
+
         // 대상에 충전 시작 알림
         currentTarget.OnChargeBegin();
 
@@ -214,6 +218,10 @@ public class RingChargeSystem : MonoBehaviour
         chargeElapsed = 0f;
         IsCharging = false;
         ActiveRayInteractor = null;
+
+        // 햅틱 비활성화
+        if (inputManager != null)
+            inputManager.HapticEnabled = false;
     }
 
     // ─── Ray 대상 탐색 ───

@@ -88,6 +88,9 @@ public class VRInputManager : MonoBehaviour
     /// <summary>Grip이 Active 상태인지.</summary>
     public bool IsGripActive => isGripActive;
 
+    /// <summary>햅틱 활성화 여부. false이면 진동을 보내지 않습니다. 외부에서 제어합니다.</summary>
+    public bool HapticEnabled { get; set; }
+
     // ─── 초기화 ───
 
     private void OnEnable()
@@ -201,6 +204,7 @@ public class VRInputManager : MonoBehaviour
 
     private void SendHaptic(HandSide hand, float gripValue)
     {
+        if (!HapticEnabled) return;
         if (!devicesFound) FindXRDevices();
 
         var device = hand == HandSide.Left ? leftDevice : rightDevice;
