@@ -46,6 +46,15 @@ public class SequentialInteractionHandler : MonoBehaviour
             yield break;
         }
 
+        // ── 인터랙션 활성화 + 아웃라인 활성화 (남은 인터랙터블 전체) ──
+        foreach (var interactable in interactionSequence)
+        {
+            if (interactable == null || interactable.IsCompleted) continue;
+            interactable.ActivateInteraction();
+            var ol = interactable.GetComponent<InteractableOutline>();
+            if (ol != null) ol.Activate();
+        }
+
         // ── Timeline → Idle 크로스페이드 ──
         bool fadeOutDone = false;
         blender.FadeToIdle(idleClip, () => fadeOutDone = true);
@@ -63,6 +72,11 @@ public class SequentialInteractionHandler : MonoBehaviour
         target.OnInteractionDone -= OnDone;
 
         Log($"완료! [{currentIndex + 1}/{interactionSequence.Count}]: {target.name}");
+
+        // ── 완료된 아웃라인 비활성화 ──
+        var outline = target.GetComponent<InteractableOutline>();
+        if (outline != null) outline.Complete();
+
         currentIndex++;
 
         if (resumeDelay > 0f)

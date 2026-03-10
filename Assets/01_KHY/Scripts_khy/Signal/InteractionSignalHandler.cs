@@ -33,6 +33,13 @@ public class InteractionSignalHandler : MonoBehaviour
     {
         isWaitingForInteraction = true;
 
+        // ── 인터랙션 활성화 (호버 림 반응 시작) ──
+        targetInteractable.ActivateInteraction();
+
+        // ── 아웃라인 활성화 ──
+        var outline = targetInteractable.GetComponent<InteractableOutline>();
+        if (outline != null) outline.Activate();
+
         // ── Timeline → Idle 크로스페이드 ──
         bool fadeOutDone = false;
         blender.FadeToIdle(idleClip, () => fadeOutDone = true);
@@ -50,6 +57,9 @@ public class InteractionSignalHandler : MonoBehaviour
         while (!interactionDone) yield return null;
         targetInteractable.OnInteractionDone -= OnDone;
         Log($"인터랙션 완료! 대상: {targetInteractable.name}");
+
+        // ── 아웃라인 비활성화 ──
+        if (outline != null) outline.Complete();
 
         if (resumeDelay > 0f)
             yield return new WaitForSeconds(resumeDelay);

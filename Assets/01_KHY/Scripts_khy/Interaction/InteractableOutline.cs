@@ -1,21 +1,24 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+/// <summary>
+/// 타임라인 시그널 발동 시 아웃라인을 활성화하여
+/// 인터랙션 가능 오브젝트를 시각적으로 안내합니다.
+///
+/// 동작:
+///   시그널 발동 → Activate() → 아웃라인 ON ("이 오브젝트와 상호작용 가능")
+///   호버 → InteractableHoverRim이 림컬러 처리 (별도 컴포넌트)
+///   인터랙션 완료 → Complete() → 아웃라인 OFF
+/// </summary>
 [RequireComponent(typeof(Outline))]
-[RequireComponent(typeof(XRBaseInteractable))]
 public class InteractableOutline : MonoBehaviour
 {
-    [Header("Outline ����")]
+    [Header("Outline 설정")]
     [SerializeField] private Color outlineColor = new Color(1f, 0.8f, 0f);
     [SerializeField] private float outlineWidth = 4f;
     [SerializeField] private Outline.Mode outlineMode = Outline.Mode.OutlineVisible;
 
-    [Header("���� ����")]
-    [SerializeField] private bool disableAfterGrab = true; // �׷� �� ���� ��Ȱ��ȭ
-
     private Outline _outline;
-    private bool _isCompleted; // ���ͷ��� �Ϸ� ����
+    private bool _isCompleted;
 
     void Awake()
     {
@@ -24,33 +27,19 @@ public class InteractableOutline : MonoBehaviour
         _outline.OutlineWidth = outlineWidth;
         _outline.OutlineMode = outlineMode;
         _outline.enabled = false;
-
-        var interactable = GetComponent<XRBaseInteractable>();
-        interactable.hoverEntered.AddListener(OnHoverEnter);
-        interactable.hoverExited.AddListener(OnHoverExit);
-        interactable.selectExited.AddListener(OnSelectExit);
-    }
-
-    private void OnHoverEnter(HoverEnterEventArgs args)
-    {
-        if (!_isCompleted)
-            _outline.enabled = true;
-    }
-
-    private void OnHoverExit(HoverExitEventArgs args)
-    {
-        if (!_isCompleted)
-            _outline.enabled = false;
-    }
-
-    private void OnSelectExit(SelectExitEventArgs args)
-    {
-        if (disableAfterGrab)
-            Complete();
     }
 
     /// <summary>
-    /// �ܺο��� ȣ�� ���� - ���ͷ��� �Ϸ� ó��
+    /// 시그널 발동 시 호출 — 아웃라인 활성화
+    /// </summary>
+    public void Activate()
+    {
+        if (_isCompleted) return;
+        _outline.enabled = true;
+    }
+
+    /// <summary>
+    /// 인터랙션 완료 — 아웃라인 비활성화
     /// </summary>
     public void Complete()
     {
@@ -59,10 +48,11 @@ public class InteractableOutline : MonoBehaviour
     }
 
     /// <summary>
-    /// �ʿ� �� �ٽ� Ȱ��ȭ (��: ����)
+    /// 상태 초기화 (재사용 시)
     /// </summary>
     public void ResetState()
     {
         _isCompleted = false;
+        _outline.enabled = false;
     }
 }

@@ -58,6 +58,7 @@ public class RingInteractable : MonoBehaviour
     // ─── 상태 ───
 
     private bool isCompleted;
+    private bool isInteractionActive;
 
     // ─── 프로퍼티 ───
 
@@ -66,6 +67,9 @@ public class RingInteractable : MonoBehaviour
 
     /// <summary>인터랙션 완료 여부. true이면 더 이상 충전 불가.</summary>
     public bool IsCompleted => isCompleted;
+
+    /// <summary>인터랙션 활성 여부. 시그널 발동 후 true, 완료 후 false.</summary>
+    public bool IsInteractionActive => isInteractionActive;
 
     /// <summary>프로그레스 VFX 소환 위치. null이면 기본 오프셋 사용.</summary>
     public Transform VFXSpawnPoint => vfxSpawnPoint;
@@ -170,6 +174,7 @@ public class RingInteractable : MonoBehaviour
     protected void NotifyInteractionDone()
     {
         isCompleted = true;
+        isInteractionActive = false;
         OnInteractionDone?.Invoke();
         Debug.Log($"[RingInteractable] 인터랙션 완료: {ringType} → {name}", this);
     }
@@ -177,11 +182,21 @@ public class RingInteractable : MonoBehaviour
     // ─── 외부 제어 ───
 
     /// <summary>
+    /// 시그널 발동 시 호출 — 인터랙션 활성화 (호버 림/아웃라인 반응 시작)
+    /// </summary>
+    public void ActivateInteraction()
+    {
+        if (isCompleted) return;
+        isInteractionActive = true;
+    }
+
+    /// <summary>
     /// 인터랙션 상태를 초기화합니다. 재사용이 필요할 때 호출합니다.
     /// </summary>
     public virtual void ResetInteraction()
     {
         isCompleted = false;
+        isInteractionActive = false;
         if (outline != null)
         {
             outline.OutlineWidth = 2f;

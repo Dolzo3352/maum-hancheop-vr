@@ -95,7 +95,7 @@ public class InteractableHoverRim : MonoBehaviour
         if (ray.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             var interactable = hit.collider.GetComponentInParent<RingInteractable>();
-            if (interactable != null && !interactable.IsCompleted)
+            if (interactable != null && interactable.IsInteractionActive && !interactable.IsCompleted)
                 return interactable;
         }
 
