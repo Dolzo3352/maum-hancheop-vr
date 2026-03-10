@@ -8,8 +8,9 @@ using UnityEngine;
 ///   시그널 발동 → Activate() → 아웃라인 ON ("이 오브젝트와 상호작용 가능")
 ///   호버 → InteractableHoverRim이 림컬러 처리 (별도 컴포넌트)
 ///   인터랙션 완료 → Complete() → 아웃라인 OFF
+///
+/// includeChildren이 true이면 하위 오브젝트의 Outline도 함께 제어합니다.
 /// </summary>
-[RequireComponent(typeof(Outline))]
 public class InteractableOutline : MonoBehaviour
 {
     [Header("Outline 설정")]
@@ -17,16 +18,29 @@ public class InteractableOutline : MonoBehaviour
     [SerializeField] private float outlineWidth = 4f;
     [SerializeField] private Outline.Mode outlineMode = Outline.Mode.OutlineVisible;
 
-    private Outline _outline;
+    [Header("하위 오브젝트")]
+    [Tooltip("true면 자신 + 하위 오브젝트의 Outline을 모두 제어합니다")]
+    [SerializeField] private bool includeChildren = true;
+
+    private Outline[] _outlines;
     private bool _isCompleted;
 
     void Awake()
     {
-        _outline = GetComponent<Outline>();
-        _outline.OutlineColor = outlineColor;
-        _outline.OutlineWidth = outlineWidth;
-        _outline.OutlineMode = outlineMode;
-        _outline.enabled = false;
+        // 자신 + 하위 Outline 수집
+        if (includeChildren)
+            _outlines = GetComponentsInChildren<Outline>(true);
+        else
+            _outlines = GetComponents<Outline>();
+
+        // 초기 설정
+        foreach (var outline in _outlines)
+        {
+            outline.OutlineColor = outlineColor;
+            outline.OutlineWidth = outlineWidth;
+            outline.OutlineMode = outlineMode;
+            outline.enabled = false;
+        }
     }
 
     /// <summary>
@@ -35,7 +49,7 @@ public class InteractableOutline : MonoBehaviour
     public void Activate()
     {
         if (_isCompleted) return;
-        _outline.enabled = true;
+        SetOutlinesEnabled(true);
     }
 
     /// <summary>
@@ -44,7 +58,7 @@ public class InteractableOutline : MonoBehaviour
     public void Complete()
     {
         _isCompleted = true;
-        _outline.enabled = false;
+        SetOutlinesEnabled(false);
     }
 
     /// <summary>
@@ -53,6 +67,16 @@ public class InteractableOutline : MonoBehaviour
     public void ResetState()
     {
         _isCompleted = false;
-        _outline.enabled = false;
+        SetOutlinesEnabled(false);
+    }
+
+    private void SetOutlinesEnabled(bool enabled)
+    {
+        if (_outlines == null) return;
+        foreach (var outline in _outlines)
+        {
+            if (outline != null)
+                outline.enabled = enabled;
+        }
     }
 }

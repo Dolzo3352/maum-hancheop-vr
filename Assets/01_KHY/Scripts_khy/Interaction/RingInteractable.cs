@@ -30,13 +30,6 @@ public class RingInteractable : MonoBehaviour
     [Tooltip("이 오브젝트의 링 색상 타입")]
     [SerializeField] private RingType ringType = RingType.Orange;
 
-    [Header("아웃라인 (선택)")]
-    [Tooltip("충전 시작 시 활성화할 아웃라인 컴포넌트")]
-    [SerializeField] private Outline outline;
-
-    [Tooltip("충전 중 아웃라인 색상 (ringType 색상으로 자동 설정됨)")]
-    [SerializeField] private bool useRingColorForOutline = true;
-
     [Header("VFX 배치")]
     [Tooltip("프로그레스 VFX가 소환될 위치. 비워두면 오브젝트 위치 + 기본 오프셋")]
     [SerializeField] private Transform vfxSpawnPoint;
@@ -92,14 +85,6 @@ public class RingInteractable : MonoBehaviour
         {
             Debug.LogError($"[RingInteractable] Collider가 없습니다: {name}", this);
         }
-
-        // 아웃라인 초기 비활성화
-        if (outline != null)
-        {
-            if (useRingColorForOutline)
-                outline.OutlineColor = RingTypeColors.GetColor(ringType);
-            outline.enabled = false;
-        }
     }
 
     // ─── RingChargeSystem에서 호출하는 메서드 ───
@@ -109,10 +94,6 @@ public class RingInteractable : MonoBehaviour
     /// </summary>
     public virtual void OnChargeBegin()
     {
-        // 아웃라인 활성화
-        if (outline != null)
-            outline.enabled = true;
-
         onChargeBegin?.Invoke();
     }
 
@@ -123,9 +104,7 @@ public class RingInteractable : MonoBehaviour
     /// <param name="progress">충전 진행도 (0~1)</param>
     public virtual void OnChargeUpdate(float progress)
     {
-        // 아웃라인 두께를 진행도에 따라 변경 (선택적 피드백)
-        if (outline != null)
-            outline.OutlineWidth = Mathf.Lerp(2f, 8f, progress);
+        // 하위 클래스에서 오버라이드하여 충전 중 시각적 피드백 구현
     }
 
     /// <summary>
@@ -133,13 +112,6 @@ public class RingInteractable : MonoBehaviour
     /// </summary>
     public virtual void OnChargeCancelled()
     {
-        // 아웃라인 비활성화
-        if (outline != null)
-        {
-            outline.OutlineWidth = 2f;
-            outline.enabled = false;
-        }
-
         onChargeCancelled?.Invoke();
     }
 
@@ -150,10 +122,6 @@ public class RingInteractable : MonoBehaviour
     public virtual void Execute()
     {
         Debug.Log($"[RingInteractable] 인터랙션 실행: {ringType} → {name}", this);
-
-        // 아웃라인 비활성화
-        if (outline != null)
-            outline.enabled = false;
 
         // UnityEvent 호출 (Inspector 연결용)
         onExecute?.Invoke();
@@ -197,11 +165,6 @@ public class RingInteractable : MonoBehaviour
     {
         isCompleted = false;
         isInteractionActive = false;
-        if (outline != null)
-        {
-            outline.OutlineWidth = 2f;
-            outline.enabled = false;
-        }
     }
 
     /// <summary>
