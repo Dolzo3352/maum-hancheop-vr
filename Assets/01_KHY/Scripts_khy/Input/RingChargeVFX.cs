@@ -51,6 +51,17 @@ public class RingChargeVFX : MonoBehaviour
     private bool isFadingOut;
     private bool isActive;
 
+    // 실패 연출 상태
+    private bool isFailureMode;
+    private float failureElapsed;
+    private float failureJitterDuration;
+    private float failureJitterIntensity;
+    private float failureColorTransitionDuration;
+    private float failureFadeOutDuration;
+    private Color failureTargetColor;
+    private Color failureBaseColor;
+    private Vector3 failureBasePosition;
+
     // 셰이더 프로퍼티 ID (캐시)
     private static readonly int FillAmountID = Shader.PropertyToID("_FillAmount");
     private static readonly int GaugeColorID = Shader.PropertyToID("_GaugeColor");
@@ -123,6 +134,8 @@ public class RingChargeVFX : MonoBehaviour
     private void HandleChargeUpdated(float progress, RingType ringType)
     {
         if (!isActive || meshRenderer == null) return;
+        // 실패 모드 중이면 진행도 업데이트 무시
+        if (isFailureMode) return;
 
         meshRenderer.GetPropertyBlock(mpb);
         mpb.SetFloat(FillAmountID, 1f - progress); // 셰이더 반전: progress 0→1 = FillAmount 1→0
@@ -144,7 +157,89 @@ public class RingChargeVFX : MonoBehaviour
     private void HandleChargeCancelled(RingType ringType)
     {
         if (!isActive) return;
+        // 실패 모드 중이면 일반 취소 무시 (실패 연출이 직접 처리)
+        if (isFailureMode) return;
         StartFadeOut();
+    }
+
+    // ─── 실패 연출 ───
+
+    /// <summary>
+    /// 현재 표시 중인 링 메시를 실패 연출로 전환합니다.
+    /// 떨림 + 색상 전환 → 페이드아웃.
+    /// FailedTreeInteractable에서 호출합니다.
+    /// </summary>
+    public void PlayFailure(Color failColor, float jitterDuration, float jitterIntensity,
+                            float colorTransitionDuration = 0.3f, float failFadeOutDuration = 0.4f)
+    {
+        if (!isActive || meshInstance == null) return;
+
+        isFailureMode = true;
+        isFadingIn = false;
+        isFadingOut = false;
+        failureElapsed = 0f;
+
+        failureJitterDuration = jitterDuration;
+        failureJitterIntensity = jitterIntensity;
+        failureColorTransitionDuration = colorTransitionDuration;
+        failureFadeOutDuration = failFadeOutDuration;
+        failureTargetColor = failColor;
+        failureBasePosition = meshInstance.transform.position;
+
+        // 현재 색상 저장
+        meshRenderer.GetPropertyBlock(mpb);
+        failureBaseColor = mpb.GetColor(GaugeColorID);
+    }
+
+    private void UpdateFailure()
+    {
+        failureElapsed += Time.deltaTime;
+
+        if (failureElapsed <= failureJitterDuration)
+        {
+            // ── 떨림 + 색상 전환 단계 ──
+            float t = Mathf.Clamp01(failureElapsed / failureJitterDuration);
+
+            // 색상: 원래 → 빨간
+            float colorT = Mathf.Clamp01(failureElapsed / failureColorTransitionDuration);
+            Color currentColor = Color.Lerp(failureBaseColor, failureTargetColor, colorT);
+
+            // 떨림 (점점 약해짐)
+            float jitterScale = failureJitterIntensity * (1f - t);
+            Vector3 jitterOffset = new Vector3(
+                Random.Range(-jitterScale, jitterScale),
+                Random.Range(-jitterScale, jitterScale),
+                Random.Range(-jitterScale, jitterScale)
+            );
+            meshInstance.transform.position = failureBasePosition + jitterOffset;
+
+            // 충전량 흔들림 (불안정)
+            float currentFill = mpb.GetFloat(FillAmountID);
+            float fillJitter = Random.Range(-0.02f, 0.02f) * (1f - t);
+
+            meshRenderer.GetPropertyBlock(mpb);
+            mpb.SetColor(GaugeColorID, currentColor);
+            mpb.SetFloat(FillAmountID, currentFill + fillJitter);
+            meshRenderer.SetPropertyBlock(mpb);
+        }
+        else
+        {
+            // ── 페이드아웃 단계 ──
+            float fadeElapsed = failureElapsed - failureJitterDuration;
+            float fadeT = Mathf.Clamp01(fadeElapsed / failureFadeOutDuration);
+
+            meshInstance.transform.position = failureBasePosition;
+            meshInstance.transform.localScale = baseScale * (1f - fadeT);
+
+            if (fadeT >= 1f)
+            {
+                // 실패 연출 완료
+                isFailureMode = false;
+                isActive = false;
+                meshInstance.SetActive(false);
+                meshInstance.transform.localScale = baseScale;
+            }
+        }
     }
 
     // ─── 페이드 ───
@@ -166,6 +261,12 @@ public class RingChargeVFX : MonoBehaviour
 
     private void Update()
     {
+        if (isFailureMode)
+        {
+            UpdateFailure();
+            return;
+        }
+
         if (isFadingIn)
         {
             fadeProgress += Time.deltaTime / fadeInDuration;
