@@ -43,7 +43,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _GrainScale: 60
-    - _NormalStrength: 0.01
+    - _NormalStrength: 0.008
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothness: 0.15

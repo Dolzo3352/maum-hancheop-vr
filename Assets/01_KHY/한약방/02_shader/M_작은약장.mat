@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_GrainNoiseTexture 2
+  m_Name: "M_\uC791\uC740\uC57D\uC7A5"
   m_Shader: {fileID: -6465566751694194690, guid: fb6a09fd8f489144cab71489318ec385, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8909e51d3acb9d3468032460abcc1056, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a1fbbf0f7c55c04e853acfb9c24a7e8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
