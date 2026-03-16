@@ -31,8 +31,11 @@ public class SplinePathGenerator : MonoBehaviour
     public PathType pathType = PathType.River;
 
     [Header("메시 설정")]
-    [Tooltip("경로 너비")]
+    [Tooltip("기본 경로 너비 (구간별 폭이 비어있으면 이 값 사용)")]
     public float width = 3f;
+
+    [Tooltip("스플라인 포인트별 폭 (비어있으면 width 값 사용, 포인트 순서대로)")]
+    public float[] widthPerPoint = new float[0];
 
     [Tooltip("길이 방향 세그먼트 수 (높을수록 부드러움)")]
     [Range(10, 500)]
@@ -99,7 +102,9 @@ public class SplinePathGenerator : MonoBehaviour
         var uvs = new Vector2[totalVerts];
         var triangles = new int[totalTris];
 
-        // 버텍스 생성
+        // 버텍스 생성 - right 벡터 일관성 유지
+        Vector3 prevRight = Vector3.zero;
+
         for (int i = 0; i <= lengthSegments; i++)
         {
             float t = (float)i / lengthSegments;
@@ -107,20 +112,30 @@ public class SplinePathGenerator : MonoBehaviour
             // 스플라인 위의 점과 방향
             SplineUtility.Evaluate(spline, t, out float3 pos, out float3 tangent, out float3 up);
 
-            Vector3 worldPos = transform.TransformPoint((Vector3)pos);
-            Vector3 forward = ((Vector3)tangent).normalized;
+            Vector3 localPos = (Vector3)pos;
+            Vector3 worldPos = transform.TransformPoint(localPos);
+            Vector3 forward = transform.TransformDirection(((Vector3)tangent).normalized);
 
-            // up 벡터가 0이면 기본값 사용
-            Vector3 upVec = ((Vector3)up).sqrMagnitude > 0.001f ? ((Vector3)up).normalized : Vector3.up;
-            Vector3 right = Vector3.Cross(forward, upVec).normalized;
+            // right 벡터: 항상 수평면(XZ)에서 계산하여 꼬임 방지
+            Vector3 flatForward = new Vector3(forward.x, 0, forward.z).normalized;
+            if (flatForward.sqrMagnitude < 0.001f)
+                flatForward = new Vector3(forward.x, 0, forward.z + 0.001f).normalized;
 
-            if (right.sqrMagnitude < 0.001f)
-                right = Vector3.Cross(forward, Vector3.up).normalized;
+            Vector3 right = Vector3.Cross(Vector3.up, flatForward).normalized;
+
+            // 이전 프레임과 방향이 급격히 바뀌면 뒤집힘 보정
+            if (prevRight.sqrMagnitude > 0.001f && Vector3.Dot(right, prevRight) < 0)
+                right = -right;
+
+            prevRight = right;
+
+            // 구간별 폭 보간
+            float currentWidth = GetWidthAtT(t, spline.Count);
 
             for (int j = 0; j <= widthSegments; j++)
             {
                 float widthT = (float)j / widthSegments; // 0 ~ 1
-                float offsetX = (widthT - 0.5f) * width;
+                float offsetX = (widthT - 0.5f) * currentWidth;
 
                 // 단면 프로파일 적용
                 float profileY = GetProfileHeight(widthT);
@@ -174,6 +189,28 @@ public class SplinePathGenerator : MonoBehaviour
 
         meshFilter.sharedMesh = mesh;
         Debug.Log($"[SplinePathGenerator] '{pathType}' 메시 생성 완료 (정점: {totalVerts}, 삼각형: {totalTris / 3})");
+    }
+
+    /// <summary>
+    /// 스플라인 t값(0~1)에서의 폭을 반환합니다.
+    /// widthPerPoint 배열이 설정되어 있으면 포인트 간 보간, 아니면 기본 width 사용.
+    /// </summary>
+    float GetWidthAtT(float t, int knotCount)
+    {
+        if (widthPerPoint == null || widthPerPoint.Length == 0)
+            return width;
+
+        // 포인트 수와 배열 길이가 다르면 기본값 사용
+        if (widthPerPoint.Length < 2)
+            return widthPerPoint.Length == 1 ? widthPerPoint[0] : width;
+
+        // t를 포인트 인덱스로 변환 후 보간
+        float pointT = t * (widthPerPoint.Length - 1);
+        int idx = Mathf.FloorToInt(pointT);
+        idx = Mathf.Clamp(idx, 0, widthPerPoint.Length - 2);
+        float lerp = pointT - idx;
+
+        return Mathf.Lerp(widthPerPoint[idx], widthPerPoint[idx + 1], lerp);
     }
 
     float GetProfileHeight(float t)
@@ -242,7 +279,8 @@ public class SplinePathGenerator : MonoBehaviour
                 if (right.sqrMagnitude < 0.001f)
                     right = Vector3.Cross(fwd, Vector3.up).normalized;
 
-                Gizmos.DrawLine(w0 - right * width * 0.5f, w0 + right * width * 0.5f);
+                float gizmoWidth = GetWidthAtT(t0, spline.Count);
+                Gizmos.DrawLine(w0 - right * gizmoWidth * 0.5f, w0 + right * gizmoWidth * 0.5f);
             }
         }
     }
