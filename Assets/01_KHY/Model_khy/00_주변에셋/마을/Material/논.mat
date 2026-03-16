@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LPW_Grass_B1_01
+  m_Name: "\uB17C"
   m_Shader: {fileID: 4800000, guid: 0dee0a5c73cc4d746a63652331a3c92f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -49,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2c4e51a73d7c73d40935ba83394b9014, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -99,9 +99,9 @@ Material:
     - _MBAmplitude: 2
     - _MBAmplitudeOffset: 1
     - _MBDefaultBending: 0
-    - _MBFrequency: 1.97
+    - _MBFrequency: 0.2
     - _MBFrequencyOffset: 0.1
-    - _MBMaxHeight: 0.4
+    - _MBMaxHeight: 10.78
     - _MBPhase: 10
     - _MBWindBlend: 0
     - _MBWindDir: 90
@@ -121,7 +121,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.91381, b: 0.05098039, a: 1}
+    - _Color: {r: 0.9725491, g: 0.7803922, b: 0.07450981, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NoisePannerSpeed: {r: 0.08, g: 0.04, b: 0, a: 0}
     - _NoiseTextureTilling: {r: 1, g: 1, b: 1, a: 1}
