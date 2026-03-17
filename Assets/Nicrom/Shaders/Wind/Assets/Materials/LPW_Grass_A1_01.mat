@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LPW_Grass_A1_01
-  m_Shader: {fileID: 4800000, guid: 62e570c62a5cc054694b49c038ef660b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 48a0653513a197345aa3202826ca1e8f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

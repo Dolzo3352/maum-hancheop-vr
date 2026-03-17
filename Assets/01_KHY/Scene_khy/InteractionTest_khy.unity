@@ -753,7 +753,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 50120031923901381, guid: 4793cbf451c2dac48b249545f5ebe396, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.69
+      value: 3.06
       objectReference: {fileID: 0}
     - target: {fileID: 50120031923901381, guid: 4793cbf451c2dac48b249545f5ebe396, type: 3}
       propertyPath: m_LocalPosition.y
@@ -761,7 +761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 50120031923901381, guid: 4793cbf451c2dac48b249545f5ebe396, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.18
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 50120031923901381, guid: 4793cbf451c2dac48b249545f5ebe396, type: 3}
       propertyPath: m_LocalRotation.w
@@ -951,6 +951,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 615924907600716756, guid: 53856da6504b69c42868d544e38db783, type: 3}
+      propertyPath: startScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211050501465861567, guid: 53856da6504b69c42868d544e38db783, type: 3}
+      propertyPath: startScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622641824905902027, guid: 53856da6504b69c42868d544e38db783, type: 3}
+      propertyPath: startScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4306394817788816403, guid: 53856da6504b69c42868d544e38db783, type: 3}
       propertyPath: childTarget
       value: 
@@ -958,6 +970,26 @@ PrefabInstance:
     - target: {fileID: 4736026833488671420, guid: 53856da6504b69c42868d544e38db783, type: 3}
       propertyPath: m_Name
       value: SilverGrass
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798836195213425606, guid: 53856da6504b69c42868d544e38db783, type: 3}
+      propertyPath: startScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6166716711259818680, guid: 53856da6504b69c42868d544e38db783, type: 3}
+      propertyPath: startScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251302958681059632, guid: 53856da6504b69c42868d544e38db783, type: 3}
+      propertyPath: startScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086547293910898991, guid: 53856da6504b69c42868d544e38db783, type: 3}
+      propertyPath: startScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466458290586156557, guid: 53856da6504b69c42868d544e38db783, type: 3}
+      propertyPath: startScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1514,8 +1546,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RingInteractable
   ringType: 5
-  outline: {fileID: 1801813132}
-  useRingColorForOutline: 1
   vfxSpawnPoint: {fileID: 0}
   autoCompleteOnExecute: 1
   onExecute:
@@ -1673,8 +1703,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RingInteractable
   ringType: 2
-  outline: {fileID: 752405963}
-  useRingColorForOutline: 1
   vfxSpawnPoint: {fileID: 0}
   autoCompleteOnExecute: 1
   onExecute:
@@ -3465,7 +3493,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 333266368367479065, guid: 5bdb54470d9f1774ba2d51e83df75641, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1305
+      value: -3.22
       objectReference: {fileID: 0}
     - target: {fileID: 333266368367479065, guid: 5bdb54470d9f1774ba2d51e83df75641, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3473,7 +3501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 333266368367479065, guid: 5bdb54470d9f1774ba2d51e83df75641, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.06664
+      value: 3.69
       objectReference: {fileID: 0}
     - target: {fileID: 333266368367479065, guid: 5bdb54470d9f1774ba2d51e83df75641, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3674,8 +3702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RingInteractable
   ringType: 4
-  outline: {fileID: 1801813132}
-  useRingColorForOutline: 1
   vfxSpawnPoint: {fileID: 0}
   autoCompleteOnExecute: 1
   onExecute:

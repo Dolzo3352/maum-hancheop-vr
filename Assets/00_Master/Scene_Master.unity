@@ -1346,6 +1346,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &19173676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1525932836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &20859758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3072,12 +3077,20 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 539020247}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &98162597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 98162596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &101662141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1182784772}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &111216834
 Mesh:
@@ -4469,12 +4482,20 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1961357694}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &133758855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 133758854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &139012750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 524736180}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &139627554
 PrefabInstance:
@@ -5026,6 +5047,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5707813131339434805, guid: b995a96a7ca36d04b851e46870b5aadf, type: 3}
   m_PrefabInstance: {fileID: 156972906}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &159888676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1872810143}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &160235960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5249,7 +5275,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1708137799}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &171197934 stripped
 Transform:
@@ -5532,7 +5561,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1317470360}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &182056104 stripped
 Transform:
@@ -5697,6 +5729,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 753340291}
   m_SourcePrefab: {fileID: 100100000, guid: 5574ec9d7c1d277428295ba340d6e295, type: 3}
+--- !u!1 &206704129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 941193767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &210847797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5764,7 +5801,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 627674637}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &210847798 stripped
 Transform:
@@ -5838,7 +5878,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 517913029}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &211375415 stripped
 Transform:
@@ -7601,6 +7644,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 456810, guid: 2d20d3e774b9b574f8c22333d48eaea0, type: 3}
   m_PrefabInstance: {fileID: 250860316}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &252622346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 579232790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &254831228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7746,7 +7794,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 358616099}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &256549878 stripped
 Transform:
@@ -8909,6 +8960,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5707813131339434805, guid: b995a96a7ca36d04b851e46870b5aadf, type: 3}
   m_PrefabInstance: {fileID: 300880613}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &301152134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1708935225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &301414908
 GameObject:
   m_ObjectHideFlags: 0
@@ -9393,7 +9449,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 335049459}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &321859208 stripped
 Transform:
@@ -9545,7 +9604,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 813187921}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &325086401 stripped
 Transform:
@@ -9679,6 +9741,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1851491458}
   m_LocalEulerAnglesHint: {x: 64.824, y: 0, z: 0}
+--- !u!1 &326076391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1900991462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &331013623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9757,6 +9824,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5707813131339434805, guid: b995a96a7ca36d04b851e46870b5aadf, type: 3}
   m_PrefabInstance: {fileID: 331013623}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &335049455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 321859207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &335049459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335049455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!43 &335965240
 Mesh:
   m_ObjectHideFlags: 0
@@ -10211,6 +10305,16 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &344936219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 750203464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &346993438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 550225760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348971240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10676,6 +10780,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5888765399538998960, guid: ad818c36731146e994540a1896ad8f24, type: 3}
   m_PrefabInstance: {fileID: 358187746}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &358616095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 256549877}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &358616099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358616095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &360781262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12379,7 +12510,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2035396584}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &389738881 stripped
 Transform:
@@ -13119,7 +13253,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 800502642}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &405156439 stripped
 Transform:
@@ -15021,6 +15158,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bc5293c0d8404a14f9304db629424977, type: 3}
   m_PrefabInstance: {fileID: 455343804}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &460372664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 468915625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &461838761
 GameObject:
   m_ObjectHideFlags: 0
@@ -15131,13 +15273,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 468915630}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &468915626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 468915625}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &468915630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460372664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &471118903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15596,7 +15763,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1336479020}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &493093690 stripped
 Transform:
@@ -15764,6 +15934,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7364201638191320601, guid: 9c767b16a8ee80341893411595b968b3, type: 3}
   m_PrefabInstance: {fileID: 516638535}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &517913025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 211375414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &517913029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517913025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &518032142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cf3c9352840c1884cbcbe098d60858e1, type: 3}
@@ -16118,13 +16315,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 524736185}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &524736181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 524736180}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &524736185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139012750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &527005719
 GameObject:
   m_ObjectHideFlags: 0
@@ -16531,6 +16753,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1558153190}
   m_LocalEulerAnglesHint: {x: 64.824, y: 164.13, z: 0}
+--- !u!1 &539020243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 98162596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &539020247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539020243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &539805018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16750,13 +16999,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 550225765}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &550225761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 550225760}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &550225765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346993438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &553485150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16902,7 +17176,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 675672736}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &556948655 stripped
 Transform:
@@ -17054,7 +17331,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2141550948}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &566196342 stripped
 Transform:
@@ -17280,13 +17560,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 579232795}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &579232791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 579232790}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &579232795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252622346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &585890093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18021,7 +18326,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 794790296}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &604982841 stripped
 Transform:
@@ -18177,7 +18485,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1605179807}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &611791162 stripped
 Transform:
@@ -18497,6 +18808,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5707813131339434805, guid: b995a96a7ca36d04b851e46870b5aadf, type: 3}
   m_PrefabInstance: {fileID: 627249940}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &627674633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 210847797}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &627674637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627674633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &635433969
 GameObject:
   m_ObjectHideFlags: 0
@@ -18911,6 +19249,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 662862715}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &667310780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1488739431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &668534835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19324,6 +19667,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6818968701719558352, guid: 744b8b62d5b62fe4c93a2278d11bd87b, type: 3}
   m_PrefabInstance: {fileID: 672627400}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &675672732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 556948654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &675672736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675672732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &679173218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19879,7 +20249,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1714813632}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &689289598 stripped
 Transform:
@@ -20189,6 +20562,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5707813131339434805, guid: b995a96a7ca36d04b851e46870b5aadf, type: 3}
   m_PrefabInstance: {fileID: 716978644}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &720776091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 894903893}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &724768813
 PrefabInstance:
@@ -20594,6 +20972,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8332277329177182672, guid: a5ca1dc783f7a774bb69d004603f6783, type: 3}
   m_PrefabInstance: {fileID: 746669848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &747996260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1958651850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &750203464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20661,13 +21044,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 750203469}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &750203465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 750203464}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &750203469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344936219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &752911271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20979,6 +21387,16 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2282547957663615492, guid: 85a5f34963363ec459b3e6ac3bc57ee7, type: 3}
   m_PrefabInstance: {fileID: 774042291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &775559328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1903249630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &776021411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1521169285}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &780877724
 Mesh:
@@ -21380,6 +21798,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 786282264}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &794790292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 604982840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &794790296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794790292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
+--- !u!1 &800502638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 405156438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &800502642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800502638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
+--- !u!1 &813187917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 325086400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &813187921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813187917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &819737768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21599,7 +22098,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1860893035}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &830251452 stripped
 Transform:
@@ -21696,6 +22198,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836487809}
   m_Mesh: {fileID: 4579454407841743219, guid: b2cac649b5719f34ab555e512996e15d, type: 3}
+--- !u!1 &837426279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1343419210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &840864240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22334,6 +22841,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 854026883}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &858729352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1333609177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &860892323
 GameObject:
   m_ObjectHideFlags: 0
@@ -22810,6 +23322,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5707813131339434805, guid: b995a96a7ca36d04b851e46870b5aadf, type: 3}
   m_PrefabInstance: {fileID: 873250419}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &878180668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1894076738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &879606862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23021,12 +23538,20 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1481584801}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &885587501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 885587500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &892676924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1607895521}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &894903893
 PrefabInstance:
@@ -23095,13 +23620,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 894903898}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &894903894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 894903893}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &894903898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720776091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &898872263
 GameObject:
   m_ObjectHideFlags: 0
@@ -23602,6 +24152,133 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5986952113235655307, guid: fad659e93634c1149844f0b8bbf8b1ac, type: 3}
   m_PrefabInstance: {fileID: 912761396}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &915131790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 915131791}
+  - component: {fileID: 915131793}
+  - component: {fileID: 915131792}
+  m_Layer: 0
+  m_Name: TestPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &915131791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915131790}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.17282423, y: -0, z: -0, w: 0.98495275}
+  m_LocalPosition: {x: 19.14, y: -37.46, z: -38.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1039773393}
+  m_LocalEulerAnglesHint: {x: 19.904, y: 0, z: 0}
+--- !u!114 &915131792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915131790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!108 &915131793
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915131790}
+  m_Enabled: 1
+  serializedVersion: 12
+  m_Type: 0
+  m_Color: {r: 1, g: 0.9140456, b: 0.759434, a: 1}
+  m_Intensity: 794.3
+  m_Range: 87.82597
+  m_SpotAngle: 143.05455
+  m_InnerSpotAngle: 95.237144
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!1001 &918425380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24119,13 +24796,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 941193772}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &941193768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 941193767}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &941193772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206704129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &945220024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25302,6 +26004,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 975536869}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1002485856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 2089666205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1003623470 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 44186fac4ccb7f747b8418d458b29c43, type: 3}
@@ -25598,6 +26305,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2689197974250401515, guid: a2c92576a9d04e648aafe250087e15f8, type: 3}
   m_PrefabInstance: {fileID: 1015129449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1016116783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 2013217284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1019812429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25653,7 +26365,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1279850704962129966, guid: 6d42e7adef59ef441b568c3712ecc451, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1885862715}
   m_SourcePrefab: {fileID: 100100000, guid: 6d42e7adef59ef441b568c3712ecc451, type: 3}
 --- !u!4 &1019812430 stripped
 Transform:
@@ -25819,6 +26534,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8332277329177182672, guid: a5ca1dc783f7a774bb69d004603f6783, type: 3}
   m_PrefabInstance: {fileID: 1023019176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1030861033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1898013092}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1035122610
 PrefabInstance:
@@ -26027,6 +26747,7 @@ Transform:
   - {fileID: 1183034931}
   - {fileID: 1796161320}
   - {fileID: 1494516445}
+  - {fileID: 915131791}
   m_Father: {fileID: 461838762}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1042729361
@@ -26268,7 +26989,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1114180432}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1046276430 stripped
 Transform:
@@ -27780,6 +28504,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2282547957663615492, guid: 85a5f34963363ec459b3e6ac3bc57ee7, type: 3}
   m_PrefabInstance: {fileID: 1078085535}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1079532836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1335590220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1079781662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28292,6 +29021,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ec2ec0bb5103f9479721c120ce3ba45, type: 3}
   m_PrefabInstance: {fileID: 6302466542866926301}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1114180428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1046276429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1114180432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114180428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1117002992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28961,7 +29717,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1924078348}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1141541930 stripped
 Transform:
@@ -29749,13 +30508,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1182784777}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1182784773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1182784772}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1182784777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101662141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1183034930
 GameObject:
   m_ObjectHideFlags: 0
@@ -29961,6 +30745,118 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 485030, guid: 45e99e4ebfee5894db524d132e997128, type: 3}
   m_PrefabInstance: {fileID: 1184280797}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1192331439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1192331443}
+  - component: {fileID: 1192331442}
+  - component: {fileID: 1192331441}
+  - component: {fileID: 1192331440}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1192331440
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192331439}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1192331441
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192331439}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1192331442
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192331439}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1192331443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192331439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.61885, y: 10.5, z: 56.28883}
+  m_LocalScale: {x: 2.9534, y: 2.9534, z: 2.9534}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1192427072
 GameObject:
   m_ObjectHideFlags: 0
@@ -33109,7 +34005,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1591162634}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1298621668 stripped
 Transform:
@@ -33143,7 +34042,7 @@ Transform:
   m_GameObject: {fileID: 1301072591}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.91405773, z: -0, w: 0.40558404}
-  m_LocalPosition: {x: 17.36, y: -4.87, z: 0.9}
+  m_LocalPosition: {x: 8.85, y: -2.94, z: 47.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -33728,7 +34627,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1956877397}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1313654185 stripped
 Transform:
@@ -33805,6 +34707,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e565ca2ccacf7c24d9779a23f9cb386c, type: 3}
   m_PrefabInstance: {fileID: 1314267090}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1317470356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 182056103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1317470360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317470356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1318202627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34442,13 +35371,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1333609182}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1333609178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1333609177}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1333609182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858729352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1335590220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34516,13 +35470,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1335590225}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1335590221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1335590220}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1335590225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079532836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
+--- !u!1 &1336479016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 493093689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1336479020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336479016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!43 &1341015040
 Mesh:
   m_ObjectHideFlags: 0
@@ -34799,13 +35805,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1343419215}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1343419211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1343419210}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1343419215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837426279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1345116459
 GameObject:
   m_ObjectHideFlags: 0
@@ -35699,7 +36730,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1990828061}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1378990354 stripped
 Transform:
@@ -36070,12 +37104,20 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1582260720}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1391838618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1391838617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1392643544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1477057407}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1392902005
 PrefabInstance:
@@ -36300,7 +37342,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1593407735}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1400154315 stripped
 Transform:
@@ -36824,6 +37869,16 @@ Transform:
   - {fileID: 724768814}
   m_Father: {fileID: 904208243}
   m_LocalEulerAnglesHint: {x: 0, y: -26.161, z: 0}
+--- !u!1 &1412990283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 2126646196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1417757858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1864134632}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1418416456
 GameObject:
   m_ObjectHideFlags: 0
@@ -37317,6 +38372,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1426014272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 2069621513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1427514161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38411,7 +39471,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1981455507}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1460646024 stripped
 Transform:
@@ -38713,13 +39776,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1477057412}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1477057408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1477057407}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1477057412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392643544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
+--- !u!1 &1481584797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 885587500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1481584801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481584797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1482906610
 GameObject:
   m_ObjectHideFlags: 0
@@ -38729,6 +39844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1482906611}
+  - component: {fileID: 1482906612}
   m_Layer: 0
   m_Name: Grass (1)
   m_TagString: Untagged
@@ -38813,6 +39929,85 @@ Transform:
   - {fileID: 256549878}
   m_Father: {fileID: 904208243}
   m_LocalEulerAnglesHint: {x: 0, y: -26.161, z: 0}
+--- !u!114 &1482906612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482906610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a326463a661f6448b21173451a3c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrassGroupManager
+  grasses:
+  - {fileID: 1864134637}
+  - {fileID: 468915630}
+  - {fileID: 2069621518}
+  - {fileID: 2089666210}
+  - {fileID: 1885862715}
+  - {fileID: 2072418507}
+  - {fileID: 1900991467}
+  - {fileID: 1961357694}
+  - {fileID: 2120132250}
+  - {fileID: 1956877397}
+  - {fileID: 1591162634}
+  - {fileID: 1114180432}
+  - {fileID: 1924078348}
+  - {fileID: 2129635580}
+  - {fileID: 941193772}
+  - {fileID: 1898013097}
+  - {fileID: 1488739436}
+  - {fileID: 517913029}
+  - {fileID: 2131350401}
+  - {fileID: 800502642}
+  - {fileID: 1860893035}
+  - {fileID: 550225765}
+  - {fileID: 335049459}
+  - {fileID: 524736185}
+  - {fileID: 579232795}
+  - {fileID: 675672736}
+  - {fileID: 894903898}
+  - {fileID: 1336479020}
+  - {fileID: 1521169290}
+  - {fileID: 1335590225}
+  - {fileID: 1708137799}
+  - {fileID: 1343419215}
+  - {fileID: 750203469}
+  - {fileID: 1525932841}
+  - {fileID: 2141550948}
+  - {fileID: 1582260720}
+  - {fileID: 1593407735}
+  - {fileID: 1903249635}
+  - {fileID: 1481584801}
+  - {fileID: 1958651855}
+  - {fileID: 1680392680}
+  - {fileID: 1317470360}
+  - {fileID: 2035396584}
+  - {fileID: 813187921}
+  - {fileID: 2126646201}
+  - {fileID: 1605179807}
+  - {fileID: 1714813632}
+  - {fileID: 1991475088}
+  - {fileID: 1894076743}
+  - {fileID: 2013217289}
+  - {fileID: 1990828061}
+  - {fileID: 627674637}
+  - {fileID: 1708935230}
+  - {fileID: 1333609182}
+  - {fileID: 794790296}
+  - {fileID: 1872810148}
+  - {fileID: 1981455507}
+  - {fileID: 1607895526}
+  - {fileID: 539020247}
+  - {fileID: 1182784777}
+  - {fileID: 1477057412}
+  - {fileID: 358616099}
+  delayBetween: 0.2
+  growFromCenter: 1
+  childTarget: {fileID: 1192331443}
+  enableBendAfterGrow: 1
 --- !u!1 &1483072678
 GameObject:
   m_ObjectHideFlags: 0
@@ -38942,13 +40137,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1488739436}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1488739432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1488739431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1488739436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667310780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1492344838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39074,7 +40294,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1279850704962129966, guid: 6d42e7adef59ef441b568c3712ecc451, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2072418507}
   m_SourcePrefab: {fileID: 100100000, guid: 6d42e7adef59ef441b568c3712ecc451, type: 3}
 --- !u!4 &1493645795 stripped
 Transform:
@@ -39748,13 +40971,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1521169290}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1521169286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1521169285}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1521169290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776021411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1521766018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39977,13 +41225,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1525932841}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1525932837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1525932836}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1525932841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19173676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1526945395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41336,6 +42609,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 280999331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1571238009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1991475083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1579801187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41481,13 +42759,97 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2120132250}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1580688269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1580688268}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1582260716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1391838617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1582260720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582260716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
+--- !u!1 &1585829586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1680392675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1586298301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586298303}
+  - component: {fileID: 1586298302}
+  m_Layer: 0
+  m_Name: GrassInteractor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1586298302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586298301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e893445b28c139478a9e147fbb44a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DearBrave.GrassInteractor
+  target: {fileID: 1192331443}
+  radius: 1.5
+  strength: 1.5
+  recoverySpeed: 5
+  bounciness: 0.3
+--- !u!4 &1586298303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586298301}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1586900229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41562,6 +42924,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1586900229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1591162630 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1298621667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1591162634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591162630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1591530727
 GameObject:
   m_ObjectHideFlags: 0
@@ -42107,6 +43496,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1039773393}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1593407731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1400154314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1593407735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593407731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1601922054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42185,6 +43601,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2282547957663615492, guid: 85a5f34963363ec459b3e6ac3bc57ee7, type: 3}
   m_PrefabInstance: {fileID: 1601922054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1605179803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 611791161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1605179807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605179803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1607895521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42252,13 +43695,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1607895526}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1607895522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1607895521}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1607895526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892676924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1608987500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44764,13 +46232,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1680392680}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1680392676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1680392675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1680392680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585829586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1697330203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44927,6 +46420,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5707813131339434805, guid: b995a96a7ca36d04b851e46870b5aadf, type: 3}
   m_PrefabInstance: {fileID: 1707948826}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1708137795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 171197933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1708137799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708137795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1708935225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44994,13 +46514,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1708935230}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1708935226 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1708935225}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1708935230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301152134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
+--- !u!1 &1714813628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 689289597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1714813632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714813628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1716315988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45293,6 +46865,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44186fac4ccb7f747b8418d458b29c43, type: 3}
   m_PrefabInstance: {fileID: 1730418490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1739173627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 2129635575}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1745836412
 GameObject:
@@ -46908,6 +48485,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1461131194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1860893031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 830251451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1860893035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860893031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1861214562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47057,13 +48661,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1864134637}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1864134633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1864134632}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1864134637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417757858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1866678276
 GameObject:
   m_ObjectHideFlags: 0
@@ -47244,13 +48873,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1872810148}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1872810144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1872810143}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1872810148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159888676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1878498374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47403,6 +49057,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5707813131339434805, guid: b995a96a7ca36d04b851e46870b5aadf, type: 3}
   m_PrefabInstance: {fileID: 1884609769}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1885862711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1279850704962129966, guid: 6d42e7adef59ef441b568c3712ecc451, type: 3}
+  m_PrefabInstance: {fileID: 1019812429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1885862715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885862711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1889068405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47790,13 +49471,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1894076743}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1894076739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1894076738}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1894076743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878180668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1898013092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47864,13 +49570,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1898013097}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1898013093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1898013092}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1898013097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030861033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1899781181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48000,13 +49731,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1900991467}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1900991463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1900991462}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1900991467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326076391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1903249630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48074,13 +49830,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1903249635}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1903249631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1903249630}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1903249635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775559328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1904949758
 GameObject:
   m_ObjectHideFlags: 0
@@ -48343,13 +50124,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2131350401}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1922530500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1922530499}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1924078344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1141541929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1924078348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924078344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1942622377
 GameObject:
   m_ObjectHideFlags: 0
@@ -48479,6 +50290,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 423184, guid: 7cc29cdea2c4d1046afa2e5ed507667c, type: 3}
   m_PrefabInstance: {fileID: 1942970412}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1956877393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1313654184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1956877397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956877393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1958651850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48546,13 +50384,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1958651855}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1958651851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1958651850}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1958651855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747996260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1958656561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48845,6 +50708,33 @@ MonoBehaviour:
   outlineWidth: 4
   outlineMode: 1
   includeChildren: 1
+--- !u!1 &1961357690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 133758854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1961357694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961357690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1966063371
 GameObject:
   m_ObjectHideFlags: 0
@@ -49093,6 +50983,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e565ca2ccacf7c24d9779a23f9cb386c, type: 3}
   m_PrefabInstance: {fileID: 1980021365}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1981455503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1460646023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1981455507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981455503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1982198463
 GameObject:
   m_ObjectHideFlags: 0
@@ -49933,6 +51850,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d5d1d576c3817847a347137e769d6fd, type: 3}
   m_PrefabInstance: {fileID: 1990582909}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1990828057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1378990353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1990828061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990828057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &1991475083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50000,13 +51944,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1991475088}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &1991475084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 1991475083}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1991475088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571238009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &1994193939
 GameObject:
   m_ObjectHideFlags: 0
@@ -50732,13 +52701,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2013217289}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &2013217285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 2013217284}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2013217289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016116783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!43 &2013901668
 Mesh:
   m_ObjectHideFlags: 0
@@ -52018,6 +54012,33 @@ MonoBehaviour:
   failureHapticDuration: 0.5
   ringChargeSystem: {fileID: 1319231635}
   ringChargeVFX: {fileID: 2130689925}
+--- !u!1 &2035396580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 389738880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2035396584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035396580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &2041020431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52694,13 +54715,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2069621518}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &2069621514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 2069621513}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2069621518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426014272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &2070064235
 GameObject:
   m_ObjectHideFlags: 0
@@ -52852,6 +54898,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 465d83a69ae6da242ba46dca9cc0d9e7, type: 3}
   m_PrefabInstance: {fileID: 2071814272}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2072418503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1279850704962129966, guid: 6d42e7adef59ef441b568c3712ecc451, type: 3}
+  m_PrefabInstance: {fileID: 1493645794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2072418507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072418503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &2077785210
 GameObject:
   m_ObjectHideFlags: 0
@@ -53746,13 +55819,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2089666210}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &2089666206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 2089666205}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2089666210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002485856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1 &2094700140
 GameObject:
   m_ObjectHideFlags: 0
@@ -55079,6 +57177,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 2119873528}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2120132246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1580688268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2120132250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120132246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!4 &2121300390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ec2ec0bb5103f9479721c120ce3ba45, type: 3}
@@ -55360,13 +57485,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2126646201}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &2126646197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 2126646196}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2126646201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412990283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &2127557917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55508,13 +57658,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2129635580}
   m_SourcePrefab: {fileID: 100100000, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
 --- !u!4 &2129635576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3637134996410565414, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
   m_PrefabInstance: {fileID: 2129635575}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2129635580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739173627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &2130689923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55592,6 +57767,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad093a34d3473f43b0a42b3f70197cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RingChargeVFX
+--- !u!1 &2131350397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 1922530499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2131350401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131350397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!1001 &2131400872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55942,6 +58144,33 @@ MonoBehaviour:
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
+--- !u!1 &2141550944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3637134996410867462, guid: 07e045768eabf894bbda2d6667a630e7, type: 3}
+  m_PrefabInstance: {fileID: 566196341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2141550948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141550944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e24e0b8e304394aaf85860cb204a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilverGrass
+  startScale: 1
+  growDuration: 1.5
+  growShakeStrength: 5
+  target: {fileID: 1192331443}
+  bendRadius: 0.3
+  bendStrength: 60
+  bendSpeed: 8
+  recoverSpeed: 3
+  twistStrength: 15
+  bendScaleMultiplier: 1.1
 --- !u!4 &388804764602699025
 Transform:
   m_ObjectHideFlags: 0
@@ -56945,3 +59174,5 @@ SceneRoots:
   - {fileID: 904208243}
   - {fileID: 2131854144}
   - {fileID: 1851047391}
+  - {fileID: 1586298303}
+  - {fileID: 1192331443}
