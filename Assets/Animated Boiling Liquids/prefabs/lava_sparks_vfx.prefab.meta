@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f7ab109458766174ba039f84a5966f37
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/prefabs/lava_sparks_vfx.prefab
+  uploadId: 763916

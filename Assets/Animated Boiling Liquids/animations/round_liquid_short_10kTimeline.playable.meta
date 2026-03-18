@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: dc7360a67ef8dce448571d3e0274a5b3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/animations/round_liquid_short_10kTimeline.playable
+  uploadId: 763916

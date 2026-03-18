@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b20969b83ae5e124f8825577963b5bb5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/prefabs/square_liquid_long_10k_mesh.prefab
+  uploadId: 763916

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 677d0d4c44964d24dbfa5cc906f1004b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/animations/square_liquid_short_4k_Timeline.playable
+  uploadId: 763916
