@@ -261,6 +261,18 @@ public class RingChargeVFX : MonoBehaviour
 
     private void Update()
     {
+        // 링 메시가 항상 카메라를 바라보도록
+        if (isActive && meshInstance != null)
+        {
+            var cam = Camera.main;
+            if (cam != null)
+            {
+                Vector3 lookDir = meshInstance.transform.position - cam.transform.position;
+                if (lookDir.sqrMagnitude > 0.001f)
+                    meshInstance.transform.rotation = Quaternion.LookRotation(lookDir);
+            }
+        }
+
         if (isFailureMode)
         {
             UpdateFailure();
