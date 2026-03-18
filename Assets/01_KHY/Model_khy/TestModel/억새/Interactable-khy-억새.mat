@@ -162,7 +162,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimPower: 4
-    - _Smoothness: 0.2
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -173,14 +173,14 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.62705505, b: 0.46855342, a: 1}
+    - _BaseColor: {r: 1, g: 0.8388404, b: 0.26729542, a: 1}
     - _BumpOffset: {r: 0, g: 0, b: 0, a: 0}
     - _BumpTiling: {r: 4, g: 2, b: 0, a: 0}
     - _Color: {r: 0.5686274, g: 0.78431374, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NormalOffset: {r: 0, g: 0, b: 0, a: 0}
     - _NormalTiling: {r: 4, g: 2, b: 0, a: 0}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 0.09803922}
+    - _RimColor: {r: 1, g: 0.91574883, b: 0.63207537, a: 0.09803922}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
