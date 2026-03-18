@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 77e4321215d45fe41aecd6e6a3607c05
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/scenes/demo_scene_Profiles/Main Camera
+    Profile(URP).asset
+  uploadId: 763916

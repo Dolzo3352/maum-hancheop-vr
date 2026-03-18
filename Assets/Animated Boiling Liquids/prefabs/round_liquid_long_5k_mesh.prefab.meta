@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 80b27103c48ce3345a19360667c8ec0f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/prefabs/round_liquid_long_5k_mesh.prefab
+  uploadId: 763916

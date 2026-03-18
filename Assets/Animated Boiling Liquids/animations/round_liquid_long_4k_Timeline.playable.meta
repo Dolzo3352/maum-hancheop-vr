@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ad7b8f742ee505e4d9fdc52d70992dbc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/animations/round_liquid_long_4k_Timeline.playable
+  uploadId: 763916

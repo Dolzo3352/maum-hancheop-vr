@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 856c96acb7b7e584ebfb2bfaae8eb64d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/prefabs/forge_mesh.prefab
+  uploadId: 763916

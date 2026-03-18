@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a5744a0d7a03898448e7dcb3de68fe86
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/prefabs/oven_mesh.prefab
+  uploadId: 763916
