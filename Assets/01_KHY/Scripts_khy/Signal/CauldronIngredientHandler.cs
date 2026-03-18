@@ -24,6 +24,8 @@ public class CauldronIngredientHandler : MonoBehaviour
     [SerializeField] private PlayableDirector director;
     [SerializeField] private CauldronDropZone dropZone;
     [SerializeField] private TimelineAnimationBlender blender;
+    [Tooltip("가마솥 인터랙션 중 링 충전을 비활성화하기 위한 참조")]
+    [SerializeField] private RingChargeSystem ringChargeSystem;
 
     [Header("약재")]
     [Tooltip("그랩 가능한 약재들 (아웃라인/림 활성화용)")]
@@ -53,6 +55,10 @@ public class CauldronIngredientHandler : MonoBehaviour
     private IEnumerator WaitForAllIngredients()
     {
         isWaiting = true;
+
+        // ── 링 충전 시스템 비활성화 (그립이 그랩에 사용되어야 하므로) ──
+        if (ringChargeSystem != null)
+            ringChargeSystem.IsEnabled = false;
 
         // ── 약재 활성화: 그랩 가능 + 아웃라인 ON + 호버 림 반응 ──
         foreach (var ingredient in ingredients)
