@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 79fbd32467a9b6f4bbc439ab24f500c1
+timeCreated: 1520630954
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 199792
+  packageName: 'Low Poly Bird: Golden Eagle'
+  packageVersion: 1.0
+  assetPath: Assets/Low Poly Bird Golden Eagle/Demo/Materials/Checker_Mat.mat
+  uploadId: 444486
