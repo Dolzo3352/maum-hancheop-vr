@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: acd17cf70bd9bbd41990c76eedd95fb5
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190463
+  packageName: Animated Boiling Liquids
+  packageVersion: 1.0
+  assetPath: Assets/Animated Boiling Liquids/meshes/round_liquid_short_2k_mesh.abc
+  uploadId: 763916
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -10,6 +17,7 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: f53f5fc499d31e44b9deee84d28a9ee8, type: 3}
   rootGameObjectId: 
   rootGameObjectName: 
+  importerVersion: 1
   streamSettings:
     normals: 1
     tangents: 1
@@ -26,19 +34,12 @@ ScriptedImporter:
     importCameras: 1
     importMeshes: 1
     importPoints: 0
+    importCurves: 1
+    createCurveRenderers: 0
   abcStartTime: 4.166666666666667
   abcEndTime: 6.25
   startTime: 4.166666666666667
   endTime: 6.25
   importWarning: 
-  varyingTopologyMeshNames:
-  - liquid6
-  splittingMeshNames: []
   firstImport: 0
-AssetOrigin:
-  serializedVersion: 1
-  productId: 190463
-  packageName: Animated Boiling Liquids
-  packageVersion: 1.0
-  assetPath: Assets/Animated Boiling Liquids/meshes/round_liquid_short_2k_mesh.abc
-  uploadId: 763916
+  isHDF5: 0

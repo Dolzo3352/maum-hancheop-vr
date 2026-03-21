@@ -38,7 +38,6 @@ MonoBehaviour:
   streamPlayer:
     exposedName: d2459ac45a5c7234b84d33ec7e683db0
     defaultValue: {fileID: 0}
-  endOffset: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +84,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -1295259975735967058}
-    m_Duration: 1.488095351627895
+    m_Duration: 1.4880953516278952
     m_TimeScale: 1.4
     m_ParentTrack: {fileID: 466257559434834458}
     m_EaseInDuration: 0
