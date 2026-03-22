@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6cb80a04ebc9d094f93bf1595c97a09b, type: 3}
-  m_Name: "Stage_03_\uD070\uAE38"
+  m_Name: "Stage_01_\uD29C\uD1A0\uB9AC\uC5BC"
   m_EditorClassIdentifier: Assembly-CSharp::StageData
-  stageName: "Stage_03_\uD070\uAE38"
-  stageIndex: 2
+  stageName: "Stage_01_\uD29C\uD1A0\uB9AC\uC5BC"
+  stageIndex: 0
   dioramaScale: 1
   entryTransition: 0
   transitionDuration: 1
