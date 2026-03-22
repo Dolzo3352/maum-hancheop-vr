@@ -61,6 +61,9 @@ public class GrabIngredient : MonoBehaviour
         originalPosition = transform.position;
         originalRotation = transform.rotation;
 
+        // 그랩 활성화 전까지 물리 비활성 (FlyToTarget과 충돌 방지)
+        rb.isKinematic = true;
+
         // 시작 시 그랩 비활성화 (시그널 전까지)
         SetGrabEnabled(false);
 
@@ -171,6 +174,16 @@ public class GrabIngredient : MonoBehaviour
     {
         isGrabEnabled = enabled;
         grabInteractable.enabled = enabled;
+    }
+
+    /// <summary>
+    /// 현재 위치를 새 원래 위치로 업데이트합니다.
+    /// FlyToTarget.onArrived에서 호출하여 착지 위치를 복귀 위치로 설정합니다.
+    /// </summary>
+    public void UpdateOriginalPosition()
+    {
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
     }
 
     /// <summary>
