@@ -174,14 +174,19 @@ public class TimelineAnimationBlender : MonoBehaviour
         behaviour.weight = 1f;
         behaviour.outputs.Clear();
 
-        // Timeline의 모든 AnimationPlayableOutput 수집
+        // 지정된 Animator의 AnimationPlayableOutput만 수집
+        // (다른 트랙 — 위치, 약초 등 — 은 weight를 유지)
         for (int i = 0; i < graph.GetOutputCount(); i++)
         {
             var graphOutput = graph.GetOutput(i);
             if (graphOutput.IsOutputValid() &&
                 graphOutput.GetPlayableOutputType() == typeof(AnimationPlayableOutput))
             {
-                behaviour.outputs.Add((AnimationPlayableOutput)graphOutput);
+                var animOutput = (AnimationPlayableOutput)graphOutput;
+                if (animOutput.GetTarget() == animator)
+                {
+                    behaviour.outputs.Add(animOutput);
+                }
             }
         }
 
