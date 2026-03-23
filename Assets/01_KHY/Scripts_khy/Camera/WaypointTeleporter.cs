@@ -12,6 +12,9 @@ public class WaypointTeleporter : MonoBehaviour
     [Tooltip("XR Origin (XR Rig) 오브젝트를 드래그")]
     public Transform xrOrigin;
 
+    [Tooltip("XR Origin 하위의 Main Camera (HMD)")]
+    public Transform xrCamera;
+
     [Header("웨이포인트 (빈 오브젝트 배치 후 할당)")]
     [Tooltip("흰색 도로 구간에 배치한 뷰포인트들")]
     public Transform[] waypoints;
@@ -48,6 +51,9 @@ public class WaypointTeleporter : MonoBehaviour
             if (xrOrigin == null)
                 xrOrigin = Camera.main?.transform.parent;
         }
+
+        if (xrCamera == null)
+            xrCamera = Camera.main?.transform;
 
         if (waypoints.Length == 0)
             Debug.LogWarning("[WaypointTeleporter] 웨이포인트가 비어있습니다. Inspector에서 할당하세요.");
@@ -134,9 +140,40 @@ public class WaypointTeleporter : MonoBehaviour
     public void TeleportImmediate(int index)
     {
         if (xrOrigin == null || waypoints[index] == null) return;
-        xrOrigin.position = waypoints[index].position;
-        xrOrigin.rotation = waypoints[index].rotation;
+        ApplyTeleport(waypoints[index]);
         currentWaypoint = index;
+    }
+
+    /// <summary>
+    /// HMD 회전을 보정하여 텔레포트합니다.
+    /// 플레이어의 실제 시선이 웨이포인트의 forward 방향을 바라보도록 합니다.
+    /// </summary>
+    private void ApplyTeleport(Transform target)
+    {
+        // 카메라 자동 탐색 (Inspector에서 연결 안 됐을 때)
+        if (xrCamera == null)
+            xrCamera = Camera.main?.transform;
+
+        // 카메라의 XR Origin 기준 Y축 회전 (머리가 얼마나 돌아가 있는지)
+        float cameraYaw = 0f;
+        if (xrCamera != null)
+            cameraYaw = xrCamera.eulerAngles.y - xrOrigin.eulerAngles.y;
+
+        Debug.Log($"[WaypointTeleporter] cameraYaw: {cameraYaw}, xrCamera null: {xrCamera == null}");
+
+        // 웨이포인트 방향에서 카메라 회전만큼 빼기
+        // → XR Origin을 돌리면 카메라가 정확히 웨이포인트 forward를 바라봄
+        Quaternion targetRotation = Quaternion.Euler(0f, target.eulerAngles.y - cameraYaw, 0f);
+        xrOrigin.rotation = targetRotation;
+
+        // 위치도 카메라 오프셋 보정
+        // XR Origin 내에서 카메라가 중앙이 아닐 수 있음 (룸스케일)
+        Vector3 cameraOffset = xrCamera != null
+            ? xrOrigin.position - xrCamera.position
+            : Vector3.zero;
+        cameraOffset.y = 0f; // 높이는 보정하지 않음
+
+        xrOrigin.position = target.position + cameraOffset;
     }
 
     IEnumerator SmoothTeleport(Transform target)
@@ -147,26 +184,8 @@ public class WaypointTeleporter : MonoBehaviour
         if (useFade && fadeCanvas != null)
             yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
-        Vector3 startPos = xrOrigin.position;
-        Quaternion startRot = xrOrigin.rotation;
-        Vector3 endPos = target.position;
-        Quaternion endRot = target.rotation;
-
-        float elapsed = 0f;
-        while (elapsed < moveDuration)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / moveDuration;
-            // ease in-out
-            t = t * t * (3f - 2f * t);
-
-            xrOrigin.position = Vector3.Lerp(startPos, endPos, t);
-            xrOrigin.rotation = Quaternion.Slerp(startRot, endRot, t);
-            yield return null;
-        }
-
-        xrOrigin.position = endPos;
-        xrOrigin.rotation = endRot;
+        // 페이드 중 즉시 텔레포트 (VR에서 이동 중 회전은 멀미 유발)
+        ApplyTeleport(target);
 
         // 페이드 인
         if (useFade && fadeCanvas != null)
@@ -183,9 +202,8 @@ public class WaypointTeleporter : MonoBehaviour
         if (fadeCanvas != null)
             yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
-        // 순간 이동
-        xrOrigin.position = target.position;
-        xrOrigin.rotation = target.rotation;
+        // 순간 이동 (HMD 회전 보정 포함)
+        ApplyTeleport(target);
 
         // 한 프레임 대기 (렌더링 안정)
         yield return null;
