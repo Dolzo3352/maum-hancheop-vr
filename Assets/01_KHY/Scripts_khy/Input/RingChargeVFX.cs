@@ -112,10 +112,13 @@ public class RingChargeVFX : MonoBehaviour
         if (spawnPoint != null)
         {
             meshInstance.transform.SetPositionAndRotation(spawnPoint.position, spawnPoint.rotation);
+            // 스폰 포인트의 스케일 반영 (링 크기 조절)
+            baseScale = Vector3.Scale(progressMeshPrefab.transform.localScale, spawnPoint.localScale);
         }
         else
         {
             meshInstance.transform.position = target.transform.position + defaultOffset;
+            baseScale = progressMeshPrefab.transform.localScale;
         }
 
         // HDR 색상 설정
