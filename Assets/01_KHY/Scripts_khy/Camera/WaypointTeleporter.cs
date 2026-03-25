@@ -35,8 +35,8 @@ public class WaypointTeleporter : MonoBehaviour
     public float fadeDuration = 0.15f;
 
     [Header("페이드 (선택)")]
-    [Tooltip("없으면 자동 생성")]
-    public CanvasGroup fadeCanvas;
+    [Tooltip("카메라 앞에 배치한 Quad의 Renderer (Unlit 머티리얼 사용)")]
+    public Renderer fadeQuad;
 
     [Header("상태")]
     [SerializeField] private int currentWaypoint = 0;
@@ -58,9 +58,9 @@ public class WaypointTeleporter : MonoBehaviour
         if (waypoints.Length == 0)
             Debug.LogWarning("[WaypointTeleporter] 웨이포인트가 비어있습니다. Inspector에서 할당하세요.");
 
-        // 페이드 캔버스 자동 생성
-        if (useFade && fadeCanvas == null)
-            CreateFadeCanvas();
+        // 페이드 Quad 초기화 (투명하게)
+        if (useFade && fadeQuad != null)
+            SetFadeAlpha(0f);
 
         
         // 시작 위치로 이동
@@ -181,14 +181,14 @@ public class WaypointTeleporter : MonoBehaviour
         isMoving = true;
 
         // 페이드 아웃
-        if (useFade && fadeCanvas != null)
+        if (useFade && fadeQuad != null)
             yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
         // 페이드 중 즉시 텔레포트 (VR에서 이동 중 회전은 멀미 유발)
         ApplyTeleport(target);
 
         // 페이드 인
-        if (useFade && fadeCanvas != null)
+        if (useFade && fadeQuad != null)
             yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
 
         isMoving = false;
@@ -199,7 +199,7 @@ public class WaypointTeleporter : MonoBehaviour
         isMoving = true;
 
         // 페이드 아웃 (검은 화면으로)
-        if (fadeCanvas != null)
+        if (fadeQuad != null)
             yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
 
         // 순간 이동 (HMD 회전 보정 포함)
@@ -209,7 +209,7 @@ public class WaypointTeleporter : MonoBehaviour
         yield return null;
 
         // 페이드 인
-        if (fadeCanvas != null)
+        if (fadeQuad != null)
             yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
 
         isMoving = false;
@@ -221,35 +221,23 @@ public class WaypointTeleporter : MonoBehaviour
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
-            fadeCanvas.alpha = Mathf.Lerp(from, to, elapsed / duration);
+            SetFadeAlpha(Mathf.Lerp(from, to, elapsed / duration));
             yield return null;
         }
-        fadeCanvas.alpha = to;
+        SetFadeAlpha(to);
     }
 
-    void CreateFadeCanvas()
+    private void SetFadeAlpha(float alpha)
     {
-        // 페이드용 검은 화면 자동 생성
-        GameObject canvasObj = new GameObject("FadeCanvas");
-        Canvas canvas = canvasObj.AddComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        canvas.sortingOrder = 999;
+        if (fadeQuad == null) return;
 
-        fadeCanvas = canvasObj.AddComponent<CanvasGroup>();
-        fadeCanvas.alpha = 0f;
-        fadeCanvas.blocksRaycasts = false;
-        fadeCanvas.interactable = false;
+        // alpha 0이면 꺼서 렌더링 비용 절약
+        fadeQuad.enabled = alpha > 0f;
 
-        GameObject imageObj = new GameObject("FadeImage");
-        imageObj.transform.SetParent(canvasObj.transform, false);
-        UnityEngine.UI.Image image = imageObj.AddComponent<UnityEngine.UI.Image>();
-        image.color = Color.black;
-
-        RectTransform rect = image.rectTransform;
-        rect.anchorMin = Vector2.zero;
-        rect.anchorMax = Vector2.one;
-        rect.offsetMin = Vector2.zero;
-        rect.offsetMax = Vector2.zero;
+        var mpb = new MaterialPropertyBlock();
+        fadeQuad.GetPropertyBlock(mpb);
+        mpb.SetColor("_Color", new Color(0f, 0f, 0f, alpha));
+        fadeQuad.SetPropertyBlock(mpb);
     }
 
     // 기즈모로 에디터에서 웨이포인트 시각화
