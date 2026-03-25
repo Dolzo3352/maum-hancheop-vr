@@ -51,6 +51,15 @@ public class NarrativeSequencer : MonoBehaviour
     [Tooltip("Play 시 자동으로 내러티브를 시작할지")]
     [SerializeField] private bool autoStart = true;
 
+    [Header("디버그")]
+    [Tooltip("체크하면 숫자키 1~9로 해당 Stage로 바로 점프\n" +
+             "빌드 시에는 자동으로 비활성화됩니다")]
+    [SerializeField] private bool enableDebugKeys = true;
+
+    [Tooltip("-1이면 처음부터, 0 이상이면 해당 Stage부터 시작\n" +
+             "예: 3이면 Stage 4부터 바로 시작 (0-indexed)")]
+    [SerializeField] private int debugStartStageIndex = -1;
+
     // 현재 진행 중인 Stage 인덱스
     private int currentStageIndex = -1;
 
@@ -88,7 +97,37 @@ public class NarrativeSequencer : MonoBehaviour
     private void Start()
     {
         if (autoStart)
-            StartNarrative();
+        {
+            if (debugStartStageIndex >= 0 && debugStartStageIndex < stages.Count)
+            {
+                Debug.Log($"[NarrativeSequencer] 디버그: Stage {debugStartStageIndex}부터 시작", this);
+                GoToStage(debugStartStageIndex);
+            }
+            else
+            {
+                StartNarrative();
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (!enableDebugKeys) return;
+
+        // 숫자키 1~9 → Stage 0~8로 점프
+        if (UnityEngine.InputSystem.Keyboard.current != null)
+        {
+            var keyboard = UnityEngine.InputSystem.Keyboard.current;
+            if (keyboard.digit1Key.wasPressedThisFrame) GoToStage(0);
+            if (keyboard.digit2Key.wasPressedThisFrame) GoToStage(1);
+            if (keyboard.digit3Key.wasPressedThisFrame) GoToStage(2);
+            if (keyboard.digit4Key.wasPressedThisFrame) GoToStage(3);
+            if (keyboard.digit5Key.wasPressedThisFrame) GoToStage(4);
+            if (keyboard.digit6Key.wasPressedThisFrame) GoToStage(5);
+            if (keyboard.digit7Key.wasPressedThisFrame) GoToStage(6);
+            if (keyboard.digit8Key.wasPressedThisFrame) GoToStage(7);
+            if (keyboard.digit9Key.wasPressedThisFrame) GoToStage(8);
+        }
     }
 
     // ─── 공개 메서드 ───
