@@ -236,7 +236,7 @@ public class WaypointTeleporter : MonoBehaviour
 
         var mpb = new MaterialPropertyBlock();
         fadeQuad.GetPropertyBlock(mpb);
-        mpb.SetColor("_Color", new Color(0f, 0f, 0f, alpha));
+        mpb.SetColor("_BaseColor", new Color(0f, 0f, 0f, alpha));
         fadeQuad.SetPropertyBlock(mpb);
     }
 
