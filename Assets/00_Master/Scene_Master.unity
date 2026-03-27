@@ -3514,19 +3514,19 @@ MonoBehaviour:
   - stepName: "\uB9C8\uC744\uCF1C\uAE30 "
     commands:
     - action: 0
-      groupIndex: 1
+      groupIndex: 3
       intensityMultiplier: 0.9
       overrideFadeDuration: 1
   - stepName: "\uC0B0\uCF1C\uAE30"
     commands:
     - action: 0
-      groupIndex: 2
+      groupIndex: 1
       intensityMultiplier: 0.8
       overrideFadeDuration: 2
   - stepName: "\uD55C\uC57D\uBC29 \uAC15\uC870"
     commands:
     - action: 0
-      groupIndex: 3
+      groupIndex: 4
       intensityMultiplier: 1
       overrideFadeDuration: 0.5
     - action: 2
@@ -3538,7 +3538,7 @@ MonoBehaviour:
       intensityMultiplier: 0.7
       overrideFadeDuration: 1
     - action: 2
-      groupIndex: 2
+      groupIndex: 3
       intensityMultiplier: 0.7
       overrideFadeDuration: 1
   - stepName: "\uC6D0\uB798 \uBC1D\uAE30\uB85C \uBCF5\uADC0"
@@ -3553,6 +3553,10 @@ MonoBehaviour:
       overrideFadeDuration: 1
     - action: 2
       groupIndex: 2
+      intensityMultiplier: 0.8
+      overrideFadeDuration: 1
+    - action: 2
+      groupIndex: 3
       intensityMultiplier: 0.8
       overrideFadeDuration: 1
   defaultFadeInDuration: 1
@@ -38626,9 +38630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c8be76f4ccdfa4e9d0a4405a7cbaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageTransitionHandler
-  fadeMaterial: {fileID: 2100000, guid: 4d3a6008027a4bd488bf850983cc3fdd, type: 2}
   defaultFadeDuration: 0.5
-  fadeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &589123766
 MonoBehaviour:
   m_ObjectHideFlags: 0
