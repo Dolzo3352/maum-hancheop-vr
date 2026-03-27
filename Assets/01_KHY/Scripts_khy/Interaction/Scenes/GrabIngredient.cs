@@ -49,6 +49,7 @@ public class GrabIngredient : MonoBehaviour
     // 참조
     private XRGrabInteractable grabInteractable;
     private Rigidbody rb;
+    private Collider[] colliders;
 
     // 이벤트
     /// <summary>약재가 가마솥에 투입되었을 때</summary>
@@ -63,6 +64,7 @@ public class GrabIngredient : MonoBehaviour
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
         rb = GetComponent<Rigidbody>();
+        colliders = GetComponentsInChildren<Collider>(true);
 
         // 원래 위치 저장 (returnPoint가 있으면 해당 위치, 없으면 자기 위치)
         originalPosition = returnPoint != null ? returnPoint.position : transform.position;
@@ -188,6 +190,11 @@ public class GrabIngredient : MonoBehaviour
     {
         isGrabEnabled = enabled;
         grabInteractable.enabled = enabled;
+
+        // 콜라이더도 함께 제어 (시그널 전 실수 인터랙션 방지)
+        if (colliders != null)
+            foreach (var col in colliders)
+                if (col != null) col.enabled = enabled;
     }
 
     /// <summary>

@@ -326,6 +326,21 @@ public class NarrativeSequencer : MonoBehaviour
         }
     }
 
+    // ─── 디버그 ───
+
+    [ContextMenu("디버그: isTransitioning 상태 확인")]
+    private void DebugTransitionState()
+    {
+        Debug.Log($"[NarrativeSequencer] isTransitioning: {isTransitioning} / currentStageIndex: {currentStageIndex} / stages: {stages.Count}", this);
+    }
+
+    [ContextMenu("디버그: isTransitioning 강제 해제")]
+    private void DebugResetTransitioning()
+    {
+        isTransitioning = false;
+        Debug.Log("[NarrativeSequencer] isTransitioning 강제 해제됨", this);
+    }
+
     // ─── 검증 ───
 
     private bool ValidateReferences()
