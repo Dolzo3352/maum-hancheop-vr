@@ -23,11 +23,18 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class GrabIngredient : MonoBehaviour
 {
     [Header("복귀 설정")]
+    [Tooltip("복귀 위치/회전 기준. 비어있으면 Awake 시점의 자기 위치 사용")]
+    [SerializeField] private Transform returnPoint;
+
     [Tooltip("가마솥 밖에서 놓았을 때 원위치 복귀 시간")]
     [SerializeField] private float returnDuration = 0.5f;
 
     [Tooltip("복귀 애니메이션 커브")]
     [SerializeField] private AnimationCurve returnCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
+    [Header("투입 VFX")]
+    [Tooltip("가마솥에 넣을 때 재생할 파티클 (약재 하위에 배치)")]
+    [SerializeField] private ParticleSystem insertionParticle;
 
     // 상태
     private bool isInserted;
@@ -57,9 +64,9 @@ public class GrabIngredient : MonoBehaviour
         grabInteractable = GetComponent<XRGrabInteractable>();
         rb = GetComponent<Rigidbody>();
 
-        // 원래 위치 저장
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        // 원래 위치 저장 (returnPoint가 있으면 해당 위치, 없으면 자기 위치)
+        originalPosition = returnPoint != null ? returnPoint.position : transform.position;
+        originalRotation = returnPoint != null ? returnPoint.rotation : transform.rotation;
 
         // 그랩 활성화 전까지 물리 비활성 (FlyToTarget과 충돌 방지)
         rb.isKinematic = true;
@@ -122,6 +129,13 @@ public class GrabIngredient : MonoBehaviour
         if (ringInteractable != null)
             ringInteractable.TestExecute(); // IsCompleted = true
 
+        // 투입 VFX 재생 (부모에서 분리하여 약재 비활성화 후에도 유지)
+        if (insertionParticle != null)
+        {
+            insertionParticle.transform.SetParent(null);
+            insertionParticle.Play();
+        }
+
         // 오브젝트 비활성화 (솥에 들어간 느낌)
         gameObject.SetActive(false);
 
@@ -182,8 +196,8 @@ public class GrabIngredient : MonoBehaviour
     /// </summary>
     public void UpdateOriginalPosition()
     {
-        originalPosition = transform.position;
-        originalRotation = transform.rotation;
+        originalPosition = returnPoint != null ? returnPoint.position : transform.position;
+        originalRotation = returnPoint != null ? returnPoint.rotation : transform.rotation;
     }
 
     /// <summary>
