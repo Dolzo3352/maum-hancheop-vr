@@ -46,6 +46,9 @@ public class SequentialInteractionHandler : MonoBehaviour
             yield break;
         }
 
+        // ── 컨트롤러 하이라이트 + 햅틱 ──
+        InteractionEvents.FireActivated();
+
         // ── 인터랙션 활성화 + 아웃라인 활성화 (남은 인터랙터블 전체) ──
         foreach (var interactable in interactionSequence)
         {
@@ -76,6 +79,9 @@ public class SequentialInteractionHandler : MonoBehaviour
         // ── 완료된 아웃라인 비활성화 ──
         var outline = target.GetComponent<InteractableOutline>();
         if (outline != null) outline.Complete();
+
+        // ── 컨트롤러 하이라이트 해제 ──
+        InteractionEvents.FireCompleted();
 
         currentIndex++;
 

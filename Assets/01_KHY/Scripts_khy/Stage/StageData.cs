@@ -38,4 +38,8 @@ public class StageData : ScriptableObject
 
     [Tooltip("이 Stage의 환경음")]
     public AudioClip ambientAudio;
+
+    [Header("자막")]
+    [Tooltip("이 Stage의 자막 데이터 (없으면 자막 없음)")]
+    public SubtitleData subtitleData;
 }

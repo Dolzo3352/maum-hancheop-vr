@@ -33,6 +33,9 @@ public class InteractionSignalHandler : MonoBehaviour
     {
         isWaitingForInteraction = true;
 
+        // ── 컨트롤러 하이라이트 + 햅틱 ──
+        InteractionEvents.FireActivated();
+
         // ── 인터랙션 활성화 (호버 림 반응 시작) ──
         targetInteractable.ActivateInteraction();
 
@@ -60,6 +63,9 @@ public class InteractionSignalHandler : MonoBehaviour
 
         // ── 아웃라인 비활성화 ──
         if (outline != null) outline.Complete();
+
+        // ── 컨트롤러 하이라이트 해제 ──
+        InteractionEvents.FireCompleted();
 
         if (resumeDelay > 0f)
             yield return new WaitForSeconds(resumeDelay);

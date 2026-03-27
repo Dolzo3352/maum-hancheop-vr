@@ -58,9 +58,6 @@ public class WaypointTeleporter : MonoBehaviour
         if (waypoints.Length == 0)
             Debug.LogWarning("[WaypointTeleporter] 웨이포인트가 비어있습니다. Inspector에서 할당하세요.");
 
-        // 페이드 Quad 초기화 (투명하게)
-        if (useFade && fadeQuad != null)
-            SetFadeAlpha(0f);
 
         
         // 시작 위치로 이동
@@ -180,16 +177,13 @@ public class WaypointTeleporter : MonoBehaviour
     {
         isMoving = true;
 
-        // 페이드 아웃
-        if (useFade && fadeQuad != null)
-            yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
+        if (useFade)
+            yield return FadeController.Instance?.FadeOutCoroutine(fadeDuration);
 
-        // 페이드 중 즉시 텔레포트 (VR에서 이동 중 회전은 멀미 유발)
         ApplyTeleport(target);
 
-        // 페이드 인
-        if (useFade && fadeQuad != null)
-            yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
+        if (useFade)
+            yield return FadeController.Instance?.FadeInCoroutine(fadeDuration);
 
         isMoving = false;
     }
@@ -198,46 +192,16 @@ public class WaypointTeleporter : MonoBehaviour
     {
         isMoving = true;
 
-        // 페이드 아웃 (검은 화면으로)
-        if (fadeQuad != null)
-            yield return StartCoroutine(Fade(0f, 1f, fadeDuration));
+        if (useFade)
+            yield return FadeController.Instance?.FadeOutCoroutine(fadeDuration);
 
-        // 순간 이동 (HMD 회전 보정 포함)
         ApplyTeleport(target);
-
-        // 한 프레임 대기 (렌더링 안정)
         yield return null;
 
-        // 페이드 인
-        if (fadeQuad != null)
-            yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
+        if (useFade)
+            yield return FadeController.Instance?.FadeInCoroutine(fadeDuration);
 
         isMoving = false;
-    }
-
-    IEnumerator Fade(float from, float to, float duration)
-    {
-        float elapsed = 0f;
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            SetFadeAlpha(Mathf.Lerp(from, to, elapsed / duration));
-            yield return null;
-        }
-        SetFadeAlpha(to);
-    }
-
-    private void SetFadeAlpha(float alpha)
-    {
-        if (fadeQuad == null) return;
-
-        // alpha 0이면 꺼서 렌더링 비용 절약
-        fadeQuad.enabled = alpha > 0f;
-
-        var mpb = new MaterialPropertyBlock();
-        fadeQuad.GetPropertyBlock(mpb);
-        mpb.SetColor("_BaseColor", new Color(0f, 0f, 0f, alpha));
-        fadeQuad.SetPropertyBlock(mpb);
     }
 
     // 기즈모로 에디터에서 웨이포인트 시각화

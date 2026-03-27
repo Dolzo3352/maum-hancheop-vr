@@ -56,6 +56,9 @@ public class CauldronIngredientHandler : MonoBehaviour
     {
         isWaiting = true;
 
+        // ── 컨트롤러 하이라이트 + 햅틱 ──
+        InteractionEvents.FireActivated();
+
         // ── 링 충전 시스템 비활성화 (그립이 그랩에 사용되어야 하므로) ──
         if (ringChargeSystem != null)
             ringChargeSystem.IsEnabled = false;
@@ -97,6 +100,9 @@ public class CauldronIngredientHandler : MonoBehaviour
         dropZone.OnAllIngredientsInserted -= OnAllInserted;
 
         Log("모든 약재 투입 완료!");
+
+        // ── 컨트롤러 하이라이트 해제 ──
+        InteractionEvents.FireCompleted();
 
         if (resumeDelay > 0f)
             yield return new WaitForSeconds(resumeDelay);

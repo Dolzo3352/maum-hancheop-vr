@@ -19,3 +19,4 @@ MonoBehaviour:
   transitionDuration: 1
   lightingPreset: {fileID: 0}
   ambientAudio: {fileID: 0}
+  subtitleData: {fileID: 11400000, guid: 0258f23381a7f784aa1489232a45f5f9, type: 2}

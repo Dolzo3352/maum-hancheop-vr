@@ -52,6 +52,7 @@ public class RingInteractable : MonoBehaviour
 
     private bool isCompleted;
     private bool isInteractionActive;
+    private Collider[] colliders;
 
     // ─── 프로퍼티 ───
 
@@ -79,12 +80,16 @@ public class RingInteractable : MonoBehaviour
 
     protected virtual void Awake()
     {
-        // Collider가 Trigger가 아닌지 확인 (Raycast 감지용)
-        var col = GetComponent<Collider>();
-        if (col == null)
+        colliders = GetComponentsInChildren<Collider>(true);
+
+        if (colliders.Length == 0)
         {
             Debug.LogError($"[RingInteractable] Collider가 없습니다: {name}", this);
+            return;
         }
+
+        // 시그널 발동 전까지 콜라이더 비활성화
+        SetCollidersEnabled(false);
     }
 
     // ─── RingChargeSystem에서 호출하는 메서드 ───
@@ -143,6 +148,7 @@ public class RingInteractable : MonoBehaviour
     {
         isCompleted = true;
         isInteractionActive = false;
+        SetCollidersEnabled(false);
         OnInteractionDone?.Invoke();
         Debug.Log($"[RingInteractable] 인터랙션 완료: {ringType} → {name}", this);
     }
@@ -156,6 +162,7 @@ public class RingInteractable : MonoBehaviour
     {
         if (isCompleted) return;
         isInteractionActive = true;
+        SetCollidersEnabled(true);
     }
 
     /// <summary>
@@ -165,6 +172,14 @@ public class RingInteractable : MonoBehaviour
     {
         isCompleted = false;
         isInteractionActive = false;
+        SetCollidersEnabled(false);
+    }
+
+    private void SetCollidersEnabled(bool enabled)
+    {
+        if (colliders == null) return;
+        foreach (var col in colliders)
+            if (col != null) col.enabled = enabled;
     }
 
     /// <summary>
