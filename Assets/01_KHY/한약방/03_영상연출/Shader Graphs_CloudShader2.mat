@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_CloudShader
+  m_Name: Shader Graphs_CloudShader2
   m_Shader: {fileID: -6465566751694194690, guid: 13ab942b8a0ed0c48a248903cd6782f6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,6 +24,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _RederTexture:
+        m_Texture: {fileID: 8400000, guid: 6e892bd98be6f3a4fb680aa5da913e02, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_1c81332ee575442dbaf24acceec6c312_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 1b4502f933b0bc94f9675c38d58ee831, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -34,6 +38,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_5903f222ae664306aad3079538c809a7_Texture_1_Texture2D:
         m_Texture: {fileID: 8400000, guid: 51d63873552bcb949b79554f7e224a67, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_c5dfb8ffb3bf425890c23d175c6f9322_Out_0_Texture2D:
+        m_Texture: {fileID: 2800000, guid: c49fc57d1f4131346b99dbc2546e3b97, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -50,6 +58,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Normal: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
