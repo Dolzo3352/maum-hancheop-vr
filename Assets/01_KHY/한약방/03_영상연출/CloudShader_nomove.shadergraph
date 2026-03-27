@@ -845,7 +845,7 @@
         "z": 0.0
     },
     "m_Labels": [],
-    "m_Space": 2
+    "m_Space": 4
 }
 
 {
@@ -1182,9 +1182,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -855.0,
-            "y": 1074.0,
-            "width": 208.0,
+            "x": -854.9999389648438,
+            "y": 1069.0,
+            "width": 207.99993896484376,
             "height": 432.0
         }
     },
@@ -1222,7 +1222,7 @@
         "m_SerializableColors": []
     },
     "m_TextureType": 0,
-    "m_InputSpace": 2,
+    "m_InputSpace": 4,
     "m_NormalOutputSpace": 3
 }
 
@@ -1874,7 +1874,7 @@
         "z": 0.0
     },
     "m_Labels": [],
-    "m_Space": 2
+    "m_Space": 4
 }
 
 {
