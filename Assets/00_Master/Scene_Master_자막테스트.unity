@@ -65068,6 +65068,34 @@ MonoBehaviour:
     morphIntensity: 0.15
     crossfadeDuration: 0.5
     growthParticle: {fileID: 0}
+    shrinkAfterGrow: 0
+    shrinkDelay: 1
+    shrinkTargetMultiplier: 0.57
+    shrinkDuration: 1.5
+    shrinkCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     originalScale: {x: 0, y: 0, z: 0}
   - model: {fileID: 62833448}
     growDuration: 2
@@ -65099,6 +65127,34 @@ MonoBehaviour:
     morphIntensity: 0.2
     crossfadeDuration: 0.5
     growthParticle: {fileID: 0}
+    shrinkAfterGrow: 0
+    shrinkDelay: 1
+    shrinkTargetMultiplier: 0.57
+    shrinkDuration: 1.5
+    shrinkCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     originalScale: {x: 0, y: 0, z: 0}
   - model: {fileID: 407817758}
     growDuration: 3
@@ -65130,6 +65186,34 @@ MonoBehaviour:
     morphIntensity: 0.1
     crossfadeDuration: 1
     growthParticle: {fileID: 0}
+    shrinkAfterGrow: 0
+    shrinkDelay: 1
+    shrinkTargetMultiplier: 0.57
+    shrinkDuration: 1.5
+    shrinkCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     originalScale: {x: 0, y: 0, z: 0}
   showFirstOnAwake: 1
   debugLog: 1
@@ -73965,6 +74049,99 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 403732, guid: 569de702544af5640a5d0a5be8f24786, type: 3}
   m_PrefabInstance: {fileID: 8694611460985869118}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1180183978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1180183981}
+  - component: {fileID: 1180183980}
+  - component: {fileID: 1180183979}
+  m_Layer: 0
+  m_Name: AudioMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1180183979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180183978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 199c72599bc07634fa06a51599bb4efa, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1180183980}
+          m_TargetAssemblyTypeName: BGMBlendManager, Assembly-CSharp
+          m_MethodName: ApplyPreset
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1180183980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180183978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c069f205921de464e932cc4aaf29ea0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BGMBlendManager
+  clipA: {fileID: 8300000, guid: e5ea39c9179e6d3469759fe8b5148eeb, type: 3}
+  clipB: {fileID: 8300000, guid: 4f1e794ea0e98294dae594800f8cca0c, type: 3}
+  clipC: {fileID: 8300000, guid: 027718b1f500f8e40bb375b0eeaee0c5, type: 3}
+  masterVolume: 1
+  defaultFadeDuration: 2
+  playOnStart: 1
+  dontDestroyOnLoad: 1
+  blendPresets:
+  - presetName: 1
+    weightA: 0.4
+    weightB: 0.6
+    weightC: 0
+    fadeDuration: 0
+  - presetName: 2
+    weightA: 0.3
+    weightB: 0.3
+    weightC: 0.4
+    fadeDuration: 0
+--- !u!4 &1180183981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180183978}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 61.24209, y: 15.16768, z: -166.39949}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1181763853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 456810, guid: 2d20d3e774b9b574f8c22333d48eaea0, type: 3}
@@ -117785,6 +117962,8 @@ PlayableDirector:
     value: {fileID: 640662209}
   - key: {fileID: -1041516905767542135, guid: 3b4f6e02127f564439914c285e7560e3, type: 2}
     value: {fileID: 53896000}
+  - key: {fileID: -4859496432605002339, guid: 3b4f6e02127f564439914c285e7560e3, type: 2}
+    value: {fileID: 1180183979}
   m_ExposedReferences:
     m_References:
     - 48def2e4a0143394c94133bf15d01cb2: {fileID: 1954326173}
@@ -128230,7 +128409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -128921,7 +129100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2025350516
 Transform:
   m_ObjectHideFlags: 0
@@ -131234,25 +131413,25 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -728183064651116607, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
-  - key: {fileID: -7949189322297596240, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
-  - key: {fileID: 1400811839395651546, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
-  - key: {fileID: 3621774890505340320, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
-  - key: {fileID: 1996159057963118491, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
-  - key: {fileID: 3709102818109823966, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
-  - key: {fileID: 3899305342079003128, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
-  - key: {fileID: 7211003088712831611, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
-  - key: {fileID: -2652486795914924788, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
-  - key: {fileID: -1442366784066045914, guid: e166bb9bbfb297f489c32f8f4f32aa63, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 2016133380}
   m_ExposedReferences:
     m_References: []
@@ -168640,3 +168819,4 @@ SceneRoots:
   - {fileID: 408755934}
   - {fileID: 1036530200}
   - {fileID: 1865208350}
+  - {fileID: 1180183981}
