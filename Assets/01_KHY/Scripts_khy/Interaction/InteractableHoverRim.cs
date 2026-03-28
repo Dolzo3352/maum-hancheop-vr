@@ -39,6 +39,9 @@ public class InteractableHoverRim : MonoBehaviour
     private static readonly int RimColorID = Shader.PropertyToID("_RimColor");
     private static readonly int RimPowerID = Shader.PropertyToID("_RimPower");
 
+    // 활성화 알파 (OnActivated 시 적용)
+    private const float ActivationAlpha = 25f / 255f;
+
     // 호버 상태 추적
     private RingInteractable leftHovered;
     private RingInteractable rightHovered;
@@ -59,6 +62,32 @@ public class InteractableHoverRim : MonoBehaviour
         public bool shouldBeActive;
         public Color originalRimColor;
         public float originalRimPower;
+    }
+
+    private void Awake()
+    {
+        // 씬 내 모든 RingInteractable 구독 — 활성화 시 알파 제어
+        foreach (var interactable in FindObjectsByType<RingInteractable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            interactable.OnActivated     += () => SetRimAlpha(interactable, ActivationAlpha);
+            interactable.OnInteractionDone += () => SetRimAlpha(interactable, 0f);
+        }
+    }
+
+    private void SetRimAlpha(RingInteractable target, float alpha)
+    {
+        var renderers = target.GetComponentsInChildren<Renderer>();
+        var mpb = new MaterialPropertyBlock();
+
+        foreach (var r in renderers)
+        {
+            if (r == null) continue;
+            r.GetPropertyBlock(mpb);
+            Color c = mpb.GetColor(RimColorID);
+            c.a = alpha;
+            mpb.SetColor(RimColorID, c);
+            r.SetPropertyBlock(mpb);
+        }
     }
 
     private void Update()

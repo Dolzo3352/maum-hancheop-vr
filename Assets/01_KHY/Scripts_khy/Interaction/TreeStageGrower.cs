@@ -47,6 +47,23 @@ public class TreeStageGrower : MonoBehaviour
         [Tooltip("성장 시 재생할 파티클 (Play On Awake 해제)")]
         public ParticleSystem growthParticle;
 
+        [Header("성장 후 축소")]
+        [Tooltip("성장 완료 후 서서히 작아지는 애니메이션 사용 여부")]
+        public bool shrinkAfterGrow = false;
+
+        [Tooltip("성장 완료 후 축소 시작까지 대기 시간 (초)")]
+        public float shrinkDelay = 1.0f;
+
+        [Tooltip("목표 크기 비율 (originalScale 기준). 예: 4/7 ≈ 0.571")]
+        [Range(0.01f, 1f)]
+        public float shrinkTargetMultiplier = 0.57f;
+
+        [Tooltip("축소 애니메이션 시간 (초)")]
+        public float shrinkDuration = 1.5f;
+
+        [Tooltip("축소 커브")]
+        public AnimationCurve shrinkCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+
         // 런타임
         [HideInInspector] public Vector3 originalScale;
     }
@@ -146,6 +163,14 @@ public class TreeStageGrower : MonoBehaviour
         var current = currentStage >= 0 ? stages[currentStage] : null;
         var next = stages[nextIndex];
 
+        // next.model null 체크 — current를 끄기 전에 확인
+        if (next.model == null)
+        {
+            Debug.LogError($"[TreeStageGrower] stages[{nextIndex}].model이 null입니다. Inspector에서 모델을 할당해주세요.", this);
+            isTransitioning = false;
+            yield break;
+        }
+
         Log($"성장: Stage {currentStage} → Stage {nextIndex}");
 
         // 파티클 재생
@@ -223,6 +248,30 @@ public class TreeStageGrower : MonoBehaviour
 
         Log($"Stage {nextIndex} 성장 완료");
         OnStageComplete?.Invoke(nextIndex);
+
+        // 성장 후 축소
+        if (next.shrinkAfterGrow)
+            StartCoroutine(ShrinkAfterGrow(next));
+    }
+
+    private IEnumerator ShrinkAfterGrow(TreeStage stage)
+    {
+        yield return new WaitForSeconds(stage.shrinkDelay);
+
+        Vector3 fromScale = stage.model.transform.localScale;
+        Vector3 toScale   = stage.originalScale * stage.shrinkTargetMultiplier;
+
+        float elapsed = 0f;
+        while (elapsed < stage.shrinkDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / stage.shrinkDuration);
+            stage.model.transform.localScale = Vector3.Lerp(fromScale, toScale, stage.shrinkCurve.Evaluate(t));
+            yield return null;
+        }
+
+        stage.model.transform.localScale = toScale;
+        Log($"축소 완료 → {toScale}");
     }
 
     private void Log(string message)
