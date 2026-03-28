@@ -21,13 +21,21 @@ public class TimelineAnimationBlender : MonoBehaviour
     [SerializeField] private PlayableDirector director;
     [SerializeField] private Animator animator;
 
+    [Tooltip("추가로 상태를 제어할 Animator. 없으면 비워두세요.")]
+    [SerializeField] private Animator secondaryAnimator;
+
     [Header("설정")]
     [SerializeField] private float blendDuration = 0.3f;
 
-    // Idle 전용 그래프
+    // Idle 전용 그래프 — Primary
     private PlayableGraph idleGraph;
     private AnimationPlayableOutput idleOutput;
     private AnimationClipPlayable idlePlayable;
+
+    // Idle 전용 그래프 — Secondary
+    private PlayableGraph idleGraphSecondary;
+    private AnimationPlayableOutput idleOutputSecondary;
+    private AnimationClipPlayable idlePlayableSecondary;
 
     // Timeline weight 제어
     private ScriptPlayable<TimelineWeightBehaviour> weightPlayable;
@@ -44,10 +52,13 @@ public class TimelineAnimationBlender : MonoBehaviour
     /// Timeline → Idle 크로스페이드.
     /// Timeline은 SetSpeed(0)으로 정지되고, Idle 애니메이션이 루프 재생됩니다.
     /// </summary>
-    public void FadeToIdle(AnimationClip idleClip, Action onComplete = null)
+    /// <param name="secondaryIdleClip">secondaryAnimator용 Idle 클립. null이면 secondaryAnimator는 제어하지 않습니다.</param>
+    public void FadeToIdle(AnimationClip idleClip, AnimationClip secondaryIdleClip = null, Action onComplete = null)
     {
         if (blendCoroutine != null) StopCoroutine(blendCoroutine);
         SetupIdleGraph(idleClip);
+        if (secondaryAnimator != null && secondaryIdleClip != null)
+            SetupIdleGraphSecondary(secondaryIdleClip);
         InjectWeightBehaviour();
         blendCoroutine = StartCoroutine(DoFadeToIdle(onComplete));
     }
@@ -102,6 +113,7 @@ public class TimelineAnimationBlender : MonoBehaviour
 
         IsBlendedToIdle = false;
         CleanupIdleGraph();
+        CleanupIdleGraphSecondary();
         blendCoroutine = null;
         onComplete?.Invoke();
     }
@@ -117,6 +129,10 @@ public class TimelineAnimationBlender : MonoBehaviour
         // Idle weight (별도 그래프이므로 직접 설정 가능)
         if (idleGraph.IsValid() && idleOutput.IsOutputValid())
             idleOutput.SetWeight(idleWeight);
+
+        // Secondary Idle weight
+        if (idleGraphSecondary.IsValid() && idleOutputSecondary.IsOutputValid())
+            idleOutputSecondary.SetWeight(idleWeight);
     }
 
     // ─── Timeline 시간 제어 ───
@@ -150,10 +166,31 @@ public class TimelineAnimationBlender : MonoBehaviour
         idleGraph.Play();
     }
 
+    private void SetupIdleGraphSecondary(AnimationClip clip)
+    {
+        CleanupIdleGraphSecondary();
+
+        idleGraphSecondary = PlayableGraph.Create("IdleLoopSecondary");
+        idleGraphSecondary.SetTimeUpdateMode(DirectorUpdateMode.GameTime);
+
+        idlePlayableSecondary = AnimationClipPlayable.Create(idleGraphSecondary, clip);
+        idleOutputSecondary = AnimationPlayableOutput.Create(idleGraphSecondary, "IdleOutputSecondary", secondaryAnimator);
+        idleOutputSecondary.SetSourcePlayable(idlePlayableSecondary);
+        idleOutputSecondary.SetWeight(0f);
+
+        idleGraphSecondary.Play();
+    }
+
     private void CleanupIdleGraph()
     {
         if (idleGraph.IsValid())
             idleGraph.Destroy();
+    }
+
+    private void CleanupIdleGraphSecondary()
+    {
+        if (idleGraphSecondary.IsValid())
+            idleGraphSecondary.Destroy();
     }
 
     // ─── Timeline Weight Behaviour 삽입 ───
@@ -174,7 +211,7 @@ public class TimelineAnimationBlender : MonoBehaviour
         behaviour.weight = 1f;
         behaviour.outputs.Clear();
 
-        // 지정된 Animator의 AnimationPlayableOutput만 수집
+        // 지정된 Animator(들)의 AnimationPlayableOutput만 수집
         // (다른 트랙 — 위치, 약초 등 — 은 weight를 유지)
         for (int i = 0; i < graph.GetOutputCount(); i++)
         {
@@ -183,7 +220,8 @@ public class TimelineAnimationBlender : MonoBehaviour
                 graphOutput.GetPlayableOutputType() == typeof(AnimationPlayableOutput))
             {
                 var animOutput = (AnimationPlayableOutput)graphOutput;
-                if (animOutput.GetTarget() == animator)
+                var target = animOutput.GetTarget();
+                if (target == animator || (secondaryAnimator != null && target == secondaryAnimator))
                 {
                     behaviour.outputs.Add(animOutput);
                 }
@@ -198,6 +236,7 @@ public class TimelineAnimationBlender : MonoBehaviour
     private void OnDestroy()
     {
         CleanupIdleGraph();
+        CleanupIdleGraphSecondary();
     }
 }
 

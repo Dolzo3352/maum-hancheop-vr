@@ -888,6 +888,7 @@ MonoBehaviour:
   ringChargeSystem: {fileID: 1319231635}
   blender: {fileID: 1318608986}
   idleClip: {fileID: 7400000, guid: 417ba9a6f76197e44bed17bd5282d1cf, type: 2}
+  secondaryIdleClip: {fileID: 7400000, guid: 7ddd0dbee69e05049952921cc7fbf110, type: 2}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -2161,7 +2162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5968558176260469523, guid: e553a1533478775438d6eedad2583076, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.46
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 5968558176260469523, guid: e553a1533478775438d6eedad2583076, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2252,6 +2253,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8512658793668503746, guid: e553a1533478775438d6eedad2583076, type: 3}
       insertIndex: -1
       addedObject: {fileID: 518032157}
+    - targetCorrespondingSourceObject: {fileID: 8512658793668503746, guid: e553a1533478775438d6eedad2583076, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 518032158}
   m_SourcePrefab: {fileID: 100100000, guid: e553a1533478775438d6eedad2583076, type: 3}
 --- !u!1001 &30962571
 PrefabInstance:
@@ -3452,8 +3456,33 @@ MonoBehaviour:
   alwaysOnIntensity: 1
   lightGroups: []
   steps: []
-  defaultFadeDuration: 1
-  fadeCurve:
+  defaultFadeInDuration: 1
+  defaultFadeOutDuration: 1
+  fadeInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fadeOutCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -9641,6 +9670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimelineAnimationBlender
   director: {fileID: 74540617}
   animator: {fileID: 0}
+  secondaryAnimator: {fileID: 0}
   blendDuration: 0.3
 --- !u!1 &75282038
 GameObject:
@@ -23485,6 +23515,7 @@ MonoBehaviour:
   ringChargeSystem: {fileID: 1319231635}
   blender: {fileID: 1851491460}
   idleClip: {fileID: 7400000, guid: 7ddd0dbee69e05049952921cc7fbf110, type: 2}
+  secondaryIdleClip: {fileID: 0}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -29197,7 +29228,7 @@ GameObject:
   - component: {fileID: 408755934}
   - component: {fileID: 408755935}
   m_Layer: 5
-  m_Name: Manager
+  m_Name: SubtitleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33043,31 +33074,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6541069778545120486, guid: d7808de65f28a434eb4d455d50ac0f2b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 160.47913
+      value: 52.1578
       objectReference: {fileID: 0}
     - target: {fileID: 6541069778545120486, guid: d7808de65f28a434eb4d455d50ac0f2b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.514687
+      value: 98.81808
       objectReference: {fileID: 0}
     - target: {fileID: 6541069778545120486, guid: d7808de65f28a434eb4d455d50ac0f2b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 185.84528
+      value: -139.61911
       objectReference: {fileID: 0}
     - target: {fileID: 6541069778545120486, guid: d7808de65f28a434eb4d455d50ac0f2b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.028097007
+      value: -0.47463146
       objectReference: {fileID: 0}
     - target: {fileID: 6541069778545120486, guid: d7808de65f28a434eb4d455d50ac0f2b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.062222227
+      value: 0.019806085
       objectReference: {fileID: 0}
     - target: {fileID: 6541069778545120486, guid: d7808de65f28a434eb4d455d50ac0f2b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99766535
+      value: 0.8799618
       objectReference: {fileID: 0}
     - target: {fileID: 6541069778545120486, guid: d7808de65f28a434eb4d455d50ac0f2b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0016691667
+      value: 0.000030102075
       objectReference: {fileID: 0}
     - target: {fileID: 6541069778545120486, guid: d7808de65f28a434eb4d455d50ac0f2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -35228,6 +35259,22 @@ MonoBehaviour:
     originalScale: {x: 0, y: 0, z: 0}
     childOriginalScales: []
   initializeOnAwake: 1
+--- !u!114 &518032158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518032142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778042b9ca018544295010eb99ee536c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionScaleHint
+  scaleTarget: {fileID: 518032151}
+  pulseAmplitude: 0.08
+  pulseSpeed: 2
+  smoothInDuration: 0.5
 --- !u!1001 &518923867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40280,6 +40327,7 @@ MonoBehaviour:
   ringChargeSystem: {fileID: 1319231635}
   blender: {fileID: 1851491460}
   idleClip: {fileID: 7400000, guid: e6352408e809c084ab7c0e737d70c63e, type: 2}
+  secondaryIdleClip: {fileID: 0}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -41261,7 +41309,6 @@ Transform:
   - {fileID: 1725712796}
   - {fileID: 1456336935}
   - {fileID: 1990481838}
-  - {fileID: 1865208350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &637324742 stripped
@@ -56068,6 +56115,7 @@ MonoBehaviour:
   ringChargeSystem: {fileID: 1319231635}
   blender: {fileID: 1851491460}
   idleClip: {fileID: 7400000, guid: e6352408e809c084ab7c0e737d70c63e, type: 2}
+  secondaryIdleClip: {fileID: 0}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -58286,6 +58334,7 @@ MonoBehaviour:
   ringChargeSystem: {fileID: 1319231635}
   blender: {fileID: 1851491460}
   idleClip: {fileID: 7400000, guid: e6352408e809c084ab7c0e737d70c63e, type: 2}
+  secondaryIdleClip: {fileID: 0}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -61313,7 +61362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &943300608
 Transform:
   m_ObjectHideFlags: 0
@@ -66126,12 +66175,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036530197}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1380051553}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1037417123
 GameObject:
@@ -80500,6 +80549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimelineAnimationBlender
   director: {fileID: 1318608985}
   animator: {fileID: 1445993455}
+  secondaryAnimator: {fileID: 480717447}
   blendDuration: 0.3
 --- !u!1001 &1319231634
 PrefabInstance:
@@ -81349,6 +81399,7 @@ MonoBehaviour:
   ringChargeSystem: {fileID: 1319231635}
   blender: {fileID: 1851491460}
   idleClip: {fileID: 7400000, guid: e6352408e809c084ab7c0e737d70c63e, type: 2}
+  secondaryIdleClip: {fileID: 0}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -84768,7 +84819,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 589123764}
-  - {fileID: 1036530200}
   - {fileID: 238325005}
   - {fileID: 1077400105}
   - {fileID: 370790887}
@@ -95593,6 +95643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimelineAnimationBlender
   director: {fileID: 1558153192}
   animator: {fileID: 0}
+  secondaryAnimator: {fileID: 0}
   blendDuration: 0.3
 --- !u!1 &1558938669
 GameObject:
@@ -100287,6 +100338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimelineAnimationBlender
   director: {fileID: 1630499476}
   animator: {fileID: 1282781845}
+  secondaryAnimator: {fileID: 0}
   blendDuration: 0.3
 --- !u!1001 &1630904438
 PrefabInstance:
@@ -104890,7 +104942,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2953139607808694299, guid: 35031b7cca40c794cbfc5299be918c9c, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3055821332484184521, guid: 35031b7cca40c794cbfc5299be918c9c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -117750,6 +117802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimelineAnimationBlender
   director: {fileID: 1851491459}
   animator: {fileID: 0}
+  secondaryAnimator: {fileID: 0}
   blendDuration: 0.3
 --- !u!1001 &1853692270
 PrefabInstance:
@@ -118791,12 +118844,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865208349}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 635433970}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1865208351
 MonoBehaviour:
@@ -128945,6 +128998,7 @@ MonoBehaviour:
   ringChargeSystem: {fileID: 1319231635}
   blender: {fileID: 1318608986}
   idleClip: {fileID: 7400000, guid: 417ba9a6f76197e44bed17bd5282d1cf, type: 2}
+  secondaryIdleClip: {fileID: 0}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -129630,6 +129684,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf3c9352840c1884cbcbe098d60858e1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2035119951}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf3c9352840c1884cbcbe098d60858e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2035119954}
   m_SourcePrefab: {fileID: 100100000, guid: cf3c9352840c1884cbcbe098d60858e1, type: 3}
 --- !u!4 &2035119943 stripped
 Transform:
@@ -129732,6 +129789,22 @@ MonoBehaviour:
   failureHapticDuration: 0.5
   ringChargeSystem: {fileID: 1319231635}
   ringChargeVFX: {fileID: 2130689925}
+--- !u!114 &2035119954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035119944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778042b9ca018544295010eb99ee536c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionScaleHint
+  scaleTarget: {fileID: 2035119943}
+  pulseAmplitude: 0.05
+  pulseSpeed: 1
+  smoothInDuration: 0.5
 --- !u!4 &2035683595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 488510, guid: c9a9ca8e5a2ef854dac294761c152fa7, type: 3}
@@ -133410,6 +133483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimelineAnimationBlender
   director: {fileID: 2105154669}
   animator: {fileID: 0}
+  secondaryAnimator: {fileID: 0}
   blendDuration: 0.3
 --- !u!320 &2105154669
 PlayableDirector:
@@ -135458,6 +135532,7 @@ MonoBehaviour:
   ringChargeSystem: {fileID: 1319231635}
   blender: {fileID: 1318608986}
   idleClip: {fileID: 7400000, guid: 417ba9a6f76197e44bed17bd5282d1cf, type: 2}
+  secondaryIdleClip: {fileID: 0}
   autoEnableRingSystem: 1
   resumeDelay: 0.5
   debugLog: 1
@@ -158443,12 +158518,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1470269938}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4671016163611567479, guid: 0508f67ef23400549914523b23c91255, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1657563308}
     - targetCorrespondingSourceObject: {fileID: 7268965450916413184, guid: 0508f67ef23400549914523b23c91255, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2065727585}
+    - targetCorrespondingSourceObject: {fileID: 4671016163611567479, guid: 0508f67ef23400549914523b23c91255, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1657563308}
   m_SourcePrefab: {fileID: 100100000, guid: 0508f67ef23400549914523b23c91255, type: 3}
 --- !u!23 &6216047265518192956
 MeshRenderer:
@@ -168563,3 +168638,5 @@ SceneRoots:
   - {fileID: 471947822}
   - {fileID: 834381805}
   - {fileID: 408755934}
+  - {fileID: 1036530200}
+  - {fileID: 1865208350}

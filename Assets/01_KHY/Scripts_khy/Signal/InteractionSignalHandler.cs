@@ -13,6 +13,9 @@ public class InteractionSignalHandler : MonoBehaviour
     [Header("대기 애니메이션")]
     [SerializeField] private AnimationClip idleClip;
 
+    [Tooltip("Secondary Animator용 대기 클립 (예: 매 fly). 없으면 비워두세요.")]
+    [SerializeField] private AnimationClip secondaryIdleClip;
+
     [Header("설정")]
     [SerializeField] private bool autoEnableRingSystem = true;
     [SerializeField] private float resumeDelay = 0.5f;
@@ -45,7 +48,7 @@ public class InteractionSignalHandler : MonoBehaviour
 
         // ── Timeline → Idle 크로스페이드 ──
         bool fadeOutDone = false;
-        blender.FadeToIdle(idleClip, () => fadeOutDone = true);
+        blender.FadeToIdle(idleClip, secondaryIdleClip, onComplete: () => fadeOutDone = true);
         while (!fadeOutDone) yield return null;
         Log($"Idle 전환 완료. 대상: {targetInteractable.name}");
 

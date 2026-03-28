@@ -921,6 +921,37 @@ Transform:
   - {fileID: 479881436}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &73826528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73826529}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73826529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73826528}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.028158177, y: 0.05651746, z: 0.9976028, w: 0.028310455}
+  m_LocalPosition: {x: -0.029999986, y: 0.052000027, z: 0.19700001}
+  m_LocalScale: {x: 3.4336562, y: 3.4336557, z: 3.433657}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1944285724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &100922154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 202364688, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -11819,10 +11850,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420373044}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.02815824, y: 0.056517642, z: 0.9976028, w: 0.02831046}
-  m_LocalPosition: {x: -0.029999968, y: 0.052000016, z: 0.19700009}
-  m_LocalScale: {x: 3.4336557, y: 3.4336562, z: 3.4336567}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1944285724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15596,10 +15627,11 @@ Transform:
   m_GameObject: {fileID: 1944285723}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.068, y: -0.092, z: 0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 73826529}
   - {fileID: 1420373047}
   m_Father: {fileID: 1628813897}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

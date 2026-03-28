@@ -70,6 +70,12 @@ public class RingInteractable : MonoBehaviour
 
     // ─── C# 이벤트 ───
 
+    /// <summary>인터랙션 활성화 시 — ActivateInteraction() 호출 시 발행.</summary>
+    public event Action OnActivated;
+
+    /// <summary>충전 시작 시 — OnChargeBegin() 호출 시 발행.</summary>
+    public event Action OnChargeBegun;
+
     /// <summary>인터랙션 실행 시 (코드에서 구독).</summary>
     public event Action OnExecuted;
 
@@ -100,6 +106,7 @@ public class RingInteractable : MonoBehaviour
     public virtual void OnChargeBegin()
     {
         onChargeBegin?.Invoke();
+        OnChargeBegun?.Invoke();
     }
 
     /// <summary>
@@ -163,6 +170,7 @@ public class RingInteractable : MonoBehaviour
         if (isCompleted) return;
         isInteractionActive = true;
         SetCollidersEnabled(true);
+        OnActivated?.Invoke();
     }
 
     /// <summary>

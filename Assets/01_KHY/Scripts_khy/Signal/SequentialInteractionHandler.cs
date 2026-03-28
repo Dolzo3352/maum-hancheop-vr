@@ -60,7 +60,7 @@ public class SequentialInteractionHandler : MonoBehaviour
 
         // ── Timeline → Idle 크로스페이드 ──
         bool fadeOutDone = false;
-        blender.FadeToIdle(idleClip, () => fadeOutDone = true);
+        blender.FadeToIdle(idleClip, onComplete: () => fadeOutDone = true);
         while (!fadeOutDone) yield return null;
 
         Log($"대기 중 [{currentIndex + 1}/{interactionSequence.Count}]: {target.name}");
