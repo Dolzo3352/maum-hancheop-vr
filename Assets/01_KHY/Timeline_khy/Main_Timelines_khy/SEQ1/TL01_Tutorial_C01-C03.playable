@@ -643,7 +643,7 @@ MonoBehaviour:
     m_Start: 29.546242021811505
     m_ClipIn: 0
     m_Asset: {fileID: 3083999421082461894}
-    m_Duration: 4.473988095238095
+    m_Duration: 4.7496007604723225
     m_TimeScale: 0.7
     m_ParentTrack: {fileID: -768751589241270176}
     m_EaseInDuration: 0
@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 9.766666666666667
+  m_Time: 10.188288567836086
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: e187844c4c6161f459397790df17eb7f, type: 2}
@@ -2115,7 +2115,7 @@ MonoBehaviour:
     m_DisplayName: "Take1-1_\uADF8\uB9AC \uBA40\uC9C0 \uC54A\uC740 \uC61B\uB0A0,
       \uB9C8\uC744\uC744 \uC218\uD638\uD574\uC628 \uC2E0\uB839\uC774 \uC788\uC5C8\uC5B4\uC694._2026-03-25"
   - m_Version: 1
-    m_Start: 4.32
+    m_Start: 4.916666666666667
     m_ClipIn: 0
     m_Asset: {fileID: -1609717421013024479}
     m_Duration: 4.24
@@ -2830,7 +2830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
-  m_Time: 9.033333333333333
+  m_Time: 9.65
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: a095ab0c5d5efbc48861a3fbfce784a7, type: 2}

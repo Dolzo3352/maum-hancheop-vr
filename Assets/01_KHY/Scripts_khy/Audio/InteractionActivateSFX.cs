@@ -25,6 +25,9 @@ public class InteractionActivateSFX : MonoBehaviour
     [Tooltip("인터랙션이 가능해질 때 재생할 효과음 클립")]
     [SerializeField] private AudioClip activateClip;
 
+    [Tooltip("활성화 효과음 재생 전 대기 시간 (초)")]
+    [SerializeField] private float activateDelay = 0f;
+
     [Header("완료 SFX")]
     [Tooltip("인터랙션 성공 시 재생할 효과음 클립 (인터랙터블별 다르게 설정 가능)")]
     [SerializeField] private AudioClip completeClip;
@@ -48,6 +51,16 @@ public class InteractionActivateSFX : MonoBehaviour
     }
 
     private void HandleActivated()
+    {
+        if (sfxSource == null || activateClip == null) return;
+
+        if (activateDelay > 0f)
+            Invoke(nameof(PlayActivateClip), activateDelay);
+        else
+            PlayActivateClip();
+    }
+
+    private void PlayActivateClip()
     {
         if (sfxSource != null && activateClip != null)
             sfxSource.PlayOneShot(activateClip);
