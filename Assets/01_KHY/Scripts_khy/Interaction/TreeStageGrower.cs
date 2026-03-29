@@ -80,6 +80,13 @@ public class TreeStageGrower : MonoBehaviour
     [Tooltip("시작 시 첫 번째 단계를 자동 표시")]
     [SerializeField] private bool showFirstOnAwake = true;
 
+    [Header("성장 SFX")]
+    [Tooltip("성장 효과음을 재생할 3D AudioSource (나무 근처에 배치)")]
+    [SerializeField] private AudioSource growAudioSource;
+
+    [Tooltip("성장 시작 시 재생할 효과음 클립")]
+    [SerializeField] private AudioClip growClip;
+
     [Header("디버그")]
     [SerializeField] private bool debugLog = true;
 
@@ -180,6 +187,10 @@ public class TreeStageGrower : MonoBehaviour
         }
 
         Log($"성장: Stage {currentStage} → Stage {nextIndex}");
+
+        // 성장 SFX 재생
+        if (growAudioSource != null && growClip != null)
+            growAudioSource.PlayOneShot(growClip);
 
         // 파티클 재생
         if (next.growthParticle != null)
