@@ -326,7 +326,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 26.566668
+        time: 24.116667
         value: 1
         inSlope: 0
         outSlope: 0
@@ -365,7 +365,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 26.566668
+    m_StopTime: 24.116667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -413,7 +413,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 26.566668
+        time: 24.116667
         value: 1
         inSlope: 0
         outSlope: 0
@@ -1461,33 +1461,6 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
---- !u!114 &-4961214634430973826
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b22792c3b570444eb18cb78c2af3a74, type: 3}
-  m_Name: Audio Track
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AudioTrack
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
-  m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects: []
-  m_TrackProperties:
-    volume: 1
-    stereoPan: 0
-    spatialBlend: 0
 --- !u!114 &-4755606593529448364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2177,7 +2150,7 @@ MonoBehaviour:
     m_Start: 55.00000000000002
     m_ClipIn: 0
     m_Asset: {fileID: -8642677268881011777}
-    m_Duration: 26.56666666666667
+    m_Duration: 24.36666666666664
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3995010636412683694}
     m_EaseInDuration: 0
@@ -2294,7 +2267,6 @@ MonoBehaviour:
   - {fileID: -6443828281214527197}
   - {fileID: 2635583503672076736}
   - {fileID: -768475848251202644}
-  - {fileID: -611566054179467241}
   - {fileID: 6661459400425538238}
   - {fileID: 5720960636831227386}
   - {fileID: -3995010636412683694}
@@ -3090,7 +3062,7 @@ MonoBehaviour:
     m_Start: 55.00000000000002
     m_ClipIn: 0
     m_Asset: {fileID: 574779462219574136}
-    m_Duration: 26.566666666666677
+    m_Duration: 24.36666666666664
     m_TimeScale: 1
     m_ParentTrack: {fileID: -912652429450011428}
     m_EaseInDuration: 0
@@ -3217,50 +3189,6 @@ MonoBehaviour:
   m_Curves: {fileID: 0}
   m_Parent: {fileID: -3645739738669001646}
   m_Children: []
-  m_Clips: []
-  m_Markers:
-    m_Objects: []
-  m_TrackProperties:
-    volume: 1
-    stereoPan: 0
-    spatialBlend: 0
---- !u!114 &-629862391105295574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
-  m_Name: AudioPlayableAsset
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AudioPlayableAsset
-  m_Clip: {fileID: 8300000, guid: a165bd581b8818147b69c3af53431bb0, type: 3}
-  m_Loop: 0
-  m_bufferingTime: 0.1
-  m_ClipProperties:
-    volume: 1
---- !u!114 &-611566054179467241
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b22792c3b570444eb18cb78c2af3a74, type: 3}
-  m_Name: Audio Track (3)
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AudioTrack
-  m_Version: 3
-  m_AnimClip: {fileID: 0}
-  m_Locked: 0
-  m_Muted: 0
-  m_CustomPlayableFullTypename: 
-  m_Curves: {fileID: 0}
-  m_Parent: {fileID: -3645739738669001646}
-  m_Children: []
   m_Clips:
   - m_Version: 1
     m_Start: 33.40000000000001
@@ -3268,7 +3196,7 @@ MonoBehaviour:
     m_Asset: {fileID: -7399608734928675205}
     m_Duration: 20.04999999999999
     m_TimeScale: 0.5999999999999999
-    m_ParentTrack: {fileID: -611566054179467241}
+    m_ParentTrack: {fileID: -768475848251202644}
     m_EaseInDuration: 1
     m_EaseOutDuration: 1
     m_BlendInDuration: -1
@@ -3337,6 +3265,23 @@ MonoBehaviour:
     volume: 1
     stereoPan: 0
     spatialBlend: 0
+--- !u!114 &-629862391105295574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
+  m_Name: AudioPlayableAsset
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.AudioPlayableAsset
+  m_Clip: {fileID: 8300000, guid: a165bd581b8818147b69c3af53431bb0, type: 3}
+  m_Loop: 0
+  m_bufferingTime: 0.1
+  m_ClipProperties:
+    volume: 1
 --- !u!114 &-495112153816232181
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3564,7 +3509,6 @@ MonoBehaviour:
   - {fileID: 7226983131373501925}
   - {fileID: -912652429450011428}
   - {fileID: 9096569209866483380}
-  - {fileID: -4961214634430973826}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
@@ -3731,7 +3675,7 @@ MonoBehaviour:
     m_Start: 62.335049256791045
     m_ClipIn: 0
     m_Asset: {fileID: 1308368635673447217}
-    m_Duration: 19.231617409875646
+    m_Duration: 17.031617409875615
     m_TimeScale: 1
     m_ParentTrack: {fileID: 267206962012753011}
     m_EaseInDuration: 0
@@ -3740,7 +3684,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -5825,25 +5787,7 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -9198,7 +9142,7 @@ MonoBehaviour:
     m_Start: 56.116666666666696
     m_ClipIn: 0
     m_Asset: {fileID: -4755606593529448364}
-    m_Duration: 25.450000000000003
+    m_Duration: 23.249999999999964
     m_TimeScale: 1
     m_ParentTrack: {fileID: 9096569209866483380}
     m_EaseInDuration: 0
