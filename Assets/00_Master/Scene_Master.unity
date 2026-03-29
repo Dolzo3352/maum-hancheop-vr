@@ -86501,7 +86501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionActivateSFX
   sfxSource: {fileID: 1799665545}
-  activateClip: {fileID: 8300000, guid: 2599225badd1bf848b0c143fd5578266, type: 3}
+  activateClip: {fileID: 8300000, guid: 0c5d05f3f45d2224592c39eb5a314af4, type: 3}
   activateDelay: 0
   completeClip: {fileID: 0}
 --- !u!1 &983008267
@@ -101007,7 +101007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionActivateSFX
   sfxSource: {fileID: 569930155}
-  activateClip: {fileID: 8300000, guid: 2599225badd1bf848b0c143fd5578266, type: 3}
+  activateClip: {fileID: 8300000, guid: 0c5d05f3f45d2224592c39eb5a314af4, type: 3}
   activateDelay: 0
   completeClip: {fileID: 8300000, guid: d0055e6640cd1d44cae669442dad8a3d, type: 3}
 --- !u!1 &1179793261
@@ -134298,7 +134298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionActivateSFX
   sfxSource: {fileID: 2125780094}
-  activateClip: {fileID: 8300000, guid: 2599225badd1bf848b0c143fd5578266, type: 3}
+  activateClip: {fileID: 8300000, guid: 0c5d05f3f45d2224592c39eb5a314af4, type: 3}
   activateDelay: 0
   completeClip: {fileID: 8300000, guid: d0055e6640cd1d44cae669442dad8a3d, type: 3}
 --- !u!1 &1555000334
@@ -145204,7 +145204,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -145301,7 +145301,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -146670,7 +146670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionActivateSFX
   sfxSource: {fileID: 1969206805}
-  activateClip: {fileID: 8300000, guid: a3b7b91acdfdbd34cab2578e2d2bd488, type: 3}
+  activateClip: {fileID: 8300000, guid: 2599225badd1bf848b0c143fd5578266, type: 3}
   activateDelay: 0
   completeClip: {fileID: 0}
 --- !u!1 &1652036469
@@ -148365,7 +148365,7 @@ MonoBehaviour:
   inputManager: {fileID: 1319231637}
   leftHandSource: {fileID: 1629860005}
   rightHandSource: {fileID: 1629860004}
-  chargeLoopClip: {fileID: 8300000, guid: 9a767123df07c6f4ebdbf7b7a7e49885, type: 3}
+  chargeLoopClip: {fileID: 8300000, guid: e1eae8443c539a94ea54adb30335ce22, type: 3}
   pitchByProgress: 1
   minPitch: 0.8
   maxPitch: 1.3
