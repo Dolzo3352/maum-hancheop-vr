@@ -36,6 +36,13 @@ public class GrabIngredient : MonoBehaviour
     [Tooltip("가마솥에 넣을 때 재생할 파티클 (약재 하위에 배치)")]
     [SerializeField] private ParticleSystem insertionParticle;
 
+    [Header("투입 SFX")]
+    [Tooltip("효과음을 재생할 오디오 소스 (타임라인과 공유 가능)")]
+    [SerializeField] private AudioSource insertAudioSource;
+
+    [Tooltip("가마솥에 넣을 때 재생할 효과음 클립")]
+    [SerializeField] private AudioClip insertClip;
+
     // 상태
     private bool isInserted;
     private bool isGrabEnabled;
@@ -136,6 +143,12 @@ public class GrabIngredient : MonoBehaviour
         {
             insertionParticle.transform.SetParent(null);
             insertionParticle.Play();
+        }
+
+        // 투입 SFX 재생 (외부 AudioSource에 PlayOneShot → 약재 비활성화 영향 없음)
+        if (insertAudioSource != null && insertClip != null)
+        {
+            insertAudioSource.PlayOneShot(insertClip);
         }
 
         // 오브젝트 비활성화 (솥에 들어간 느낌)

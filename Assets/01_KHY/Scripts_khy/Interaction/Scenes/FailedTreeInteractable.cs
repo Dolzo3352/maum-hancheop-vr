@@ -51,6 +51,13 @@ public class FailedTreeInteractable : RingInteractable
     [Tooltip("실패 시 햅틱 지속 시간")]
     [SerializeField] private float failureHapticDuration = 0.5f;
 
+    [Header("실패 SFX")]
+    [Tooltip("실패 효과음을 재생할 3D AudioSource")]
+    [SerializeField] private AudioSource failAudioSource;
+
+    [Tooltip("실패 시 재생할 효과음 클립")]
+    [SerializeField] private AudioClip failClip;
+
     [Header("참조")]
     [Tooltip("충전을 강제 취소하기 위한 RingChargeSystem 참조")]
     [SerializeField] private RingChargeSystem ringChargeSystem;
@@ -110,6 +117,10 @@ public class FailedTreeInteractable : RingInteractable
 
     private IEnumerator FailureSequence()
     {
+        // 실패 SFX 재생
+        if (failAudioSource != null && failClip != null)
+            failAudioSource.PlayOneShot(failClip);
+
         // 강한 양손 햅틱
         FindXRDevices();
         SendHapticBothHands(failureHapticAmplitude, failureHapticDuration);

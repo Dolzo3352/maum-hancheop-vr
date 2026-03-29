@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -45,6 +46,14 @@ public class InteractableHoverRim : MonoBehaviour
     // 호버 상태 추적
     private RingInteractable leftHovered;
     private RingInteractable rightHovered;
+
+    // ─── 호버 이벤트 ───
+
+    /// <summary>호버 진입 시. (대상 인터랙터블)</summary>
+    public event Action<RingInteractable> OnHoverEnter;
+
+    /// <summary>호버 이탈 시. (대상 인터랙터블)</summary>
+    public event Action<RingInteractable> OnHoverExit;
 
     // 활성 림 이펙트 (대상 → 상태)
     private readonly Dictionary<RingInteractable, RimState> activeRims = new();
@@ -98,15 +107,29 @@ public class InteractableHoverRim : MonoBehaviour
 
         // 이전에 호버됐지만 이제 아닌 것들 비활성화 (다른 손이 여전히 호버 중이면 유지)
         if (leftHovered != null && leftHovered != newLeft && leftHovered != newRight)
+        {
+            OnHoverExit?.Invoke(leftHovered);
             SetRimActive(leftHovered, false);
+        }
         if (rightHovered != null && rightHovered != newRight && rightHovered != newLeft)
+        {
+            OnHoverExit?.Invoke(rightHovered);
             SetRimActive(rightHovered, false);
+        }
 
         // 새로 호버된 것들 활성화
         if (newLeft != null)
+        {
+            if (newLeft != leftHovered)
+                OnHoverEnter?.Invoke(newLeft);
             SetRimActive(newLeft, true);
+        }
         if (newRight != null)
+        {
+            if (newRight != rightHovered && newRight != newLeft)
+                OnHoverEnter?.Invoke(newRight);
             SetRimActive(newRight, true);
+        }
 
         leftHovered = newLeft;
         rightHovered = newRight;
