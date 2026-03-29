@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 using TMPro;
 
 /// <summary>
@@ -33,9 +34,15 @@ public class SubtitleDisplay : MonoBehaviour
 
     // ─── 필드 ───
 
-    [Header("참조")]
+    [Header("참조 (멀티 스테이지 씬)")]
     [SerializeField] private TimelineController timelineController;
     [SerializeField] private NarrativeSequencer narrativeSequencer;
+
+    [Header("참조 (단일 타임라인 씬)")]
+    [Tooltip("TimelineController 없이 PlayableDirector를 직접 참조할 때")]
+    [SerializeField] private PlayableDirector directDirector;
+    [Tooltip("NarrativeSequencer 없을 때 사용할 자막 데이터")]
+    [SerializeField] private SubtitleData initialSubtitleData;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI subtitleText;
@@ -59,6 +66,10 @@ public class SubtitleDisplay : MonoBehaviour
 
         if (canvasGroup != null)
             canvasGroup.alpha = 0f;
+
+        // NarrativeSequencer 없는 단일 타임라인 씬이면 초기 자막 데이터 바로 사용
+        if (narrativeSequencer == null && initialSubtitleData != null)
+            SetSubtitleData(initialSubtitleData);
     }
 
     private void OnEnable()
@@ -98,8 +109,28 @@ public class SubtitleDisplay : MonoBehaviour
 
     private void UpdateSubtitle()
     {
-        if (currentData == null || timelineController == null) return;
-        if (!timelineController.IsPlaying)
+        if (currentData == null) return;
+
+        // 시간 소스 결정: TimelineController 우선, 없으면 직접 Director
+        bool isPlaying;
+        double time;
+
+        if (timelineController != null)
+        {
+            isPlaying = timelineController.IsPlaying;
+            time = timelineController.CurrentTime;
+        }
+        else if (directDirector != null)
+        {
+            isPlaying = directDirector.state == PlayState.Playing;
+            time = directDirector.time;
+        }
+        else
+        {
+            return;
+        }
+
+        if (!isPlaying)
         {
             // 재생 중이 아니면 자막 숨김
             if (lastEntryIndex >= 0)
@@ -109,8 +140,6 @@ public class SubtitleDisplay : MonoBehaviour
             }
             return;
         }
-
-        double time = timelineController.CurrentTime;
         int index = FindEntry(time);
 
         if (index == lastEntryIndex) return;
