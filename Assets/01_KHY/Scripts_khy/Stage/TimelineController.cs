@@ -64,6 +64,13 @@ public class TimelineController : MonoBehaviour
         // 새 Director 구독
         if (currentDirector != null)
         {
+            // Play On Awake로 이미 재생 중이면 정지 (구독 전이라 stopped 이벤트 안전)
+            if (currentDirector.state == PlayState.Playing)
+            {
+                currentDirector.Stop();
+                Debug.Log($"[TimelineController] Play On Awake 감지 → 정지: {currentDirector.gameObject.name}", this);
+            }
+
             currentDirector.stopped += HandleTimelineStopped;
             Debug.Log($"[TimelineController] Director 교체: {currentDirector.gameObject.name}", this);
         }

@@ -34,6 +34,9 @@ public class FadeController : MonoBehaviour
     private Material fadeMaterial;
     private Coroutine fadeCoroutine;
 
+    /// <summary>현재 페이드 진행 중 여부. 코루틴 교체에 안전한 상태 플래그.</summary>
+    public bool IsFading { get; private set; }
+
     // ─── 초기화 ───
 
     private void Awake()
@@ -90,19 +93,17 @@ public class FadeController : MonoBehaviour
         }, d);
     }
 
-    /// <summary>코루틴으로 사용할 때.</summary>
+    /// <summary>코루틴으로 사용할 때. IsFading 플래그로 완료를 감지하여 경쟁 조건에 안전.</summary>
     public IEnumerator FadeOutCoroutine(float duration = -1f)
     {
-        bool done = false;
-        FadeOut(() => done = true, duration);
-        while (!done) yield return null;
+        FadeOut(null, duration);
+        while (IsFading) yield return null;
     }
 
     public IEnumerator FadeInCoroutine(float duration = -1f)
     {
-        bool done = false;
-        FadeIn(() => done = true, duration);
-        while (!done) yield return null;
+        FadeIn(null, duration);
+        while (IsFading) yield return null;
     }
 
     // ─── 내부 ───
@@ -116,6 +117,8 @@ public class FadeController : MonoBehaviour
 
     private IEnumerator FadeRoutine(float from, float to, float duration, Action onComplete)
     {
+        IsFading = true;
+
         float elapsed = 0f;
         while (elapsed < duration)
         {
@@ -129,6 +132,7 @@ public class FadeController : MonoBehaviour
         if (to >= 1f && holdDuration > 0f)
             yield return new WaitForSeconds(holdDuration);
 
+        IsFading = false;
         onComplete?.Invoke();
     }
 

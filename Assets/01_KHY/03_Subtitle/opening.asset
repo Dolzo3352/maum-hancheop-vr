@@ -16,15 +16,15 @@ MonoBehaviour:
   - startTime: 0.51666665
     endTime: 4.556667
     koText: "\uC2E0\uB839\uB2D8 \uC544\uBC84\uC9C0 \uBCD1\uC774 \uB0AB\uAC8C \uD574\uC8FC\uC138\uC694"
-    enText: 
+    enText: 1
   - startTime: 7.4976993
     endTime: 10.6977
     koText: "\uC74C \uC26C\uC6B4 \uBCD1\uC774 \uC544\uB2C8\uB124\uC694"
-    enText: 
+    enText: 2
   - startTime: 10.9
     endTime: 13.59
     koText: "\uC544\uC8FC \uADC0\uD55C \uC57D\uCD08\uAC00 \uD544\uC694\uD558\uACA0\uC5B4\uC694"
-    enText: 
+    enText: 3
   - startTime: 14.45
     endTime: 17.25
     koText: 
