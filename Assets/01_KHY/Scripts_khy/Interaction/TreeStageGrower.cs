@@ -47,6 +47,10 @@ public class TreeStageGrower : MonoBehaviour
         [Tooltip("성장 시 재생할 파티클 (Play On Awake 해제)")]
         public ParticleSystem growthParticle;
 
+        [Header("성장 시작 딜레이")]
+        [Tooltip("GrowToNextStage() 호출 후 실제 성장 시작까지 대기 시간 (초)")]
+        public float growDelay = 0f;
+
         [Header("성장 후 축소")]
         [Tooltip("성장 완료 후 서서히 작아지는 애니메이션 사용 여부")]
         public bool shrinkAfterGrow = false;
@@ -162,6 +166,10 @@ public class TreeStageGrower : MonoBehaviour
 
         var current = currentStage >= 0 ? stages[currentStage] : null;
         var next = stages[nextIndex];
+
+        // 성장 시작 딜레이
+        if (next.growDelay > 0f)
+            yield return new WaitForSeconds(next.growDelay);
 
         // next.model null 체크 — current를 끄기 전에 확인
         if (next.model == null)
