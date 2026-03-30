@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마음 한첩 - VR 인터랙티브 시네마틱</title>
+    <meta name="description" content="Meta Quest 3 기반 VR 디오라마 인터랙티브 내러티브 '마음 한첩' 부천판타스틱어워즈 출품작">
+    <meta property="og:title" content="마음 한첩 - A Remedy for the Heart">
+    <meta property="og:description" content="돌아가는 길이 틀린 길이 아닐 수 있다는 것.">
+    <meta property="og:image" content="">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-389378365"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-389378365');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #3D3D3D;
+            line-height: 1.6;
+        }
+        
+        /* 공통 스타일 */
+        section {
+            width: 100%;
+        }
+        
+        /* 모바일 최적화 */
+        @media (max-width: 600px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            p { font-size: 15px; }
+        }
+        
+        /* 스크롤 페이드 애니메이션 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO SECTION ===== -->
+<section id="hero" style="
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #D4A574 0%, #F5DEB3 50%, #FEFAF0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+">
+
+  <!-- 배경 디오라마 스타일 장식 -->
+  <div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(232, 149, 110, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(139, 115, 85, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  "></div>
+
+  <div style="
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+  ">
+
+    <!-- 로고 -->
+    <div style="
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 30px;
+      background: rgba(212, 165, 116, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: #8B7355;
+    ">
+      🎬
+    </div>
+
+    <!-- 작품명 -->
+    <h1 style="
+      font-size: 48px;
+      font-weight: 700;
+      color: #3D3D3D;
+      margin: 0 0 20px 0;
+      line-height: 1.2;
+    ">
+      마음 한첩
+    </h1>
+
+    <!-- 영문명 -->
+    <p style="
+      font-size: 18px;
+      color: #8B7355;
+      margin: 0 0 30px 0;
+      font-weight: 300;
+      letter-spacing: 2px;
+      font-family: 'Courier New', monospace;
+    ">
+      A Remedy for the Heart
+    </p>
+
+    <!-- 한 줄 설명 -->
+    <p style="
+      font-size: 16px;
+      color: #3D3D3D;
+      margin: 0 0 40px 0;
+      line-height: 1.6;
+      font-weight: 500;
+    ">
+      Meta Quest 3 기반 VR 디오라마 인터랙티브 내러티브
+    </p>
+
+    <!-- CTA 버튼 -->
+    <a href="#story" style="
+      display: inline-block;
+      padding: 14px 40px;
+      background-color: #E8956E;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid #E8956E;
+    " onmouseover="this.style.backgroundColor='#D4794F'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#E8956E'; this.style.transform='scale(1)'">
+      작품 보기
+    </a>
+
+  </div>
+
+  <!-- 스크롤 인디케이터 -->
+  <div style="
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: #8B7355;
+  ">
+    ↓
+  </div>
+
+</section>
+
+
+<!-- ===== STORY SECTION ===== -->
+<section id="story" style="
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #FEFAF0;
+  box-sizing: border-box;
+">
+
+  <div style="
+    max-width: 500px;
+    margin: 0 auto;
+  ">
+
+    <h2 style="
+      font-size: 32px;
+      font-weight: 700;
+      color: #3D3D3D;
+      margin: 0 0 40px 0;
+      text-align: center;
+      position: relative;
+      padding-bottom: 20px;
+    ">
+      이야기
+      <span style="
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: #E8956E;
+        border-radius: 2px;
+      "></span>
+    </h2>
+
+    <div style="margin-bottom: 30px;">
+      <p style="font-size: 16px; color: #3D3D3D; line-height: 1.8; margin: 0; font-weight: 500;">
+        아버지가 아프다.
+      </p>
+      <p style="font-size: 16px; color: #8B7355; line-height: 1.8; margin: 10px 0 0 0;">
+        아이는 약을 받으러 길을 나섰다.
+      </p>
+    </div>
+
+    <div style="height: 2px; background: linear-gradient(to right, transparent, #D4A574, transparent); margin: 40px 0;"></div>
+
+    <div style="margin-bottom: 30px;">
+      <p style="font-size: 16px; color: #3D3D3D; line-height: 1.8; margin: 0; font-weight: 500;">
+        그만 버스를 반대로 타고 말았다.
+      </p>
+      <p style="font-size: 16px; color: #8B7355; line-height: 1.8; margin: 10px 0 0 0;">
+        그 실수가, 뜻밖의 방식으로 아버지에게 닿는 약이 된다.
+      </p>
+    </div>
+
+    <div style="height: 2px; background: linear-gradient(to right, transparent, #D4A574, transparent); margin: 40px 0;"></div>
+
+    <div style="background-color: rgba(232, 149, 110, 0.08); border-left: 4px solid #E8956E; padding: 24px; border-radius: 4px; margin-top: 40px;">
+      <p style="font-size: 18px; color: #3D3D3D; line-height: 1.8; margin: 0; font-weight: 600;">
+        돌아가는 길이 틀린 길이 아닐 수 있다는 것.
+      </p>
+      <p style="font-size: 16px; color: #8B7355; line-height: 1.8; margin: 12px 0 0 0;">
+        진심은 실수조차 의미 있는 자리에 데려다 놓는다는 것.
+      </p>
+    </div>
+
+    <div style="margin-top: 40px; padding: 20px; background-color: rgba(212, 165, 116, 0.06); border-radius: 4px; text-align: center;">
+      <p style="font-size: 15px; color: #8B7355; line-height: 1.8; margin: 0;">
+        지금 돌아가고 있다고 느끼는 사람에게,<br/>
+        그 길이 헛된 것이 아니라고.<br/>
+        당신이 걷는 방향은, 분명 맞닿을 곳이 있다고.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== DIORAMA SECTION ===== -->
+<section id="diorama" style="
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #FEFAF0 0%, #F5DEB3 100%);
+  box-sizing: border-box;
+">
+
+  <div style="max-width: 500px; margin: 0 auto;">
+
+    <h2 style="font-size: 32px; font-weight: 700; color: #3D3D3D; margin: 0 0 50px 0; text-align: center; position: relative; padding-bottom: 20px;">
+      왜 VR인가?
+      <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: #E8956E; border-radius: 2px;"></span>
+    </h2>
+
+    <!-- 포인트 1 -->
+    <div style="margin-bottom: 40px; padding: 24px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2);">
+      <div style="display: flex; gap: 16px; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 48px; height: 48px; background-color: #E8956E; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🎯</div>
+        <div>
+          <h3 style="font-size: 18px; font-weight: 700; color: #3D3D3D; margin: 0 0 8px 0;">제약을 형식의 언어로</h3>
+          <p style="font-size: 14px; color: #8B7355; line-height: 1.6; margin: 0;">VR은 자유도가 높지만, 동시에 한계가 있다. 우리는 이 역설을 정면으로 받아들이고, 제약을 창의적 선택으로 변환했다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 포인트 2 -->
+    <div style="margin-bottom: 40px; padding: 24px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2);">
+      <div style="display: flex; gap: 16px; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 48px; height: 48px; background-color: #D4A574; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">👁️</div>
+        <div>
+          <h3 style="font-size: 18px; font-weight: 700; color: #3D3D3D; margin: 0 0 8px 0;">디오라마 뷰: 신령의 시점</h3>
+          <p style="font-size: 14px; color: #8B7355; line-height: 1.6; margin: 0;">천계와 지하를 가로지르는 넓은 시야. 세계 전체를 한눈에 품는 감각 속에서 이야기를 경험한다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 포인트 3 -->
+    <div style="margin-bottom: 40px; padding: 24px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2);">
+      <div style="display: flex; gap: 16px; align-items: flex-start;">
+        <div style="flex-shrink: 0; width: 48px; height: 48px; background-color: #8B7355; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🌀</div>
+        <div>
+          <h3 style="font-size: 18px; font-weight: 700; color: #3D3D3D; margin: 0 0 8px 0;">몰입과 초월</h3>
+          <p style="font-size: 14px; color: #8B7355; line-height: 1.6; margin: 0;">시점 전환을 통해 관객은 단순 관찰자가 아닌, 이야기 안의 존재로 깊이 몰입한다. 현실에서 불가능한 감각을 체험한다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 50px; padding: 28px; background-color: rgba(232, 149, 110, 0.15); border-left: 4px solid #E8956E; border-radius: 4px;">
+      <p style="font-size: 15px; color: #3D3D3D; line-height: 1.8; margin: 0; font-weight: 500;">
+        <strong style="color: #8B7355;">VR만의 가능성:</strong><br/>
+        현실에서 불가능한 시점 전환, 디오라마 세상 속으로 직접 들어가는 감각, VR이기에 가능한 공간, 그리고 VR이기에 유효한 위로.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== INTERACTION SECTION ===== -->
+<section id="interaction" style="
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #FEFAF0;
+  box-sizing: border-box;
+">
+
+  <div style="max-width: 500px; margin: 0 auto;">
+
+    <h2 style="font-size: 32px; font-weight: 700; color: #3D3D3D; margin: 0 0 50px 0; text-align: center; position: relative; padding-bottom: 20px;">
+      인터랙션
+      <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: #E8956E; border-radius: 2px;"></span>
+    </h2>
+
+    <div style="margin-bottom: 40px; padding: 24px; background-color: rgba(212, 165, 116, 0.08); border-radius: 8px; border-left: 4px solid #D4A574;">
+      <h3 style="font-size: 18px; font-weight: 700; color: #3D3D3D; margin: 0 0 12px 0;">1. 타임라인 분기</h3>
+      <p style="font-size: 14px; color: #8B7355; line-height: 1.6; margin: 0;">관객이 선택한 경로에 따라 이야기가 갈라진다. 여러 번 경험해 다양한 엔딩을 발견할 수 있다.</p>
+    </div>
+
+    <div style="margin-bottom: 40px; padding: 24px; background-color: rgba(232, 149, 110, 0.08); border-radius: 8px; border-left: 4px solid #E8956E;">
+      <h3 style="font-size: 18px; font-weight: 700; color: #3D3D3D; margin: 0 0 12px 0;">2. 환경 변화</h3>
+      <p style="font-size: 14px; color: #8B7355; line-height: 1.6; margin: 0;">스크롤/시점 조작에 따라 배경과 세계가 변한다. 계절, 시간대, 지형의 변화가 은유적 연출을 담아낸다.</p>
+    </div>
+
+    <div style="margin-bottom: 40px; padding: 24px; background-color: rgba(139, 115, 85, 0.08); border-radius: 8px; border-left: 4px solid #8B7355;">
+      <h3 style="font-size: 18px; font-weight: 700; color: #3D3D3D; margin: 0 0 12px 0;">3. 세부 상호작용</h3>
+      <p style="font-size: 14px; color: #8B7355; line-height: 1.6; margin: 0;">VR 공간 내 객체와의 직관적 상호작용. 손 트래킹을 통해 이야기의 미세한 감정 변화를 조종할 수 있다.</p>
+    </div>
+
+    <div style="margin-top: 50px; padding: 20px; background-color: rgba(212, 165, 116, 0.06); border-radius: 4px; text-align: center;">
+      <p style="font-size: 14px; color: #8B7355; line-height: 1.7; margin: 0;">
+        모든 인터랙션은 이야기의 테마를 강화한다.<br/>
+        직관적이면서도 의미 깊은 경험.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== GALLERY SECTION ===== -->
+<section id="gallery" style="
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #FEFAF0 0%, #F5DEB3 100%);
+  box-sizing: border-box;
+">
+
+  <div style="max-width: 500px; margin: 0 auto;">
+
+    <h2 style="font-size: 32px; font-weight: 700; color: #3D3D3D; margin: 0 0 50px 0; text-align: center; position: relative; padding-bottom: 20px;">
+      스크린샷
+      <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: #E8956E; border-radius: 2px;"></span>
+    </h2>
+
+    <div style="margin-bottom: 24px; border-radius: 12px; overflow: hidden; background-color: rgba(212, 165, 116, 0.1); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #8B7355; font-size: 14px; text-align: center; padding: 20px; min-height: 200px;">
+      <div style="font-weight: 500;">🖼️ 스크린샷 1<br/>(products/마음한첩/images/ 에 이미지 추가 필요)</div>
+    </div>
+
+    <div style="margin-bottom: 24px; border-radius: 12px; overflow: hidden; background-color: rgba(232, 149, 110, 0.1); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #E8956E; font-size: 14px; text-align: center; padding: 20px; min-height: 200px;">
+      <div style="font-weight: 500;">🖼️ 스크린샷 2<br/>(products/마음한첩/images/ 에 이미지 추가 필요)</div>
+    </div>
+
+    <div style="margin-bottom: 40px; border-radius: 12px; overflow: hidden; background-color: rgba(139, 115, 85, 0.1); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: #8B7355; font-size: 14px; text-align: center; padding: 20px; min-height: 200px;">
+      <div style="font-weight: 500;">🖼️ 스크린샷 3<br/>(products/마음한첩/images/ 에 이미지 추가 필요)</div>
+    </div>
+
+    <div style="padding: 20px; background-color: rgba(212, 165, 116, 0.06); border-radius: 4px; text-align: center; border-left: 3px solid #D4A574;">
+      <p style="font-size: 13px; color: #8B7355; margin: 0; line-height: 1.6;">
+        💡 <strong>이미지 추가 방법:</strong><br/>
+        <code style="background: rgba(255,255,255,0.5); padding: 2px 6px; border-radius: 3px;">products/마음한첩/images/</code> 폴더에 스크린샷을 넣으면 자동으로 표시됩니다.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== FAQ SECTION ===== -->
+<section id="faq" style="
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #FEFAF0;
+  box-sizing: border-box;
+">
+
+  <div style="max-width: 500px; margin: 0 auto;">
+
+    <h2 style="font-size: 32px; font-weight: 700; color: #3D3D3D; margin: 0 0 50px 0; text-align: center; position: relative; padding-bottom: 20px;">
+      자주 묻는 질문
+      <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: #E8956E; border-radius: 2px;"></span>
+    </h2>
+
+    <details style="margin-bottom: 16px; padding: 20px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); cursor: pointer;" open>
+      <summary style="font-size: 16px; font-weight: 600; color: #3D3D3D; cursor: pointer; user-select: none;">Q. Meta Quest 3이 필요한가요?</summary>
+      <p style="font-size: 14px; color: #8B7355; margin: 12px 0 0 0; line-height: 1.6;">네, 이 작품은 Meta Quest 3 플랫폼을 위해 제작되었습니다. Quest 3의 손 트래킹과 고화질 디스플레이를 활용하여 최적의 경험을 제공합니다.</p>
+    </details>
+
+    <details style="margin-bottom: 16px; padding: 20px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); cursor: pointer;">
+      <summary style="font-size: 16px; font-weight: 600; color: #3D3D3D; cursor: pointer; user-select: none;">Q. 플레이 타임은 얼마나 되나요?</summary>
+      <p style="font-size: 14px; color: #8B7355; margin: 12px 0 0 0; line-height: 1.6;">약 10~15분 정도 소요됩니다. 여러 경로와 엔딩이 있어 반복 경험으로 더 깊이 있는 감정을 느낄 수 있습니다.</p>
+    </details>
+
+    <details style="margin-bottom: 16px; padding: 20px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); cursor: pointer;">
+      <summary style="font-size: 16px; font-weight: 600; color: #3D3D3D; cursor: pointer; user-select: none;">Q. 이 작품은 어디서 볼 수 있나요?</summary>
+      <p style="font-size: 14px; color: #8B7355; margin: 12px 0 0 0; line-height: 1.6;">현재 부천판타스틱어워즈에 출품 중입니다. 영화제 상영 외에도 VR 전시, 아트 갤러리, 국제 영화제 등에서 공개될 예정입니다.</p>
+    </details>
+
+    <details style="margin-bottom: 40px; padding: 20px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); cursor: pointer;">
+      <summary style="font-size: 16px; font-weight: 600; color: #3D3D3D; cursor: pointer; user-select: none;">Q. 디오라마 뷰의 장점이 뭔가요?</summary>
+      <p style="font-size: 14px; color: #8B7355; margin: 12px 0 0 0; line-height: 1.6;">디오라마 뷰는 관객이 신령의 시점에서 세계 전체를 조망하면서도, 동시에 이야기 안으로 몰입하게 합니다. 현실에서 불가능한 이 시점 전환이 작품의 핵심입니다.</p>
+    </details>
+
+  </div>
+
+</section>
+
+
+<!-- ===== CREDITS SECTION ===== -->
+<section id="credits" style="
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #FEFAF0 0%, #F5DEB3 100%);
+  box-sizing: border-box;
+">
+
+  <div style="max-width: 500px; margin: 0 auto;">
+
+    <h2 style="font-size: 32px; font-weight: 700; color: #3D3D3D; margin: 0 0 50px 0; text-align: center; position: relative; padding-bottom: 20px;">
+      팀
+      <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: #E8956E; border-radius: 2px;"></span>
+    </h2>
+
+    <div style="padding: 24px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); margin-bottom: 20px;">
+      <h3 style="font-size: 16px; font-weight: 700; color: #8B7355; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 1px;">감독</h3>
+      <p style="font-size: 15px; color: #3D3D3D; margin: 0; font-weight: 500;">(제작팀 정보 업데이트 필요)</p>
+    </div>
+
+    <div style="padding: 24px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); margin-bottom: 20px;">
+      <h3 style="font-size: 16px; font-weight: 700; color: #8B7355; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 1px;">팀 구성</h3>
+      <ul style="font-size: 14px; color: #8B7355; margin: 0; padding-left: 20px; line-height: 1.8;">
+        <li style="margin-bottom: 8px;">예술 감독</li>
+        <li style="margin-bottom: 8px;">프로그래머</li>
+        <li style="margin-bottom: 8px;">디자이너</li>
+        <li style="margin-bottom: 8px;">음향 디자인</li>
+        <li>프로듀서</li>
+      </ul>
+    </div>
+
+    <div style="padding: 24px; background-color: rgba(255, 255, 255, 0.6); border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2);">
+      <h3 style="font-size: 16px; font-weight: 700; color: #8B7355; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 1px;">기술 스펙</h3>
+      <ul style="font-size: 14px; color: #8B7355; margin: 0; padding-left: 20px; line-height: 1.8;">
+        <li style="margin-bottom: 8px;"><strong>플랫폼:</strong> Meta Quest 3</li>
+        <li style="margin-bottom: 8px;"><strong>엔진:</strong> Unreal / Unity</li>
+        <li style="margin-bottom: 8px;"><strong>시점:</strong> Diorama View</li>
+        <li><strong>상호작용:</strong> 분기형 내러티브</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 50px; padding: 20px; text-align: center; border-top: 1px solid rgba(212, 165, 116, 0.3);">
+      <p style="font-size: 13px; color: #8B7355; margin: 0;">
+        마음 한첩<br/>
+        VR Interactive Cinematic Experience<br/>
+        부천판타스틱어워즈 출품작
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===== CTA SECTION ===== -->
+<section id="cta" style="
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #D4A574 0%, #E8956E 100%);
+  box-sizing: border-box;
+">
+
+  <div style="max-width: 500px; margin: 0 auto; text-align: center;">
+
+    <h2 style="font-size: 32px; font-weight: 700; color: white; margin: 0 0 20px 0; text-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      함께하기
+    </h2>
+
+    <p style="font-size: 16px; color: rgba(255, 255, 255, 0.95); margin: 0 0 40px 0; line-height: 1.6;">
+      이 작품에 관심이 있으시다면 아래 방법으로 연락해주세요.
+    </p>
+
+    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px;">
+
+      <a href="mailto:contact@example.com?subject=마음%20한첩%20시연%20요청" style="
+        display: block;
+        padding: 16px 32px;
+        background-color: white;
+        color: #D4A574;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+      " onmouseover="this.style.backgroundColor='#FEFAF0'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='white'; this.style.transform='translateY(0)'">
+        시연 요청
+      </a>
+
+      <a href="mailto:contact@example.com?subject=마음%20한첩%20제작%20문의" style="
+        display: block;
+        padding: 16px 32px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+      " onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(0)'">
+        제작팀 문의
+      </a>
+
+      <a href="mailto:contact@example.com?subject=마음%20한첩%20제휴%20제의" style="
+        display: block;
+        padding: 16px 32px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+      " onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(0)'">
+        제휴/상영 제의
+      </a>
+
+    </div>
+
+    <div style="padding: 24px; background-color: rgba(255, 255, 255, 0.1); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.3);">
+      <p style="font-size: 13px; color: rgba(255, 255, 255, 0.9); margin: 0; line-height: 1.6;">
+        <strong>부천판타스틱어워즈 출품작</strong><br/>
+        VR Interactive Cinematic Experience<br/>
+        Meta Quest 3 기반
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- 애니메이션 정의 -->
+<style>
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+</style>
+
+</body>
+</html>

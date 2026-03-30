@@ -1,0 +1,117 @@
+<!-- CTA Section 컴포넌트 -->
+<!-- Call-To-Action: 제출/제휴/문의 -->
+
+<section id="cta" style="
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #D4A574 0%, #E8956E 100%);
+  box-sizing: border-box;
+">
+
+  <div style="
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  ">
+
+    <!-- 타이틀 -->
+    <h2 style="
+      font-size: 32px;
+      font-weight: 700;
+      color: white;
+      margin: 0 0 20px 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    ">
+      함께하기
+    </h2>
+
+    <!-- 설명 -->
+    <p style="
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.95);
+      margin: 0 0 40px 0;
+      line-height: 1.6;
+    ">
+      이 작품에 관심이 있으시다면 아래 방법으로 연락해주세요.
+    </p>
+
+    <!-- CTA 버튼들 -->
+    <div style="
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    ">
+
+      <!-- 버튼 1: 시연 요청 -->
+      <a href="mailto:contact@example.com?subject=마음%20한첩%20시연%20요청" style="
+        display: block;
+        padding: 16px 32px;
+        background-color: white;
+        color: #D4A574;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+      " onmouseover="this.style.backgroundColor='#FEFAF0'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='white'; this.style.transform='translateY(0)'">
+        시연 요청
+      </a>
+
+      <!-- 버튼 2: 제작 문의 -->
+      <a href="mailto:contact@example.com?subject=마음%20한첩%20제작%20문의" style="
+        display: block;
+        padding: 16px 32px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+      " onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(0)'">
+        제작팀 문의
+      </a>
+
+      <!-- 버튼 3: 제휴/상영 -->
+      <a href="mailto:contact@example.com?subject=마음%20한첩%20제휴%20제의" style="
+        display: block;
+        padding: 16px 32px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid white;
+      " onmouseover="this.style.backgroundColor='rgba(255, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.backgroundColor='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(0)'">
+        제휴/상영 제의
+      </a>
+
+    </div>
+
+    <!-- 추가 정보 -->
+    <div style="
+      padding: 24px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    ">
+      <p style="
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+        line-height: 1.6;
+      ">
+        <strong>부천판타스틱어워즈 출품작</strong><br/>
+        VR Interactive Cinematic Experience<br/>
+        Meta Quest 3 기반
+      </p>
+    </div>
+
+  </div>
+
+</section>
