@@ -11467,7 +11467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &892767676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15259,8 +15259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f0e3949cd5ef2814a81f375d73c17ad3, type: 2}
-  m_sharedMaterial: {fileID: 6662527600972534680, guid: f0e3949cd5ef2814a81f375d73c17ad3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8dc241669734e9a4d9be6239f7efb1f6, type: 2}
+  m_sharedMaterial: {fileID: -9204646679183575382, guid: 8dc241669734e9a4d9be6239f7efb1f6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -21373,7 +21373,7 @@ MonoBehaviour:
   timelineController: {fileID: 0}
   narrativeSequencer: {fileID: 0}
   directDirector: {fileID: 439246578}
-  initialSubtitleData: {fileID: 11400000, guid: 4febcc49c57acbe41977c4d2d1bf6814, type: 2}
+  initialSubtitleData: {fileID: 11400000, guid: 160eee4bb61472c4c8714659996e459c, type: 2}
   subtitleText: {fileID: 1271516875}
   canvasGroup: {fileID: 892767677}
   fadeSpeed: 5
@@ -24778,7 +24778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2118148810
 Transform:
   m_ObjectHideFlags: 0
