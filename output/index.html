@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마음 한첩 — A Remedy for the Heart</title>
+    <meta name="description" content="Meta Quest 3 기반 VR 디오라마 인터랙티브 내러티브. 부천판타스틱어워즈 출품작.">
+    <meta property="og:title" content="마음 한첩 — A Remedy for the Heart">
+    <meta property="og:description" content="돌아가는 길이 틀린 길이 아닐 수 있다는 것.">
+    <meta property="og:image" content="">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-389378365"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-389378365');
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F7F0E6;
+            --cream-dark: #EDD9B8;
+            --amber: #C4733B;
+            --amber-light: #E8A87C;
+            --brown-deep: #2C2420;
+            --brown: #6B4E3D;
+            --brown-light: #9B7B6A;
+            --white-warm: #FEFBF5;
+            --border: rgba(196, 115, 59, 0.2);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, sans-serif;
+            color: var(--brown-deep);
+            background-color: var(--white-warm);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .section-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--amber);
+            text-align: center;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--brown-deep);
+            text-align: center;
+            margin-bottom: 16px;
+            letter-spacing: 0.04em;
+        }
+
+        .section-rule {
+            width: 40px;
+            height: 1px;
+            background: var(--amber);
+            margin: 0 auto 64px;
+        }
+
+        @media (max-width: 600px) {
+            .section-inner { padding: 0 20px; }
+            .section-title { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- ===== HERO ===== -->
+<section style="
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(160deg, #E8D0A8 0%, #F0E2C8 40%, #F7F0E6 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px 80px;
+    position: relative;
+    overflow: hidden;
+">
+    <!-- subtle texture overlay -->
+    <div style="
+        position: absolute; inset: 0;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.75%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3CfeColorMatrix type=%22saturate%22 values=%220%22/%3E%3C/filter%3E%3Crect width=%22300%22 height=%22300%22 filter=%22url(%23n)%22 opacity=%220.04%22/%3E%3C/svg%3E');
+        pointer-events: none;
+    "></div>
+
+    <div style="position: relative; z-index: 1; max-width: 640px;">
+
+        <!-- Festival badge -->
+        <div style="
+            display: inline-block;
+            margin-bottom: 48px;
+            padding: 8px 22px;
+            border: 1px solid rgba(196, 115, 59, 0.4);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--amber);
+        ">부천판타스틱어워즈 출품작 &nbsp;·&nbsp; BIFAN 2025</div>
+
+        <!-- Title -->
+        <h1 style="
+            font-family: 'Noto Serif KR', serif;
+            font-size: clamp(56px, 11vw, 88px);
+            font-weight: 300;
+            color: #2C2420;
+            letter-spacing: 0.06em;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        ">마음 한첩</h1>
+
+        <!-- English title -->
+        <p style="
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(17px, 3vw, 24px);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--brown-light);
+            letter-spacing: 0.14em;
+            margin-bottom: 36px;
+        ">A Remedy for the Heart</p>
+
+        <!-- Thin rule -->
+        <div style="width: 40px; height: 1px; background: var(--amber); margin: 0 auto 36px;"></div>
+
+        <!-- Platform tag -->
+        <p style="
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            color: var(--brown-light);
+            margin-bottom: 56px;
+            font-weight: 300;
+        ">Meta Quest 3 &nbsp;·&nbsp; VR 디오라마 인터랙티브 내러티브</p>
+
+        <!-- CTA button -->
+        <a href="#story" style="
+            display: inline-block;
+            padding: 14px 40px;
+            background: transparent;
+            color: var(--amber);
+            text-decoration: none;
+            border: 1px solid var(--amber);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        " onmouseover="this.style.background='rgba(196,115,59,0.08)'" onmouseout="this.style.background='transparent'">
+            작품 보기
+        </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div style="
+        position: absolute;
+        bottom: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        opacity: 0.5;
+    ">
+        <span style="
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brown-light);
+        ">Scroll</span>
+        <div style="width: 1px; height: 44px; background: linear-gradient(to bottom, var(--amber-light), transparent);"></div>
+    </div>
+</section>
+
+
+<!-- ===== STORY ===== -->
+<section id="story" style="padding: 112px 0; background: var(--white-warm);">
+    <div class="section-inner">
+
+        <span class="section-label reveal">Story</span>
+        <h2 class="section-title reveal">이야기</h2>
+        <div class="section-rule reveal"></div>
+
+        <!-- Story lines -->
+        <div style="
+            font-family: 'Noto Serif KR', serif;
+            font-size: 18px;
+            line-height: 2.1;
+            color: var(--brown-deep);
+            text-align: center;
+            margin-bottom: 56px;
+        " class="reveal">
+            <p style="margin-bottom: 16px;">아버지가 아프다.</p>
+            <p style="margin-bottom: 16px; color: var(--brown-light);">아이는 약을 받으러 길을 나섰다가,</p>
+            <p>그만 버스를 반대로 타고 말았다.</p>
+        </div>
+
+        <!-- Faint divider -->
+        <div style="
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(196,115,59,0.25), transparent);
+            margin: 0 0 56px;
+        " class="reveal"></div>
+
+        <!-- Blockquote -->
+        <blockquote style="
+            font-family: 'Noto Serif KR', serif;
+            font-size: 17px;
+            line-height: 2.1;
+            color: var(--brown-deep);
+            text-align: center;
+            border: 1px solid rgba(196,115,59,0.18);
+            padding: 48px 40px;
+            background: linear-gradient(135deg, rgba(237,217,184,0.25) 0%, rgba(232,168,124,0.08) 100%);
+            position: relative;
+            margin-bottom: 56px;
+        " class="reveal">
+            <div style="
+                position: absolute; top: 16px; left: 28px;
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 72px; font-weight: 300;
+                color: rgba(196,115,59,0.12); line-height: 1;
+                user-select: none;
+            ">"</div>
+            <p style="font-weight: 600; margin-bottom: 20px;">그 실수가, 뜻밖의 방식으로 아버지에게 닿는 약이 된다.</p>
+            <p style="font-size: 16px; color: var(--brown); margin-bottom: 8px;">돌아가는 길이 틀린 길이 아닐 수 있다는 것.</p>
+            <p style="font-size: 16px; color: var(--brown);">진심은 실수조차 의미 있는 자리에 데려다 놓는다는 것.</p>
+        </blockquote>
+
+        <!-- Outro -->
+        <div style="
+            font-family: 'Noto Serif KR', serif;
+            font-size: 16px;
+            line-height: 2.3;
+            color: var(--brown-light);
+            text-align: center;
+        " class="reveal">
+            <p>그래서 이 작품은 조용히 말을 건넨다.</p>
+            <p style="font-weight: 500; color: var(--brown); margin: 8px 0;">지금 돌아가고 있다고 느끼는 사람에게,</p>
+            <p style="margin-bottom: 8px;">그 길이 헛된 것이 아니라고.</p>
+            <p style="font-weight: 600; color: var(--brown-deep);">당신이 걷는 방향은, 분명 맞닿을 곳이 있다고.</p>
+        </div>
+
+        <!-- Audience note -->
+        <div style="
+            margin-top: 56px;
+            padding: 28px 32px;
+            background: rgba(196,115,59,0.05);
+            border-left: 2px solid var(--amber);
+            font-family: 'Noto Serif KR', serif;
+            font-size: 15px;
+            line-height: 2;
+            color: var(--brown);
+        " class="reveal">
+            따뜻한 세계관과 정겨운 비주얼 속에서, 관객은 잠시 일상을 내려놓고<br>
+            작은 위로 하나를 조용히 안고 돌아갈 수 있다.
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WHY VR ===== -->
+<section id="why-vr" style="
+    padding: 112px 0;
+    background: linear-gradient(160deg, #EDD9B8 0%, #F2E5CC 100%);
+">
+    <div class="section-inner">
+
+        <span class="section-label reveal">Concept</span>
+        <h2 class="section-title reveal">왜 이 작품은 VR이어야 하는가</h2>
+        <div class="section-rule reveal"></div>
+
+        <!-- Lead paragraph -->
+        <p style="
+            font-family: 'Noto Serif KR', serif;
+            font-size: 16px;
+            line-height: 2.1;
+            color: var(--brown);
+            text-align: center;
+            margin-bottom: 64px;
+        " class="reveal">
+            VR은 흔히 자유도가 높은 매체로 여겨진다.<br>
+            그러나 역설적이게도, 가상현실에서 구현할 수 있는 세계는 오히려 제한적이다.<br>
+            이 작품은 그 역설을 정면으로 받아들이는 대신,<br>
+            <strong style="color: var(--brown-deep);">제약을 형식의 언어로 바꾼다.</strong>
+        </p>
+
+        <!-- Three cards -->
+        <div style="display: flex; flex-direction: column; gap: 2px;" class="reveal">
+
+            <div style="
+                padding: 36px 40px;
+                background: rgba(254,251,245,0.7);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            ">
+                <div style="
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 11px;
+                    letter-spacing: 0.22em;
+                    text-transform: uppercase;
+                    color: var(--amber);
+                    margin-bottom: 14px;
+                ">01 &nbsp;·&nbsp; 디오라마 뷰</div>
+                <p style="font-size: 15px; line-height: 1.9; color: var(--brown-deep);">
+                    이야기의 전달력을 높이고 VR 공간의 장점을 온전히 살리기 위해 디오라마 뷰를 채택했다. 관객은 천계와 지하를 가로지르는 넓은 시야 안에서, 세계 전체를 한눈에 품는다.
+                </p>
+            </div>
+
+            <div style="
+                padding: 36px 40px;
+                background: rgba(254,251,245,0.7);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            ">
+                <div style="
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 11px;
+                    letter-spacing: 0.22em;
+                    text-transform: uppercase;
+                    color: var(--amber);
+                    margin-bottom: 14px;
+                ">02 &nbsp;·&nbsp; 신령의 시점</div>
+                <p style="font-size: 15px; line-height: 1.9; color: var(--brown-deep);">
+                    이는 단순한 연출 선택이 아니라, 신령의 시점으로 이야기를 경험하게 만드는 핵심 장치다. 현실에서는 불가능한 시점 전환—디오라마 세상 속으로 직접 들어가는 감각—을 통해 관객은 이야기 안의 존재로 깊이 몰입하게 된다.
+                </p>
+            </div>
+
+            <div style="
+                padding: 36px 40px;
+                background: rgba(254,251,245,0.7);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            ">
+                <div style="
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 11px;
+                    letter-spacing: 0.22em;
+                    text-transform: uppercase;
+                    color: var(--amber);
+                    margin-bottom: 14px;
+                ">03 &nbsp;·&nbsp; VR만의 가능성</div>
+                <p style="font-size: 15px; line-height: 1.9; color: var(--brown-deep);">
+                    VR이기에 가능한 공간. VR이기에 유효한 위로. 관객은 단순 관찰자가 아닌, 이야기 안의 존재가 된다.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== INTERACTION ===== -->
+<section id="interaction" style="padding: 112px 0; background: var(--white-warm);">
+    <div class="section-inner">
+
+        <span class="section-label reveal">Experience</span>
+        <h2 class="section-title reveal">인터랙션</h2>
+        <div class="section-rule reveal"></div>
+
+        <div class="reveal">
+            <div style="
+                display: flex; gap: 28px; align-items: flex-start;
+                padding: 32px 0;
+                border-bottom: 1px solid rgba(196,115,59,0.15);
+            ">
+                <div style="
+                    flex-shrink: 0; width: 44px;
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 40px; font-weight: 300;
+                    color: rgba(196,115,59,0.25); line-height: 1;
+                ">1</div>
+                <div>
+                    <h3 style="
+                        font-family: 'Noto Serif KR', serif;
+                        font-size: 17px; font-weight: 600;
+                        color: var(--brown-deep); margin-bottom: 10px;
+                    ">타임라인 분기</h3>
+                    <p style="font-size: 14px; color: var(--brown-light); line-height: 1.9;">관객이 선택한 경로에 따라 이야기가 갈라진다. 여러 번 경험해 다양한 엔딩을 발견할 수 있다.</p>
+                </div>
+            </div>
+
+            <div style="
+                display: flex; gap: 28px; align-items: flex-start;
+                padding: 32px 0;
+                border-bottom: 1px solid rgba(196,115,59,0.15);
+            ">
+                <div style="
+                    flex-shrink: 0; width: 44px;
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 40px; font-weight: 300;
+                    color: rgba(196,115,59,0.25); line-height: 1;
+                ">2</div>
+                <div>
+                    <h3 style="
+                        font-family: 'Noto Serif KR', serif;
+                        font-size: 17px; font-weight: 600;
+                        color: var(--brown-deep); margin-bottom: 10px;
+                    ">환경 변화</h3>
+                    <p style="font-size: 14px; color: var(--brown-light); line-height: 1.9;">스크롤/시점 조작에 따라 배경과 세계가 변한다. 계절, 시간대, 지형의 변화가 은유적 연출을 담아낸다.</p>
+                </div>
+            </div>
+
+            <div style="
+                display: flex; gap: 28px; align-items: flex-start;
+                padding: 32px 0;
+            ">
+                <div style="
+                    flex-shrink: 0; width: 44px;
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 40px; font-weight: 300;
+                    color: rgba(196,115,59,0.25); line-height: 1;
+                ">3</div>
+                <div>
+                    <h3 style="
+                        font-family: 'Noto Serif KR', serif;
+                        font-size: 17px; font-weight: 600;
+                        color: var(--brown-deep); margin-bottom: 10px;
+                    ">세부 상호작용</h3>
+                    <p style="font-size: 14px; color: var(--brown-light); line-height: 1.9;">VR 공간 내 객체와의 직관적 상호작용. 손 트래킹을 통해 이야기의 미세한 감정 변화를 조종할 수 있다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== GALLERY ===== -->
+<section id="gallery" style="
+    padding: 112px 0;
+    background: linear-gradient(160deg, #EDD9B8 0%, #F2E5CC 100%);
+">
+    <div class="section-inner">
+
+        <span class="section-label reveal">Visual</span>
+        <h2 class="section-title reveal">스크린샷</h2>
+        <div class="section-rule reveal"></div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;" class="reveal">
+            <div style="
+                width: 100%; aspect-ratio: 16/9;
+                background: rgba(254,251,245,0.5);
+                border: 1px dashed rgba(196,115,59,0.3);
+                display: flex; flex-direction: column;
+                align-items: center; justify-content: center; gap: 10px;
+            ">
+                <div style="
+                    width: 36px; height: 36px;
+                    border: 1px solid rgba(196,115,59,0.35);
+                    border-radius: 50%;
+                    display: flex; align-items: center; justify-content: center;
+                    color: var(--amber); font-size: 18px; font-weight: 300;
+                ">+</div>
+                <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.15em; color: var(--brown-light);">Screenshot 01</p>
+            </div>
+            <div style="
+                width: 100%; aspect-ratio: 16/9;
+                background: rgba(254,251,245,0.5);
+                border: 1px dashed rgba(196,115,59,0.3);
+                display: flex; flex-direction: column;
+                align-items: center; justify-content: center; gap: 10px;
+            ">
+                <div style="
+                    width: 36px; height: 36px;
+                    border: 1px solid rgba(196,115,59,0.35);
+                    border-radius: 50%;
+                    display: flex; align-items: center; justify-content: center;
+                    color: var(--amber); font-size: 18px; font-weight: 300;
+                ">+</div>
+                <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.15em; color: var(--brown-light);">Screenshot 02</p>
+            </div>
+            <div style="
+                width: 100%; aspect-ratio: 16/9;
+                background: rgba(254,251,245,0.5);
+                border: 1px dashed rgba(196,115,59,0.3);
+                display: flex; flex-direction: column;
+                align-items: center; justify-content: center; gap: 10px;
+            ">
+                <div style="
+                    width: 36px; height: 36px;
+                    border: 1px solid rgba(196,115,59,0.35);
+                    border-radius: 50%;
+                    display: flex; align-items: center; justify-content: center;
+                    color: var(--amber); font-size: 18px; font-weight: 300;
+                ">+</div>
+                <p style="font-family: 'Cormorant Garamond', serif; font-size: 12px; letter-spacing: 0.15em; color: var(--brown-light);">Screenshot 03</p>
+            </div>
+        </div>
+
+        <p style="
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            color: var(--brown-light);
+            margin-top: 28px;
+            letter-spacing: 0.1em;
+        ">3D Low-poly &nbsp;·&nbsp; 가을 따뜻한 톤 &nbsp;·&nbsp; 베이지 / 갈색 / 주황 / 크림</p>
+    </div>
+</section>
+
+
+<!-- ===== CREDITS ===== -->
+<section id="credits" style="padding: 112px 0; background: var(--white-warm);">
+    <div class="section-inner">
+
+        <span class="section-label reveal">Team</span>
+        <h2 class="section-title reveal">크레딧</h2>
+        <div class="section-rule reveal"></div>
+
+        <!-- Directors block -->
+        <div style="
+            text-align: center;
+            padding: 56px 40px;
+            border: 1px solid rgba(196,115,59,0.2);
+            margin-bottom: 2px;
+        " class="reveal">
+            <p style="
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 11px; letter-spacing: 0.28em;
+                text-transform: uppercase;
+                color: var(--amber); margin-bottom: 28px;
+            ">Directed by</p>
+            <p style="
+                font-family: 'Noto Serif KR', serif;
+                font-size: 32px; font-weight: 300;
+                color: var(--brown-deep);
+                letter-spacing: 0.06em; margin-bottom: 12px;
+            ">송동호 &nbsp;·&nbsp; 김하윤</p>
+            <p style="
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 15px; font-style: italic;
+                color: var(--brown-light); letter-spacing: 0.08em;
+            ">Dongho Song &nbsp;·&nbsp; Hayoon Kim</p>
+        </div>
+
+        <!-- Tech specs grid -->
+        <div style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            background: rgba(196,115,59,0.12);
+            margin-bottom: 40px;
+        " class="reveal">
+            <div style="padding: 24px 28px; background: var(--white-warm);">
+                <p style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px;">Platform</p>
+                <p style="font-size: 14px; color: var(--brown-deep); font-weight: 500;">Meta Quest 3</p>
+            </div>
+            <div style="padding: 24px 28px; background: var(--white-warm);">
+                <p style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px;">View Type</p>
+                <p style="font-size: 14px; color: var(--brown-deep); font-weight: 500;">Diorama View</p>
+            </div>
+            <div style="padding: 24px 28px; background: var(--white-warm);">
+                <p style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px;">Visual Style</p>
+                <p style="font-size: 14px; color: var(--brown-deep); font-weight: 500;">3D Low-poly</p>
+            </div>
+            <div style="padding: 24px 28px; background: var(--white-warm);">
+                <p style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px;">Category</p>
+                <p style="font-size: 14px; color: var(--brown-deep); font-weight: 500;">Interactive Narrative</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== CTA ===== -->
+<section id="contact" style="
+    padding: 112px 0 80px;
+    background: linear-gradient(160deg, #2C2420 0%, #4A3228 100%);
+">
+    <div class="section-inner" style="text-align: center;">
+
+        <span style="
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 11px; letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(232,168,124,0.65);
+            display: block; margin-bottom: 20px;
+        " class="reveal">Contact</span>
+
+        <h2 style="
+            font-family: 'Noto Serif KR', serif;
+            font-size: 30px; font-weight: 300;
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 20px; letter-spacing: 0.04em;
+        " class="reveal">함께하기</h2>
+
+        <div style="width: 40px; height: 1px; background: rgba(196,115,59,0.5); margin: 0 auto 40px;" class="reveal"></div>
+
+        <p style="
+            font-size: 15px; color: rgba(255,255,255,0.5);
+            margin-bottom: 52px; line-height: 1.9;
+        " class="reveal">이 작품에 관심이 있으시다면 아래 방법으로 연락해주세요.</p>
+
+        <div style="
+            display: flex; flex-direction: column; gap: 10px;
+            max-width: 320px; margin: 0 auto 64px;
+        " class="reveal">
+            <a href="mailto:contact@example.com?subject=마음%20한첩%20시연%20요청" style="
+                display: block; padding: 15px 32px;
+                background: transparent;
+                color: rgba(255,255,255,0.85);
+                text-decoration: none;
+                border: 1px solid rgba(196,115,59,0.4);
+                font-size: 13px; letter-spacing: 0.12em;
+                transition: all 0.3s;
+            " onmouseover="this.style.background='rgba(196,115,59,0.12)'; this.style.borderColor='rgba(196,115,59,0.7)'" onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(196,115,59,0.4)'">
+                시연 요청
+            </a>
+            <a href="mailto:contact@example.com?subject=마음%20한첩%20제작%20문의" style="
+                display: block; padding: 15px 32px;
+                background: transparent;
+                color: rgba(255,255,255,0.85);
+                text-decoration: none;
+                border: 1px solid rgba(196,115,59,0.4);
+                font-size: 13px; letter-spacing: 0.12em;
+                transition: all 0.3s;
+            " onmouseover="this.style.background='rgba(196,115,59,0.12)'; this.style.borderColor='rgba(196,115,59,0.7)'" onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(196,115,59,0.4)'">
+                제작팀 문의
+            </a>
+            <a href="mailto:contact@example.com?subject=마음%20한첩%20상영%20제의" style="
+                display: block; padding: 15px 32px;
+                background: transparent;
+                color: rgba(255,255,255,0.85);
+                text-decoration: none;
+                border: 1px solid rgba(196,115,59,0.4);
+                font-size: 13px; letter-spacing: 0.12em;
+                transition: all 0.3s;
+            " onmouseover="this.style.background='rgba(196,115,59,0.12)'; this.style.borderColor='rgba(196,115,59,0.7)'" onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(196,115,59,0.4)'">
+                상영 / 제휴 제의
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div style="padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08);">
+            <p style="
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 13px; letter-spacing: 0.1em;
+                color: rgba(255,255,255,0.25); line-height: 2.2;
+            ">
+                마음 한첩 &nbsp;·&nbsp; A Remedy for the Heart<br>
+                VR Interactive Cinematic Experience<br>
+                부천판타스틱어워즈 &nbsp;·&nbsp; BIFAN 2025
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Scroll reveal -->
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
