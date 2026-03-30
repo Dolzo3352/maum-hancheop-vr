@@ -16,18 +16,18 @@ MonoBehaviour:
   - startTime: 0
     endTime: 4.32
     koText: "\uADF8\uB9AC \uBA40\uC9C0 \uC54A\uC740 \uC61B\uB0A0, \uB9C8\uC744\uC744
-      \uC218\uD638\uD574\uC628 \uC2E0\uB839\uC774 \uC788\uC5C8\uC5B4\uC694"
+      \uC218\uD638\uD574 \uC628 \uC2E0\uB839\uC774 \uC788\uC5C8\uC5B4\uC694"
     enText: Long ago, not so far in the past, there was a guardian spirit who watched
       over this village
   - startTime: 4.9166665
     endTime: 9.156667
-    koText: "\uC774 \uC2E0\uB839\uC740 \uBD04\uC5D4 \uAE30\uC6B4\uC744 \uBD88\uC5B4\uB123\uC5B4
-      \uC7A0\uB4E0 \uB545\uC774 \uAE68\uC5B4\uB098\uAC8C \uD588\uC5B4\uC694"
+    koText: "\uC774 \uC2E0\uB839\uC740 \uBD04\uC5D4 \uAE30\uC6B4\uC744 \uBD88\uC5B4
+      \uB123\uC5B4 \uC7A0\uB4E0 \uB545\uC774 \uAE68\uC5B4\uB098\uAC8C \uD588\uC5B4\uC694"
     enText: In spring, this spirit would breathe life into the sleeping earth to
       awaken it
   - startTime: 10.188289
     endTime: 14.348289
-    koText: "\uB9DE\uC544\uC694, \uC624\uB798\uC804\uBD80\uD130 \uB2F9\uC2E0\uC774
+    koText: "\uB9DE\uC544\uC694, \uC624\uB798 \uC804\uBD80\uD130 \uB2F9\uC2E0\uC774
       \uD574\uC628 \uC77C\uC774\uC5D0\uC694"
     enText: "That's right\u2014this is what you've been doing since long ago"
   - startTime: 15.071622

@@ -13,79 +13,94 @@ MonoBehaviour:
   m_Name: "2_\uC624\uD504\uB2DD"
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   entries:
-  - startTime: 0.51666665
-    endTime: 4.556667
-    koText: "\uC2E0\uB839\uB2D8 \uC544\uBC84\uC9C0 \uBCD1\uC774 \uB0AB\uAC8C \uD574\uC8FC\uC138\uC694"
-    enText: 1
-  - startTime: 7.4976993
-    endTime: 10.6977
-    koText: "\uC74C \uC26C\uC6B4 \uBCD1\uC774 \uC544\uB2C8\uB124\uC694"
-    enText: 2
-  - startTime: 10.9
-    endTime: 13.59
+  - startTime: 0
+    endTime: 4.24
+    koText: "\uC74C~ \uC800 \uC544\uC774\uAC00 \uC9C4\uC2EC \uC5B4\uB9B0 \uAE30\uB3C4\uB97C
+      \uC62C\uB838\uB098 \uBD10\uC694"
+    enText: Hmm~ it seems that child offered a heartfelt prayer
+  - startTime: 5.316366
+    endTime: 6.7363663
+    koText: "\uBB34\uC2A8 \uC77C\uC77C\uAE4C\uC694?"
+    enText: What could be the matter?
+  - startTime: 7.9166665
+    endTime: 11.956667
+    koText: "\uC2E0\uB839\uB2D8\u2026 \uC544\uBC84\uC9C0 \uBCD1\uC774 \uB0AB\uAC8C
+      \uD574\uC8FC\uC138\uC694"
+    enText: "Dear Spirit\u2026 please make my father's illness go away"
+  - startTime: 14.897699
+    endTime: 18.0977
+    koText: "\uD760\u2026 \uC26C\uC6B4 \uBCD1\uC774 \uC544\uB2C8\uB124\uC694"
+    enText: "Hmm\u2026 this is no simple illness"
+  - startTime: 18.3
+    endTime: 20.99
     koText: "\uC544\uC8FC \uADC0\uD55C \uC57D\uCD08\uAC00 \uD544\uC694\uD558\uACA0\uC5B4\uC694"
-    enText: 3
-  - startTime: 14.45
-    endTime: 17.25
-    koText: 
-    enText: 
-  - startTime: 17.87
-    endTime: 20.45
-    koText: 
-    enText: 
-  - startTime: 20.65
-    endTime: 23.62
-    koText: 
-    enText: 
-  - startTime: 23.8
-    endTime: 26.36
-    koText: 
-    enText: 
-  - startTime: 26.766666
-    endTime: 28.946667
-    koText: 
-    enText: 
-  - startTime: 29.133333
-    endTime: 31.433332
-    koText: 
-    enText: 
-  - startTime: 31.616667
-    endTime: 33.736668
-    koText: 
-    enText: 
-  - startTime: 34.35
-    endTime: 38.83
-    koText: 
-    enText: 
-  - startTime: 40.42
-    endTime: 43.03
-    koText: 
-    enText: 
-  - startTime: 43.22
-    endTime: 48.36
-    koText: 
-    enText: 
-  - startTime: 48.553333
-    endTime: 51.083332
-    koText: 
-    enText: 
-  - startTime: 52.483334
-    endTime: 56.56333
-    koText: 
-    enText: 
-  - startTime: 57.341652
-    endTime: 60.091652
-    koText: 
-    enText: 
-  - startTime: 61.341652
-    endTime: 62.271652
-    koText: 
-    enText: 
-  - startTime: 62.791653
-    endTime: 66.25165
-    koText: 
-    enText: 
-  - startTime: 66.391655
-    endTime: 68.31165
-    koText: 
-    enText: 
+    enText: A very rare medicinal herb will be needed
+  - startTime: 21.85
+    endTime: 24.65
+    koText: "\uC774\uB7F4 \uB54C \uC81C\uACA9\uC778 \uCE5C\uAD6C\uAC00 \uC788\uC8E0"
+    enText: I know just the right friends for times like this
+  - startTime: 25.27
+    endTime: 27.85
+    koText: "\uCCAB \uBC88\uC9F8\uB294 \uBC14\uB85C \uC800 \uB450\uB354\uC9C0\uC608\uC694"
+    enText: The first is that mole right there
+  - startTime: 28.05
+    endTime: 31.02
+    koText: "\uB545\uC18D \uAE4A\uC740 \uACF3\uC744 \uB204\uAD6C\uBCF4\uB2E4 \uC798
+      \uC544\uB294 \uB140\uC11D\uC774\uC9C0\uC694"
+    enText: No one knows the deep underground better than he does
+  - startTime: 31.2
+    endTime: 33.76
+    koText: "\uADC0\uD55C \uC57D\uCD08\uB97C \uADC0\uC2E0\uAC19\uC774 \uCC3E\uC544
+      \uC904 \uAC70\uC608\uC694\n(\uB450\uB354\uC9C0) \uC54C\uACA0\uC5B4! \uC88B\uC740
+      \uB188\uC73C\uB85C \uBC14\uB85C \uAC00\uC838\uC62C\uAC8C!"
+    enText: 'He''ll sniff out those rare herbs like magic
+
+      (Mole) Got it! I''ll
+      bring back the best one right away!'
+  - startTime: 34.166668
+    endTime: 36.34667
+    koText: "\uADF8\uB9AC\uACE0 \uD55C \uCE5C\uAD6C\uAC00 \uB354 \uC788\uC5B4\uC694"
+    enText: And there's one more friend
+  - startTime: 36.53333
+    endTime: 38.83333
+    koText: "\uD558\uB298 \uB192\uC774 \uB098\uB294 \uB9E4\uB78D\uB2C8\uB2E4"
+    enText: A hawk that soars high in the sky
+  - startTime: 39.016666
+    endTime: 41.136665
+    koText: "\uC800 \uAD6C\uB984 \uC704\uB97C \uB4DC\uB098\uB4E4\uBA70"
+    enText: Gliding freely above the clouds,
+  - startTime: 41.75
+    endTime: 46.23
+    koText: "\uC774 \uC138\uC0C1\uC5D0\uC120 \uAD6C\uD558\uAE30 \uD798\uB4E0 \uD2B9\uBCC4\uD55C
+      \uC5F4\uB9E4\uB97C \uAC00\uC838\uB2E4 \uC904 \uAC70\uC608\uC694"
+    enText: it will bring back a special fruit that's hard to find in this world
+  - startTime: 47.82
+    endTime: 50.43
+    koText: "\uC5B4\uB77C..? \uC774\uB7EC\uBA74 \uC548 \uB418\uB294\uB370"
+    enText: Oh no..? This isn't good
+  - startTime: 50.62
+    endTime: 55.76
+    koText: "\uB450\uB354\uC9C0\uC640 \uB9E4\uAC00 \uBC29\uAE08 \uCD9C\uBC1C\uD588\uB294\uB370,
+      \uC544\uC774\uAC00 \uBC8C\uC368 \uC57D\uBC29\uC73C\uB85C \uC624\uACE0 \uC788\uC5B4\uC694"
+    enText: The mole and the hawk just left, but the child is already heading to
+      the medicine shop
+  - startTime: 55.953335
+    endTime: 58.483334
+    koText: "\uC774\uB300\uB85C\uBA74 \uC904 \uC218 \uC788\uB294 \uC57D\uC774 \uC5C6\uC5B4\uC694"
+    enText: At this rate, there's no medicine to give
+  - startTime: 59.883335
+    endTime: 63.963333
+    koText: "\uC5B4? \uADF8\uB7F0\uB370\u2026 \uC800 \uBC84\uC2A4, \uBC18\uB300 \uBC29\uD5A5\uC774\uC5D0\uC694!"
+    enText: "Huh? Wait\u2026 that bus is going the wrong way!"
+  - startTime: 64.74165
+    endTime: 67.49165
+    koText: "\uC544\uC774\uAC00 \uAE38\uC744 \uC798\uBABB \uB4E0 \uAC83 \uAC19\uC544\uC694"
+    enText: It looks like the child took a wrong turn
+  - startTime: 70.19165
+    endTime: 73.65165
+    koText: "\uC544\uC774\uAC00 \uC870\uAE08\uB9CC \uB354 \uB2A6\uAC8C \uB3C4\uCC29\uD55C\uB2E4\uBA74\u2026"
+    enText: "If only the child arrives a little later\u2026"
+  - startTime: 73.65165
+    endTime: 75.57165
+    koText: "\uC57D\uC744 \uC900\uBE44\uD560 \uC218 \uC788\uC744 \uAC83 \uAC19\uC544\uC694"
+    enText: I think we can prepare the medicine in time

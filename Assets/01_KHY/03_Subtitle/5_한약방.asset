@@ -13,79 +13,127 @@ MonoBehaviour:
   m_Name: "5_\uD55C\uC57D\uBC29"
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   entries:
-  - startTime: 0.51666665
-    endTime: 4.556667
-    koText: "\uC2E0\uB839\uB2D8 \uC544\uBC84\uC9C0 \uBCD1\uC774 \uB0AB\uAC8C \uD574\uC8FC\uC138\uC694"
-    enText: 1
-  - startTime: 7.4976993
-    endTime: 10.6977
-    koText: "\uC74C \uC26C\uC6B4 \uBCD1\uC774 \uC544\uB2C8\uB124\uC694"
-    enText: 2
-  - startTime: 10.9
-    endTime: 13.59
-    koText: "\uC544\uC8FC \uADC0\uD55C \uC57D\uCD08\uAC00 \uD544\uC694\uD558\uACA0\uC5B4\uC694"
-    enText: 3
-  - startTime: 14.45
-    endTime: 17.25
+  - startTime: 0
+    endTime: 3.5166667
     koText: 
     enText: 
-  - startTime: 17.87
-    endTime: 20.45
+  - startTime: 0.78333336
+    endTime: 2.5828543
     koText: 
     enText: 
-  - startTime: 20.65
-    endTime: 23.62
+  - startTime: 3.3058543
+    endTime: 4.122521
     koText: 
     enText: 
-  - startTime: 23.8
-    endTime: 26.36
+  - startTime: 3.9058542
+    endTime: 4.528521
     koText: 
     enText: 
-  - startTime: 26.766666
-    endTime: 28.946667
+  - startTime: 4.4891877
+    endTime: 5.111854
     koText: 
     enText: 
-  - startTime: 29.133333
-    endTime: 31.433332
+  - startTime: 4.5833335
+    endTime: 5.2833333
     koText: 
     enText: 
-  - startTime: 31.616667
-    endTime: 33.736668
+  - startTime: 5.9733334
+    endTime: 7.483333
     koText: 
     enText: 
-  - startTime: 34.35
-    endTime: 38.83
+  - startTime: 8.58
+    endTime: 12.780001
     koText: 
     enText: 
-  - startTime: 40.42
-    endTime: 43.03
+  - startTime: 12.9800005
+    endTime: 13.9800005
     koText: 
     enText: 
-  - startTime: 43.22
-    endTime: 48.36
+  - startTime: 13.9800005
+    endTime: 19.81
     koText: 
     enText: 
-  - startTime: 48.553333
-    endTime: 51.083332
+  - startTime: 19.513334
+    endTime: 21.733334
     koText: 
     enText: 
-  - startTime: 52.483334
-    endTime: 56.56333
+  - startTime: 22.286667
+    endTime: 26.783333
     koText: 
     enText: 
-  - startTime: 57.341652
-    endTime: 60.091652
+  - startTime: 24.246666
+    endTime: 26.466597
     koText: 
     enText: 
-  - startTime: 61.341652
-    endTime: 62.271652
+  - startTime: 26.783333
+    endTime: 28.826666
     koText: 
     enText: 
-  - startTime: 62.791653
-    endTime: 66.25165
+  - startTime: 27.210476
+    endTime: 31.314476
     koText: 
     enText: 
-  - startTime: 66.391655
-    endTime: 68.31165
+  - startTime: 28.966667
+    endTime: 33.34667
+    koText: 
+    enText: 
+  - startTime: 30.1
+    endTime: 34.59848
+    koText: 
+    enText: 
+  - startTime: 33.48
+    endTime: 35.33
+    koText: 
+    enText: 
+  - startTime: 35.33
+    endTime: 37.96
+    koText: 
+    enText: 
+  - startTime: 38.15
+    endTime: 41.363335
+    koText: 
+    enText: 
+  - startTime: 40.35
+    endTime: 42.711113
+    koText: 
+    enText: 
+  - startTime: 42.046665
+    endTime: 43.576668
+    koText: 
+    enText: 
+  - startTime: 43.696667
+    endTime: 47.406666
+    koText: 
+    enText: 
+  - startTime: 46.733334
+    endTime: 51.23181
+    koText: 
+    enText: 
+  - startTime: 47.663334
+    endTime: 50.543335
+    koText: 
+    enText: 
+  - startTime: 50.543335
+    endTime: 54.703335
+    koText: 
+    enText: 
+  - startTime: 55.45
+    endTime: 59.12
+    koText: 
+    enText: 
+  - startTime: 59.12
+    endTime: 61.24
+    koText: 
+    enText: 
+  - startTime: 63.5
+    endTime: 66.14331
+    koText: 
+    enText: 
+  - startTime: 63.55
+    endTime: 68.52
+    koText: 
+    enText: 
+  - startTime: 69.2
+    endTime: 70.6
     koText: 
     enText: 

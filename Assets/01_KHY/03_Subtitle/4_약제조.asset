@@ -13,79 +13,41 @@ MonoBehaviour:
   m_Name: "4_\uC57D\uC81C\uC870"
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   entries:
-  - startTime: 0.51666665
-    endTime: 4.556667
-    koText: "\uC2E0\uB839\uB2D8 \uC544\uBC84\uC9C0 \uBCD1\uC774 \uB0AB\uAC8C \uD574\uC8FC\uC138\uC694"
-    enText: 1
-  - startTime: 7.4976993
-    endTime: 10.6977
-    koText: "\uC74C \uC26C\uC6B4 \uBCD1\uC774 \uC544\uB2C8\uB124\uC694"
-    enText: 2
-  - startTime: 10.9
-    endTime: 13.59
-    koText: "\uC544\uC8FC \uADC0\uD55C \uC57D\uCD08\uAC00 \uD544\uC694\uD558\uACA0\uC5B4\uC694"
-    enText: 3
-  - startTime: 14.45
-    endTime: 17.25
-    koText: 
-    enText: 
-  - startTime: 17.87
-    endTime: 20.45
-    koText: 
-    enText: 
-  - startTime: 20.65
-    endTime: 23.62
-    koText: 
-    enText: 
-  - startTime: 23.8
-    endTime: 26.36
-    koText: 
-    enText: 
-  - startTime: 26.766666
-    endTime: 28.946667
-    koText: 
-    enText: 
-  - startTime: 29.133333
-    endTime: 31.433332
-    koText: 
-    enText: 
-  - startTime: 31.616667
-    endTime: 33.736668
-    koText: 
-    enText: 
-  - startTime: 34.35
-    endTime: 38.83
-    koText: 
-    enText: 
-  - startTime: 40.42
-    endTime: 43.03
-    koText: 
-    enText: 
-  - startTime: 43.22
-    endTime: 48.36
-    koText: 
-    enText: 
-  - startTime: 48.553333
-    endTime: 51.083332
-    koText: 
-    enText: 
-  - startTime: 52.483334
-    endTime: 56.56333
-    koText: 
-    enText: 
-  - startTime: 57.341652
-    endTime: 60.091652
-    koText: 
-    enText: 
-  - startTime: 61.341652
-    endTime: 62.271652
-    koText: 
-    enText: 
-  - startTime: 62.791653
-    endTime: 66.25165
-    koText: 
-    enText: 
-  - startTime: 66.391655
-    endTime: 68.31165
-    koText: 
-    enText: 
+  - startTime: 0.6666667
+    endTime: 2.2766666
+    koText: "\uC774\uC81C \uB9C8\uC744\uC774 \uBCF4\uC5EC\uC694"
+    enText: The village is in sight now
+  - startTime: 2.7
+    endTime: 4.08
+    koText: "\uC774\uB7F4 \uB54C\uAC00 \uC544\uB2C8\uC5D0\uC694"
+    enText: "This is no time to linger\u2014"
+  - startTime: 4.08
+    endTime: 6.21
+    koText: "\uC5BC\uB978 \uC57D\uC744 \uB9CC\uB4E4\uC5B4\uC57C\uACA0\uC5B4\uC694"
+    enText: I need to hurry and prepare the medicine
+  - startTime: 6.516667
+    endTime: 9.126667
+    koText: "\uB450\uB354\uC9C0\uC640 \uB9E4\uB3C4 \uACE7 \uB3C4\uCC29\uD560 \uAC70\uC608\uC694"
+    enText: The mole and hawk should arrive soon
+  - startTime: 10.266666
+    endTime: 12.446667
+    koText: "\uB140\uC11D, \uC131\uACA9\uB3C4 \uAE09\uD558\uC9C0~"
+    enText: "That little guy\u2014always in such a rush~"
+  - startTime: 14.5
+    endTime: 16.72
+    koText: "\uD558\uC5EC\uAC04, \uB2E4\uC815\uD558\uB2E4\uB2C8\uAE4C~"
+    enText: Honestly, so sweet of them~
+  - startTime: 17.133333
+    endTime: 21.043333
+    koText: "\uC7AC\uB8CC\uAC00 \uB2E4 \uBAA8\uC600\uC5B4\uC694. \uC5BC\uB978 \uC57D\uC744
+      \uC644\uC131\uD574 \uBCF4\uC8E0"
+    enText: All the ingredients are here. Let's hurry and finish the medicine
+  - startTime: 23.233334
+    endTime: 27.063334
+    koText: "\uC57D\uC774 \uC798 \uC644\uC131\uB418\uC5B4\uC57C \uD560 \uD150\uB370
+      \uAC71\uC815\uC774\uB124\uC694"
+    enText: "I hope the medicine turns out well\u2026 I'm worried"
+  - startTime: 27.50966
+    endTime: 30.05966
+    koText: "\uC544\uC774\uAC00 \uB3C4\uCC29\uD55C \uAC83 \uAC19\uB124\uC694"
+    enText: It sounds like the child has arrived
