@@ -13,79 +13,114 @@ MonoBehaviour:
   m_Name: "3_\uAC10\uB098\uBB34\uACE8"
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   entries:
-  - startTime: 0.51666665
-    endTime: 4.556667
-    koText: "\uC2E0\uB839\uB2D8 \uC544\uBC84\uC9C0 \uBCD1\uC774 \uB0AB\uAC8C \uD574\uC8FC\uC138\uC694"
-    enText: 1
-  - startTime: 7.4976993
-    endTime: 10.6977
-    koText: "\uC74C \uC26C\uC6B4 \uBCD1\uC774 \uC544\uB2C8\uB124\uC694"
-    enText: 2
-  - startTime: 10.9
-    endTime: 13.59
-    koText: "\uC544\uC8FC \uADC0\uD55C \uC57D\uCD08\uAC00 \uD544\uC694\uD558\uACA0\uC5B4\uC694"
-    enText: 3
-  - startTime: 14.45
-    endTime: 17.25
-    koText: 
-    enText: 
-  - startTime: 17.87
-    endTime: 20.45
-    koText: 
-    enText: 
-  - startTime: 20.65
-    endTime: 23.62
-    koText: 
-    enText: 
-  - startTime: 23.8
-    endTime: 26.36
-    koText: 
-    enText: 
-  - startTime: 26.766666
-    endTime: 28.946667
-    koText: 
-    enText: 
-  - startTime: 29.133333
-    endTime: 31.433332
-    koText: 
-    enText: 
-  - startTime: 31.616667
-    endTime: 33.736668
-    koText: 
-    enText: 
-  - startTime: 34.35
-    endTime: 38.83
-    koText: 
-    enText: 
-  - startTime: 40.42
-    endTime: 43.03
-    koText: 
-    enText: 
-  - startTime: 43.22
-    endTime: 48.36
-    koText: 
-    enText: 
-  - startTime: 48.553333
-    endTime: 51.083332
-    koText: 
-    enText: 
-  - startTime: 52.483334
-    endTime: 56.56333
-    koText: 
-    enText: 
-  - startTime: 57.341652
-    endTime: 60.091652
-    koText: 
-    enText: 
-  - startTime: 61.341652
-    endTime: 62.271652
-    koText: 
-    enText: 
-  - startTime: 62.791653
-    endTime: 66.25165
-    koText: 
-    enText: 
-  - startTime: 66.391655
-    endTime: 68.31165
-    koText: 
-    enText: 
+  - startTime: 3.4
+    endTime: 5.9
+    koText: "\uB4DC\uB514\uC5B4 \uC544\uC774\uAC00 \uBC84\uC2A4\uC5D0\uC11C \uB0B4\uB838\uB124\uC694"
+    enText: The child has finally gotten off the bus
+  - startTime: 5.75
+    endTime: 9.852957
+    koText: "\uC5C9\uB6B1\uD55C \uACF3\uC5D0 \uB0B4\uB838\uC9C0\uB9CC, \uC544\uC774\uB294
+      \uC804\uD600 \uBAA8\uB974\uB294 \uB208\uCE58\uC608\uC694"
+    enText: She got off at the wrong place, but she doesn't seem to notice at all
+  - startTime: 11.15
+    endTime: 14.47
+    koText: "\uC544\uC774\uAC00 \uC624\uB294 \uAE38\uC5D0 \uC791\uC740 \uB098\uBB34\uC640
+      \uD480\uC774 \uBCF4\uC774\uB124\uC694"
+    enText: I can see small trees and grass along the child's path
+  - startTime: 15.016666
+    endTime: 16.886667
+    koText: "\uC544\uC774\uC5D0\uAC90 \uBBF8\uC548\uD558\uC9C0\uB9CC,"
+    enText: I'm sorry, little one, but
+  - startTime: 16.886667
+    endTime: 19.006666
+    koText: "\uC5EC\uAE30\uC5D0 \uAE30\uC6B4\uC744 \uBD88\uC5B4\uB123\uC5B4\uC11C,"
+    enText: if I breathe life into these,
+  - startTime: 19.006666
+    endTime: 22.216667
+    koText: "\uC544\uC774\uAC00 \uC870\uAE08\uC774\uB77C\uB3C4 \uCC9C\uCC9C\uD788
+      \uC624\uAC8C \uD574\uC57C\uACA0\uC5B4\uC694"
+    enText: the child will have to slow down a bit
+  - startTime: 25.633333
+    endTime: 28.463333
+    koText: "\uC774\uAC70\uB77C\uBA74 \uC544\uC774\uB97C \uB2A6\uCD9C \uC218 \uC788\uC744
+      \uAC70\uC608\uC694!"
+    enText: This should be enough to delay the child!
+  - startTime: 28.583334
+    endTime: 31.443333
+    koText: "\uBBF8\uC548\uD558\uC9C0\uB9CC, \uC5B4\uCA54 \uC218 \uC5C6\uC5B4\uC694"
+    enText: I'm sorry, but there's no other way
+  - startTime: 31.53333
+    endTime: 33.93333
+    koText: "\uAE09\uD560\uC218\uB85D \uB3CC\uC544\uAC00\uB77C\uB294 \uB9D0\uB3C4
+      \uC788\uC796\uC544\uC694?"
+    enText: "You know the saying\u2014the longer the road, the shorter the delay?"
+  - startTime: 35.15
+    endTime: 37.92
+    koText: "\uC774\uC81C \uD558\uB298\uC758 \uC5F4\uB9E4\uB97C \uAC00\uC838\uC640\uC57C\uACA0\uC5B4\uC694"
+    enText: Now I need to get the fruit from the sky
+  - startTime: 38.48075
+    endTime: 40.760754
+    koText: "\uD55C\uBC88 \uB9E4\uB97C \uB530\uB77C\uAC00 \uBCFC\uAE4C\uC694?"
+    enText: Shall we follow the hawk?
+  - startTime: 41.95
+    endTime: 43.5
+    koText: "\uC800 \uAD6C\uB984 \uB108\uBA38"
+    enText: Beyond those clouds,
+  - startTime: 43.666668
+    endTime: 46.926666
+    koText: "\uC774\uACF3\uC5D0\uB9CC \uC790\uB77C\uB294 \uC2E0\uBE44\uB85C\uC6B4
+      \uC5F4\uB9E4\uAC00 \uC788\uB2F5\uB2C8\uB2E4"
+    enText: there grows a wondrous fruit found only here
+  - startTime: 47.15
+    endTime: 49.98
+    koText: "\uADF8\uB7F0\uB370 \uAD6C\uB984\uC774 \uB108\uBB34 \uB9CE\uC544\uC694"
+    enText: But there are too many clouds
+  - startTime: 50.083332
+    endTime: 52.693333
+    koText: "\uC5F4\uB9E4\uAC00 \uC5B4\uB514 \uC788\uB294\uC9C0 \uBCF4\uC774\uC9C8
+      \uC54A\uB124\uC694"
+    enText: I can't see where the fruit is
+  - startTime: 52.8
+    endTime: 55.16
+    koText: "\uAD6C\uB984\uC744 \uAC77\uC5B4\uB0B4\uC57C\uACA0\uC5B4\uC694"
+    enText: I need to clear these clouds away
+  - startTime: 55.3
+    endTime: 58.15
+    koText: "\uAE30\uC6B4\uC744 \uBAA8\uC544 \uAD6C\uB984\uC744 \uBE44\uB85C \uB9CC\uB4E4\uC5B4
+      \uBCFC\uAE4C\uC694?"
+    enText: Shall we gather our energy and turn the clouds into rain?
+  - startTime: 59.6
+    endTime: 63.199997
+    koText: "\uC800\uAE30, \uAD6C\uB984 \uB4A4\uC5D0 \uC228\uC5B4 \uC788\uC5C8\uB124\uC694!"
+    enText: "There it is\u2014it was hiding behind the clouds!"
+  - startTime: 62.85
+    endTime: 66.65
+    koText: "\uB2E4\uD589\uC774\uC5D0\uC694, \uB9E4\uAC00 \uBB34\uC0AC\uD788 \uC5F4\uB9E4\uB97C
+      \uCC59\uACBC\uB124\uC694"
+    enText: "What a relief\u2014the hawk safely collected the fruit"
+  - startTime: 66.916664
+    endTime: 69.416664
+    koText: "\uC544\uC774\uB294 \uC9C0\uAE08 \uC5B4\uB514\uAE4C\uC9C0 \uC654\uC744\uAE4C\uC694?"
+    enText: Where has the child gotten to by now?
+  - startTime: 69.88333
+    endTime: 72.27333
+    koText: "\uC544\uC774\uAC00 \uC544\uC9C1 \uB0C7\uAC00\uC5D0 \uC788\uC5B4\uC694"
+    enText: The child is still at the stream
+  - startTime: 72.27333
+    endTime: 74.223335
+    koText: "\uC791\uC804\uC774 \uD6A8\uACFC\uAC00 \uC788\uC5C8\uB098 \uBD10\uC694"
+    enText: It seems our plan worked
+  - startTime: 74.77333
+    endTime: 78.85333
+    koText: "\uC774 \uC815\uB3C4\uBA74\u2026 \uC2DC\uAC04 \uC548\uC5D0 \uC57D\uC744
+      \uB9CC\uB4E4 \uC218 \uC788\uC744 \uAC83 \uAC19\uC544\uC694"
+    enText: "At this rate\u2026 I think we can make the medicine in time"
+  - startTime: 80.280136
+    endTime: 82.97014
+    koText: "\uD480\uC774\u2026 \uB108\uBB34 \uD06C\uAC8C \uC790\uB780 \uAC83 \uAC19\uB124\uC694?"
+    enText: "The grass\u2026 seems to have grown too tall, doesn't it?"
+  - startTime: 83.25
+    endTime: 86.69
+    koText: "\uADF8\uB798\uB3C4 \uC544\uC774\uB294 \uC798 \uD5E4\uCCD0\uB098\uAC00\uACE0
+      \uC788\uC73C\uB2C8 \uAD1C\uCC2E\uACA0\uC9C0\uC694?"
+    enText: But the child is pushing through just fine, so it should be alright?
