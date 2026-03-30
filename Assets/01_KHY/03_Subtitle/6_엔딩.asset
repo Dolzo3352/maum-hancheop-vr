@@ -13,79 +13,31 @@ MonoBehaviour:
   m_Name: "6_\uC5D4\uB529"
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   entries:
-  - startTime: 0.51666665
-    endTime: 4.556667
-    koText: "\uC2E0\uB839\uB2D8 \uC544\uBC84\uC9C0 \uBCD1\uC774 \uB0AB\uAC8C \uD574\uC8FC\uC138\uC694"
-    enText: 1
-  - startTime: 7.4976993
-    endTime: 10.6977
-    koText: "\uC74C \uC26C\uC6B4 \uBCD1\uC774 \uC544\uB2C8\uB124\uC694"
-    enText: 2
-  - startTime: 10.9
-    endTime: 13.59
-    koText: "\uC544\uC8FC \uADC0\uD55C \uC57D\uCD08\uAC00 \uD544\uC694\uD558\uACA0\uC5B4\uC694"
-    enText: 3
-  - startTime: 14.45
-    endTime: 17.25
-    koText: 
-    enText: 
-  - startTime: 17.87
-    endTime: 20.45
-    koText: 
-    enText: 
-  - startTime: 20.65
-    endTime: 23.62
-    koText: 
-    enText: 
-  - startTime: 23.8
-    endTime: 26.36
-    koText: 
-    enText: 
-  - startTime: 26.766666
-    endTime: 28.946667
-    koText: 
-    enText: 
-  - startTime: 29.133333
-    endTime: 31.433332
-    koText: 
-    enText: 
-  - startTime: 31.616667
-    endTime: 33.736668
-    koText: 
-    enText: 
-  - startTime: 34.35
-    endTime: 38.83
-    koText: 
-    enText: 
-  - startTime: 40.42
-    endTime: 43.03
-    koText: 
-    enText: 
-  - startTime: 43.22
-    endTime: 48.36
-    koText: 
-    enText: 
-  - startTime: 48.553333
-    endTime: 51.083332
-    koText: 
-    enText: 
-  - startTime: 52.483334
-    endTime: 56.56333
-    koText: 
-    enText: 
-  - startTime: 57.341652
-    endTime: 60.091652
-    koText: 
-    enText: 
-  - startTime: 61.341652
-    endTime: 62.271652
-    koText: 
-    enText: 
-  - startTime: 62.791653
-    endTime: 66.25165
-    koText: 
-    enText: 
-  - startTime: 66.391655
-    endTime: 68.31165
-    koText: 
-    enText: 
+  - startTime: 0
+    endTime: 1.64
+    koText: "\uC9C4\uC2EC \uC5B4\uB9B0 \uB9C8\uC74C"
+    enText: "A heart full of sincerity\u2014"
+  - startTime: 1.8666667
+    endTime: 5.1466665
+    koText: "\uADF8\uAC8C \uC138\uC0C1\uC5D0\uC11C \uAC00\uC7A5 \uADC0\uD55C \uC57D\uC778\uAC00
+      \uBD10\uC694"
+    enText: that must be the most precious medicine in the world
+  - startTime: 5.4333334
+    endTime: 10.193334
+    koText: "\uC624\uB79C \uC138\uC6D4 \uB9C8\uC744\uC744 \uB3CC\uBD10\uC654\uC9C0\uB9CC,
+      \uC624\uB298\uC740 \uC624\uB798 \uAE30\uC5B5\uB420 \uAC83 \uAC19\uB124\uC694"
+    enText: I've watched over this village for ages, but today is a day I'll remember
+      for a long time
+  - startTime: 11.65
+    endTime: 13.82
+    koText: "\uC544\uC774\uAC00 \uC9D1\uC5D0 \uB3C4\uCC29\uD588\uC5B4\uC694"
+    enText: The child has arrived home
+  - startTime: 14.416667
+    endTime: 17.426666
+    koText: "\uB2E4\uB140\uC654\uC2B5\uB2C8\uB2E4! \uC5BC\uB978 \uC57D \uB4DC\uC138\uC694!"
+    enText: I'm back! Please take this medicine right away!
+  - startTime: 17.683332
+    endTime: 20.613333
+    koText: "\uC800\uB3C4 \uC774\uC81C \uD3B8\uD558\uAC8C \uC26C\uB7EC \uAC08 \uC218
+      \uC788\uACA0\uB124\uC694"
+    enText: Now I can finally go rest in peace

@@ -13,127 +13,90 @@ MonoBehaviour:
   m_Name: "5_\uD55C\uC57D\uBC29"
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
   entries:
-  - startTime: 0
-    endTime: 3.5166667
-    koText: 
-    enText: 
-  - startTime: 0.78333336
-    endTime: 2.5828543
-    koText: 
-    enText: 
-  - startTime: 3.3058543
-    endTime: 4.122521
-    koText: 
-    enText: 
-  - startTime: 3.9058542
-    endTime: 4.528521
-    koText: 
-    enText: 
-  - startTime: 4.4891877
-    endTime: 5.111854
-    koText: 
-    enText: 
-  - startTime: 4.5833335
-    endTime: 5.2833333
-    koText: 
-    enText: 
   - startTime: 5.9733334
     endTime: 7.483333
-    koText: 
-    enText: 
+    koText: "\uC548\uB155\uD558\uC138\uC694!"
+    enText: Hello!
   - startTime: 8.58
     endTime: 12.780001
-    koText: 
-    enText: 
+    koText: "\uC544\uC774\uB294 \uC544\uBC84\uC9C0\uC758 \uBCD1\uD658\uC744 \uC870\uACE4\uC870\uACE4
+      \uC124\uBA85\uD588\uC5B4\uC694"
+    enText: The child calmly explained her father's condition
   - startTime: 12.9800005
     endTime: 13.9800005
-    koText: 
-    enText: 
+    koText: "\uADF8\uB7F0\uB370\u2026"
+    enText: "But\u2026"
   - startTime: 13.9800005
     endTime: 19.81
-    koText: 
-    enText: 
+    koText: "\uC57D\uC774 \uC644\uC131\uB418\uC9C8 \uC54A\uC558\uC5B4\uC694. \uAE09\uD558\uAC8C
+      \uB9CC\uB4DC\uB290\uB77C \uC2E4\uC218\uB97C \uD588\uB098 \uBD10\uC694"
+    enText: The medicine didn't come together. I must have made a mistake rushing
+      to finish it
   - startTime: 19.513334
     endTime: 21.733334
-    koText: 
-    enText: 
+    koText: "\uC544\uC774\uD55C\uD14C \uBBF8\uC548\uD574\uC11C \uC5B4\uCA4C\uC8E0..?"
+    enText: "I feel so sorry toward the child\u2026 what should I do?"
   - startTime: 22.286667
     endTime: 26.783333
-    koText: 
-    enText: 
-  - startTime: 24.246666
-    endTime: 26.466597
-    koText: 
-    enText: 
+    koText: "\uC5B4?\u2026 \uC544\uC774 \uC8FC\uBA38\uB2C8\uC5D0\uC11C \uBB54\uAC00
+      \uAE30\uC6B4\uC774 \uB290\uAEF4\uC838\uC694"
+    enText: "Huh?\u2026 I can sense some kind of energy from the child's pocket"
   - startTime: 26.783333
     endTime: 28.826666
-    koText: 
-    enText: 
-  - startTime: 27.210476
-    endTime: 31.314476
-    koText: 
-    enText: 
+    koText: "\uC800 \uC548\uC5D0 \uBB50\uAC00 \uB4E4\uC5B4 \uC788\uB294 \uAC78\uAE4C\uC694?"
+    enText: What could be inside?
   - startTime: 28.966667
     endTime: 33.34667
-    koText: 
-    enText: 
+    koText: "\uC544, \uC774\uAC70\uC694? \uC544\uBC84\uC9C0 \uB4DC\uB9AC\uB824\uACE0
+      \uCC59\uACBC\uC5B4\uC694"
+    enText: Oh, this? I brought it to give to my father
   - startTime: 30.1
     endTime: 34.59848
-    koText: 
-    enText: 
-  - startTime: 33.48
-    endTime: 35.33
-    koText: 
-    enText: 
+    koText: "\uC5B8\uC81C \uC774\uB7F0\uAC78 \uCC59\uACBC\uC9C0?"
+    enText: When did she pick this?
   - startTime: 35.33
     endTime: 37.96
-    koText: 
-    enText: 
+    koText: "\uAC10\uB098\uBB34\uACE8\uC5D0\uC11C \uCC59\uACA8\uC628 \uAC70\uC600\uC5B4\uC694"
+    enText: "It was from Persimmon Tree Hollow\u2014"
   - startTime: 38.15
     endTime: 41.363335
-    koText: 
-    enText: 
-  - startTime: 40.35
-    endTime: 42.711113
-    koText: 
-    enText: 
+    koText: "\uC5F4\uB9E4\uB97C \uB9FA\uAC8C \uD55C, \uBC14\uB85C \uADF8 \uAC10\uB098\uBB34\uC5D0\uC11C\uC694"
+    enText: from the very tree that bore fruit
   - startTime: 42.046665
     endTime: 43.576668
-    koText: 
-    enText: 
+    koText: "\uC774\uAC83\uB3C4 \uC788\uC5B4\uC694!"
+    enText: I have this too!
   - startTime: 43.696667
     endTime: 47.406666
-    koText: 
-    enText: 
-  - startTime: 46.733334
-    endTime: 51.23181
-    koText: 
-    enText: 
+    koText: "\uC774\uAC74 \uC608\uBED0\uC11C \uBD80\uBAA8\uB2D8 \uB4DC\uB9AC\uB824\uACE0
+      \uCC59\uACBC\uC5B4\uC694"
+    enText: "I picked this because it was pretty\u2014I wanted to give it to my parents"
   - startTime: 47.663334
     endTime: 50.543335
-    koText: 
-    enText: 
+    koText: "\uADF8 \uD480\uBC2D\uC5D0 \uC774\uB7F0 \uAF43\uC774 \uC228\uC5B4 \uC788\uC5C8\uB124\uC694"
+    enText: A flower like this was hidden in that tall grass
   - startTime: 50.543335
     endTime: 54.703335
-    koText: 
-    enText: 
+    koText: "\uC544\uC774\uAC00 \uCC59\uACA8\uC628 \uC7AC\uB8CC\uB97C \uB354\uD558\uBA74
+      \uC57D\uC774 \uC644\uC131\uB420 \uAC83 \uAC19\uC544\uC694"
+    enText: If we add what the child brought, I think the medicine can be completed
   - startTime: 55.45
     endTime: 59.12
-    koText: 
-    enText: 
+    koText: "\uACB0\uAD6D \uC57D\uC744 \uC644\uC131\uD55C \uAC74, \uC544\uC774\uC758
+      \uB9C8\uC74C\uC774\uC5C8\uB124\uC694"
+    enText: In the end, it was the child's heart that completed the medicine
   - startTime: 59.12
     endTime: 61.24
-    koText: 
-    enText: 
-  - startTime: 63.5
-    endTime: 66.14331
-    koText: 
-    enText: 
+    koText: "\uC5BC\uB978 \uC7AC\uB8CC\uB97C \uB123\uC5B4\uC57C\uACA0\uC5B4\uC694"
+    enText: I need to add the ingredients quickly
   - startTime: 63.55
     endTime: 68.52
-    koText: 
-    enText: 
+    koText: "\uC57D\uC774 \uC798 \uC9C0\uC5B4\uC84C\uB124\uC694. \uC774\uAC70\uB77C\uBA74
+      \uC544\uBC84\uC9C0\uAC00 \uAE08\uBC29 \uAE30\uC6B4\uC744 \uCC3E\uC73C\uC2E4
+      \uAC70\uC608\uC694"
+    enText: The medicine turned out well. With this, your father should regain his
+      strength in no time
   - startTime: 69.2
     endTime: 70.6
-    koText: 
-    enText: 
+    koText: "\uAC10\uC0AC\uD569\uB2C8\uB2E4!"
+    enText: Thank you!

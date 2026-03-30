@@ -16011,7 +16011,7 @@ MonoBehaviour:
   timelineController: {fileID: 0}
   narrativeSequencer: {fileID: 0}
   directDirector: {fileID: 736751895}
-  initialSubtitleData: {fileID: 11400000, guid: 4febcc49c57acbe41977c4d2d1bf6814, type: 2}
+  initialSubtitleData: {fileID: 11400000, guid: 18419153269a1f54aa257f1a4531e754, type: 2}
   subtitleText: {fileID: 233133113}
   canvasGroup: {fileID: 1884207935}
   fadeSpeed: 5

@@ -11467,7 +11467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &892767676
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21373,7 +21373,7 @@ MonoBehaviour:
   timelineController: {fileID: 0}
   narrativeSequencer: {fileID: 0}
   directDirector: {fileID: 439246578}
-  initialSubtitleData: {fileID: 11400000, guid: 4febcc49c57acbe41977c4d2d1bf6814, type: 2}
+  initialSubtitleData: {fileID: 11400000, guid: 160eee4bb61472c4c8714659996e459c, type: 2}
   subtitleText: {fileID: 1271516875}
   canvasGroup: {fileID: 892767677}
   fadeSpeed: 5
@@ -24778,7 +24778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2118148810
 Transform:
   m_ObjectHideFlags: 0
