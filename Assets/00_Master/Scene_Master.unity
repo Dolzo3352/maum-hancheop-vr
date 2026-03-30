@@ -158250,10 +158250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeController
   fadeRenderer: {fileID: 69002978}
-  defaultDuration: 0.1
-  fadeInOnStart: 1
-  startFadeDuration: 0.3
-  holdDuration: 0.7
+  defaultDuration: 0.3
+  fadeInOnStart: 0
+  startFadeDuration: 0.5
+  holdDuration: 1
 --- !u!1 &1775099592
 GameObject:
   m_ObjectHideFlags: 0

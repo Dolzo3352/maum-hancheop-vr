@@ -16,7 +16,7 @@ MonoBehaviour:
   stageIndex: 0
   dioramaScale: 1
   entryTransition: 0
-  transitionDuration: 1
+  transitionDuration: 0.3
   lightingPreset: {fileID: 0}
   ambientAudio: {fileID: 0}
   subtitleData: {fileID: 11400000, guid: 4febcc49c57acbe41977c4d2d1bf6814, type: 2}

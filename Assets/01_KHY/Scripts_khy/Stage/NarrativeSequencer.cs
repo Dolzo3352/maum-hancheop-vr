@@ -258,27 +258,24 @@ public class NarrativeSequencer : MonoBehaviour
             yield break;
         }
 
-        // ─── 이후 Stage: 크로스페이드 전환 ───
+        // ─── 이후 Stage: 페이드 아웃 후 전환 ───
 
-        // 1. 다음 스테이지 추가 활성화 (이전 스테이지도 켜진 상태 유지)
-        stageManager.ActivateStageAdditive(data.stageIndex);
-        Debug.Log($"[NarrativeSequencer] 크로스페이드 시작: Stage {prevStageIndex} → {data.stageIndex}", this);
-
-        // 2. 라이팅 크로스페이드 (있으면)
-        if (lightingController != null)
-        {
-            lightingController.TurnOffStageLights(data.stageIndex);
-            yield return lightingController.CrossfadeLighting(prevStageIndex, data.stageIndex);
-        }
-
-        // 3. 페이드 아웃 (짧은 암전)
+        // 1. 페이드 아웃 (암전)
         if (transitionHandler != null)
         {
             yield return transitionHandler.FadeOut(data.transitionDuration);
         }
+        Debug.Log($"[NarrativeSequencer] 전환 시작: Stage {prevStageIndex} → {data.stageIndex}", this);
 
-        // 4. 암전 중: 이전 스테이지 비활성화
+        // 2. 암전 중: 이전 스테이지 비활성화 + 다음 스테이지 활성화
         stageManager.DeactivateStage(prevStageIndex);
+        stageManager.ActivateStageAdditive(data.stageIndex);
+
+        // 3. 라이팅 전환 (암전 중이라 즉시 적용)
+        if (lightingController != null)
+        {
+            lightingController.TurnOffStageLights(prevStageIndex);
+        }
 
         // 5. 스케일 초기화
         stageManager.ResetToDefaultScale();
