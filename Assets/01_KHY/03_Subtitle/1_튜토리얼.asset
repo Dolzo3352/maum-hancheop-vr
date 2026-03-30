@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a987a2e54cb2049b36ad32b48748e7, type: 3}
+  m_Name: "1_\uD29C\uD1A0\uB9AC\uC5BC"
+  m_EditorClassIdentifier: Assembly-CSharp::SubtitleData
+  entries:
+  - startTime: 0
+    endTime: 4.32
+    koText: "\uADF8\uB9AC \uBA40\uC9C0 \uC54A\uC740 \uC61B\uB0A0, \uB9C8\uC744\uC744
+      \uC218\uD638\uD574\uC628 \uC2E0\uB839\uC774 \uC788\uC5C8\uC5B4\uC694"
+    enText: Long ago, not so far in the past, there was a guardian spirit who watched
+      over this village
+  - startTime: 4.9166665
+    endTime: 9.156667
+    koText: "\uC774 \uC2E0\uB839\uC740 \uBD04\uC5D4 \uAE30\uC6B4\uC744 \uBD88\uC5B4\uB123\uC5B4
+      \uC7A0\uB4E0 \uB545\uC774 \uAE68\uC5B4\uB098\uAC8C \uD588\uC5B4\uC694"
+    enText: In spring, this spirit would breathe life into the sleeping earth to
+      awaken it
+  - startTime: 10.188289
+    endTime: 14.348289
+    koText: "\uB9DE\uC544\uC694, \uC624\uB798\uC804\uBD80\uD130 \uB2F9\uC2E0\uC774
+      \uD574\uC628 \uC77C\uC774\uC5D0\uC694"
+    enText: "That's right\u2014this is what you've been doing since long ago"
+  - startTime: 15.071622
+    endTime: 18.661621
+    koText: "\uC5EC\uB984\uC5D4 \uBE44\uB97C \uB0B4\uB824 \uC0DD\uBA85\uC5D0 \uD65C\uB825\uC744
+      \uC8FC\uC5C8\uC8E0"
+    enText: In summer, you brought rain to give vitality to all living things
+  - startTime: 20.2
+    endTime: 22.86
+    koText: "\uB098\uBB34\uAC00 \uD55C\uAECF \uAE30\uC9C0\uAC1C\uB97C \uCF30\uB124\uC694"
+    enText: The tree stretched out with all its might
+  - startTime: 23.58333
+    endTime: 25.47333
+    koText: "\uADF8\uB807\uAC8C \uC5EC\uB984\uC774 \uC9C0\uB098\uACE0,"
+    enText: And so summer passed,
+  - startTime: 25.85
+    endTime: 28.65
+    koText: "\uC78E\uC774 \uBD89\uAC8C \uBB3C\uB4E4\uAE30 \uC2DC\uC791\uD588\uC5B4\uC694"
+    enText: and the leaves began to turn red
+  - startTime: 29.478033
+    endTime: 32.678032
+    koText: "\uC774\uACF3\uC774 \uBC14\uB85C, \uB2F9\uC2E0\uC758 \uC190\uAE38\uC774
+      \uB2FF\uC544\uC628 \uACF3\uC774\uC5D0\uC694"
+    enText: This is the very place your hands have touched
+  - startTime: 34.29584
+    endTime: 38.695843
+    koText: "\uAC00\uC744\uC774 \uB418\uBA74 \uC628 \uB4E4\uD310\uC774 \uD669\uAE08\uBE5B\uC73C\uB85C
+      \uBB3C\uB4DC\uB294 \uACF3\uC774\uC5C8\uC9C0\uC694"
+    enText: When autumn comes, every field turns golden here
+  - startTime: 39.75
+    endTime: 43.71
+    koText: "\uB9C8\uC744 \uD55C\uCF20\uC5D4 \uB2F9\uC2E0\uC774 \uC6B4\uC601\uD558\uB294
+      \uC791\uC740 \uD55C\uC57D\uBC29\uC774 \uC788\uC5B4\uC694"
+    enText: In one corner of the village, there's a small herbal medicine shop that
+      you run
+  - startTime: 44.516666
+    endTime: 50.956665
+    koText: "\uB9C8\uB545\uD55C \uC758\uC6D0 \uD558\uB098 \uC5C6\uB294 \uC774\uACF3\uC5D0\uC11C,
+      \uC544\uD508 \uC774\uB4E4\uC744 \uC704\uD574 \uC815\uC131\uAECF \uC57D\uC744
+      \uC9C0\uC5B4\uC8FC\uACE4 \uD588\uC9C0\uC694"
+    enText: In this place with no proper doctor, you would carefully prepare remedies
+      for those who were ill
+  - startTime: 52.216667
+    endTime: 56.466667
+    koText: "\uCC44 \uC790\uB77C\uC9C0 \uBABB\uD55C \uAC83\uB4E4\uC5D0\uAC8C \uD798\uC744
+      \uBD88\uC5B4\uB123\uC5B4 \uC8FC\uB294 \uAC83\uC774\uC5C8\uC9C0\uC694"
+    enText: Your gift was breathing strength into things that hadn't yet fully grown
+  - startTime: 57.979176
+    endTime: 60.139175
+    koText: "\uD798\uC744 \uBAA8\uC544\uC11C \uC804\uB2EC\uD574 \uBCFC\uAE4C\uC694?"
+    enText: Shall we gather our energy and pass it along?
+  - startTime: 61.27546
+    endTime: 63.67546
+    koText: "\uB17C\uBC2D\uC774 \uB178\uB797\uAC8C \uC775\uC5B4\uAC00\uB124\uC694"
+    enText: The rice paddies are turning golden
+  - startTime: 64.51667
+    endTime: 68.97667
+    koText: "\uADF8\uB7F0\uB370, \uC544\uC9C1 \uC5F4\uB9E4\uB97C \uB9FA\uC9C0 \uBABB\uD55C
+      \uB098\uBB34\uAC00 \uBCF4\uC774\uB124\uC694"
+    enText: "Look\u2014there's a tree over there that hasn't borne fruit yet "
+  - startTime: 69.55
+    endTime: 71.5
+    koText: "\uD798\uC744 \uD55C \uBC88 \uB354 \uBAA8\uC544\uBCFC\uAE4C\uC694?"
+    enText: Shall we try gathering our strength once more?
+  - startTime: 73.71667
+    endTime: 76.52667
+    koText: "\uD798\uC774 \uBAA8\uC774\uC9C8 \uC54A\uB124\uC694"
+    enText: The energy won't come together
+  - startTime: 76.8
+    endTime: 81.17
+    koText: "\uB18D\uC0AC\uB3C4 \uB3CC\uBCF4\uACE0 \uC57D\uBC29\uB3C4 \uC6B4\uC601\uD558\uB290\uB77C
+      \uD798\uC744 \uB2E4 \uC368\uBC84\uB838\uB098 \uBD10\uC694"
+    enText: It seems you've used up all your strength tending the fields and running
+      the medicine shop
+  - startTime: 81.6
+    endTime: 88.04
+    koText: "\uBD04\uBD80\uD130 \uAC00\uC744\uAE4C\uC9C0 \uC628 \uD798\uC744 \uC3DF\uACE0
+      \uB098\uBA74, \uC2E0\uB839\uC740 \uAE34 \uACA8\uC6B8\uC7A0\uC5D0 \uB4E0\uB2F5\uB2C8\uB2E4"
+    enText: After pouring all your energy from spring to fall, the spirit goes into
+      a long winter sleep
+  - startTime: 88.5
+    endTime: 91.81
+    koText: "\uC62C\uD574\uB294 \uD48D\uB144\uC774\uACE0, \uB2E4\uB4E4 \uAC74\uAC15\uD574
+      \uBCF4\uC774\uB2C8"
+    enText: It's been a good harvest this year, and everyone looks healthy,
+  - startTime: 92.16481
+    endTime: 93.29481
+    koText: "\uC774\uC81C \uC26C\uC5B4\uB3C4 \uB420 \uAC83 \uAC19\uC544\uC694"
+    enText: so it seems alright to rest now
+  - startTime: 94.9523
+    endTime: 96.0823
+    koText: "\uADF8\uB7F0\uB370 \uADF8\uB54C"
+    enText: "But just then\u2014"
+  - startTime: 96.51667
+    endTime: 99.47667
+    koText: "\uC5B4\uB514\uC120\uAC00 \uAC11\uC790\uAE30 \uAE30\uC6B4\uC774 \uC804\uD574\uC84C\uC5B4\uC694"
+    enText: a sudden wave of energy came from somewhere
