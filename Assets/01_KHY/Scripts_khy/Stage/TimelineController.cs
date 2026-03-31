@@ -64,11 +64,13 @@ public class TimelineController : MonoBehaviour
         // 새 Director 구독
         if (currentDirector != null)
         {
-            // Play On Awake로 이미 재생 중이면 정지 (구독 전이라 stopped 이벤트 안전)
+            // Play On Awake로 이미 재생 중이면 Pause로 그래프 유지
+            // Stop()은 그래프를 파괴하여, 같은 프레임 내 Play() 시 Audio Track 바인딩이 깨질 수 있음
             if (currentDirector.state == PlayState.Playing)
             {
-                currentDirector.Stop();
-                Debug.Log($"[TimelineController] Play On Awake 감지 → 정지: {currentDirector.gameObject.name}", this);
+                currentDirector.Pause();
+                currentDirector.time = 0;
+                Debug.Log($"[TimelineController] Play On Awake 감지 → 일시정지: {currentDirector.gameObject.name}", this);
             }
 
             currentDirector.stopped += HandleTimelineStopped;
@@ -89,6 +91,7 @@ public class TimelineController : MonoBehaviour
 
         currentDirector.time = 0;
         currentDirector.Play();
+        currentDirector.Evaluate(); // 첫 프레임 강제 평가 → Audio Track 바인딩 보장
         OnTimelineStarted?.Invoke();
 
         Debug.Log($"[TimelineController] 재생 시작: {currentDirector.playableAsset.name}", this);

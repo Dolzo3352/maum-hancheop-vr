@@ -7,6 +7,7 @@ TagManager:
   - seq2_1
   - seq2_2
   - seq2_3
+  - Subtitle
   layers:
   - Default
   - TransparentFX

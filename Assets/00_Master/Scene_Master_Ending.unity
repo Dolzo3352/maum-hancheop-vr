@@ -4661,8 +4661,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 5.75
+  m_fontSizeBase: 5.75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11209,9 +11209,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 621252502}
-    - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1884207934}
     - targetCorrespondingSourceObject: {fileID: 202364688, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1592639598}
@@ -16010,10 +16007,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleDisplay
   timelineController: {fileID: 0}
   narrativeSequencer: {fileID: 0}
+  stageManager: {fileID: 0}
   directDirector: {fileID: 736751895}
   initialSubtitleData: {fileID: 11400000, guid: 18419153269a1f54aa257f1a4531e754, type: 2}
   subtitleText: {fileID: 233133113}
   canvasGroup: {fileID: 1884207935}
+  subtitleTag: Subtitle
   fadeSpeed: 5
 --- !u!224 &944552419
 RectTransform:
@@ -27003,7 +27002,7 @@ Transform:
   m_GameObject: {fileID: 1533333613}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64.14904, y: 0.07541835, z: -37.694054}
+  m_LocalPosition: {x: 64.14904, y: 0.27, z: -37.694054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33408,17 +33407,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884207933}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 235}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -38.44}
+  m_LocalScale: {x: 0.11886683, y: 0.11886682, z: 0.11886682}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 233133112}
-  m_Father: {fileID: 668919717}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 48.100002, y: 0.8999999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1884207935
@@ -38097,3 +38096,4 @@ SceneRoots:
   - {fileID: 1533333615}
   - {fileID: 2017523374}
   - {fileID: 944552419}
+  - {fileID: 1884207934}

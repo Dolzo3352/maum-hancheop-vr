@@ -37,6 +37,7 @@ public class SubtitleDisplay : MonoBehaviour
     [Header("참조 (멀티 스테이지 씬)")]
     [SerializeField] private TimelineController timelineController;
     [SerializeField] private NarrativeSequencer narrativeSequencer;
+    [SerializeField] private DioramaStageManager stageManager;
 
     [Header("참조 (단일 타임라인 씬)")]
     [Tooltip("TimelineController 없이 PlayableDirector를 직접 참조할 때")]
@@ -44,9 +45,13 @@ public class SubtitleDisplay : MonoBehaviour
     [Tooltip("NarrativeSequencer 없을 때 사용할 자막 데이터")]
     [SerializeField] private SubtitleData initialSubtitleData;
 
-    [Header("UI")]
+    [Header("UI (단일 타임라인 씬에서 직접 연결)")]
     [SerializeField] private TextMeshProUGUI subtitleText;
     [SerializeField] private CanvasGroup canvasGroup;
+
+    [Header("스테이지별 Canvas 자동 탐색")]
+    [Tooltip("각 스테이지 Canvas 하위 TextMeshProUGUI의 태그")]
+    [SerializeField] private string subtitleTag = "Subtitle";
 
     [Header("설정")]
     [Tooltip("페이드 속도 (높을수록 빠름)")]
@@ -88,7 +93,44 @@ public class SubtitleDisplay : MonoBehaviour
 
     private void HandleStageStart(int index, StageData data)
     {
+        // 스테이지 Canvas에서 UI 자동 탐색
+        if (stageManager != null)
+        {
+            FindStageSubtitleUI(data.stageIndex);
+        }
+
         SetSubtitleData(data != null ? data.subtitleData : null);
+    }
+
+    /// <summary>스테이지 GO 하위에서 태그로 자막 UI를 찾아 연결합니다.</summary>
+    private void FindStageSubtitleUI(int stageIndex)
+    {
+        // 이전 Canvas 숨기기
+        if (canvasGroup != null)
+            canvasGroup.alpha = 0f;
+
+        subtitleText = null;
+        canvasGroup = null;
+
+        if (stageManager == null) return;
+
+        var stageObj = stageManager.GetStage(stageIndex);
+        if (stageObj == null) return;
+
+        // 태그로 자막 텍스트 찾기
+        var allTexts = stageObj.GetComponentsInChildren<TextMeshProUGUI>(true);
+        foreach (var text in allTexts)
+        {
+            if (text.CompareTag(subtitleTag))
+            {
+                subtitleText = text;
+                canvasGroup = text.GetComponentInParent<CanvasGroup>();
+                if (canvasGroup != null)
+                    canvasGroup.alpha = 0f;
+                Debug.Log($"[SubtitleDisplay] Stage {stageIndex} 자막 UI 연결: {text.gameObject.name}", this);
+                break;
+            }
+        }
     }
 
     /// <summary>자막 데이터를 교체합니다.</summary>
