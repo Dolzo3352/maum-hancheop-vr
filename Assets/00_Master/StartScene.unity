@@ -1421,6 +1421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SubtitleLanguageToggle
   buttonLabel: {fileID: 1371739700}
+  resetToKoreanOnStart: 1
 --- !u!4 &665253396
 Transform:
   m_ObjectHideFlags: 0

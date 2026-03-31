@@ -12,8 +12,14 @@ public class SubtitleLanguageToggle : MonoBehaviour
     [Tooltip("현재 언어를 표시할 텍스트 (없으면 무시)")]
     [SerializeField] private TextMeshProUGUI buttonLabel;
 
+    [Tooltip("시작 시 한국어로 초기화 (StartScene에서만 체크)")]
+    [SerializeField] private bool resetToKoreanOnStart = false;
+
     private void Start()
     {
+        if (resetToKoreanOnStart)
+            SubtitleDisplay.CurrentLanguage = SubtitleDisplay.Language.Korean;
+
         UpdateLabel();
     }
 
