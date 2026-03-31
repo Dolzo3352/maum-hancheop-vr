@@ -88052,7 +88052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1266459731552040660, guid: 61055c9c5448c7c4ba8152b3849c6d94, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3960872010406387404, guid: 61055c9c5448c7c4ba8152b3849c6d94, type: 3}
       propertyPath: m_LocalPosition.x
@@ -133331,6 +133331,114 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ec2ec0bb5103f9479721c120ce3ba45, type: 3}
   m_PrefabInstance: {fileID: 3821981943687046060}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1507936566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507936568}
+  - component: {fileID: 1507936567}
+  - component: {fileID: 1507936569}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1507936567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507936566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c069f205921de464e932cc4aaf29ea0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BGMBlendManager
+  clipA: {fileID: 8300000, guid: e9cc80b79ba49e34e8f9ca66e9bd52a7, type: 3}
+  clipB: {fileID: 8300000, guid: 4f1e794ea0e98294dae594800f8cca0c, type: 3}
+  clipC: {fileID: 0}
+  masterVolume: 0.05
+  defaultFadeDuration: 2
+  playOnStart: 1
+  dontDestroyOnLoad: 1
+  blendPresets:
+  - presetName: "\uBA54\uC778"
+    weightA: 1
+    weightB: 0
+    weightC: 0
+    fadeDuration: 2
+  - presetName: "\uC544\uC774\uC9D1"
+    weightA: 0
+    weightB: 1
+    weightC: 0
+    fadeDuration: 0
+--- !u!4 &1507936568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507936566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 47.76493, y: 20.34129, z: -29.96266}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1507936569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507936566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 199c72599bc07634fa06a51599bb4efa, type: 2}
+    - {fileID: 11400000, guid: a7381a83129bdf24fa69cf228ba6c36b, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1507936567}
+          m_TargetAssemblyTypeName: BGMBlendManager, Assembly-CSharp
+          m_MethodName: ApplyPreset
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1507936567}
+          m_TargetAssemblyTypeName: BGMBlendManager, Assembly-CSharp
+          m_MethodName: ApplyPreset
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1507953092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -148214,7 +148322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1630499475
 Transform:
   m_ObjectHideFlags: 0
@@ -170449,7 +170557,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1851491458
 Transform:
   m_ObjectHideFlags: 0
@@ -170555,6 +170663,8 @@ PlayableDirector:
     value: {fileID: 802475834}
   - key: {fileID: 1885959238841275335, guid: 3b4f6e02127f564439914c285e7560e3, type: 2}
     value: {fileID: 1010142357}
+  - key: {fileID: -6518113912827573028, guid: 3b4f6e02127f564439914c285e7560e3, type: 2}
+    value: {fileID: 1507936569}
   m_ExposedReferences:
     m_References:
     - 48def2e4a0143394c94133bf15d01cb2: {fileID: 1954326173}
@@ -236937,3 +237047,4 @@ SceneRoots:
   - {fileID: 965258779}
   - {fileID: 366014270}
   - {fileID: 576588596}
+  - {fileID: 1507936568}
