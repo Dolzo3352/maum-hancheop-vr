@@ -32,7 +32,22 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 .section-rule{width:60px;height:3px;background:var(--orange);margin:0 auto 48px;border-radius:2px;opacity:0.6}
 .hand-card{background:rgba(253,246,227,0.7);border:2px dashed var(--amber);border-radius:12px 8px 14px 6px;padding:28px 24px}
 .leaf{position:absolute;pointer-events:none;opacity:0.15}
-@media(max-width:600px){.inner{padding:0 18px}.section-title{font-size:28px}}
+/* 살랑거리는 애니메이션 */
+@keyframes sway-slow{0%,100%{transform:rotate(0deg)}25%{transform:rotate(3deg)}50%{transform:rotate(-2deg)}75%{transform:rotate(2.5deg)}}
+@keyframes sway-mid{0%,100%{transform:rotate(0deg)}30%{transform:rotate(-4deg)}60%{transform:rotate(3deg)}80%{transform:rotate(-2deg)}}
+@keyframes sway-fast{0%,100%{transform:rotate(0deg)}20%{transform:rotate(5deg)}40%{transform:rotate(-4deg)}70%{transform:rotate(3.5deg)}90%{transform:rotate(-2deg)}}
+@keyframes sway-grass{0%,100%{transform:skewX(0deg)}25%{transform:skewX(4deg)}50%{transform:skewX(-3deg)}75%{transform:skewX(2.5deg)}}
+.nature-scene{position:absolute;bottom:0;left:0;width:100%;height:220px;pointer-events:none;overflow:hidden;z-index:0}
+.tree{transform-origin:bottom center}
+.tree-slow{animation:sway-slow 6s ease-in-out infinite}
+.tree-mid{animation:sway-mid 5s ease-in-out infinite}
+.grass{transform-origin:bottom center}
+.grass-1{animation:sway-fast 3.5s ease-in-out infinite}
+.grass-2{animation:sway-grass 4s ease-in-out infinite 0.3s}
+.grass-3{animation:sway-mid 4.5s ease-in-out infinite 0.6s}
+.grass-4{animation:sway-fast 3s ease-in-out infinite 1s}
+.grass-5{animation:sway-grass 3.8s ease-in-out infinite 0.5s}
+@media(max-width:600px){.inner{padding:0 18px}.section-title{font-size:28px}.nature-scene{height:160px}}
 </style>
 </head>
 <body>
@@ -52,9 +67,80 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <p style="font-family:Gaegu,cursive;font-size:15px;color:var(--brown);margin-bottom:48px;letter-spacing:0.08em">Meta Quest 3 · VR 디오라마 인터랙티브 내러티브</p>
 <a href="#story" style="display:inline-block;padding:14px 36px;background:transparent;color:var(--orange);text-decoration:none;border:2px dashed var(--orange);border-radius:10px 6px 12px 8px;font-family:Gaegu,cursive;font-size:16px;font-weight:700;transition:background 0.3s" onmouseover="this.style.background='rgba(212,121,58,0.1)'" onmouseout="this.style.background='transparent'">작품 보기</a>
 </div>
-<div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0.4">
+<div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0.4;z-index:2">
 <span style="font-family:Gaegu,cursive;font-size:12px;color:var(--brown)">scroll</span>
 <div style="width:2px;height:36px;background:linear-gradient(to bottom,var(--orange),transparent);border-radius:1px"></div>
+</div>
+
+<!-- 감나무 + 억새 살랑거리는 장면 -->
+<div class="nature-scene">
+<!-- 왼쪽 감나무 -->
+<svg class="tree tree-slow" style="position:absolute;bottom:0;left:2%;width:120px;height:200px;opacity:0.25" viewBox="0 0 120 200">
+<rect x="55" y="100" width="10" height="100" rx="3" fill="#6B4226"/>
+<circle cx="40" cy="70" r="30" fill="#D4793A"/>
+<circle cx="80" cy="60" r="28" fill="#B85C3A"/>
+<circle cx="60" cy="45" r="32" fill="#D4793A"/>
+<circle cx="55" cy="80" r="25" fill="#C8882E"/>
+<circle cx="48" cy="95" r="6" fill="#D4A843"/>
+<circle cx="72" cy="88" r="5" fill="#D4A843"/>
+<circle cx="38" cy="75" r="5.5" fill="#D4A843"/>
+</svg>
+
+<!-- 오른쪽 감나무 -->
+<svg class="tree tree-mid" style="position:absolute;bottom:0;right:3%;width:100px;height:180px;opacity:0.2" viewBox="0 0 120 200">
+<rect x="55" y="110" width="10" height="90" rx="3" fill="#6B4226"/>
+<circle cx="45" cy="80" r="28" fill="#C8882E"/>
+<circle cx="75" cy="70" r="26" fill="#D4793A"/>
+<circle cx="60" cy="55" r="30" fill="#B85C3A"/>
+<circle cx="50" cy="100" r="5" fill="#D4A843"/>
+<circle cx="70" cy="92" r="4.5" fill="#D4A843"/>
+</svg>
+
+<!-- 억새 무리들 -->
+<svg class="grass grass-1" style="position:absolute;bottom:0;left:15%;width:20px;height:110px;opacity:0.3" viewBox="0 0 20 110">
+<path d="M10 110 Q8 60 4 20 Q3 10 6 0" stroke="#C8882E" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M10 110 Q12 55 16 15 Q17 5 14 0" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<path d="M10 110 Q9 70 10 30 Q10 15 10 0" stroke="#C8882E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<ellipse cx="4" cy="5" rx="4" ry="8" fill="#D4A843" opacity="0.6" transform="rotate(-15,4,5)"/>
+<ellipse cx="14" cy="3" rx="3.5" ry="7" fill="#C8882E" opacity="0.5" transform="rotate(10,14,3)"/>
+<ellipse cx="10" cy="2" rx="3" ry="7" fill="#D4A843" opacity="0.55"/>
+</svg>
+
+<svg class="grass grass-2" style="position:absolute;bottom:0;left:22%;width:18px;height:95px;opacity:0.25" viewBox="0 0 20 110">
+<path d="M10 110 Q7 55 5 15" stroke="#D4A843" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M10 110 Q13 60 15 20" stroke="#C8882E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<ellipse cx="5" cy="10" rx="4" ry="8" fill="#D4A843" opacity="0.5" transform="rotate(-10,5,10)"/>
+<ellipse cx="15" cy="15" rx="3.5" ry="7" fill="#C8882E" opacity="0.45" transform="rotate(12,15,15)"/>
+</svg>
+
+<svg class="grass grass-3" style="position:absolute;bottom:0;left:30%;width:16px;height:80px;opacity:0.2" viewBox="0 0 20 110">
+<path d="M10 110 Q8 50 6 10" stroke="#C8882E" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M10 110 Q12 55 14 15" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<ellipse cx="6" cy="8" rx="3.5" ry="7" fill="#C8882E" opacity="0.5" transform="rotate(-8,6,8)"/>
+</svg>
+
+<svg class="grass grass-4" style="position:absolute;bottom:0;right:18%;width:22px;height:105px;opacity:0.28" viewBox="0 0 20 110">
+<path d="M10 110 Q7 50 3 10" stroke="#D4A843" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M10 110 Q14 55 17 12" stroke="#C8882E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<path d="M10 110 Q10 65 10 20" stroke="#D4793A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<ellipse cx="3" cy="6" rx="4" ry="8" fill="#D4A843" opacity="0.55" transform="rotate(-12,3,6)"/>
+<ellipse cx="17" cy="8" rx="3.5" ry="7" fill="#C8882E" opacity="0.5" transform="rotate(15,17,8)"/>
+</svg>
+
+<svg class="grass grass-5" style="position:absolute;bottom:0;right:25%;width:17px;height:88px;opacity:0.22" viewBox="0 0 20 110">
+<path d="M10 110 Q8 55 5 12" stroke="#C8882E" stroke-width="2" fill="none" stroke-linecap="round"/>
+<path d="M10 110 Q13 60 15 18" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<ellipse cx="5" cy="8" rx="3.5" ry="7" fill="#D4A843" opacity="0.5" transform="rotate(-5,5,8)"/>
+</svg>
+
+<svg class="grass grass-2" style="position:absolute;bottom:0;right:12%;width:15px;height:70px;opacity:0.18" viewBox="0 0 20 110">
+<path d="M10 110 Q7 50 6 15" stroke="#D4793A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<path d="M10 110 Q14 55 15 20" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+<ellipse cx="6" cy="12" rx="3" ry="6" fill="#D4793A" opacity="0.4" transform="rotate(-8,6,12)"/>
+</svg>
+
+<!-- 바닥 풀밭 라인 -->
+<div style="position:absolute;bottom:0;left:0;width:100%;height:20px;background:linear-gradient(to top,rgba(107,66,38,0.08),transparent);border-radius:50% 50% 0 0"></div>
 </div>
 </section>
 
