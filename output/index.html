@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>마음 한첩 — A Remedy for the Heart</title>
-<meta name="description" content="Meta Quest 3 기반 VR 디오라마 인터랙티브 내러티브. 부천판타스틱어워즈 출품작.">
-<meta property="og:title" content="마음 한첩 — A Remedy for the Heart">
+<title>마음 한첩 — A Dozen of Heart</title>
+<meta name="description" content="Meta Quest 3 기반 VR 디오라마 인터랙티브 내러티브. 부천국제판타스틱영화제 출품작.">
+<meta property="og:title" content="마음 한첩 — A Dozen of Heart">
 <meta property="og:description" content="돌아가는 길이 틀린 길이 아닐 수 있다는 것.">
 <meta property="og:image" content="">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3C2FBQWTFN"></script>
@@ -56,6 +56,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 .lightbox-close{position:fixed;top:20px;right:24px;width:44px;height:44px;background:rgba(255,255,255,0.12);border:none;border-radius:50%;color:#fff;font-size:28px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10001;transition:background 0.2s}
 .lightbox-close:hover{background:rgba(255,255,255,0.25)}
 .lightbox-caption{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);font-family:Gaegu,cursive;font-size:16px;color:rgba(255,255,255,0.7);z-index:10001}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:52px;height:52px;background:rgba(255,255,255,0.1);border:none;border-radius:50%;color:#fff;font-size:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10001;transition:background 0.2s;line-height:1}
+.lightbox-nav:hover{background:rgba(255,255,255,0.25)}
+.lightbox-prev{left:20px}
+.lightbox-next{right:20px}
 </style>
 </head>
 <body>
@@ -68,9 +72,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <svg class="leaf" style="bottom:25%;right:6%;width:38px;transform:rotate(45deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#B85C3A"/></svg>
 
 <div style="position:relative;z-index:1;max-width:640px">
-<div style="display:inline-block;margin-bottom:40px;padding:8px 20px;border:2px dashed var(--orange);border-radius:8px 6px 10px 4px;font-family:Gaegu,cursive;font-size:14px;color:var(--orange)">부천판타스틱어워즈 출품작 · BIFAN 2026</div>
+<div style="display:inline-block;margin-bottom:40px;padding:8px 20px;border:2px dashed var(--orange);border-radius:8px 6px 10px 4px;font-family:Gaegu,cursive;font-size:14px;color:var(--orange)">부천국제판타스틱영화제 출품작 · BIFAN 2026</div>
 <h1 style="font-family:Gaegu,cursive;font-size:clamp(60px,12vw,96px);font-weight:700;color:var(--dark);letter-spacing:0.04em;margin-bottom:16px;line-height:1.1">마음 한첩</h1>
-<p style="font-family:Gaegu,cursive;font-size:clamp(18px,3.5vw,26px);font-weight:400;color:var(--brown);letter-spacing:0.1em;margin-bottom:28px;font-style:italic">A Remedy for the Heart</p>
+<p style="font-family:Gaegu,cursive;font-size:clamp(18px,3.5vw,26px);font-weight:400;color:var(--brown);letter-spacing:0.1em;margin-bottom:28px;font-style:italic">A Dozen of Heart</p>
 <div style="width:50px;height:3px;background:var(--orange);margin:0 auto 28px;border-radius:2px;opacity:0.5"></div>
 <p style="font-family:Gaegu,cursive;font-size:15px;color:var(--brown);margin-bottom:48px;letter-spacing:0.08em">Meta Quest 3 · VR 디오라마 인터랙티브 내러티브</p>
 <a href="#story" style="display:inline-block;padding:14px 36px;background:transparent;color:var(--orange);text-decoration:none;border:2px dashed var(--orange);border-radius:10px 6px 12px 8px;font-family:Gaegu,cursive;font-size:16px;font-weight:700;transition:background 0.3s" onmouseover="this.style.background='rgba(212,121,58,0.1)'" onmouseout="this.style.background='transparent'">작품 보기</a>
@@ -314,42 +318,17 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <!-- INTERACTION -->
 <section id="interaction" style="padding:100px 0;background:var(--paper);position:relative">
 <svg class="leaf" style="top:6%;right:7%;width:30px;transform:rotate(25deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#D4A843"/></svg>
-<div class="inner">
+<div class="inner" style="max-width:900px">
 <span class="section-label reveal">Experience</span>
 <h2 class="section-title reveal">인터랙션</h2>
 <div class="section-rule reveal"></div>
 
 <!-- Video placeholder -->
-<div style="width:100%;aspect-ratio:16/9;background:rgba(107,66,38,0.06);border:3px dashed var(--amber);border-radius:14px 8px 16px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;margin-bottom:48px" class="reveal">
-<div style="width:64px;height:64px;border:3px dashed var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center">
-<svg width="24" height="28" viewBox="0 0 24 28" fill="none"><path d="M4 2l18 12L4 26V2z" fill="#D4793A" opacity="0.6"/></svg>
+<div style="width:100%;aspect-ratio:16/9;background:rgba(107,66,38,0.06);border:3px dashed var(--amber);border-radius:14px 8px 16px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px" class="reveal">
+<div style="width:80px;height:80px;border:3px dashed var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center">
+<svg width="32" height="36" viewBox="0 0 24 28" fill="none"><path d="M4 2l18 12L4 26V2z" fill="#D4793A" opacity="0.6"/></svg>
 </div>
-<p style="font-family:Gaegu,cursive;font-size:16px;color:var(--brown);font-weight:700">인터랙션 영상 준비 중</p>
-</div>
-
-<!-- Features -->
-<div class="reveal">
-<div style="display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:2px dashed rgba(200,136,46,0.2)">
-<div style="flex-shrink:0;width:44px;font-family:Gaegu,cursive;font-size:36px;font-weight:700;color:rgba(212,121,58,0.3);line-height:1">1</div>
-<div>
-<h3 style="font-family:Gaegu,cursive;font-size:19px;font-weight:700;color:var(--dark);margin-bottom:8px">타임라인 분기</h3>
-<p style="font-size:14px;color:#7A5C4A;line-height:1.9">관객이 선택한 경로에 따라 이야기가 갈라진다. 여러 번 경험해 다양한 엔딩을 발견할 수 있다.</p>
-</div>
-</div>
-<div style="display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:2px dashed rgba(200,136,46,0.2)">
-<div style="flex-shrink:0;width:44px;font-family:Gaegu,cursive;font-size:36px;font-weight:700;color:rgba(212,121,58,0.3);line-height:1">2</div>
-<div>
-<h3 style="font-family:Gaegu,cursive;font-size:19px;font-weight:700;color:var(--dark);margin-bottom:8px">환경 변화</h3>
-<p style="font-size:14px;color:#7A5C4A;line-height:1.9">시점 조작에 따라 배경과 세계가 변한다. 계절, 시간대, 지형의 변화가 은유적 연출을 담아낸다.</p>
-</div>
-</div>
-<div style="display:flex;gap:20px;align-items:flex-start;padding:24px 0">
-<div style="flex-shrink:0;width:44px;font-family:Gaegu,cursive;font-size:36px;font-weight:700;color:rgba(212,121,58,0.3);line-height:1">3</div>
-<div>
-<h3 style="font-family:Gaegu,cursive;font-size:19px;font-weight:700;color:var(--dark);margin-bottom:8px">손 교감</h3>
-<p style="font-size:14px;color:#7A5C4A;line-height:1.9">VR 공간 내 객체와의 직관적 상호작용. 손 트래킹을 통해 이야기의 미세한 감정 변화를 조종할 수 있다.</p>
-</div>
-</div>
+<p style="font-family:Gaegu,cursive;font-size:18px;color:var(--brown);font-weight:700">인터랙션 영상 준비 중</p>
 </div>
 </div>
 </section>
@@ -400,7 +379,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <div style="text-align:center;padding:48px 32px;border:3px dashed var(--amber);border-radius:16px 10px 14px 8px;margin-bottom:16px;background:rgba(253,246,227,0.4)" class="reveal">
 <p style="font-family:Gaegu,cursive;font-size:14px;color:var(--orange);margin-bottom:20px;font-weight:700;letter-spacing:0.15em">Directed by</p>
 <p style="font-family:Gaegu,cursive;font-size:36px;font-weight:700;color:var(--dark);letter-spacing:0.04em;margin-bottom:10px">김하윤 · 송동호</p>
-<p style="font-family:Gaegu,cursive;font-size:17px;color:var(--brown);font-style:italic">Hayoon Kim · Dongho Song</p>
+<p style="font-family:Gaegu,cursive;font-size:17px;color:var(--brown);font-style:italic">Kim Hayun · Dongho Song</p>
 </div>
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px" class="reveal">
@@ -427,15 +406,20 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
 <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+<button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&lsaquo;</button>
 <img id="lightbox-img" src="" alt="">
+<button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&rsaquo;</button>
 <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
 
 <!-- Scroll reveal -->
 <script>
-function openLightbox(el){var lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=el.src;document.getElementById('lightbox-caption').textContent=el.dataset.caption||'';lb.classList.add('active');document.body.style.overflow='hidden'}
+var lbImages=[];var lbIndex=0;
+function openLightbox(el){lbImages=Array.from(document.querySelectorAll('.world-img'));lbIndex=lbImages.indexOf(el);showLbImage();document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden'}
+function showLbImage(){var img=lbImages[lbIndex];document.getElementById('lightbox-img').src=img.src;document.getElementById('lightbox-caption').textContent=img.dataset.caption||''}
+function navLightbox(dir){lbIndex=(lbIndex+dir+lbImages.length)%lbImages.length;showLbImage()}
 function closeLightbox(e){if(e.target.id==='lightbox'||e.target.classList.contains('lightbox-close')){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox({target:{id:'lightbox'}})});
+document.addEventListener('keydown',function(e){var lb=document.getElementById('lightbox');if(!lb.classList.contains('active'))return;if(e.key==='Escape')closeLightbox({target:{id:'lightbox'}});if(e.key==='ArrowLeft')navLightbox(-1);if(e.key==='ArrowRight')navLightbox(1)});
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
