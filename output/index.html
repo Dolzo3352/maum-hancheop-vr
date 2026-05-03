@@ -47,7 +47,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 .grass-3{animation:sway-mid 4.5s ease-in-out infinite 0.6s}
 .grass-4{animation:sway-fast 3s ease-in-out infinite 1s}
 .grass-5{animation:sway-grass 3.8s ease-in-out infinite 0.5s}
-@media(max-width:600px){.inner{padding:0 18px}.section-title{font-size:28px}.nature-scene{height:320px}}
+@media(max-width:600px){.inner{padding:0 18px}.section-title{font-size:28px}.nature-scene{height:320px}.nature-scene .grass{scale:0.4}.grass-hide-mobile{display:none}}
 .world-img{width:100%;height:100%;object-fit:cover;border-radius:inherit;cursor:pointer;transition:transform 0.3s ease,box-shadow 0.3s ease}
 .world-img:hover{transform:scale(1.02);box-shadow:0 8px 32px rgba(61,43,31,0.15)}
 .lightbox{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:24px;cursor:pointer}
@@ -137,7 +137,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 </svg>
 
 <!-- 오른쪽 감나무 (줄기-가지-잎 일체형, 좀 더 작게) -->
-<svg class="tree tree-mid" style="position:absolute;bottom:0;right:1%;width:230px;height:380px;opacity:0.2" viewBox="0 0 140 210">
+<svg class="tree tree-mid" style="position:absolute;bottom:0;right:1%;width:230px;height:345px;opacity:0.2" viewBox="0 0 140 210">
 <path d="M70 210 C70 210 72 175 73 155 C74 140 75 125 75 115" stroke="#5A3518" stroke-width="7" fill="none" stroke-linecap="round"/>
 <path d="M74 148 C82 138 95 130 105 122" stroke="#5A3518" stroke-width="3.5" fill="none" stroke-linecap="round"/>
 <path d="M74 135 C65 125 52 118 42 112" stroke="#5A3518" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -166,7 +166,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <ellipse cx="5" cy="8" rx="3.5" ry="7" fill="#D4A843" opacity="0.5" transform="rotate(-8,5,8)"/>
 <ellipse cx="15" cy="14" rx="3" ry="6.5" fill="#C8882E" opacity="0.45" transform="rotate(10,15,14)"/>
 </svg>
-<svg class="grass grass-5" style="position:absolute;bottom:0;left:18%;width:32px;height:170px;opacity:0.22" viewBox="0 0 20 110">
+<svg class="grass grass-5 grass-hide-mobile" style="position:absolute;bottom:0;left:18%;width:32px;height:170px;opacity:0.22" viewBox="0 0 20 110">
 <path d="M10 110 Q7 50 6 10" stroke="#C8882E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 <path d="M10 110 Q14 55 15 15" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 <ellipse cx="6" cy="8" rx="3" ry="6" fill="#C8882E" opacity="0.45" transform="rotate(-5,6,8)"/>
@@ -194,7 +194,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <ellipse cx="3" cy="6" rx="3.5" ry="7" fill="#D4A843" opacity="0.5" transform="rotate(-12,3,6)"/>
 <ellipse cx="17" cy="10" rx="3" ry="6.5" fill="#C8882E" opacity="0.45" transform="rotate(8,17,10)"/>
 </svg>
-<svg class="grass grass-3" style="position:absolute;bottom:0;left:37%;width:30px;height:156px;opacity:0.2" viewBox="0 0 20 110">
+<svg class="grass grass-3 grass-hide-mobile" style="position:absolute;bottom:0;left:37%;width:30px;height:156px;opacity:0.2" viewBox="0 0 20 110">
 <path d="M10 110 Q8 50 6 12" stroke="#C8882E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 <path d="M10 110 Q12 55 14 16" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 <ellipse cx="6" cy="8" rx="3" ry="6" fill="#C8882E" opacity="0.4" transform="rotate(-6,6,8)"/>
@@ -208,7 +208,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <ellipse cx="5" cy="10" rx="3.5" ry="7.5" fill="#D4A843" opacity="0.5" transform="rotate(-10,5,10)"/>
 <ellipse cx="19" cy="13" rx="3" ry="7" fill="#C8882E" opacity="0.45" transform="rotate(12,19,13)"/>
 </svg>
-<svg class="grass grass-2" style="position:absolute;bottom:0;left:47%;width:34px;height:176px;opacity:0.22" viewBox="0 0 20 110">
+<svg class="grass grass-2 grass-hide-mobile" style="position:absolute;bottom:0;left:47%;width:34px;height:176px;opacity:0.22" viewBox="0 0 20 110">
 <path d="M10 110 Q7 52 5 10" stroke="#C8882E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 <path d="M10 110 Q13 56 16 15" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 <ellipse cx="5" cy="6" rx="3" ry="6.5" fill="#C8882E" opacity="0.45" transform="rotate(-8,5,6)"/>
@@ -221,7 +221,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <ellipse cx="4" cy="8" rx="4" ry="8" fill="#D4A843" opacity="0.55" transform="rotate(-12,4,8)"/>
 <ellipse cx="20" cy="12" rx="3.5" ry="7" fill="#C8882E" opacity="0.5" transform="rotate(10,20,12)"/>
 </svg>
-<svg class="grass grass-1" style="position:absolute;bottom:0;right:34%;width:32px;height:164px;opacity:0.2" viewBox="0 0 20 110">
+<svg class="grass grass-1 grass-hide-mobile" style="position:absolute;bottom:0;right:34%;width:32px;height:164px;opacity:0.2" viewBox="0 0 20 110">
 <path d="M10 110 Q8 52 5 10" stroke="#C8882E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 <path d="M10 110 Q13 55 15 14" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 <ellipse cx="5" cy="6" rx="3" ry="6" fill="#C8882E" opacity="0.4" transform="rotate(-6,5,6)"/>
@@ -247,7 +247,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <path d="M10 110 Q14 58 17 16" stroke="#C8882E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 <ellipse cx="4" cy="8" rx="3.5" ry="7" fill="#D4A843" opacity="0.5" transform="rotate(-8,4,8)"/>
 </svg>
-<svg class="grass grass-4" style="position:absolute;bottom:0;right:16%;width:32px;height:160px;opacity:0.2" viewBox="0 0 20 110">
+<svg class="grass grass-4 grass-hide-mobile" style="position:absolute;bottom:0;right:16%;width:32px;height:160px;opacity:0.2" viewBox="0 0 20 110">
 <path d="M10 110 Q7 50 5 10" stroke="#C8882E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 <path d="M10 110 Q14 55 16 15" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 <ellipse cx="5" cy="6" rx="3" ry="6" fill="#C8882E" opacity="0.4" transform="rotate(-5,5,6)"/>
@@ -261,7 +261,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <ellipse cx="6" cy="10" rx="4" ry="8" fill="#D4A843" opacity="0.55" transform="rotate(-12,6,10)"/>
 <ellipse cx="18" cy="12" rx="3.5" ry="7.5" fill="#C8882E" opacity="0.5" transform="rotate(10,18,12)"/>
 </svg>
-<svg class="grass grass-3" style="position:absolute;bottom:0;right:6%;width:34px;height:180px;opacity:0.22" viewBox="0 0 20 110">
+<svg class="grass grass-3 grass-hide-mobile" style="position:absolute;bottom:0;right:6%;width:34px;height:180px;opacity:0.22" viewBox="0 0 20 110">
 <path d="M10 110 Q8 52 5 10" stroke="#C8882E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 <path d="M10 110 Q13 55 16 15" stroke="#D4A843" stroke-width="1.5" fill="none" stroke-linecap="round"/>
 <ellipse cx="5" cy="6" rx="3" ry="6.5" fill="#C8882E" opacity="0.45" transform="rotate(-8,5,6)"/>
@@ -287,7 +287,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 
 <div style="width:100%;height:2px;border-bottom:2px dashed rgba(200,136,46,0.3);margin:0 0 48px" class="reveal"></div>
 
-<div style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:40px" class="reveal">
+<div style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:40px;text-align:center" class="reveal">
 <p data-i18n="synopsis.body1" style="margin-bottom:16px">마을에서 한약방을 운영하던 신령은 곤란한 상황이었다. 약이 아직 준비되지 않았는데, 아이는 곧 도착할 터였다. 그런데 아이가 오지 않는다. 반대 방향으로 한참을 달려가고 있다. 덕분에 신령에게 시간이 생겼다.</p>
 <p data-i18n="synopsis.body2">그리고 신령은 깨닫는다. 아이가 돌아오는 그 먼 길에서, 감나무골을 지나며 부모를 생각해 챙긴 것들이 약의 마지막 재료가 된다는 것을.</p>
 </div>
@@ -297,11 +297,11 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <span data-i18n="synopsis.quote">실수로 돌아간 길이,<br>처음부터 약의 일부였다는 것을.</span>
 </blockquote>
 
-<div style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:40px" class="reveal">
+<div style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:40px;text-align:center" class="reveal">
 <p data-i18n="synopsis.body3">관객은 신령이 되어 약을 완성해간다. 천계와 지하를 가로지르는 디오라마 세계 안에서 직접 손을 쓰고, 세계와 교감하며, 아이가 돌아올 때를 함께 기다린다. 실수로 벌어진 시간이 하나의 마음으로 모이는 과정이다.</p>
 </div>
 
-<div data-i18n="synopsis.outro" style="margin-top:40px;padding:24px 28px;background:rgba(212,121,58,0.06);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;font-family:'Noto Serif KR',serif;font-size:15px;line-height:2.1;color:var(--brown)" class="reveal">
+<div data-i18n="synopsis.outro" style="margin-top:40px;padding:24px 28px;background:rgba(212,121,58,0.06);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;font-family:'Noto Serif KR',serif;font-size:15px;line-height:2.1;color:var(--brown);text-align:center" class="reveal">
 따뜻한 세계관과 정겨운 비주얼 속에서, 관객은 잠시 일상을 내려놓고<br>작은 위로 하나를 조용히 안고 돌아갈 수 있다.
 </div>
 </div>
@@ -365,7 +365,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <h2 class="section-title reveal" data-i18n="whyvr.title">왜 이 작품은 VR이어야 하는가</h2>
 <div class="section-rule reveal"></div>
 
-<p data-i18n="whyvr.intro" style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:48px" class="reveal">이 작품이 VR을 선택한 것은 단순히 새로운 기술을 활용하기 위해서가 아니다. VR은 자유도가 높은 매체처럼 보이지만, 실제로 구현할 수 있는 세계는 제한적이다. 그 한계를 인정하고, 오히려 디오라마 뷰라는 형식 안에 이야기를 담았다. 관객은 천계와 지하를 한눈에 바라보는 신령의 시점으로 세계 전체를 품는다. 그리고 때로는 그 축소된 세상 속으로 직접 들어가는 시점 전환을 통해, 단순히 보는 사람이 아니라 이야기 안에 있는 존재가 된다.</p>
+<p data-i18n="whyvr.intro" style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:48px;text-align:center" class="reveal">이 작품이 VR을 선택한 것은 단순히 새로운 기술을 활용하기 위해서가 아니다. VR은 자유도가 높은 매체처럼 보이지만, 실제로 구현할 수 있는 세계는 제한적이다. 그 한계를 인정하고, 오히려 디오라마 뷰라는 형식 안에 이야기를 담았다. 관객은 천계와 지하를 한눈에 바라보는 신령의 시점으로 세계 전체를 품는다. 그리고 때로는 그 축소된 세상 속으로 직접 들어가는 시점 전환을 통해, 단순히 보는 사람이 아니라 이야기 안에 있는 존재가 된다.</p>
 
 <div style="display:flex;flex-direction:column;gap:12px" class="reveal">
 <div class="hand-card">
