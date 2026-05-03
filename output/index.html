@@ -53,9 +53,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 .lightbox{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:24px;cursor:pointer}
 .lightbox.active{display:flex}
 .lightbox img{width:100vw;height:100vh;object-fit:contain;cursor:default}
-.lightbox-close{position:fixed;top:20px;right:20px;width:48px;height:48px;background:rgba(253,246,227,0.95);border:2px dashed var(--amber);border-radius:50%;color:var(--brown);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10002;transition:background 0.2s,transform 0.2s;box-shadow:0 4px 16px rgba(0,0,0,0.4);padding:0}
+.lightbox-close{position:fixed;top:20px;right:20px;width:42px;height:42px;background:rgba(253,246,227,0.95);border:2px dashed var(--amber);border-radius:50%;color:var(--brown);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10002;transition:background 0.2s,transform 0.2s;box-shadow:0 4px 16px rgba(0,0,0,0.4);padding:0}
 .lightbox-close:hover{background:rgba(253,246,227,1);transform:scale(1.06)}
-.lightbox-close svg{width:18px;height:18px;display:block;pointer-events:none}
+.lightbox-close svg{width:16px;height:16px;display:block;pointer-events:none}
 body.lightbox-open .lang-switcher{display:none}
 .lightbox-caption{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);font-family:Gaegu,cursive;font-size:16px;color:rgba(255,255,255,0.7);z-index:10001}
 .lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:52px;height:52px;background:rgba(255,255,255,0.1);border:none;border-radius:50%;color:#fff;font-size:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10001;transition:background 0.2s;line-height:1}
