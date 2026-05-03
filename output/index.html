@@ -60,9 +60,35 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 .lightbox-nav:hover{background:rgba(255,255,255,0.25)}
 .lightbox-prev{left:20px}
 .lightbox-next{right:20px}
+/* 언어 선택기 */
+.lang-switcher{position:fixed;top:20px;right:20px;z-index:10001;font-family:Gaegu,cursive;user-select:none}
+.lang-toggle{display:flex;align-items:center;gap:8px;padding:8px 14px;background:rgba(253,246,227,0.92);border:2px dashed var(--amber);border-radius:10px 6px 12px 8px;cursor:pointer;font-family:inherit;font-size:14px;color:var(--brown);font-weight:700;letter-spacing:0.05em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(61,43,31,0.08)}
+.lang-toggle:hover{background:rgba(253,246,227,1);box-shadow:0 4px 14px rgba(61,43,31,0.12)}
+.lang-flag{font-size:18px;line-height:1}
+.lang-arrow{font-size:11px;transition:transform 0.2s;opacity:0.7}
+.lang-switcher.open .lang-arrow{transform:rotate(180deg)}
+.lang-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;list-style:none;padding:6px;margin:0;background:rgba(253,246,227,0.98);border:2px dashed var(--amber);border-radius:10px 6px 12px 8px;min-width:148px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(61,43,31,0.15)}
+.lang-switcher.open .lang-menu{display:block}
+.lang-menu li{display:flex;align-items:center;gap:10px;padding:8px 12px;cursor:pointer;border-radius:6px;font-size:14px;color:var(--dark);transition:background 0.15s}
+.lang-menu li:hover{background:rgba(212,121,58,0.12)}
+.lang-menu li.active{color:var(--orange);font-weight:700;background:rgba(212,121,58,0.08)}
+@media(max-width:600px){.lang-switcher{top:14px;right:14px}.lang-toggle{padding:6px 11px;font-size:13px}.lang-flag{font-size:16px}.lang-menu{min-width:130px}}
 </style>
 </head>
 <body>
+
+<!-- 언어 선택기 -->
+<div class="lang-switcher" id="langSwitcher">
+<button class="lang-toggle" id="langToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Language">
+<span class="lang-flag" id="langFlag">🇰🇷</span>
+<span class="lang-code" id="langCode">KO</span>
+<span class="lang-arrow">▾</span>
+</button>
+<ul class="lang-menu" id="langMenu" role="menu">
+<li role="menuitem" data-lang="ko"><span class="lang-flag">🇰🇷</span><span>한국어</span></li>
+<li role="menuitem" data-lang="en"><span class="lang-flag">🇺🇸</span><span>English</span></li>
+</ul>
+</div>
 
 <!-- HERO -->
 <section style="width:100%;min-height:100vh;background:linear-gradient(160deg,#E8CFA0 0%,#F0DEB8 40%,#FDF6E3 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px;position:relative;overflow:hidden">
@@ -72,12 +98,12 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <svg class="leaf" style="bottom:25%;right:6%;width:38px;transform:rotate(45deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#B85C3A"/></svg>
 
 <div style="position:relative;z-index:1;max-width:640px">
-<div style="display:inline-block;margin-bottom:40px;padding:8px 20px;border:2px dashed var(--orange);border-radius:8px 6px 10px 4px;font-family:Gaegu,cursive;font-size:14px;color:var(--orange)">부천국제판타스틱영화제 출품작 · BIFAN 2026</div>
+<div data-i18n="hero.badge" style="display:inline-block;margin-bottom:40px;padding:8px 20px;border:2px dashed var(--orange);border-radius:8px 6px 10px 4px;font-family:Gaegu,cursive;font-size:14px;color:var(--orange)">부천국제판타스틱영화제 출품작 · BIFAN 2026</div>
 <h1 style="font-family:Gaegu,cursive;font-size:clamp(60px,12vw,96px);font-weight:700;color:var(--dark);letter-spacing:0.04em;margin-bottom:16px;line-height:1.1">마음 한첩</h1>
 <p style="font-family:Gaegu,cursive;font-size:clamp(18px,3.5vw,26px);font-weight:400;color:var(--brown);letter-spacing:0.1em;margin-bottom:28px;font-style:italic">A Dose of Heart</p>
 <div style="width:50px;height:3px;background:var(--orange);margin:0 auto 28px;border-radius:2px;opacity:0.5"></div>
-<p style="font-family:Gaegu,cursive;font-size:15px;color:var(--brown);margin-bottom:48px;letter-spacing:0.08em">Meta Quest 3 · VR 디오라마 인터랙티브 내러티브</p>
-<a href="#story" style="display:inline-block;padding:14px 36px;background:transparent;color:var(--orange);text-decoration:none;border:2px dashed var(--orange);border-radius:10px 6px 12px 8px;font-family:Gaegu,cursive;font-size:16px;font-weight:700;transition:background 0.3s" onmouseover="this.style.background='rgba(212,121,58,0.1)'" onmouseout="this.style.background='transparent'">작품 보기</a>
+<p data-i18n="hero.platform" style="font-family:Gaegu,cursive;font-size:15px;color:var(--brown);margin-bottom:48px;letter-spacing:0.08em">Meta Quest 3 · VR 디오라마 인터랙티브 내러티브</p>
+<a href="#story" data-i18n="hero.cta" style="display:inline-block;padding:14px 36px;background:transparent;color:var(--orange);text-decoration:none;border:2px dashed var(--orange);border-radius:10px 6px 12px 8px;font-family:Gaegu,cursive;font-size:16px;font-weight:700;transition:background 0.3s" onmouseover="this.style.background='rgba(212,121,58,0.1)'" onmouseout="this.style.background='transparent'">작품 보기</a>
 </div>
 <div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0.4;z-index:2">
 <span style="font-family:Gaegu,cursive;font-size:12px;color:var(--brown)">scroll</span>
@@ -251,31 +277,31 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <svg class="leaf" style="top:5%;right:4%;width:32px;transform:rotate(15deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#D4A843"/></svg>
 <svg class="leaf" style="bottom:8%;left:3%;width:28px;transform:rotate(-25deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#C8882E"/></svg>
 <div class="inner">
-<span class="section-label reveal">Synopsis</span>
-<h2 class="section-title reveal">시놉시스</h2>
+<span class="section-label reveal" data-i18n="synopsis.label">Synopsis</span>
+<h2 class="section-title reveal" data-i18n="synopsis.title">시놉시스</h2>
 <div class="section-rule reveal"></div>
 
 <div style="font-family:'Noto Serif KR',serif;font-size:17px;line-height:2.2;color:var(--dark);margin-bottom:48px" class="reveal">
-<p style="margin-bottom:20px;text-align:center;font-size:19px;font-weight:600">아버지가 심한 병에 걸렸다.<br>아이는 약을 받으러 혼자 길을 나섰다가,<br>버스를 반대로 타고 말았다.</p>
+<p data-i18n="synopsis.intro" style="margin-bottom:20px;text-align:center;font-size:19px;font-weight:600">아버지가 심한 병에 걸렸다.<br>아이는 약을 받으러 혼자 길을 나섰다가,<br>버스를 반대로 타고 말았다.</p>
 </div>
 
 <div style="width:100%;height:2px;border-bottom:2px dashed rgba(200,136,46,0.3);margin:0 0 48px" class="reveal"></div>
 
 <div style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:40px" class="reveal">
-<p style="margin-bottom:16px">마을에서 한약방을 운영하던 신령은 곤란한 상황이었다. 약이 아직 준비되지 않았는데, 아이는 곧 도착할 터였다. 그런데 아이가 오지 않는다. 반대 방향으로 한참을 달려가고 있다. 덕분에 신령에게 시간이 생겼다.</p>
-<p>그리고 신령은 깨닫는다. 아이가 돌아오는 그 먼 길에서, 감나무골을 지나며 부모를 생각해 챙긴 것들이 약의 마지막 재료가 된다는 것을.</p>
+<p data-i18n="synopsis.body1" style="margin-bottom:16px">마을에서 한약방을 운영하던 신령은 곤란한 상황이었다. 약이 아직 준비되지 않았는데, 아이는 곧 도착할 터였다. 그런데 아이가 오지 않는다. 반대 방향으로 한참을 달려가고 있다. 덕분에 신령에게 시간이 생겼다.</p>
+<p data-i18n="synopsis.body2">그리고 신령은 깨닫는다. 아이가 돌아오는 그 먼 길에서, 감나무골을 지나며 부모를 생각해 챙긴 것들이 약의 마지막 재료가 된다는 것을.</p>
 </div>
 
 <blockquote style="font-family:Gaegu,cursive;font-size:22px;font-weight:700;line-height:1.8;color:var(--redbrown);text-align:center;border:3px dashed var(--amber);border-radius:16px 10px 18px 8px;padding:40px 32px;background:rgba(212,168,67,0.08);margin-bottom:40px;position:relative" class="reveal">
 <div style="position:absolute;top:12px;left:20px;font-family:Gaegu,cursive;font-size:64px;color:rgba(200,136,46,0.15);line-height:1">&ldquo;</div>
-실수로 돌아간 길이,<br>처음부터 약의 일부였다는 것을.
+<span data-i18n="synopsis.quote">실수로 돌아간 길이,<br>처음부터 약의 일부였다는 것을.</span>
 </blockquote>
 
 <div style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:40px" class="reveal">
-<p>관객은 신령이 되어 약을 완성해간다. 천계와 지하를 가로지르는 디오라마 세계 안에서 직접 손을 쓰고, 세계와 교감하며, 아이가 돌아올 때를 함께 기다린다. 실수로 벌어진 시간이 하나의 마음으로 모이는 과정이다.</p>
+<p data-i18n="synopsis.body3">관객은 신령이 되어 약을 완성해간다. 천계와 지하를 가로지르는 디오라마 세계 안에서 직접 손을 쓰고, 세계와 교감하며, 아이가 돌아올 때를 함께 기다린다. 실수로 벌어진 시간이 하나의 마음으로 모이는 과정이다.</p>
 </div>
 
-<div style="margin-top:40px;padding:24px 28px;background:rgba(212,121,58,0.06);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;font-family:'Noto Serif KR',serif;font-size:15px;line-height:2.1;color:var(--brown)" class="reveal">
+<div data-i18n="synopsis.outro" style="margin-top:40px;padding:24px 28px;background:rgba(212,121,58,0.06);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;font-family:'Noto Serif KR',serif;font-size:15px;line-height:2.1;color:var(--brown)" class="reveal">
 따뜻한 세계관과 정겨운 비주얼 속에서, 관객은 잠시 일상을 내려놓고<br>작은 위로 하나를 조용히 안고 돌아갈 수 있다.
 </div>
 </div>
@@ -286,32 +312,32 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <svg class="leaf" style="top:4%;left:4%;width:32px;transform:rotate(-30deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#D4793A"/></svg>
 <svg class="leaf" style="bottom:6%;right:3%;width:28px;transform:rotate(20deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#6B4226"/></svg>
 <div class="inner">
-<span class="section-label reveal">World</span>
-<h2 class="section-title reveal">세계관</h2>
+<span class="section-label reveal" data-i18n="world.label">World</span>
+<h2 class="section-title reveal" data-i18n="world.title">세계관</h2>
 <div class="section-rule reveal"></div>
 
 <!-- Large top image — 월드 전체 -->
 <div style="width:100%;aspect-ratio:16/9;border-radius:14px 8px 16px 10px;overflow:hidden;margin-bottom:12px;position:relative" class="reveal">
-<img class="world-img" src="images/world/03-world-full.png" alt="월드 전체뷰" data-caption="월드 전체뷰" onclick="openLightbox(this)">
+<img class="world-img" src="images/world/03-world-full.png" alt="월드 전체뷰" data-caption="월드 전체뷰" data-i18n-alt="world.alt.full" data-i18n-caption="world.alt.full" onclick="openLightbox(this)">
 </div>
 
 <!-- 4 grid images -->
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="reveal">
 <div style="aspect-ratio:4/3;border-radius:10px 6px 12px 8px;overflow:hidden;position:relative">
-<img class="world-img" src="images/world/05-cheonge.png" alt="천계" data-caption="천계" onclick="openLightbox(this)">
+<img class="world-img" src="images/world/05-cheonge.png" alt="천계" data-caption="천계" data-i18n-alt="world.alt.heavens" data-i18n-caption="world.alt.heavens" onclick="openLightbox(this)">
 </div>
 <div style="aspect-ratio:4/3;border-radius:8px 12px 6px 14px;overflow:hidden;position:relative">
-<img class="world-img" src="images/world/04-jiha.png" alt="지하" data-caption="지하" onclick="openLightbox(this)">
+<img class="world-img" src="images/world/04-jiha.png" alt="지하" data-caption="지하" data-i18n-alt="world.alt.underworld" data-i18n-caption="world.alt.underworld" onclick="openLightbox(this)">
 </div>
 <div style="aspect-ratio:4/3;border-radius:12px 6px 8px 14px;overflow:hidden;position:relative">
-<img class="world-img" src="images/world/02-gamnamu.png" alt="감나무골" data-caption="감나무골" onclick="openLightbox(this)">
+<img class="world-img" src="images/world/02-gamnamu.png" alt="감나무골" data-caption="감나무골" data-i18n-alt="world.alt.village" data-i18n-caption="world.alt.village" onclick="openLightbox(this)">
 </div>
 <div style="aspect-ratio:4/3;border-radius:6px 14px 10px 8px;overflow:hidden;position:relative">
-<img class="world-img" src="images/world/01-hanyakbang.png" alt="한약방" data-caption="한약방" onclick="openLightbox(this)">
+<img class="world-img" src="images/world/01-hanyakbang.png" alt="한약방" data-caption="한약방" data-i18n-alt="world.alt.apothecary" data-i18n-caption="world.alt.apothecary" onclick="openLightbox(this)">
 </div>
 </div>
 
-<p style="text-align:center;font-family:Gaegu,cursive;font-size:14px;color:var(--brown);margin-top:20px;opacity:0.6">3D Low-poly · 가을 따뜻한 톤 · 베이지 / 갈색 / 주황 / 크림</p>
+<p data-i18n="world.note" style="text-align:center;font-family:Gaegu,cursive;font-size:14px;color:var(--brown);margin-top:20px;opacity:0.6">3D Low-poly · 가을 따뜻한 톤 · 베이지 / 갈색 / 주황 / 크림</p>
 </div>
 </section>
 
@@ -319,8 +345,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <section id="interaction" style="padding:100px 0;background:var(--paper);position:relative">
 <svg class="leaf" style="top:6%;right:7%;width:30px;transform:rotate(25deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#D4A843"/></svg>
 <div class="inner" style="max-width:900px">
-<span class="section-label reveal">Experience</span>
-<h2 class="section-title reveal">인터랙션</h2>
+<span class="section-label reveal" data-i18n="interaction.label">Experience</span>
+<h2 class="section-title reveal" data-i18n="interaction.title">인터랙션</h2>
 <div class="section-rule reveal"></div>
 
 <!-- YouTube Video -->
@@ -335,32 +361,32 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <svg class="leaf" style="top:8%;left:6%;width:36px;transform:rotate(40deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#B85C3A"/></svg>
 <svg class="leaf" style="bottom:10%;right:5%;width:34px;transform:rotate(-15deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#D4793A"/></svg>
 <div class="inner">
-<span class="section-label reveal">Concept</span>
-<h2 class="section-title reveal">왜 이 작품은 VR이어야 하는가</h2>
+<span class="section-label reveal" data-i18n="whyvr.label">Concept</span>
+<h2 class="section-title reveal" data-i18n="whyvr.title">왜 이 작품은 VR이어야 하는가</h2>
 <div class="section-rule reveal"></div>
 
-<p style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:48px" class="reveal">이 작품이 VR을 선택한 것은 단순히 새로운 기술을 활용하기 위해서가 아니다. VR은 자유도가 높은 매체처럼 보이지만, 실제로 구현할 수 있는 세계는 제한적이다. 그 한계를 인정하고, 오히려 디오라마 뷰라는 형식 안에 이야기를 담았다. 관객은 천계와 지하를 한눈에 바라보는 신령의 시점으로 세계 전체를 품는다. 그리고 때로는 그 축소된 세상 속으로 직접 들어가는 시점 전환을 통해, 단순히 보는 사람이 아니라 이야기 안에 있는 존재가 된다.</p>
+<p data-i18n="whyvr.intro" style="font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:#5A3E2B;margin-bottom:48px" class="reveal">이 작품이 VR을 선택한 것은 단순히 새로운 기술을 활용하기 위해서가 아니다. VR은 자유도가 높은 매체처럼 보이지만, 실제로 구현할 수 있는 세계는 제한적이다. 그 한계를 인정하고, 오히려 디오라마 뷰라는 형식 안에 이야기를 담았다. 관객은 천계와 지하를 한눈에 바라보는 신령의 시점으로 세계 전체를 품는다. 그리고 때로는 그 축소된 세상 속으로 직접 들어가는 시점 전환을 통해, 단순히 보는 사람이 아니라 이야기 안에 있는 존재가 된다.</p>
 
 <div style="display:flex;flex-direction:column;gap:12px" class="reveal">
 <div class="hand-card">
-<div style="font-family:Gaegu,cursive;font-size:13px;color:var(--orange);margin-bottom:10px;font-weight:700">01 · 디오라마 뷰</div>
-<p style="font-size:15px;line-height:1.9;color:var(--dark)">이야기의 전달력을 높이고 VR 공간의 장점을 온전히 살리기 위해 디오라마 뷰를 채택했다. 관객은 천계와 지하를 가로지르는 넓은 시야 안에서, 세계 전체를 한눈에 품는다.</p>
+<div data-i18n="whyvr.card1.title" style="font-family:Gaegu,cursive;font-size:13px;color:var(--orange);margin-bottom:10px;font-weight:700">01 · 디오라마 뷰</div>
+<p data-i18n="whyvr.card1.body" style="font-size:15px;line-height:1.9;color:var(--dark)">이야기의 전달력을 높이고 VR 공간의 장점을 온전히 살리기 위해 디오라마 뷰를 채택했다. 관객은 천계와 지하를 가로지르는 넓은 시야 안에서, 세계 전체를 한눈에 품는다.</p>
 </div>
 <div class="hand-card">
-<div style="font-family:Gaegu,cursive;font-size:13px;color:var(--orange);margin-bottom:10px;font-weight:700">02 · 신령의 시점</div>
-<p style="font-size:15px;line-height:1.9;color:var(--dark)">이는 단순한 연출 선택이 아니라, 신령의 시점으로 이야기를 경험하게 만드는 핵심 장치다. 현실에서는 불가능한 시점 전환—디오라마 세상 속으로 직접 들어가는 감각—을 통해 관객은 이야기 안의 존재로 깊이 몰입하게 된다.</p>
+<div data-i18n="whyvr.card2.title" style="font-family:Gaegu,cursive;font-size:13px;color:var(--orange);margin-bottom:10px;font-weight:700">02 · 신령의 시점</div>
+<p data-i18n="whyvr.card2.body" style="font-size:15px;line-height:1.9;color:var(--dark)">이는 단순한 연출 선택이 아니라, 신령의 시점으로 이야기를 경험하게 만드는 핵심 장치다. 현실에서는 불가능한 시점 전환—디오라마 세상 속으로 직접 들어가는 감각—을 통해 관객은 이야기 안의 존재로 깊이 몰입하게 된다.</p>
 </div>
 <div class="hand-card">
-<div style="font-family:Gaegu,cursive;font-size:13px;color:var(--orange);margin-bottom:10px;font-weight:700">03 · VR만의 가능성</div>
-<p style="font-size:15px;line-height:1.9;color:var(--dark)">VR이기에 가능한 공간. VR이기에 유효한 위로. 관객은 단순 관찰자가 아닌, 이야기 안의 존재가 된다.</p>
+<div data-i18n="whyvr.card3.title" style="font-family:Gaegu,cursive;font-size:13px;color:var(--orange);margin-bottom:10px;font-weight:700">03 · VR만의 가능성</div>
+<p data-i18n="whyvr.card3.body" style="font-size:15px;line-height:1.9;color:var(--dark)">VR이기에 가능한 공간. VR이기에 유효한 위로. 관객은 단순 관찰자가 아닌, 이야기 안의 존재가 된다.</p>
 </div>
 </div>
 
 <div style="margin-top:48px;font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.2;color:var(--dark);text-align:center;padding:32px 24px;border:2px dashed rgba(200,136,46,0.25);border-radius:14px 8px 12px 10px;background:rgba(253,246,227,0.5)" class="reveal">
-<p style="margin-bottom:8px">돌아가는 길이 틀린 길이 아닐 수 있다는 것.</p>
-<p style="margin-bottom:8px">진심은 실수조차 의미 있는 자리에 데려다 놓는다는 것.</p>
-<p style="margin-bottom:8px">이 작품은 그것을 직접 말하는 대신, 관객이 신령으로서 그 과정을 직접 완성하게 함으로써 조용히 전한다.</p>
-<p style="font-weight:600;color:var(--redbrown);margin-top:12px">지금 돌아가고 있다고 느끼는 사람에게, 그 길이 헛되지 않을 수 있다고.</p>
+<p data-i18n="whyvr.outro1" style="margin-bottom:8px">돌아가는 길이 틀린 길이 아닐 수 있다는 것.</p>
+<p data-i18n="whyvr.outro2" style="margin-bottom:8px">진심은 실수조차 의미 있는 자리에 데려다 놓는다는 것.</p>
+<p data-i18n="whyvr.outro3" style="margin-bottom:8px">이 작품은 그것을 직접 말하는 대신, 관객이 신령으로서 그 과정을 직접 완성하게 함으로써 조용히 전한다.</p>
+<p data-i18n="whyvr.outro4" style="font-weight:600;color:var(--redbrown);margin-top:12px">지금 돌아가고 있다고 느끼는 사람에게, 그 길이 헛되지 않을 수 있다고.</p>
 </div>
 </div>
 </section>
@@ -369,8 +395,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 <section id="credits" style="padding:100px 0;background:var(--paper);position:relative">
 <svg class="leaf" style="top:10%;right:6%;width:30px;transform:rotate(35deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#C8882E"/></svg>
 <div class="inner">
-<span class="section-label reveal">Team</span>
-<h2 class="section-title reveal">크레딧</h2>
+<span class="section-label reveal" data-i18n="credits.label">Team</span>
+<h2 class="section-title reveal" data-i18n="credits.title">크레딧</h2>
 <div class="section-rule reveal"></div>
 
 <div style="text-align:center;padding:48px 32px;border:3px dashed var(--amber);border-radius:16px 10px 14px 8px;margin-bottom:16px;background:rgba(253,246,227,0.4)" class="reveal">
@@ -411,6 +437,166 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;
 
 <!-- Scroll reveal -->
 <script>
+/* ========== 한/영 언어 전환 ========== */
+const I18N = {
+  ko: {
+    'meta.title': '마음 한첩 — A Dose of Heart',
+    'meta.description': 'Meta Quest 3 기반 VR 디오라마 인터랙티브 내러티브. 부천국제판타스틱영화제 출품작.',
+    'meta.ogTitle': '마음 한첩 — A Dose of Heart',
+    'meta.ogDescription': '돌아가는 길이 틀린 길이 아닐 수 있다는 것.',
+    'hero.badge': '부천국제판타스틱영화제 출품작 · BIFAN 2026',
+    'hero.platform': 'Meta Quest 3 · VR 디오라마 인터랙티브 내러티브',
+    'hero.cta': '작품 보기',
+    'synopsis.label': 'Synopsis',
+    'synopsis.title': '시놉시스',
+    'synopsis.intro': '아버지가 심한 병에 걸렸다.<br>아이는 약을 받으러 혼자 길을 나섰다가,<br>버스를 반대로 타고 말았다.',
+    'synopsis.body1': '마을에서 한약방을 운영하던 신령은 곤란한 상황이었다. 약이 아직 준비되지 않았는데, 아이는 곧 도착할 터였다. 그런데 아이가 오지 않는다. 반대 방향으로 한참을 달려가고 있다. 덕분에 신령에게 시간이 생겼다.',
+    'synopsis.body2': '그리고 신령은 깨닫는다. 아이가 돌아오는 그 먼 길에서, 감나무골을 지나며 부모를 생각해 챙긴 것들이 약의 마지막 재료가 된다는 것을.',
+    'synopsis.quote': '실수로 돌아간 길이,<br>처음부터 약의 일부였다는 것을.',
+    'synopsis.body3': '관객은 신령이 되어 약을 완성해간다. 천계와 지하를 가로지르는 디오라마 세계 안에서 직접 손을 쓰고, 세계와 교감하며, 아이가 돌아올 때를 함께 기다린다. 실수로 벌어진 시간이 하나의 마음으로 모이는 과정이다.',
+    'synopsis.outro': '따뜻한 세계관과 정겨운 비주얼 속에서, 관객은 잠시 일상을 내려놓고<br>작은 위로 하나를 조용히 안고 돌아갈 수 있다.',
+    'world.label': 'World',
+    'world.title': '세계관',
+    'world.alt.full': '월드 전체뷰',
+    'world.alt.heavens': '천계',
+    'world.alt.underworld': '지하',
+    'world.alt.village': '감나무골',
+    'world.alt.apothecary': '한약방',
+    'world.note': '3D Low-poly · 가을 따뜻한 톤 · 베이지 / 갈색 / 주황 / 크림',
+    'interaction.label': 'Experience',
+    'interaction.title': '인터랙션',
+    'whyvr.label': 'Concept',
+    'whyvr.title': '왜 이 작품은 VR이어야 하는가',
+    'whyvr.intro': '이 작품이 VR을 선택한 것은 단순히 새로운 기술을 활용하기 위해서가 아니다. VR은 자유도가 높은 매체처럼 보이지만, 실제로 구현할 수 있는 세계는 제한적이다. 그 한계를 인정하고, 오히려 디오라마 뷰라는 형식 안에 이야기를 담았다. 관객은 천계와 지하를 한눈에 바라보는 신령의 시점으로 세계 전체를 품는다. 그리고 때로는 그 축소된 세상 속으로 직접 들어가는 시점 전환을 통해, 단순히 보는 사람이 아니라 이야기 안에 있는 존재가 된다.',
+    'whyvr.card1.title': '01 · 디오라마 뷰',
+    'whyvr.card1.body': '이야기의 전달력을 높이고 VR 공간의 장점을 온전히 살리기 위해 디오라마 뷰를 채택했다. 관객은 천계와 지하를 가로지르는 넓은 시야 안에서, 세계 전체를 한눈에 품는다.',
+    'whyvr.card2.title': '02 · 신령의 시점',
+    'whyvr.card2.body': '이는 단순한 연출 선택이 아니라, 신령의 시점으로 이야기를 경험하게 만드는 핵심 장치다. 현실에서는 불가능한 시점 전환—디오라마 세상 속으로 직접 들어가는 감각—을 통해 관객은 이야기 안의 존재로 깊이 몰입하게 된다.',
+    'whyvr.card3.title': '03 · VR만의 가능성',
+    'whyvr.card3.body': 'VR이기에 가능한 공간. VR이기에 유효한 위로. 관객은 단순 관찰자가 아닌, 이야기 안의 존재가 된다.',
+    'whyvr.outro1': '돌아가는 길이 틀린 길이 아닐 수 있다는 것.',
+    'whyvr.outro2': '진심은 실수조차 의미 있는 자리에 데려다 놓는다는 것.',
+    'whyvr.outro3': '이 작품은 그것을 직접 말하는 대신, 관객이 신령으로서 그 과정을 직접 완성하게 함으로써 조용히 전한다.',
+    'whyvr.outro4': '지금 돌아가고 있다고 느끼는 사람에게, 그 길이 헛되지 않을 수 있다고.',
+    'credits.label': 'Team',
+    'credits.title': '크레딧'
+  },
+  en: {
+    'meta.title': 'A Dose of Heart — 마음 한첩',
+    'meta.description': 'A VR diorama interactive narrative for Meta Quest 3. Submitted to BIFAN 2026.',
+    'meta.ogTitle': 'A Dose of Heart — 마음 한첩',
+    'meta.ogDescription': 'That a path turned around may not be the wrong one.',
+    'hero.badge': 'Entry · BIFAN 2026',
+    'hero.platform': 'Meta Quest 3 · VR Diorama Interactive Narrative',
+    'hero.cta': 'Enter the Story',
+    'synopsis.label': 'Synopsis',
+    'synopsis.title': 'Synopsis',
+    'synopsis.intro': 'A father has fallen gravely ill.<br>The child sets out alone to fetch the medicine —<br>and boards the bus in the wrong direction.',
+    'synopsis.body1': 'The mountain spirit who tended the village apothecary was in a bind. The medicine was not yet ready, and the child was due to arrive at any moment. Yet the child does not come — running far off, in the opposite direction. And so, time is given to the spirit.',
+    'synopsis.body2': 'Then the spirit understands: along that long road home, as the child passes through Persimmon Village and gathers small things in thought of their parents, those very things become the final ingredients of the cure.',
+    'synopsis.quote': 'That the path taken by mistake<br>was, from the very beginning, part of the cure.',
+    'synopsis.body3': 'The viewer becomes the spirit, and completes the medicine. Within a diorama world that stretches between the heavens and the underworld, you reach in with your own hands, commune with the world, and wait together for the child\'s return. It is a process where time set loose by mistake gathers into a single heart.',
+    'synopsis.outro': 'Within a warm world and tender visuals, the viewer can set down the everyday for a moment<br>and quietly carry home a small consolation.',
+    'world.label': 'World',
+    'world.title': 'World',
+    'world.alt.full': 'Full World View',
+    'world.alt.heavens': 'The Heavens',
+    'world.alt.underworld': 'The Underworld',
+    'world.alt.village': 'Persimmon Village',
+    'world.alt.apothecary': 'Herbal Apothecary',
+    'world.note': '3D Low-poly · Warm Autumn Palette · Beige / Brown / Orange / Cream',
+    'interaction.label': 'Experience',
+    'interaction.title': 'Interaction',
+    'whyvr.label': 'Concept',
+    'whyvr.title': 'Why This Story Must Be VR',
+    'whyvr.intro': 'This work chose VR not simply to make use of a new technology. VR may seem like a medium of boundless freedom, yet the worlds it can actually realize are limited. Rather than fight that limitation, we embraced it — and held the story within the form of a diorama view. Through the spirit\'s gaze, the viewer takes in the entire world at once, looking down upon the heavens and the underworld together. And at times, through a shift in perspective impossible in the physical world — stepping directly into that miniature realm — the viewer ceases to be a mere onlooker and becomes a presence within the story.',
+    'whyvr.card1.title': '01 · Diorama View',
+    'whyvr.card1.body': 'We chose the diorama view to deepen the storytelling and to make full use of what VR space offers. Within a wide field that spans heavens and underworld, the viewer holds the whole world in a single gaze.',
+    'whyvr.card2.title': '02 · The Spirit\'s Gaze',
+    'whyvr.card2.body': 'This is not merely a directorial choice but the core device through which the viewer lives the story as the spirit. Through perspective shifts impossible in reality — the sensation of stepping into the diorama itself — the viewer becomes deeply immersed as a presence within the tale.',
+    'whyvr.card3.title': '03 · What Only VR Can Offer',
+    'whyvr.card3.body': 'A space made possible by VR. A consolation made meaningful by VR. The viewer is no mere onlooker, but a presence within the story.',
+    'whyvr.outro1': 'That a path turned around may not be the wrong one.',
+    'whyvr.outro2': 'That sincerity carries even a mistake to a place of meaning.',
+    'whyvr.outro3': 'Rather than say this aloud, the work entrusts it quietly to the viewer — who, as the spirit, completes the process themselves.',
+    'whyvr.outro4': 'To anyone who feels they are wandering now — that path, too, may not be in vain.',
+    'credits.label': 'Team',
+    'credits.title': 'Credits'
+  }
+};
+const LANG_META = {
+  ko: { flag: '🇰🇷', code: 'KO' },
+  en: { flag: '🇺🇸', code: 'EN' }
+};
+function detectInitialLang(){
+  try { var s = localStorage.getItem('mh_lang'); if(s && I18N[s]) return s; } catch(e){}
+  var nav = (navigator.language || navigator.userLanguage || 'ko').toLowerCase();
+  return nav.indexOf('ko') === 0 ? 'ko' : 'en';
+}
+function applyLang(lang){
+  var dict = I18N[lang]; if(!dict) return;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var v = dict[el.getAttribute('data-i18n')]; if(v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(function(el){
+    var v = dict[el.getAttribute('data-i18n-alt')]; if(v !== undefined) el.setAttribute('alt', v);
+  });
+  document.querySelectorAll('[data-i18n-caption]').forEach(function(el){
+    var v = dict[el.getAttribute('data-i18n-caption')]; if(v !== undefined) el.setAttribute('data-caption', v);
+  });
+  if(dict['meta.title']) document.title = dict['meta.title'];
+  var md = document.querySelector('meta[name="description"]');
+  if(md && dict['meta.description']) md.setAttribute('content', dict['meta.description']);
+  var ot = document.querySelector('meta[property="og:title"]');
+  if(ot && dict['meta.ogTitle']) ot.setAttribute('content', dict['meta.ogTitle']);
+  var od = document.querySelector('meta[property="og:description"]');
+  if(od && dict['meta.ogDescription']) od.setAttribute('content', dict['meta.ogDescription']);
+  var meta = LANG_META[lang];
+  var fl = document.getElementById('langFlag'); if(fl) fl.textContent = meta.flag;
+  var cd = document.getElementById('langCode'); if(cd) cd.textContent = meta.code;
+  document.querySelectorAll('#langMenu li[data-lang]').forEach(function(li){
+    li.classList.toggle('active', li.getAttribute('data-lang') === lang);
+  });
+}
+function setLang(lang){
+  if(!I18N[lang]) return;
+  try { localStorage.setItem('mh_lang', lang); } catch(e){}
+  applyLang(lang);
+}
+(function initLangSwitcher(){
+  var sw = document.getElementById('langSwitcher');
+  var tg = document.getElementById('langToggle');
+  var mn = document.getElementById('langMenu');
+  if(!sw || !tg || !mn) return;
+  tg.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = sw.classList.toggle('open');
+    tg.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mn.addEventListener('click', function(e){
+    var li = e.target.closest('li[data-lang]');
+    if(!li) return;
+    setLang(li.getAttribute('data-lang'));
+    sw.classList.remove('open');
+    tg.setAttribute('aria-expanded', 'false');
+  });
+  document.addEventListener('click', function(e){
+    if(!sw.contains(e.target)){
+      sw.classList.remove('open');
+      tg.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      sw.classList.remove('open');
+      tg.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+applyLang(detectInitialLang());
+
+/* ========== 라이트박스 / 스크롤 리빌 ========== */
 var lbImages=[];var lbIndex=0;
 function openLightbox(el){lbImages=Array.from(document.querySelectorAll('.world-img'));lbIndex=lbImages.indexOf(el);showLbImage();document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden'}
 function showLbImage(){var img=lbImages[lbIndex];document.getElementById('lightbox-img').src=img.src;document.getElementById('lightbox-caption').textContent=img.dataset.caption||''}
