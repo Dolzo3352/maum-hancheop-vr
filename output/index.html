@@ -75,15 +75,30 @@ body.lightbox-open .lang-switcher{display:none}
 .lang-menu li:hover{background:rgba(212,121,58,0.12)}
 .lang-menu li.active{color:var(--orange);font-weight:700;background:rgba(212,121,58,0.08)}
 @media(max-width:600px){.lang-switcher{position:absolute;top:14px;right:14px}.lang-toggle{padding:6px 11px;font-size:13px}.lang-flag{font-size:16px}.lang-menu{min-width:130px}}
-/* 첫 화면 팀 정보 */
-.team-intro{width:min(100%,560px);margin:0 auto 36px;padding:18px 22px 20px;background:rgba(253,246,227,0.65);border:1px solid rgba(200,136,46,0.38);border-radius:18px 10px 18px 10px;box-shadow:0 14px 32px rgba(107,66,38,0.10);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.team-intro-label{font-family:Gaegu,cursive;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--orange);margin-bottom:10px}
-.team-intro-list{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;list-style:none}
-.team-intro-item{min-width:0;padding:3px 10px 5px;border-left:1px solid rgba(200,136,46,0.3)}
-.team-intro-item:first-child{border-left:0}.team-intro-name{display:block;font-family:Gaegu,cursive;font-size:22px;font-weight:700;line-height:1.1;color:var(--dark)}
-.team-intro-role{display:block;margin-top:4px;font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--brown)}
-.team-intro-phone{display:block;margin-top:4px;font-size:11px;letter-spacing:.02em;color:var(--orange);text-decoration:none;white-space:nowrap}.team-intro-phone:hover{text-decoration:underline}
-@media(max-width:600px){.team-intro{margin-bottom:30px;padding:16px 10px 17px}.team-intro-item{padding:3px 7px 5px}.team-intro-name{font-size:19px}.team-intro-role,.team-intro-phone{font-size:10px}}
+/* 디자인 시스템 보정 */
+::selection{background:rgba(212,121,58,.25);color:var(--dark)}
+section[id]{scroll-margin-top:24px}
+.hand-card{border:1px solid rgba(200,136,46,.32);border-radius:14px;padding:28px 24px;box-shadow:0 10px 28px rgba(61,43,31,.045);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.hand-card:hover{transform:translateY(-3px);border-color:rgba(200,136,46,.55);box-shadow:0 16px 34px rgba(61,43,31,.09)}
+.hero{min-height:100svh!important;padding:104px 24px 80px!important;background:radial-gradient(circle at 50% 28%,rgba(216,151,79,.30),transparent 29%),linear-gradient(155deg,#42281d 0%,#71452d 48%,#bb7040 100%)!important;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,20,14,.06),rgba(35,20,14,.26));z-index:0}
+.hero .leaf{opacity:.30;filter:saturate(.9)}
+.hero-content{max-width:670px!important}
+.hero-badge{margin-bottom:30px!important;padding:7px 15px!important;border:1px solid rgba(255,235,197,.42)!important;border-radius:999px!important;background:rgba(67,39,25,.2);color:#ffe5b9!important;font-size:13px!important;letter-spacing:.05em}
+.hero-title{font-size:clamp(64px,11vw,102px)!important;color:#fff4dd!important;letter-spacing:.025em!important;text-shadow:0 8px 26px rgba(40,21,12,.22);margin-bottom:10px!important}
+.hero-subtitle{color:#f4d8ad!important;margin-bottom:24px!important;letter-spacing:.14em!important}
+.hero-rule{width:42px!important;background:#f1bc71!important;margin-bottom:22px!important;opacity:.85!important}
+.hero-platform{color:#f7dfbb!important;margin-bottom:22px!important;font-size:14px!important}
+.team-intro{width:min(100%,590px);margin:0 auto 30px;padding:16px 20px 18px;background:rgba(255,247,229,.94);border:1px solid rgba(255,226,180,.78);border-radius:16px;box-shadow:0 18px 44px rgba(35,18,10,.20);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.team-intro-label{font-family:Gaegu,cursive;font-size:12px;font-weight:700;letter-spacing:.20em;color:var(--orange);margin-bottom:10px}
+.team-intro-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0;list-style:none}
+.team-intro-item{min-width:0;padding:3px 16px 5px;border-left:1px solid rgba(107,66,38,.16)}
+.team-intro-item:first-child{border-left:0}.team-intro-name{display:block;font-family:Gaegu,cursive;font-size:23px;font-weight:700;line-height:1.08;color:var(--dark)}
+.team-intro-role{display:block;margin-top:4px;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--brown)}
+.team-intro-phone{display:block;margin-top:4px;font-size:11px;letter-spacing:.025em;color:var(--orange);text-decoration:none;white-space:nowrap}.team-intro-phone:hover{text-decoration:underline}
+.hero-cta{padding:14px 32px!important;background:#f7d9a5!important;color:#54311f!important;border:1px solid #f7d9a5!important;border-radius:999px!important;box-shadow:0 8px 20px rgba(34,17,9,.18);transition:transform .25s ease,box-shadow .25s ease!important}.hero-cta:hover{transform:translateY(-2px);box-shadow:0 13px 26px rgba(34,17,9,.28)!important}
+.hero-scroll{opacity:.58!important}.hero-scroll span{color:#f7dfbb!important}.hero-scroll div{background:linear-gradient(to bottom,#f1bc71,transparent)!important}
+@media(max-width:600px){.hero{padding:94px 18px 72px!important}.hero-badge{margin-bottom:24px!important;font-size:12px!important}.hero-title{font-size:clamp(56px,17vw,72px)!important}.hero-platform{font-size:13px!important;margin-bottom:18px!important}.team-intro{margin-bottom:25px;padding:15px 8px 16px}.team-intro-item{padding:3px 7px 5px}.team-intro-name{font-size:19px}.team-intro-role,.team-intro-phone{font-size:10px}}
 </style>
 </head>
 <body>
@@ -102,18 +117,18 @@ body.lightbox-open .lang-switcher{display:none}
 </div>
 
 <!-- HERO -->
-<section style="width:100%;min-height:100vh;background:linear-gradient(160deg,#E8CFA0 0%,#F0DEB8 40%,#FDF6E3 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px;position:relative;overflow:hidden">
+<section class="hero" style="width:100%;min-height:100vh;background:linear-gradient(160deg,#E8CFA0 0%,#F0DEB8 40%,#FDF6E3 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px;position:relative;overflow:hidden">
 <svg class="leaf" style="top:10%;left:5%;width:40px" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#D4793A"/></svg>
 <svg class="leaf" style="top:20%;right:8%;width:35px;transform:rotate(30deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#C8882E"/></svg>
 <svg class="leaf" style="bottom:15%;left:12%;width:30px;transform:rotate(-20deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#D4A843"/></svg>
 <svg class="leaf" style="bottom:25%;right:6%;width:38px;transform:rotate(45deg)" viewBox="0 0 40 60"><path d="M20 0C10 15 0 30 5 45c3 10 12 15 15 15s12-5 15-15c5-15-5-30-15-45z" fill="#B85C3A"/></svg>
 
-<div style="position:relative;z-index:1;max-width:640px">
-<div data-i18n="hero.badge" style="display:inline-block;margin-bottom:40px;padding:8px 20px;border:2px dashed var(--orange);border-radius:8px 6px 10px 4px;font-family:Gaegu,cursive;font-size:14px;color:var(--orange)">부천국제판타스틱영화제 출품작 · BIFAN 2026</div>
-<h1 style="font-family:Gaegu,cursive;font-size:clamp(60px,12vw,96px);font-weight:700;color:var(--dark);letter-spacing:0.04em;margin-bottom:16px;line-height:1.1">마음 한첩</h1>
-<p style="font-family:Gaegu,cursive;font-size:clamp(18px,3.5vw,26px);font-weight:400;color:var(--brown);letter-spacing:0.1em;margin-bottom:28px;font-style:italic">A Dose of Heart</p>
-<div style="width:50px;height:3px;background:var(--orange);margin:0 auto 28px;border-radius:2px;opacity:0.5"></div>
-<p data-i18n="hero.platform" style="font-family:Gaegu,cursive;font-size:15px;color:var(--brown);margin-bottom:24px;letter-spacing:0.08em">Meta Quest 3 · VR 디오라마 인터랙티브 내러티브</p>
+<div class="hero-content" style="position:relative;z-index:1;max-width:640px">
+<div class="hero-badge" data-i18n="hero.badge" style="display:inline-block;margin-bottom:40px;padding:8px 20px;border:2px dashed var(--orange);border-radius:8px 6px 10px 4px;font-family:Gaegu,cursive;font-size:14px;color:var(--orange)">부천국제판타스틱영화제 출품작 · BIFAN 2026</div>
+<h1 class="hero-title" style="font-family:Gaegu,cursive;font-size:clamp(60px,12vw,96px);font-weight:700;color:var(--dark);letter-spacing:0.04em;margin-bottom:16px;line-height:1.1">마음 한첩</h1>
+<p class="hero-subtitle" style="font-family:Gaegu,cursive;font-size:clamp(18px,3.5vw,26px);font-weight:400;color:var(--brown);letter-spacing:0.1em;margin-bottom:28px;font-style:italic">A Dose of Heart</p>
+<div class="hero-rule" style="width:50px;height:3px;background:var(--orange);margin:0 auto 28px;border-radius:2px;opacity:0.5"></div>
+<p class="hero-platform" data-i18n="hero.platform" style="font-family:Gaegu,cursive;font-size:15px;color:var(--brown);margin-bottom:24px;letter-spacing:0.08em">Meta Quest 3 · VR 디오라마 인터랙티브 내러티브</p>
 <div class="team-intro" aria-label="Team information">
 <p class="team-intro-label" data-i18n="team.label">CREATIVE TEAM</p>
 <ul class="team-intro-list">
@@ -122,9 +137,9 @@ body.lightbox-open .lang-switcher{display:none}
 <li class="team-intro-item"><span class="team-intro-name">안지윤</span><span class="team-intro-role" data-i18n="team.jiyoon.role">아트</span><a class="team-intro-phone" href="tel:01076630253">010-7663-0253</a></li>
 </ul>
 </div>
-<a href="#story" data-i18n="hero.cta" style="display:inline-block;padding:14px 36px;background:transparent;color:var(--orange);text-decoration:none;border:2px dashed var(--orange);border-radius:10px 6px 12px 8px;font-family:Gaegu,cursive;font-size:16px;font-weight:700;transition:background 0.3s" onmouseover="this.style.background='rgba(212,121,58,0.1)'" onmouseout="this.style.background='transparent'">작품 보기</a>
+<a class="hero-cta" href="#story" data-i18n="hero.cta" style="display:inline-block;padding:14px 36px;background:transparent;color:var(--orange);text-decoration:none;border:2px dashed var(--orange);border-radius:10px 6px 12px 8px;font-family:Gaegu,cursive;font-size:16px;font-weight:700;transition:background 0.3s" onmouseover="this.style.background='rgba(212,121,58,0.1)'" onmouseout="this.style.background='transparent'">작품 보기</a>
 </div>
-<div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0.4;z-index:2">
+<div class="hero-scroll" style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0.4;z-index:2">
 <span style="font-family:Gaegu,cursive;font-size:12px;color:var(--brown)">scroll</span>
 <div style="width:2px;height:36px;background:linear-gradient(to bottom,var(--orange),transparent);border-radius:1px"></div>
 </div>
