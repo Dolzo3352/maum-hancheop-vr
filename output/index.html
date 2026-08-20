@@ -75,6 +75,15 @@ body.lightbox-open .lang-switcher{display:none}
 .lang-menu li:hover{background:rgba(212,121,58,0.12)}
 .lang-menu li.active{color:var(--orange);font-weight:700;background:rgba(212,121,58,0.08)}
 @media(max-width:600px){.lang-switcher{position:absolute;top:14px;right:14px}.lang-toggle{padding:6px 11px;font-size:13px}.lang-flag{font-size:16px}.lang-menu{min-width:130px}}
+/* 첫 화면 팀 정보 */
+.team-intro{width:min(100%,560px);margin:0 auto 36px;padding:18px 22px 20px;background:rgba(253,246,227,0.65);border:1px solid rgba(200,136,46,0.38);border-radius:18px 10px 18px 10px;box-shadow:0 14px 32px rgba(107,66,38,0.10);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.team-intro-label{font-family:Gaegu,cursive;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--orange);margin-bottom:10px}
+.team-intro-list{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;list-style:none}
+.team-intro-item{min-width:0;padding:3px 10px 5px;border-left:1px solid rgba(200,136,46,0.3)}
+.team-intro-item:first-child{border-left:0}.team-intro-name{display:block;font-family:Gaegu,cursive;font-size:22px;font-weight:700;line-height:1.1;color:var(--dark)}
+.team-intro-role{display:block;margin-top:4px;font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--brown)}
+.team-intro-phone{display:block;margin-top:4px;font-size:11px;letter-spacing:.02em;color:var(--orange);text-decoration:none;white-space:nowrap}.team-intro-phone:hover{text-decoration:underline}
+@media(max-width:600px){.team-intro{margin-bottom:30px;padding:16px 10px 17px}.team-intro-item{padding:3px 7px 5px}.team-intro-name{font-size:19px}.team-intro-role,.team-intro-phone{font-size:10px}}
 </style>
 </head>
 <body>
@@ -104,7 +113,15 @@ body.lightbox-open .lang-switcher{display:none}
 <h1 style="font-family:Gaegu,cursive;font-size:clamp(60px,12vw,96px);font-weight:700;color:var(--dark);letter-spacing:0.04em;margin-bottom:16px;line-height:1.1">마음 한첩</h1>
 <p style="font-family:Gaegu,cursive;font-size:clamp(18px,3.5vw,26px);font-weight:400;color:var(--brown);letter-spacing:0.1em;margin-bottom:28px;font-style:italic">A Dose of Heart</p>
 <div style="width:50px;height:3px;background:var(--orange);margin:0 auto 28px;border-radius:2px;opacity:0.5"></div>
-<p data-i18n="hero.platform" style="font-family:Gaegu,cursive;font-size:15px;color:var(--brown);margin-bottom:48px;letter-spacing:0.08em">Meta Quest 3 · VR 디오라마 인터랙티브 내러티브</p>
+<p data-i18n="hero.platform" style="font-family:Gaegu,cursive;font-size:15px;color:var(--brown);margin-bottom:24px;letter-spacing:0.08em">Meta Quest 3 · VR 디오라마 인터랙티브 내러티브</p>
+<div class="team-intro" aria-label="Team information">
+<p class="team-intro-label" data-i18n="team.label">CREATIVE TEAM</p>
+<ul class="team-intro-list">
+<li class="team-intro-item"><span class="team-intro-name">김하윤</span><span class="team-intro-role" data-i18n="team.hayun.role">개발</span></li>
+<li class="team-intro-item"><span class="team-intro-name">송동호</span><span class="team-intro-role" data-i18n="team.dongho.role">기획</span><a class="team-intro-phone" href="tel:01041443352">010-4144-3352</a></li>
+<li class="team-intro-item"><span class="team-intro-name">안지윤</span><span class="team-intro-role" data-i18n="team.jiyoon.role">아트</span></li>
+</ul>
+</div>
 <a href="#story" data-i18n="hero.cta" style="display:inline-block;padding:14px 36px;background:transparent;color:var(--orange);text-decoration:none;border:2px dashed var(--orange);border-radius:10px 6px 12px 8px;font-family:Gaegu,cursive;font-size:16px;font-weight:700;transition:background 0.3s" onmouseover="this.style.background='rgba(212,121,58,0.1)'" onmouseout="this.style.background='transparent'">작품 보기</a>
 </div>
 <div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0.4;z-index:2">
@@ -448,6 +465,10 @@ const I18N = {
     'meta.ogDescription': '돌아가는 길이 틀린 길이 아닐 수 있다는 것.',
     'hero.badge': '부천국제판타스틱영화제 출품작 · BIFAN 2026',
     'hero.platform': 'Meta Quest 3 · VR 디오라마 인터랙티브 내러티브',
+    'team.label': 'CREATIVE TEAM',
+    'team.hayun.role': '개발',
+    'team.dongho.role': '기획',
+    'team.jiyoon.role': '아트',
     'hero.cta': '작품 보기',
     'synopsis.label': 'Synopsis',
     'synopsis.title': '시놉시스',
@@ -490,6 +511,10 @@ const I18N = {
     'meta.ogDescription': 'That a path turned around may not be the wrong one.',
     'hero.badge': 'Entry · BIFAN 2026',
     'hero.platform': 'Meta Quest 3 · VR Diorama Interactive Narrative',
+    'team.label': 'CREATIVE TEAM',
+    'team.hayun.role': 'Development',
+    'team.dongho.role': 'Planning',
+    'team.jiyoon.role': 'Art',
     'hero.cta': 'Enter the Story',
     'synopsis.label': 'Synopsis',
     'synopsis.title': 'Synopsis',
