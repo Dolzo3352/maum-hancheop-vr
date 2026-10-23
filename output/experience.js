@@ -5,8 +5,8 @@
   const chapters = [
     {at: 0, seek: .12, ko: ['의자에 앉습니다.', '앉은 자세로 체험을 시작합니다.'], en: ['Take a seat.', 'The experience is played seated.']},
     {at: .23, seek: .36, ko: ['기기를 착용합니다.', '헤드셋을 쓰고 양손에 컨트롤러를 듭니다.'], en: ['Put on the headset.', 'Hold a controller in each hand.']},
-    {at: .48, seek: .66, ko: ['구름을 뭉칩니다.', '컨트롤러를 움직여 구름을 한데 모읍니다.'], en: ['Gather the clouds.', 'Move the controllers to bring the clouds together.']},
-    {at: .76, seek: .96, ko: ['비를 내립니다.', '뭉친 구름에서 비가 내립니다.'], en: ['Make it rain.', 'Rain falls from the gathered clouds.']}
+    {at: .48, seek: .66, ko: ['구름을 뭉칩니다.', '구름을 뭉치면 원형 게이지가 찹니다.'], en: ['Gather the clouds.', 'The circular gauge fills as you gather the clouds.']},
+    {at: .76, seek: .96, ko: ['비를 내립니다.', '게이지가 차면 구름이 사라지고 비가 내립니다.'], en: ['Make it rain.', 'When the gauge is full, the clouds disappear and rain begins.']}
   ];
   const $ = id => document.getElementById(id);
   const buttons = [...section.querySelectorAll('[data-step]')];
@@ -36,26 +36,34 @@
     $('journeyProgress').style.transform = `scaleX(${progress})`;
     const seat = ease(progress, 0, .16);
     const gear = ease(progress, .23, .37);
-    const gather = ease(progress, .48, .74);
-    const rainfall = ease(progress, .76, .88);
-    translate('person', -28 * (1 - seat), -24 * (1 - seat));
-    opacity('person', .5 + .5 * seat);
+    const gather = ease(progress, .48, .76);
+    const vanished = ease(progress, .77, .84);
+    const rainfall = ease(progress, .84, .93);
+    translate('person', -8 * (1 - seat), -16 * (1 - seat));
     translate('headset', 0, -60 * (1 - gear));
     opacity('headset', gear);
-    opacity('cloud-left', .18 + .82 * gear);
-    opacity('cloud-right', .18 + .82 * gear);
-    translate('cloud-left', 590 + 95 * gather, 164 - 8 * gather);
-    translate('cloud-right', 830 - 95 * gather, 164 + 8 * gather);
-    const backX = 369 + 47 * gear + 27 * gather, backY = 326 - 55 * gear - 36 * gather;
-    const frontX = 388 + 94 * gear - 15 * gather, frontY = 330 - 22 * gear - 53 * gather;
-    $('arm-back').setAttribute('d', `M294 274L${320 + 20 * gear} ${318 - 20 * gear}L${backX} ${backY}`);
-    $('arm-front').setAttribute('d', `M324 274L${343 + 30 * gear} ${317 - 15 * gear}L${frontX} ${frontY}`);
+    opacity('cloud-left', gear * (1 - vanished));
+    opacity('cloud-right', gear * (1 - vanished));
+    const cloudScale = .72 - .16 * gather - .12 * vanished;
+    translate('cloud-left', 590 + 110 * gather, 164 - 8 * gather, `scale(${cloudScale})`);
+    translate('cloud-right', 850 - 110 * gather, 164 + 8 * gather, `scale(${cloudScale})`);
+    opacity('cloud-gauge', ease(progress, .45, .5) * (1 - ease(progress, .81, .88)));
+    $('gauge-fill').setAttribute('stroke-dashoffset', 100 * (1 - gather));
+    $('gauge-value').textContent = `${Math.round(gather * 100)}%`;
+    const backX = 345 + 56 * gear + 9 * gather, backY = 354 - 83 * gear - 25 * gather;
+    const frontX = 359 + 84 * gear - 5 * gather, frontY = 360 - 52 * gear - 35 * gather;
+    const backArm = `M286 269Q${299 + 12 * gear} ${303 - 10 * gear} ${320 + 20 * gear} ${318 - 20 * gear}L${backX - 8} ${backY}`;
+    const frontArm = `M323 273Q${328 + 20 * gear} ${301 - 12 * gear} ${343 + 30 * gear} ${317 - 15 * gear}L${frontX - 9} ${frontY}`;
+    $('arm-back').setAttribute('d', backArm);
+    $('arm-front').setAttribute('d', frontArm);
+    $('arm-back-seam').setAttribute('d', backArm);
+    $('arm-front-seam').setAttribute('d', frontArm);
     translate('hand-back', backX, backY, `rotate(${-25 * gather})`);
     translate('hand-front', frontX, frontY, `rotate(${-20 * gather})`);
-    opacity('hand-back', gear); opacity('hand-front', gear);
-    $('ray-left').setAttribute('d', `M${backX + 8} ${backY - 10}L${590 + 95 * gather} 195`);
-    $('ray-right').setAttribute('d', `M${frontX + 8} ${frontY - 10}L${830 - 95 * gather} 195`);
-    opacity('controller-rays', gear * .7);
+    opacity('controller-back', gear); opacity('controller-front', gear);
+    $('ray-left').setAttribute('d', `M${backX + 8} ${backY - 10}L${590 + 110 * gather} 175`);
+    $('ray-right').setAttribute('d', `M${frontX + 8} ${frontY - 10}L${850 - 110 * gather} 185`);
+    opacity('controller-rays', gear * .55 * (1 - vanished));
     opacity('rain', rainfall); opacity('rain-rings', rainfall);
     translate('rain', 0, 25 * rainfall);
     section.dataset.stage = String(active);
@@ -95,7 +103,7 @@
   function resize() {
     headerHeight = document.querySelector('.site-header').getBoundingClientRect().height;
     section.style.setProperty('--journey-header', `${headerHeight}px`);
-    section.querySelector('svg').setAttribute('viewBox', innerWidth <= 760 ? '210 90 750 430' : '0 0 1000 540');
+    section.querySelector('svg').setAttribute('viewBox', innerWidth <= 760 ? '130 25 850 500' : '0 0 1000 540');
     updateMode();
     schedule();
   }
@@ -113,7 +121,7 @@
   window.addEventListener('resize', resize);
   headerHeight = document.querySelector('.site-header').getBoundingClientRect().height;
   section.style.setProperty('--journey-header', `${headerHeight}px`);
-  section.querySelector('svg').setAttribute('viewBox', innerWidth <= 760 ? '210 90 750 430' : '0 0 1000 540');
+  section.querySelector('svg').setAttribute('viewBox', innerWidth <= 760 ? '130 25 850 500' : '0 0 1000 540');
   updateMode(false);
   syncScroll();
 })();

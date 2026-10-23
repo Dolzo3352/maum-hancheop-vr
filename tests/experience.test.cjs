@@ -43,6 +43,21 @@ for (let i = 0; i < 4; i++) {
   assert.equal(page.buttons[i].getAttribute('aria-pressed'), 'true');
 }
 assert.equal(page.make('rain').getAttribute('opacity'), '1');
+assert.equal(page.make('cloud-left').getAttribute('opacity'), '0');
+assert.equal(page.make('cloud-right').getAttribute('opacity'), '0');
+assert.equal(page.make('gauge-fill').getAttribute('stroke-dashoffset'), '0');
+page.scroll(.66);
+const partialGauge = Number(page.make('gauge-fill').getAttribute('stroke-dashoffset'));
+assert(partialGauge > 0 && partialGauge < 100);
+assert.equal(page.make('cloud-left').getAttribute('opacity'), '1');
+assert.equal(page.make('rain').getAttribute('opacity'), '0');
+page.scroll(.76);
+assert.equal(page.make('gauge-fill').getAttribute('stroke-dashoffset'), '0');
+assert.equal(page.make('cloud-left').getAttribute('opacity'), '1');
+assert.equal(page.make('rain').getAttribute('opacity'), '0');
+page.scroll(.84);
+assert.equal(page.make('cloud-left').getAttribute('opacity'), '0');
+assert(Number(page.make('rain').getAttribute('opacity')) < .001);
 page.scroll(.6);
 assert.equal(page.section.dataset.stage, '2');
 assert.equal(page.make('rain').getAttribute('opacity'), '0');
@@ -70,4 +85,4 @@ assert.equal(reduced.section.dataset.stage, '3');
 const short = setup({height: 480});
 assert(short.section.classList.contains('journey-static'));
 assert(short.mode.hidden);
-console.log('Passed: stage buttons, reverse scroll, mode continuity, language, reduced motion, short viewport.');
+console.log('Passed: gauge fill, cloud disappearance before rain, reverse scroll, mode continuity, language, reduced motion, short viewport.');
