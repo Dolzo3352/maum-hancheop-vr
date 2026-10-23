@@ -95,12 +95,12 @@ svg = f'''<svg viewBox="0 0 1000 540" aria-hidden="true" focusable="false">
 </g>
 <!-- The visitor is built in layers so hands, sleeves, and equipment remain articulated. -->
 <g id="person">
- <path d="M291 351Q326 351 365 363Q384 366 386 386L392 438L374 444Q363 413 358 391L297 388Z" fill="#ac9d7d"/>
- <path d="M288 353Q307 357 341 371Q358 377 359 397L351 445L332 444L336 396Q305 389 283 374Z" fill="url(#trouserShade)"/>
- <path d="M301 365Q319 377 342 381M346 397L340 432M376 395L382 429" fill="none" stroke="#ddcba6" stroke-width="2" opacity=".6"/>
- <path d="M332 441L352 441L354 449Q379 453 379 460Q361 467 329 460Z" fill="#f8f3df" stroke="#b3ad94" stroke-width="1.2"/>
- <path d="M374 438L392 435L399 442Q420 445 420 452Q402 460 371 452Z" fill="#f7f2df" stroke="#b3ad94" stroke-width="1.2"/>
- <path d="M332 456Q352 461 375 458M376 450Q400 456 417 451M345 447l9 4m-3-5 9 4M389 442l9 3m-4-5 9 3" fill="none" stroke="#cbc4ac" stroke-width="1.2"/>
+ <path d="M292 353C315 355 343 361 368 365Q385 367 385 386L387 439L369 441L365 394Q361 390 352 390L298 384Z" fill="#ac9d7d"/>
+ <path d="M282 354C300 361 321 366 341 370Q357 374 356 391L349 444L331 443L334 395Q333 391 327 390C308 387 289 384 278 375Z" fill="url(#trouserShade)"/>
+ <path d="M294 369Q314 378 337 380Q344 381 344 388M344 399L339 432M375 397L378 429" fill="none" stroke="#ddcba6" stroke-width="1.5" opacity=".5"/>
+ <path d="M331 440L349 441L352 448Q369 450 370 456Q353 462 329 458Z" fill="#f8f3df" stroke="#b3ad94" stroke-width="1.1"/>
+ <path d="M369 438L386 438L389 445Q407 446 410 452Q392 458 367 453Z" fill="#f7f2df" stroke="#b3ad94" stroke-width="1.1"/>
+ <path d="M331 455Q350 460 367 455M370 450Q391 455 406 451M344 446l8 3m-3-4 8 3M382 442l8 3m-3-4 8 3" fill="none" stroke="#cbc4ac" stroke-width="1"/>
  <path d="M290 249Q270 254 268 278L272 326L269 359Q300 375 337 358L334 279Q333 256 315 250Z" fill="url(#sweaterShade)"/>
  <path d="M278 274Q275 313 281 350M326 280L329 347M286 353Q307 361 328 353" fill="none" stroke="#8ea38c" stroke-width="1.6" opacity=".7"/>
  <path d="M272 356Q305 370 336 356L336 365Q307 378 271 365Z" fill="#506c5d"/>
@@ -108,7 +108,7 @@ svg = f'''<svg viewBox="0 0 1000 540" aria-hidden="true" focusable="false">
   <path d="M294 226L292 250Q302 258 315 250L313 226Z" fill="#dfb38d"/>
   <path d="M294 231Q303 242 314 237L314 244Q301 246 293 239Z" fill="#c99c79" opacity=".45"/>
   <path d="M277 224Q266 212 270 190Q271 165 291 159Q315 150 332 169Q342 182 340 204Q336 221 338 229Q329 237 321 231L282 231Z" fill="url(#hairShade)"/>
-  <path d="M286 188Q293 175 311 176Q328 177 331 194L331 204Q331 210 334 214Q336 217 331 218Q328 229 318 235Q310 240 301 235Q288 229 286 215L282 202Z" fill="url(#faceShade)"/>
+  <path d="M286 188Q293 175 311 176Q328 177 331 194C333 208 331 222 322 231Q312 241 302 235C291 230 286 221 285 209L282 202Z" fill="url(#faceShade)"/>
   <path d="M286 207Q289 224 303 233Q311 237 319 233" fill="none" stroke="#d5a580" stroke-width="1" opacity=".55"/>
   <path d="M283 204Q276 199 277 207Q277 217 285 217L288 214Z" fill="#e2b48e"/>
   <path d="M282 206Q278 205 281 212L284 212" fill="none" stroke="#bd8c6b" stroke-width=".85" stroke-linecap="round"/>
@@ -120,7 +120,7 @@ svg = f'''<svg viewBox="0 0 1000 540" aria-hidden="true" focusable="false">
   <path d="M295 205Q300 201 305 205M316 204Q321 201 325 205" fill="none" stroke="#4c5547" stroke-width="1.1" stroke-linecap="round"/>
   <ellipse cx="301" cy="205" rx="1.65" ry="2.3" fill="#414c3e"/><ellipse cx="321" cy="204.7" rx="1.5" ry="2.1" fill="#414c3e"/>
   <g fill="#fff8e8"><circle cx="301.5" cy="204" r=".55"/><circle cx="321.4" cy="203.8" r=".5"/></g>
-  <path d="M313 207Q313 212 316 215Q315 217 312 216" fill="none" stroke="#bc8d6a" stroke-width=".9" stroke-linecap="round"/>
+  <path d="M313 210L314 214Q314 215 312 215" fill="none" stroke="#bc8d6a" stroke-width=".75" stroke-linecap="round" opacity=".75"/>
   <ellipse cx="297" cy="216" rx="5" ry="2.8" fill="#d8947e" opacity=".23"/><ellipse cx="325" cy="215" rx="3.3" ry="2.5" fill="#d8947e" opacity=".21"/>
   <path d="M306 223Q312 226 318 222" fill="none" stroke="#ab7560" stroke-width="1.15" stroke-linecap="round"/><path d="M309 227Q313 228 316 226" fill="none" stroke="#f8dcc0" stroke-width="1.2" stroke-linecap="round"/>
  </g>
@@ -129,12 +129,22 @@ svg = f'''<svg viewBox="0 0 1000 540" aria-hidden="true" focusable="false">
   <path d="M298 187Q324 181 348 187L352 209Q325 217 298 210Z" fill="#eeeede" stroke="#a4b0a1" stroke-width="1.5"/><path d="M302 190Q325 185 346 190L347 205Q324 211 302 206Z" fill="#fafaf1"/>
   <g fill="#7a887b"><ellipse cx="310" cy="198" rx="1.8" ry="3"/><ellipse cx="327" cy="197" rx="1.8" ry="3"/><ellipse cx="343" cy="196" rx="1.5" ry="2.5"/></g><path d="M306 212L341 212" stroke="#809081" stroke-width="2"/>
  </g>
- <path id="arm-back" fill="none" stroke="#4e705f" stroke-width="17" stroke-linecap="round"/>
+ <path id="arm-back" fill="none" stroke="#4e705f" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
  <path id="arm-back-seam" fill="none" stroke="#7e9982" stroke-width="1.3" opacity=".55"/>
- <path id="arm-front" fill="none" stroke="#668673" stroke-width="20" stroke-linecap="round"/>
+ <path id="arm-front" fill="none" stroke="#668673" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
  <path id="arm-front-seam" fill="none" stroke="#94aa90" stroke-width="1.4" opacity=".6"/>
- <g id="hand-back"><path d="M-7-7Q-1-12 6-7L11-1Q12 7 5 9L-5 7Z" fill="#d8b28a"/><g id="controller-back"><path d="M-4-17Q2-20 7-15L6 5Q1 10-4 5Z" fill="#f8f6e9" stroke="#a1ad9b" stroke-width="1"/><ellipse cy="-15" rx="7" ry="4" fill="#d9dfd0"/><ellipse cy="-16" rx="3" ry="1.8" fill="#81917e"/><path d="M6-2Q12-3 9 3" fill="none" stroke="#d8b28a" stroke-width="4" stroke-linecap="round"/></g></g>
- <g id="hand-front"><path d="M-8-8Q-2-13 6-8L12-1Q13 8 5 10L-6 8Z" fill="#e0bc95"/><g id="controller-front"><path d="M-5-18Q1-22 7-17L6 5Q1 11-5 6Z" fill="#fffdf0" stroke="#a1ad9b" stroke-width="1.2"/><ellipse cy="-17" rx="8" ry="4.5" fill="#e5e8db"/><ellipse cy="-18" rx="3" ry="2" fill="#81917e"/><path d="M6-1Q13-2 9 5" fill="none" stroke="#e0bc95" stroke-width="4.5" stroke-linecap="round"/></g></g>
+ <g id="hand-back">
+  <path d="M-3-5L4-5Q7-9 10-7L13-3Q16 0 13 4Q10 7 4 6L-3 5Z" fill="#d8b28a"/>
+  <path d="M6-4Q8-1 11-1M10 2L13 2" fill="none" stroke="#bd9472" stroke-width=".65" stroke-linecap="round"/>
+  <path d="M-4-6V6" stroke="#557562" stroke-width="3" stroke-linecap="round"/>
+  <g id="controller-back"><path d="M-4-17Q2-20 7-15L6 5Q1 10-4 5Z" fill="#f8f6e9" stroke="#a1ad9b" stroke-width="1"/><ellipse cy="-15" rx="7" ry="4" fill="#d9dfd0"/><ellipse cy="-16" rx="3" ry="1.8" fill="#81917e"/><path d="M6-2Q12-3 9 3" fill="none" stroke="#d8b28a" stroke-width="3.5" stroke-linecap="round"/></g>
+ </g>
+ <g id="hand-front">
+  <path d="M-4-6L4-6Q8-10 11-7L14-3Q17 1 14 5Q10 8 4 7L-4 6Z" fill="#e0bc95"/>
+  <path d="M6-5Q9-1 12-1M10 3L14 3" fill="none" stroke="#bf9876" stroke-width=".7" stroke-linecap="round"/>
+  <path d="M-5-7V7" stroke="#607e6b" stroke-width="3" stroke-linecap="round"/>
+  <g id="controller-front"><path d="M-5-18Q1-22 7-17L6 5Q1 11-5 6Z" fill="#fffdf0" stroke="#a1ad9b" stroke-width="1.2"/><ellipse cy="-17" rx="8" ry="4.5" fill="#e5e8db"/><ellipse cy="-18" rx="3" ry="2" fill="#81917e"/><path d="M6-1Q13-2 9 5" fill="none" stroke="#e0bc95" stroke-width="4" stroke-linecap="round"/></g>
+ </g>
 </g>
 <g id="controller-rays" fill="none" stroke="#9cae94" stroke-width="1.3" stroke-dasharray="3 7"><path id="ray-left"/><path id="ray-right"/></g>
 <g id="rain" fill="none" stroke="#829d97" stroke-width="1.8" stroke-linecap="round">{rain}</g>

@@ -37,6 +37,29 @@ function setup({reduce = false, height = 900} = {}) {
   return {make, buttons, links, mode, section, query, document, events, window, scroll, flush};
 }
 const page = setup();
+// Sample the entire transition, including between chapter buttons: limbs must
+// keep their lengths, wrists must follow the forearms, and feet stay grounded.
+const previousJoints = new Map();
+for (let sample = 0; sample <= 100; sample++) {
+  page.scroll(sample / 100);
+  for (const [side, upper, forearm] of [['back', 55, 45], ['front', 52, 43]]) {
+    const joints = JSON.parse(page.make(`arm-${side}`).dataset.joints);
+    assert(joints.every(Number.isFinite));
+    const [sx, sy, ex, ey, wx, wy] = joints;
+    assert(Math.abs(Math.hypot(ex - sx, ey - sy) - upper) < 1e-8);
+    assert(Math.abs(Math.hypot(wx - ex, wy - ey) - forearm) < 1e-8);
+    const expectedAngle = Math.atan2(wy - ey, wx - ex) * 180 / Math.PI;
+    const actualAngle = Number(page.make(`hand-${side}`).getAttribute('transform').match(/rotate\(([^)]+)\)/)[1]);
+    assert(Math.abs(expectedAngle - actualAngle) < 1e-8);
+    if (previousJoints.has(side)) {
+      const before = previousJoints.get(side);
+      assert(Math.hypot(ex - before[2], ey - before[3]) < 10, 'elbow moves continuously');
+      assert(Math.hypot(wx - before[4], wy - before[5]) < 10, 'wrist moves continuously');
+    }
+    previousJoints.set(side, joints);
+  }
+  assert.equal(page.make('person').getAttribute('transform').trim(), 'translate(0 0)');
+}
 for (let i = 0; i < 4; i++) {
   page.buttons[i].click();
   assert.equal(page.section.dataset.stage, String(i));
@@ -85,4 +108,4 @@ assert.equal(reduced.section.dataset.stage, '3');
 const short = setup({height: 480});
 assert(short.section.classList.contains('journey-static'));
 assert(short.mode.hidden);
-console.log('Passed: gauge fill, cloud disappearance before rain, reverse scroll, mode continuity, language, reduced motion, short viewport.');
+console.log('Passed: fixed limb lengths, wrist alignment, continuous joints, grounded feet, gauge fill, cloud disappearance before rain, reverse scroll, mode continuity, language, reduced motion, short viewport.');

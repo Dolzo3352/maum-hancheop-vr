@@ -18,6 +18,21 @@
   const translate = (id, x, y, extra = '') => $(id).setAttribute('transform', `translate(${x} ${y}) ${extra}`);
   const opacity = (id, value) => $(id).setAttribute('opacity', value);
 
+  // Two fixed-length segments keep the elbow and wrist coherent in every pose.
+  function armPose(sx, sy, targetX, targetY, upper, forearm) {
+    const dx = targetX - sx, dy = targetY - sy;
+    const rawDistance = Math.hypot(dx, dy);
+    const distance = Math.min(rawDistance, upper + forearm - 1);
+    const ux = dx / rawDistance, uy = dy / rawDistance;
+    const along = (upper * upper - forearm * forearm + distance * distance) / (2 * distance);
+    const bend = Math.sqrt(Math.max(0, upper * upper - along * along));
+    const ex = sx + ux * along - uy * bend, ey = sy + uy * along + ux * bend;
+    const wx = sx + ux * distance, wy = sy + uy * distance;
+    const beforeX = ex + (sx - ex) * 7 / upper, beforeY = ey + (sy - ey) * 7 / upper;
+    const afterX = ex + (wx - ex) * 7 / forearm, afterY = ey + (wy - ey) * 7 / forearm;
+    return {wx, wy, ex, ey, path: `M${sx} ${sy}L${beforeX} ${beforeY}Q${ex} ${ey} ${afterX} ${afterY}L${wx} ${wy}`};
+  }
+
   function render(value) {
     progress = clamp(value);
     const index = chapters.reduce((result, chapter, i) => progress >= chapter.at ? i : result, 0);
@@ -34,12 +49,11 @@
     $('journeyMode').setAttribute('aria-pressed', String(staticMode));
     $('journeyHint').textContent = lang === 'en' ? (staticMode ? 'Choose a step.' : 'Scroll or choose a step.') : (staticMode ? '단계를 선택하세요.' : '스크롤하거나 단계를 선택하세요.');
     $('journeyProgress').style.transform = `scaleX(${progress})`;
-    const seat = ease(progress, 0, .16);
     const gear = ease(progress, .23, .37);
     const gather = ease(progress, .48, .76);
     const vanished = ease(progress, .77, .84);
     const rainfall = ease(progress, .84, .93);
-    translate('person', -8 * (1 - seat), -16 * (1 - seat));
+    translate('person', 0, 0);
     translate('headset', 0, -60 * (1 - gear));
     opacity('headset', gear);
     opacity('cloud-left', gear * (1 - vanished));
@@ -50,16 +64,21 @@
     opacity('cloud-gauge', ease(progress, .45, .5) * (1 - ease(progress, .81, .88)));
     $('gauge-fill').setAttribute('stroke-dashoffset', 100 * (1 - gather));
     $('gauge-value').textContent = `${Math.round(gather * 100)}%`;
-    const backX = 345 + 56 * gear + 9 * gather, backY = 354 - 83 * gear - 25 * gather;
-    const frontX = 359 + 84 * gear - 5 * gather, frontY = 360 - 52 * gear - 35 * gather;
-    const backArm = `M286 269Q${299 + 12 * gear} ${303 - 10 * gear} ${320 + 20 * gear} ${318 - 20 * gear}L${backX - 8} ${backY}`;
-    const frontArm = `M323 273Q${328 + 20 * gear} ${301 - 12 * gear} ${343 + 30 * gear} ${317 - 15 * gear}L${frontX - 9} ${frontY}`;
-    $('arm-back').setAttribute('d', backArm);
-    $('arm-front').setAttribute('d', frontArm);
-    $('arm-back-seam').setAttribute('d', backArm);
-    $('arm-front-seam').setAttribute('d', frontArm);
-    translate('hand-back', backX, backY, `rotate(${-25 * gather})`);
-    translate('hand-front', frontX, frontY, `rotate(${-20 * gather})`);
+    const back = armPose(286, 269, 338 + 25 * gear + 3 * gather, 353 - 58 * gear - 13 * gather, 55, 45);
+    const front = armPose(323, 273, 350 + 36 * gear + 3 * gather, 359 - 55 * gear - 14 * gather, 52, 43);
+    const backX = back.wx, backY = back.wy, frontX = front.wx, frontY = front.wy;
+    $('arm-back').setAttribute('d', back.path);
+    $('arm-front').setAttribute('d', front.path);
+    $('arm-back-seam').setAttribute('d', back.path);
+    $('arm-front-seam').setAttribute('d', front.path);
+    $('arm-back').dataset.joints = JSON.stringify([286, 269, back.ex, back.ey, backX, backY]);
+    $('arm-front').dataset.joints = JSON.stringify([323, 273, front.ex, front.ey, frontX, frontY]);
+    // Palms follow the forearms; the controller stays upright within each grip.
+    for (const [side, pose] of [['back', back], ['front', front]]) {
+      const angle = Math.atan2(pose.wy - pose.ey, pose.wx - pose.ex) * 180 / Math.PI;
+      translate(`hand-${side}`, pose.wx, pose.wy, `rotate(${angle})`);
+      $(`controller-${side}`).setAttribute('transform', `translate(8 0) rotate(${-angle - 8 * gather})`);
+    }
     opacity('controller-back', gear); opacity('controller-front', gear);
     $('ray-left').setAttribute('d', `M${backX + 8} ${backY - 10}L${590 + 110 * gather} 175`);
     $('ray-right').setAttribute('d', `M${frontX + 8} ${frontY - 10}L${850 - 110 * gather} 185`);
