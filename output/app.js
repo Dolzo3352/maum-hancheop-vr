@@ -6,8 +6,8 @@ const translatedAttributes = ['aria-label', 'alt', 'title'].flatMap(attribute =>
   [...document.querySelectorAll(`[data-en-${attribute}]`)].map(element => ({element, attribute, ko: element.getAttribute(attribute), en: element.getAttribute(`data-en-${attribute}`)}))
 );
 const metaCopy = {
-  ko: {title: '마음 한첩 — A Dose of Heart', description: '아이가 돌아오는 동안, 당신은 신령이 되어 약을 완성합니다. 가을 마을을 배경으로 펼쳐지는 Meta Quest 3 VR 이야기, 마음 한첩.', social: '돌아가는 길에도, 마음은 닿습니다. 작은 세계에서 완성하는 한 첩의 이야기.', image: '가을빛 감나무골을 담은 마음 한첩의 디오라마'},
-  en: {title: 'A Dose of Heart — 마음 한첩', description: 'Become the spirit who prepares the medicine while a child finds the way home. An interactive VR story set in a miniature autumn world, for Meta Quest 3.', social: 'A wrong turn. A way to bring care home. Discover A Dose of Heart, an interactive VR story.', image: 'The autumn diorama of Persimmon Village in A Dose of Heart'}
+  ko: {title: '마음 한첩 — A Dose of Heart', description: '마음 한첩은 신령이 되어 아이의 아버지를 위한 약을 만드는 Meta Quest 3 VR 작품입니다.', social: '마음 한첩은 신령이 되어 아이의 아버지를 위한 약을 만드는 Meta Quest 3 VR 작품입니다.', image: '가을빛 감나무골을 담은 마음 한첩의 디오라마'},
+  en: {title: 'A Dose of Heart — 마음 한첩', description: 'A Dose of Heart is an interactive VR story for Meta Quest 3. Play a spirit preparing medicine for a child to take home.', social: 'An interactive VR story for Meta Quest 3. Play a spirit preparing medicine for a child to take home.', image: 'The autumn diorama of Persimmon Village in A Dose of Heart'}
 };
 let language = 'ko';
 const galleryButtons = [...document.querySelectorAll('[data-gallery]')];
