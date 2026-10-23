@@ -42,7 +42,7 @@ const page = setup();
 const previousJoints = new Map();
 for (let sample = 0; sample <= 100; sample++) {
   page.scroll(sample / 100);
-  for (const [side, upper, forearm] of [['back', 55, 45], ['front', 52, 43]]) {
+  for (const [side, upper, forearm] of [['back', 56, 48], ['front', 59, 51]]) {
     const joints = JSON.parse(page.make(`arm-${side}`).dataset.joints);
     assert(joints.every(Number.isFinite));
     const [sx, sy, ex, ey, wx, wy] = joints;
@@ -50,7 +50,8 @@ for (let sample = 0; sample <= 100; sample++) {
     assert(Math.abs(Math.hypot(wx - ex, wy - ey) - forearm) < 1e-8);
     const expectedAngle = Math.atan2(wy - ey, wx - ex) * 180 / Math.PI;
     const actualAngle = Number(page.make(`hand-${side}`).getAttribute('transform').match(/rotate\(([^)]+)\)/)[1]);
-    assert(Math.abs(expectedAngle - actualAngle) < 1e-8);
+    if (sample >= 37) assert(Math.abs(expectedAngle - actualAngle) < 1e-8);
+    if (sample <= 23) assert.equal(actualAngle, 12, 'resting palms lie along the thighs');
     if (previousJoints.has(side)) {
       const before = previousJoints.get(side);
       assert(Math.hypot(ex - before[2], ey - before[3]) < 10, 'elbow moves continuously');

@@ -28,9 +28,17 @@
     const bend = Math.sqrt(Math.max(0, upper * upper - along * along));
     const ex = sx + ux * along - uy * bend, ey = sy + uy * along + ux * bend;
     const wx = sx + ux * distance, wy = sy + uy * distance;
-    const beforeX = ex + (sx - ex) * 7 / upper, beforeY = ey + (sy - ey) * 7 / upper;
-    const afterX = ex + (wx - ex) * 7 / forearm, afterY = ey + (wy - ey) * 7 / forearm;
-    return {wx, wy, ex, ey, path: `M${sx} ${sy}L${beforeX} ${beforeY}Q${ex} ${ey} ${afterX} ${afterY}L${wx} ${wy}`};
+    const ax = (ex - sx) / upper, ay = (ey - sy) / upper;
+    const bx = (wx - ex) / forearm, by = (wy - ey) / forearm;
+    const point = (x, y) => `${x} ${y}`;
+    const shoulder = side => point(sx - ay * 13 * side, sy + ax * 13 * side);
+    const before = side => point(ex - ax * 10 - ay * 10 * side, ey - ay * 10 + ax * 10 * side);
+    const after = side => point(ex + bx * 10 - by * 9 * side, ey + by * 10 + bx * 9 * side);
+    const elbow = side => point(ex - (ay + by) * 5 * side, ey + (ax + bx) * 5 * side);
+    const wrist = side => point(wx - by * 6 * side, wy + bx * 6 * side);
+    // Filled, tapered sleeves blend into the shoulder and narrow at the wrist.
+    const path = `M${shoulder(1)}L${before(1)}Q${elbow(1)} ${after(1)}L${wrist(1)}L${wrist(-1)}L${after(-1)}Q${elbow(-1)} ${before(-1)}L${shoulder(-1)}Q${point(sx - ax * 16, sy - ay * 16)} ${shoulder(1)}Z`;
+    return {wx, wy, ex, ey, path};
   }
 
   function render(value) {
@@ -64,18 +72,17 @@
     opacity('cloud-gauge', ease(progress, .45, .5) * (1 - ease(progress, .81, .88)));
     $('gauge-fill').setAttribute('stroke-dashoffset', 100 * (1 - gather));
     $('gauge-value').textContent = `${Math.round(gather * 100)}%`;
-    const back = armPose(286, 269, 338 + 25 * gear + 3 * gather, 353 - 58 * gear - 13 * gather, 55, 45);
-    const front = armPose(323, 273, 350 + 36 * gear + 3 * gather, 359 - 55 * gear - 14 * gather, 52, 43);
+    const back = armPose(316, 274, 357 + 28 * gear + 3 * gather, 364 - 62 * gear - 12 * gather, 56, 48);
+    const front = armPose(286, 270, 335 + 32 * gear + 3 * gather, 365 - 48 * gear - 12 * gather, 59, 51);
     const backX = back.wx, backY = back.wy, frontX = front.wx, frontY = front.wy;
     $('arm-back').setAttribute('d', back.path);
     $('arm-front').setAttribute('d', front.path);
-    $('arm-back-seam').setAttribute('d', back.path);
-    $('arm-front-seam').setAttribute('d', front.path);
-    $('arm-back').dataset.joints = JSON.stringify([286, 269, back.ex, back.ey, backX, backY]);
-    $('arm-front').dataset.joints = JSON.stringify([323, 273, front.ex, front.ey, frontX, frontY]);
+    $('arm-back').dataset.joints = JSON.stringify([316, 274, back.ex, back.ey, backX, backY]);
+    $('arm-front').dataset.joints = JSON.stringify([286, 270, front.ex, front.ey, frontX, frontY]);
     // Palms follow the forearms; the controller stays upright within each grip.
     for (const [side, pose] of [['back', back], ['front', front]]) {
-      const angle = Math.atan2(pose.wy - pose.ey, pose.wx - pose.ex) * 180 / Math.PI;
+      const forearmAngle = Math.atan2(pose.wy - pose.ey, pose.wx - pose.ex) * 180 / Math.PI;
+      const angle = 12 * (1 - gear) + forearmAngle * gear;
       translate(`hand-${side}`, pose.wx, pose.wy, `rotate(${angle})`);
       $(`controller-${side}`).setAttribute('transform', `translate(8 0) rotate(${-angle - 8 * gather})`);
     }
