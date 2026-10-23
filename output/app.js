@@ -21,12 +21,12 @@ function applyLanguage(next, save = false) {
   translatedAttributes.forEach(item => { item.element.setAttribute(item.attribute, item[language]); });
   document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === language)));
   const copy = metaCopy[language];
-  const isExperience = document.body.dataset.page === 'experience';
-  document.title = isExperience ? (language === 'en' ? 'Experience — A Dose of Heart' : '체험 방식 — 마음 한첩') : copy.title;
-  const experienceDescription = language === 'en' ? 'Sit down, gather clouds with two controllers, and make it rain. Explore the steps and playtest photos of A Dose of Heart.' : '의자에 앉아 컨트롤러로 구름을 뭉쳐 비를 내립니다. 마음 한첩의 체험 순서와 플레이 테스트 사진을 확인하세요.';
-  document.querySelector('meta[name="description"]').content = isExperience ? experienceDescription : copy.description;
+  const isPlaytest = document.body.dataset.page === 'playtest';
+  document.title = isPlaytest ? (language === 'en' ? 'Playtest — A Dose of Heart' : '사용자 테스트 — 마음 한첩') : copy.title;
+  const playtestDescription = language === 'en' ? 'Photos from the seated VR and controller interaction tests of A Dose of Heart.' : '마음 한첩의 실제 사용자 테스트 사진입니다. 앉아서 진행하는 VR 체험과 컨트롤러 조작을 확인하세요.';
+  document.querySelector('meta[name="description"]').content = isPlaytest ? playtestDescription : copy.description;
   document.querySelector('meta[property="og:title"]').content = document.title;
-  document.querySelector('meta[property="og:description"]').content = isExperience ? experienceDescription : copy.social;
+  document.querySelector('meta[property="og:description"]').content = isPlaytest ? playtestDescription : copy.social;
   document.querySelector('meta[property="og:image:alt"]').content = copy.image;
   document.querySelector('meta[property="og:locale"]').content = language === 'en' ? 'en_US' : 'ko_KR';
   const subject = language === 'en' ? 'A Dose of Heart — demonstration / exhibition enquiry' : '마음 한첩 체험·전시 문의';
@@ -108,12 +108,12 @@ dialog?.addEventListener('keydown', event => {
 dialog?.addEventListener('close', () => document.body.classList.remove('modal-open'));
 
 if ('IntersectionObserver' in window) {
-  const navigationLinks = [...document.querySelectorAll('.site-header nav a[href^="#"]')];
+  const navigationLinks = [...document.querySelectorAll('.site-header nav a[href^="#"]:not([aria-current="page"])')];
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       navigationLinks.forEach(link => {
-        if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
+        if (link.hash === `#${entry.target.dataset.navSection || entry.target.id}`) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });
     });

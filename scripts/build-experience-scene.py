@@ -147,7 +147,7 @@ svg = f'''<svg viewBox="0 0 1000 540" aria-hidden="true" focusable="false">
 </g>
 <g id="rain-rings" fill="none" stroke="#9baea1" stroke-width="1.3"><ellipse cx="626" cy="433" rx="17" ry="4"/><ellipse cx="818" cy="460" rx="21" ry="5"/><ellipse cx="899" cy="444" rx="13" ry="3"/><ellipse cx="691" cy="475" rx="11" ry="3"/></g>
 </svg>'''
-page = root / 'output' / 'experience.html'
+page = root / 'output' / 'index.html'
 html = page.read_text(encoding='utf-8')
 html, count = re.subn(r'(<div class="journey-scene">)<svg.*?</svg>(</div>)', lambda m: m[1] + svg + m[2], html, count=1, flags=re.S)
 assert count == 1
