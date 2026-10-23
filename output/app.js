@@ -21,23 +21,32 @@ function applyLanguage(next, save = false) {
   translatedAttributes.forEach(item => { item.element.setAttribute(item.attribute, item[language]); });
   document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === language)));
   const copy = metaCopy[language];
-  document.title = copy.title;
-  document.querySelector('meta[name="description"]').content = copy.description;
-  document.querySelector('meta[property="og:title"]').content = copy.title;
-  document.querySelector('meta[property="og:description"]').content = copy.social;
+  const isExperience = document.body.dataset.page === 'experience';
+  document.title = isExperience ? (language === 'en' ? 'Experience — A Dose of Heart' : '체험 방식 — 마음 한첩') : copy.title;
+  const experienceDescription = language === 'en' ? 'Sit down, gather clouds with two controllers, and make it rain. Explore the steps and playtest photos of A Dose of Heart.' : '의자에 앉아 컨트롤러로 구름을 뭉쳐 비를 내립니다. 마음 한첩의 체험 순서와 플레이 테스트 사진을 확인하세요.';
+  document.querySelector('meta[name="description"]').content = isExperience ? experienceDescription : copy.description;
+  document.querySelector('meta[property="og:title"]').content = document.title;
+  document.querySelector('meta[property="og:description"]').content = isExperience ? experienceDescription : copy.social;
   document.querySelector('meta[property="og:image:alt"]').content = copy.image;
   document.querySelector('meta[property="og:locale"]').content = language === 'en' ? 'en_US' : 'ko_KR';
   const subject = language === 'en' ? 'A Dose of Heart — demonstration / exhibition enquiry' : '마음 한첩 체험·전시 문의';
-  document.getElementById('emailLink').href = `mailto:dearbrave1111@gmail.com?subject=${encodeURIComponent(subject)}`;
+  const emailLink = document.getElementById('emailLink');
+  if (emailLink) emailLink.href = `mailto:dearbrave1111@gmail.com?subject=${encodeURIComponent(subject)}`;
+  document.querySelectorAll('[data-page-link]').forEach(link => {
+    const destination = new URL(link.href);
+    destination.searchParams.set('lang', language);
+    link.href = destination.href;
+  });
   const video = document.querySelector('#videoFrame iframe');
   if (video) video.title = language === 'en' ? 'A Dose of Heart — playthrough' : '마음 한첩 플레이 영상';
-  if (dialog.open) showImage(imageIndex);
+  if (dialog?.open) showImage(imageIndex);
   if (save) {
     try { localStorage.setItem('mh_lang', language); } catch (_) { /* Storage can be disabled. */ }
     const url = new URL(location.href);
     url.searchParams.set('lang', language);
     history.replaceState(null, '', url);
   }
+  document.dispatchEvent(new CustomEvent('languagechange', {detail: language}));
 }
 
 let initialLanguage = new URLSearchParams(location.search).get('lang');
@@ -48,7 +57,7 @@ if (!['ko', 'en'].includes(initialLanguage)) initialLanguage = navigator.languag
 applyLanguage(initialLanguage);
 document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => applyLanguage(button.dataset.lang, true)));
 
-document.getElementById('playVideo').addEventListener('click', () => {
+document.getElementById('playVideo')?.addEventListener('click', () => {
   const iframe = document.createElement('iframe');
   iframe.src = 'https://www.youtube.com/embed/7jBBZXJNfPc?autoplay=1&playsinline=1&rel=0';
   iframe.title = language === 'en' ? 'A Dose of Heart — playthrough' : '마음 한첩 플레이 영상';
@@ -75,11 +84,11 @@ galleryButtons.forEach((button, index) => button.addEventListener('click', () =>
   document.body.classList.add('modal-open');
   document.getElementById('closeGallery').focus();
 }));
-document.getElementById('closeGallery').addEventListener('click', () => dialog.close());
-document.getElementById('previousImage').addEventListener('click', () => showImage(imageIndex - 1));
-document.getElementById('nextImage').addEventListener('click', () => showImage(imageIndex + 1));
-dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
-dialog.addEventListener('keydown', event => {
+document.getElementById('closeGallery')?.addEventListener('click', () => dialog.close());
+document.getElementById('previousImage')?.addEventListener('click', () => showImage(imageIndex - 1));
+document.getElementById('nextImage')?.addEventListener('click', () => showImage(imageIndex + 1));
+dialog?.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+dialog?.addEventListener('keydown', event => {
   if (event.key === 'Tab') {
     const first = document.getElementById('closeGallery');
     const last = document.getElementById('nextImage');
@@ -96,10 +105,10 @@ dialog.addEventListener('keydown', event => {
     showImage(imageIndex + (event.key === 'ArrowLeft' ? -1 : 1));
   }
 });
-dialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
+dialog?.addEventListener('close', () => document.body.classList.remove('modal-open'));
 
 if ('IntersectionObserver' in window) {
-  const navigationLinks = [...document.querySelectorAll('.site-header nav a')];
+  const navigationLinks = [...document.querySelectorAll('.site-header nav a[href^="#"]')];
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
